@@ -119,3 +119,7 @@ python tools/test_dingtalk.py          验证钉钉通道
 - **网页没更新**：看 `data/state.json` 里的 `last_date`，判断是不是被「当天已生成」拦下了，  
   加 `--force` 重跑。
 - **代理没开**：外文源会全部失败，早报会退化成只有中文源，钉钉里会标注「降级版本」。
+
+## 许可
+
+MIT License，见 [LICENSE](LICENSE)。署名用了 GitHub 账号名（`reieve2`），要改成你的名字或组织名，直接改 LICENSE 第一行即可。
