@@ -1,0 +1,318 @@
+site:
+  title: 每日 AI 科技早报
+  base_url: https://ai-daily-brief-q2d.pages.dev
+  out_dir: out
+brief:
+  card_count: 7
+  card_count_min: 5
+  max_per_source: 2
+  lookback_hours: 30
+  timezone: Asia/Shanghai
+  language: zh
+  fetch_fulltext: true
+  fulltext_max_chars: 6000
+model:
+  base_url: https://api.deepseek.com
+  select_model: deepseek-chat
+  compose_model: deepseek-chat
+  temperature: 0.3
+  max_candidates: 120
+  summary_chars: 500
+network:
+  proxy: http://127.0.0.1:7897
+  timeout: 15
+  retries: 2
+  workers: 8                # 并发抓取的线程数
+  fetch_budget_seconds: 360 # 抓取总时间预算，超了就用手上已有的内容
+  user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+    like Gecko) Chrome/124.0 Safari/537.36
+deploy:
+  enabled: true
+  project_name: ai-daily-brief
+  branch: main
+notify:
+  dingtalk: true
+sources:
+- name: Hacker News
+  url: https://hnrss.org/frontpage
+  group: 全球
+  weight: 3
+  proxy: true
+  aggregator: true
+- name: Techmeme
+  url: https://www.techmeme.com/feed.xml
+  group: 全球
+  weight: 3
+  proxy: true
+  aggregator: true
+- name: TechCrunch
+  url: https://techcrunch.com/feed/
+  group: 全球
+  weight: 3
+  proxy: true
+- name: The Verge
+  url: https://www.theverge.com/rss/index.xml
+  group: 全球
+  weight: 2
+  proxy: true
+- name: Ars Technica
+  url: https://feeds.arstechnica.com/arstechnica/index
+  group: 全球
+  weight: 2
+  proxy: true
+- name: Wired
+  url: https://www.wired.com/feed/rss
+  group: 全球
+  weight: 2
+  proxy: true
+- name: MIT Technology Review
+  url: https://www.technologyreview.com/feed/
+  group: 全球
+  weight: 3
+  proxy: true
+- name: VentureBeat AI
+  url: https://venturebeat.com/category/ai/feed/
+  group: 全球
+  weight: 2
+  proxy: true
+- name: The Register
+  url: https://www.theregister.com/headlines.atom
+  group: 全球
+  weight: 1
+  proxy: true
+- name: Engadget
+  url: https://www.engadget.com/rss.xml
+  group: 全球
+  weight: 1
+  proxy: true
+- name: IEEE Spectrum
+  url: https://spectrum.ieee.org/feeds/feed.rss
+  group: 全球
+  weight: 2
+  proxy: true
+- name: Tom's Hardware
+  url: https://www.tomshardware.com/feeds/all
+  group: 全球
+  weight: 1
+  proxy: true
+- name: Hugging Face Blog
+  url: https://huggingface.co/blog/feed.xml
+  group: 全球
+  weight: 3
+  proxy: true
+- name: OpenAI News
+  url: https://openai.com/news/rss.xml
+  group: 全球
+  weight: 4
+  proxy: true
+- name: Google DeepMind
+  url: https://deepmind.google/blog/rss.xml
+  group: 全球
+  weight: 4
+  proxy: true
+- name: NVIDIA Blog
+  url: https://blogs.nvidia.com/feed/
+  group: 全球
+  weight: 3
+  proxy: true
+- name: Microsoft Research
+  url: https://www.microsoft.com/en-us/research/feed/
+  group: 全球
+  weight: 2
+  proxy: true
+- name: Import AI
+  url: https://importai.substack.com/feed
+  group: 全球
+  weight: 2
+  proxy: true
+- name: Simon Willison
+  url: https://simonwillison.net/atom/everything/
+  group: 全球
+  weight: 2
+  proxy: true
+- name: SemiAnalysis
+  url: https://semianalysis.com/feed/
+  group: 全球
+  weight: 3
+  proxy: true
+- name: arXiv cs.AI
+  url: http://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&max_results=25
+  group: 全球
+  weight: 2
+  proxy: true
+- name: arXiv cs.LG
+  url: http://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&max_results=25
+  group: 全球
+  weight: 2
+  proxy: true
+- name: Reddit r/MachineLearning
+  url: https://www.reddit.com/r/MachineLearning/.rss
+  group: 全球
+  weight: 2
+  proxy: true
+- name: Reddit r/LocalLLaMA
+  url: https://www.reddit.com/r/LocalLLaMA/.rss
+  group: 全球
+  weight: 2
+  proxy: true
+- name: GitHub Trending
+  url: https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml
+  group: 全球
+  weight: 1
+  proxy: true
+  aggregator: true
+- name: Google Research
+  url: https://research.google/blog/rss/
+  group: 全球
+  weight: 4
+  proxy: true
+- name: Apple ML Research
+  url: https://machinelearning.apple.com/rss.xml
+  group: 全球
+  weight: 3
+  proxy: true
+- name: AWS Machine Learning
+  url: https://aws.amazon.com/blogs/machine-learning/feed/
+  group: 全球
+  weight: 3
+  proxy: true
+- name: PyTorch Blog
+  url: https://pytorch.org/blog/feed.xml
+  group: 全球
+  weight: 3
+  proxy: true
+- name: BAIR
+  url: https://bair.berkeley.edu/blog/feed.xml
+  group: 全球
+  weight: 3
+  proxy: true
+- name: CNBC Technology
+  url: https://www.cnbc.com/id/19854910/device/rss/rss.html
+  group: 全球
+  weight: 3
+  proxy: true
+- name: Crunchbase News
+  url: https://news.crunchbase.com/feed/
+  group: 全球
+  weight: 3
+  proxy: true
+- name: Platformer
+  url: https://www.platformer.news/feed
+  group: 全球
+  weight: 3
+  proxy: true
+- name: Sifted
+  url: https://sifted.eu/feed
+  group: 全球
+  weight: 2
+  proxy: true
+- name: Data Center Dynamics
+  url: https://www.datacenterdynamics.com/en/rss/
+  group: 全球
+  weight: 3
+  proxy: true
+- name: EE Times
+  url: https://www.eetimes.com/feed/
+  group: 全球
+  weight: 2
+  proxy: true
+- name: GitHub Blog
+  url: https://github.blog/feed/
+  group: 全球
+  weight: 2
+  proxy: true
+- name: Lobsters
+  url: https://lobste.rs/rss
+  group: 全球
+  weight: 2
+  proxy: true
+- name: The New Stack
+  url: https://thenewstack.io/feed/
+  group: 全球
+  weight: 2
+  proxy: true
+- name: InfoQ 英文
+  url: https://feed.infoq.com/
+  group: 全球
+  weight: 2
+  proxy: true
+- name: TLDR AI
+  url: https://tldr.tech/api/rss/ai
+  group: 全球
+  weight: 2
+  proxy: true
+- name: arXiv cs.CL
+  url: http://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&max_results=20
+  group: 全球
+  weight: 2
+  proxy: true
+- name: arXiv cs.CV
+  url: http://export.arxiv.org/api/query?search_query=cat:cs.CV&sortBy=submittedDate&sortOrder=descending&max_results=20
+  group: 全球
+  weight: 2
+  proxy: true
+- name: 雷峰网
+  url: https://www.leiphone.com/feed
+  group: 中文
+  weight: 3
+  proxy: false
+- name: 量子位
+  url: https://www.qbitai.com/feed
+  group: 中文
+  weight: 3
+  proxy: false
+- name: 钛媒体
+  url: https://www.tmtpost.com/rss.xml
+  group: 中文
+  weight: 2
+  proxy: false
+- name: IT之家
+  url: https://www.ithome.com/rss/
+  group: 中文
+  weight: 2
+  proxy: false
+- name: 新浪科技
+  url: http://rss.sina.com.cn/tech/rollnews.xml
+  group: 中文
+  weight: 2
+  proxy: false
+- name: Solidot
+  url: https://www.solidot.org/index.rss
+  group: 中文
+  weight: 2
+  proxy: false
+- name: 爱范儿
+  url: https://www.ifanr.com/feed
+  group: 中文
+  weight: 2
+  proxy: false
+- name: 少数派
+  url: https://sspai.com/feed
+  group: 中文
+  weight: 2
+  proxy: false
+- name: 阮一峰的网络日志
+  url: https://www.ruanyifeng.com/blog/atom.xml
+  group: 中文
+  weight: 2
+  proxy: false
+- name: InfoQ 中文
+  url: https://www.infoq.cn/feed
+  group: 中文
+  weight: 2
+  proxy: false
+- name: OSCHINA
+  url: https://www.oschina.net/news/rss
+  group: 中文
+  weight: 1
+  proxy: false
+- name: 极客公园
+  url: https://www.geekpark.net/rss
+  group: 中文
+  weight: 3
+  proxy: false
+- name: 界面新闻
+  url: https://a.jiemian.com/index.php?m=article&a=rss
+  group: 中文
+  weight: 2
+  proxy: false
