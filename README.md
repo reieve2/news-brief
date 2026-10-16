@@ -4,13 +4,13 @@
 里的 AI 与科技动态，自动筛成 5-7 张卡片。每条讲清「是什么 · 背景 · 为什么重要 · 接下来」，
 正文里带虚线的术语点一下就有解释。
 
-**在线读**：<https://daily-aibrief.pages.dev>　**往期**：页面底部　**订阅**：见下
+**在线读**：<https://ai-daily-brief-q2d.pages.dev>　**往期**：页面底部　**订阅**：见下
 
 ---
 
 # 一、我只想每天看到早报（不用装任何东西）
 
-**第一步**：手机浏览器打开 <https://daily-aibrief.pages.dev>，然后「分享 → 添加到主屏幕」。
+**第一步**：手机浏览器打开 <https://ai-daily-brief-q2d.pages.dev>，然后「分享 → 添加到主屏幕」。
 以后点一下图标就能看，和 App 一样。
 
 **第二步（可选，但推荐）**：用 RSS 订阅，让它每天自动送到你面前。
@@ -20,7 +20,7 @@
 
 怎么订：
 
-1. 复制这个网址：`https://daily-aibrief.pages.dev/feed.xml`
+1. 复制这个网址：`https://ai-daily-brief-q2d.pages.dev/feed.xml`
 2. 装一个阅读器，把网址粘进去：
    - iPhone：NetNewsWire（免费）或 Reeder
    - 安卓：Feedly、Inoreader
@@ -245,6 +245,19 @@ python src/main.py
 
 注意：`.bat` 和 `.vbs` 必须是 **CRLF 换行**，改成 LF 会让 cmd 把每行开头吃掉。
 改动这两个文件后跑一下 `tools/fix_line_endings.ps1`。
+
+## 云端 + 本地兜底（推荐的稳妥组合）
+
+只用云端已经够用；如果担心哪天云端没跑成导致断更，可以再挂一个本地兜底检查：
+
+```
+python tools/local_fallback.py           # 检查线上有没有今天的早报，没有才本地补一次
+python tools/local_fallback.py --check   # 只检查、不补跑
+```
+
+它的判断逻辑是「线上今天有没有」，所以云端正常时它什么都不做，只在云端漏了的时候补位——
+不会出现两边各跑各的、重复抓取重复花钱。配一个每天固定时间的计划任务即可
+（本机用的是每天 13:00，并勾选「错过则在开机后补跑」）。
 
 ## 目录
 
