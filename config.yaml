@@ -1,6 +1,6 @@
 site:
   title: 每日 AI 科技早报
-  base_url: https://ai-daily-brief-q2d.pages.dev
+  base_url: https://daily-aibrief.pages.dev
   out_dir: out
 brief:
   card_count: 7
@@ -28,7 +28,7 @@ network:
     like Gecko) Chrome/124.0 Safari/537.36
 deploy:
   enabled: true
-  project_name: ai-daily-brief
+  project_name: daily-aibrief
   branch: main
 notify:
   dingtalk: true
