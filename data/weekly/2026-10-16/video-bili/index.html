@@ -29,7 +29,7 @@
         width: 1920px; height: 1080px;
         display: flex; flex-direction: column; align-items: center;
         justify-content: center; text-align: center;
-        padding: 0 160px 120px;
+        padding: 100px 120px 150px;
       }
       h1 { font-weight: 800; line-height: 1.22; }
       .hl { color: var(--glow, #fbbf24); }
@@ -41,6 +41,31 @@
       .sub {
         margin-top: 24px; font-size: 36px;
         color: #94a3b8; line-height: 1.5; max-width: 84%; text-wrap: balance;
+      }
+      /* 有素材图时的「窗口卡片」：白底、黑边、标题栏带三个圆点 */
+      .frame {
+        width: 58%;
+        background: #ffffff; border: 3px solid #05080f; border-radius: 14px;
+        overflow: hidden; box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+      }
+      .frame-bar {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 12px 20px; background: #ffffff; color: #05080f;
+        font-size: 22px; font-weight: 800;
+        border-bottom: 2px solid #05080f;
+      }
+      .frame-dots { display: flex; gap: 9px; }
+      .frame-dots i { width: 17px; height: 17px; border-radius: 50%; display: block; }
+      .frame-dots i:nth-child(1) { background: #ff5f57; }
+      .frame-dots i:nth-child(2) { background: #febc2e; }
+      .frame-dots i:nth-child(3) { background: #28c840; }
+      .frame-shot { height: 400px; background: #0b0f18; }
+      .frame-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+      .frame-caption {
+        padding: 14px 20px 16px; background: #ffffff; color: #05080f;
+        font-size: 30px; font-weight: 800;
+        text-align: center; line-height: 1.35;
+        border-top: 2px solid #05080f;
       }
       .cue {
         /* left:50% 会让可用宽度只剩半个屏幕，max-width 形同虚设、字幕被迫折行；
@@ -98,57 +123,63 @@
       <audio id="vo" src="assets/mix_full.wav" data-start="0" data-duration="156.876"></audio>
 
       <div class="clip scene" id="scene1" data-start="0.0" data-duration="9.832" data-track-index="0" style="--glow:#a78bfa">
-        <h1 id="t1" style="font-size:96px">模型扎堆 <span class="hl">安全不断</span></h1>
+        <h1 id="t1" style="font-size:96px">模型扎堆 <span class="hl">安全收紧</span></h1>
         <div class="rule" id="rule1"></div>
-        <div class="sub" id="s1">热闹和紧张同时发生</div>
+        <div class="sub" id="s1">前沿发布与监管动作同时发生</div>
       </div>
       <div class="clip scene" id="scene2" data-start="9.832" data-duration="12.328" data-track-index="0" style="--glow:#38bdf8">
-        <h1 id="t2" style="font-size:82px"><span class="hl">Meta</span> 首次进入前沿模型</h1>
+        <h1 id="t2" style="font-size:96px"><span class="hl">Meta</span> 首个前沿模型</h1>
         <div class="rule" id="rule2"></div>
-        <div class="sub" id="s2">发布 Muse Wonder 和 Muse Wonder Full 两个模型</div>
+        <div class="sub" id="s2">Muse Wonder 定价对标 GPT-6 Sol 与 Opus 5.5</div>
       </div>
       <div class="clip scene" id="scene3" data-start="22.16" data-duration="13.528" data-track-index="0" style="--glow:#22d3ee">
-        <h1 id="t3" style="font-size:82px"><span class="hl">Gemini 4 Argon</span></h1>
-        <div class="rule" id="rule3"></div>
+        <div class="frame">
+          <div class="frame-bar"><span>一周 AI 大事件</span><span class="frame-dots"><i></i><i></i><i></i></span></div>
+          <div class="frame-shot"><img src="assets/scene-3.png" alt="" /></div>
+          <div class="frame-caption"><span class="hl">Gemini 4 Argon</span></div>
+        </div>
         <div class="sub" id="s3">面向开发者企业和消费者开放</div>
       </div>
       <div class="clip scene" id="scene4" data-start="35.688" data-duration="13.744" data-track-index="0" style="--glow:#60a5fa">
-        <h1 id="t4" style="font-size:82px">NVIDIA 开源 1200</h1>
-        <div class="rule" id="rule4"></div>
-        <div class="sub" id="s4">面向常驻智能体 可自建部署</div>
+        <div class="frame">
+          <div class="frame-bar"><span>一周 AI 大事件</span><span class="frame-dots"><i></i><i></i><i></i></span></div>
+          <div class="frame-shot"><img src="assets/scene-4.jpeg" alt="" /></div>
+          <div class="frame-caption">英伟达开源 <span class="hl">1200 亿参数</span></div>
+        </div>
+        <div class="sub" id="s4">Nemotron 3.5 Super VL 面向常驻智能体</div>
       </div>
       <div class="clip scene" id="scene5" data-start="49.432" data-duration="15.784" data-track-index="0" style="--glow:#fb7185">
-        <h1 id="t5" style="font-size:82px"><span class="hl">Anthropic</span> 智能体越</h1>
+        <h1 id="t5" style="font-size:112px">智能体自主<span class="hl">越界</span></h1>
         <div class="rule" id="rule5"></div>
-        <div class="sub" id="s5">试图访问政府网站 已向白宫通报</div>
+        <div class="sub" id="s5">Anthropic 向白宫通报 访问政府网站</div>
       </div>
       <div class="clip scene" id="scene6" data-start="65.216" data-duration="14.752" data-track-index="0" style="--glow:#f97316">
-        <h1 id="t6" style="font-size:96px">美<span class="hl">强制</span> AI 安全报告</h1>
+        <h1 id="t6" style="font-size:96px">AI 安全事件<span class="hl">强制上报</span></h1>
         <div class="rule" id="rule6"></div>
-        <div class="sub" id="s6">首次针对 AI 公司建立强制报告制度</div>
+        <div class="sub" id="s6">特朗普政府首次建立强制报告制度</div>
       </div>
       <div class="clip scene" id="scene7" data-start="79.968" data-duration="14.848" data-track-index="0" style="--glow:#f43f5e">
-        <h1 id="t7" style="font-size:96px">字节成立<span class="hl">安全对齐</span>部门</h1>
+        <h1 id="t7" style="font-size:96px">字节设<span class="hl">安全对齐</span>部门</h1>
         <div class="rule" id="rule7"></div>
-        <div class="sub" id="s7">由严林负责 提升为独立部门</div>
+        <div class="sub" id="s7">Seed 成立独立部门 严林负责</div>
       </div>
       <div class="clip scene" id="scene8" data-start="94.816" data-duration="14.56" data-track-index="0" style="--glow:#fbbf24">
         <h1 id="t8" style="font-size:82px">Anthropic 营收 1</h1>
         <div class="rule" id="rule8"></div>
-        <div class="sub" id="s8">第三季度营收 三个季度增长逾两倍</div>
+        <div class="sub" id="s8">三季度营收 三个季度增长逾两倍</div>
       </div>
       <div class="clip scene" id="scene9" data-start="109.376" data-duration="15.808" data-track-index="0" style="--glow:#fcd34d">
         <h1 id="t9" style="font-size:82px">Character.ai 破</h1>
         <div class="rule" id="rule9"></div>
-        <div class="sub" id="s9">申请 Chapter 11 破产保护</div>
+        <div class="sub" id="s9">申请 Chapter 11 保护 高用户量不等于可持续</div>
       </div>
       <div class="clip scene" id="scene10" data-start="125.184" data-duration="15.616" data-track-index="0" style="--glow:#34d399">
-        <h1 id="t10" style="font-size:82px">苹果发布 <span class="hl">HomeView</span></h1>
+        <h1 id="t10" style="font-size:82px">苹果 <span class="hl">HomeView</span> 发布</h1>
         <div class="rule" id="rule10"></div>
-        <div class="sub" id="s10">7 英寸屏幕 起价 299 美元</div>
+        <div class="sub" id="s10">7 英寸屏 起价 299 美元 11 月 13 日发货</div>
       </div>
       <div class="clip scene" id="scene11" data-start="140.8" data-duration="16.076" data-track-index="0" style="--glow:#c084fc">
-        <h1 id="t11" style="font-size:82px">模型安全资本硬件<span class="hl">全挤一起</span></h1>
+        <h1 id="t11" style="font-size:96px">模型安全资本硬件<span class="hl">齐挤</span></h1>
         <div class="rule" id="rule11"></div>
         <div class="sub" id="s11">你最在意哪一条 评论区聊聊</div>
       </div>
@@ -235,13 +266,11 @@
       tl.fromTo("#s2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 10.252);
       tl.to("#glow2", { opacity: 0, duration: 0.4 }, 21.76);
       tl.fromTo("#glow3", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 22.21);
-      tl.fromTo("#t3", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 22.28);
-      tl.fromTo("#rule3", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 22.5);
+      tl.fromTo("#scene3 .frame", { opacity: 0, y: 44, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 0.55 }, 22.26);
       tl.fromTo("#s3", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 22.58);
       tl.to("#glow3", { opacity: 0, duration: 0.4 }, 35.288);
       tl.fromTo("#glow4", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 35.738);
-      tl.fromTo("#t4", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 35.808);
-      tl.fromTo("#rule4", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 36.028);
+      tl.fromTo("#scene4 .frame", { opacity: 0, y: 44, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 0.55 }, 35.788);
       tl.fromTo("#s4", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 36.108);
       tl.to("#glow4", { opacity: 0, duration: 0.4 }, 49.032);
       tl.fromTo("#glow5", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 49.482);

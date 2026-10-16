@@ -19,11 +19,60 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import hyperframes  # noqa: E402
+import ogimage  # noqa: E402
 import storyboard as storyboard_mod  # noqa: E402
 import tts  # noqa: E402
 from common import load_config, load_env, resolve_local_path, setup_logging  # noqa: E402
+from fetch import make_session  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
+
+IMAGE_EXTENSIONS = (".png", ".webp", ".gif", ".jpeg", ".jpg")
+
+
+def guess_extension(url: str) -> str:
+    lower = url.lower()
+    for candidate in IMAGE_EXTENSIONS:
+        if candidate in lower:
+            return candidate
+    return ".jpg"
+
+
+def collect_screenshots(cfg, digest: dict, board: dict, log):
+    """给每一幕找一张素材图。返回 [(scene, image_url, use_proxy)]。"""
+    items: dict[int, dict] = {}
+    index = 0
+    for group in digest.get("groups") or []:
+        for item in group.get("items") or []:
+            index += 1
+            items[index] = item
+
+    proxies = ogimage.proxy_map(cfg)
+    session = make_session(cfg)
+    pending: list[tuple[dict, str, bool]] = []
+
+    for order, scene in enumerate(board.get("scenes") or [], start=1):
+        if scene.get("image"):
+            continue  # 上一次已经配好图，别重复抓
+        try:
+            item_index = int(scene.get("item") or 0)
+        except (TypeError, ValueError):
+            item_index = 0
+        item = items.get(item_index)
+        if not item:
+            continue
+        image_url, source_url, use_proxy = ogimage.find_for_sources(
+            cfg, session, item.get("sources") or [], proxies
+        )
+        if not image_url:
+            log.info("第 %d 幕没找到素材图：%s", order, item.get("title", "")[:24])
+            continue
+        name = f"scene-{order}{guess_extension(image_url)}"
+        scene["image"] = name
+        pending.append((scene, image_url, use_proxy))
+        log.info("第 %d 幕配图来自 %s", order, source_url[:70])
+
+    return pending
 
 
 def parse_args() -> argparse.Namespace:
@@ -97,9 +146,18 @@ def main() -> int:
         (assets / "cues.json").write_text(
             json.dumps(cues, ensure_ascii=False, indent=2), encoding="utf-8"
         )
+        digest = json.loads((target / "digest.json").read_text(encoding="utf-8"))
         board = storyboard_mod.load_or_build(
-            cfg, script, target / f"storyboard-{version}.json", log
+            cfg, script, digest, target / f"storyboard-{version}.json", log
         )
+
+        pending: list[tuple[dict, str, bool]] = []
+        if weekly_cfg.get("images", True):
+            pending = collect_screenshots(cfg, digest, board, log)
+        if pending:
+            (target / f"storyboard-{version}.json").write_text(
+                json.dumps(board, ensure_ascii=False, indent=2), encoding="utf-8"
+            )
 
         project_dir = target / f"video-{version}"
         hyperframes.write_project(
@@ -113,6 +171,19 @@ def main() -> int:
             brand=brand,
             brand_sub=brand_sub,
         )
+
+        if pending:
+            session = make_session(cfg)
+            assets_dir = project_dir / "assets"
+            for scene, image_url, use_proxy in pending:
+                target_file = assets_dir / scene["image"]
+                if target_file.exists() and target_file.stat().st_size > 0:
+                    continue
+                if ogimage.download_image(cfg, session, image_url, target_file, use_proxy=use_proxy):
+                    log.info("  下载配图 %s（%.0f KB）", target_file.name,
+                             target_file.stat().st_size / 1024)
+                else:
+                    log.warning("  配图下载失败：%s", image_url[:70])
 
         if not (args.copy or args.render):
             continue

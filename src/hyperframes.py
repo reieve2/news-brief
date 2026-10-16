@@ -28,7 +28,11 @@ LAYOUTS = {
         "brand_top": 150,
         "brand_size": 78,
         "brand_sub_size": 32,
-        "pad": "0 110px 380px",
+        "pad": "150px 60px 360px",
+        "frame_width": "90%",
+        "frame_shot_height": 500,
+        "frame_caption_size": 34,
+        "frame_bar_size": 26,
         "h1_sizes": [(6, 124), (8, 104), (10, 88), (12, 78), (99, 70)],
     },
     "bili": {
@@ -42,7 +46,11 @@ LAYOUTS = {
         "brand_top": 54,
         "brand_size": 56,
         "brand_sub_size": 24,
-        "pad": "0 160px 120px",
+        "pad": "100px 120px 150px",
+        "frame_width": "58%",
+        "frame_shot_height": 400,
+        "frame_caption_size": 30,
+        "frame_bar_size": 22,
         "h1_sizes": [(8, 112), (11, 96), (14, 82), (99, 72)],
     },
 }
@@ -158,27 +166,53 @@ def build_index_html(
             f'data-start="{start}" data-duration="{duration}" data-track-index="0" '
             f'style="--glow:{color}">'
         )
-        scene_html.append(
-            f'        <h1 id="t{index}" style="font-size:{size}px">{title}</h1>'
-        )
-        scene_html.append(f'        <div class="rule" id="rule{index}"></div>')
+        image = scene.get("image") or ""
+        if image:
+            # 有素材图的时候走「窗口卡片」：图在上、一句话在下
+            scene_html.append('        <div class="frame">')
+            scene_html.append(
+                '          <div class="frame-bar">'
+                f'<span>{html.escape(spacing(brand)) or "素材"}</span>'
+                '<span class="frame-dots"><i></i><i></i><i></i></span>'
+                "</div>"
+            )
+            scene_html.append(
+                f'          <div class="frame-shot">'
+                f'<img src="assets/{html.escape(image)}" alt="" /></div>'
+            )
+            scene_html.append(f'          <div class="frame-caption">{title}</div>')
+            scene_html.append("        </div>")
+        else:
+            scene_html.append(
+                f'        <h1 id="t{index}" style="font-size:{size}px">{title}</h1>'
+            )
+            scene_html.append(f'        <div class="rule" id="rule{index}"></div>')
         if sub:
-            scene_html.append(f'        <div class="sub" id="s{index}">{html.escape(sub)}</div>')
+            scene_html.append(
+                f'        <div class="sub" id="s{index}">{html.escape(spacing(sub))}</div>'
+            )
         scene_html.append("      </div>")
 
         anim.append(
             f'      tl.fromTo("#glow{index}", {{ opacity: 0 }}, '
             f'{{ opacity: 0.3, duration: 0.9 }}, {round(start + 0.05, 3)});'
         )
-        anim.append(
-            f'      tl.fromTo("#t{index}", {{ opacity: 0, y: 48 }}, '
-            f'{{ opacity: 1, y: 0, duration: 0.5 }}, {round(start + 0.12, 3)});'
-        )
-        anim.append(
-            f'      tl.fromTo("#rule{index}", {{ scaleX: 0, opacity: 0 }}, '
-            f'{{ scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }}, '
-            f'{round(start + 0.34, 3)});'
-        )
+        if image:
+            anim.append(
+                f'      tl.fromTo("#scene{index} .frame", '
+                f'{{ opacity: 0, y: 44, scale: 0.97 }}, '
+                f'{{ opacity: 1, y: 0, scale: 1, duration: 0.55 }}, {round(start + 0.10, 3)});'
+            )
+        else:
+            anim.append(
+                f'      tl.fromTo("#t{index}", {{ opacity: 0, y: 48 }}, '
+                f'{{ opacity: 1, y: 0, duration: 0.5 }}, {round(start + 0.12, 3)});'
+            )
+            anim.append(
+                f'      tl.fromTo("#rule{index}", {{ scaleX: 0, opacity: 0 }}, '
+                f'{{ scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }}, '
+                f'{round(start + 0.34, 3)});'
+            )
         if sub:
             anim.append(
                 f'      tl.fromTo("#s{index}", {{ opacity: 0, y: 20 }}, '
@@ -246,6 +280,31 @@ def build_index_html(
       .sub {{
         margin-top: 24px; font-size: {layout['body_size']}px;
         color: #94a3b8; line-height: 1.5; max-width: 84%; text-wrap: balance;
+      }}
+      /* 有素材图时的「窗口卡片」：白底、黑边、标题栏带三个圆点 */
+      .frame {{
+        width: {layout['frame_width']};
+        background: #ffffff; border: 3px solid #05080f; border-radius: 14px;
+        overflow: hidden; box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+      }}
+      .frame-bar {{
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 12px 20px; background: #ffffff; color: #05080f;
+        font-size: {layout['frame_bar_size']}px; font-weight: 800;
+        border-bottom: 2px solid #05080f;
+      }}
+      .frame-dots {{ display: flex; gap: 9px; }}
+      .frame-dots i {{ width: 17px; height: 17px; border-radius: 50%; display: block; }}
+      .frame-dots i:nth-child(1) {{ background: #ff5f57; }}
+      .frame-dots i:nth-child(2) {{ background: #febc2e; }}
+      .frame-dots i:nth-child(3) {{ background: #28c840; }}
+      .frame-shot {{ height: {layout['frame_shot_height']}px; background: #0b0f18; }}
+      .frame-shot img {{ display: block; width: 100%; height: 100%; object-fit: cover; }}
+      .frame-caption {{
+        padding: 14px 20px 16px; background: #ffffff; color: #05080f;
+        font-size: {layout['frame_caption_size']}px; font-weight: 800;
+        text-align: center; line-height: 1.35;
+        border-top: 2px solid #05080f;
       }}
       .cue {{
         /* left:50% 会让可用宽度只剩半个屏幕，max-width 形同虚设、字幕被迫折行；
@@ -360,6 +419,11 @@ def write_project(
     # Path("") 会变成当前目录，所以必须先判空再判是不是文件
     if gsap_src and Path(gsap_src).is_file():
         shutil.copy2(gsap_src, assets_dir / "gsap.min.js")
+
+    # 上一轮抓的素材图也清掉，免得换了内容还留着旧图
+    for pattern in ("scene-*.jpg", "scene-*.jpeg", "scene-*.png", "scene-*.webp", "scene-*.gif"):
+        for stale in assets_dir.glob(pattern):
+            stale.unlink()
 
     logger.info("视频工程已生成：%s", project_dir)
     return project_dir

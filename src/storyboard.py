@@ -14,7 +14,26 @@ SCREEN_MAX = 14
 THEMES = {"model", "security", "capital", "hardware", "other"}
 
 
-def build_storyboard(cfg: dict, script: dict, log) -> dict:
+def build_digest_listing(digest: dict) -> tuple[str, list[dict]]:
+    """把周报条目编成清单，同时返回编号到条目的映射。"""
+    lines: list[str] = []
+    index_map: dict[int, dict] = {}
+    index = 0
+    for group in digest.get("groups") or []:
+        for item in group.get("items") or []:
+            index += 1
+            index_map[index] = item
+            sources = item.get("sources") or []
+            source_text = " ; ".join(
+                f"{s.get('name', '')} {s.get('url', '')}" for s in sources[:3]
+            )
+            lines.append(f"[{index}] {item.get('title', '')}")
+            if source_text:
+                lines.append(f"    来源：{source_text}")
+    return "\n".join(lines), [index_map[i] for i in sorted(index_map)]
+
+
+def build_storyboard(cfg: dict, script: dict, digest: dict, log) -> dict:
     segments = script.get("segments") or []
     if not segments:
         raise ModelError("口播稿没有分段")
@@ -23,9 +42,15 @@ def build_storyboard(cfg: dict, script: dict, log) -> dict:
         f"[{seg.get('key', index)}] {seg.get('text', '')}"
         for index, seg in enumerate(segments, start=1)
     )
+    digest_listing, _ = build_digest_listing(digest)
+    user_content = (
+        f"【本周条目】\n{digest_listing}\n\n【口播稿】\n{listing}"
+        if digest_listing
+        else listing
+    )
     messages = [
         {"role": "system", "content": load_text("prompts/storyboard.md")},
-        {"role": "user", "content": listing},
+        {"role": "user", "content": user_content},
     ]
     data = chat_json(cfg, messages, model=cfg["model"].get("compose_model"), max_tokens=3072)
 
@@ -45,6 +70,10 @@ def build_storyboard(cfg: dict, script: dict, log) -> dict:
         theme = str(scene.get("theme") or "").strip().lower()
         if theme not in THEMES:
             theme = "other"
+        try:
+            item_index = int(scene.get("item") or 0)
+        except (TypeError, ValueError):
+            item_index = 0
 
         if not screen:
             screen = (seg.get("text") or "")[:SCREEN_MAX]
@@ -62,6 +91,7 @@ def build_storyboard(cfg: dict, script: dict, log) -> dict:
                 "sub": sub,
                 "emphasis": emphasis,
                 "theme": theme,
+                "item": item_index,
             }
         )
 
@@ -69,7 +99,7 @@ def build_storyboard(cfg: dict, script: dict, log) -> dict:
     return {"scenes": scenes}
 
 
-def load_or_build(cfg: dict, script: dict, cache_path, log) -> dict:
+def load_or_build(cfg: dict, script: dict, digest: dict, cache_path, log) -> dict:
     """已经有分镜就直接读，省一次模型调用。"""
     try:
         if cache_path.exists():
@@ -80,6 +110,6 @@ def load_or_build(cfg: dict, script: dict, cache_path, log) -> dict:
     except Exception:  # noqa: BLE001
         pass
 
-    board = build_storyboard(cfg, script, log)
+    board = build_storyboard(cfg, script, digest, log)
     cache_path.write_text(json.dumps(board, ensure_ascii=False, indent=2), encoding="utf-8")
     return board

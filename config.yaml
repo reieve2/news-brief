@@ -33,6 +33,7 @@ deploy:
 weekly:
   enabled: true
   brand: 一周 AI 大事件      # 视频里常驻的花字，两版共用
+  images: true              # 给每幕抓一张一手来源的题图当素材
   run_in_cloud: false       # 云端（GitHub Actions）是否也做周报；本地做才需要 ffprobe
   digest_limit: 12          # 底稿条目总数的硬上限
   max_items_to_model: 30    # 合并后最多送多少条给模型挑选

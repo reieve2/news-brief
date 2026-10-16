@@ -29,7 +29,7 @@
         width: 1080px; height: 1920px;
         display: flex; flex-direction: column; align-items: center;
         justify-content: center; text-align: center;
-        padding: 0 110px 380px;
+        padding: 150px 60px 360px;
       }
       h1 { font-weight: 800; line-height: 1.22; }
       .hl { color: var(--glow, #fbbf24); }
@@ -41,6 +41,31 @@
       .sub {
         margin-top: 24px; font-size: 38px;
         color: #94a3b8; line-height: 1.5; max-width: 84%; text-wrap: balance;
+      }
+      /* 有素材图时的「窗口卡片」：白底、黑边、标题栏带三个圆点 */
+      .frame {
+        width: 90%;
+        background: #ffffff; border: 3px solid #05080f; border-radius: 14px;
+        overflow: hidden; box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+      }
+      .frame-bar {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 12px 20px; background: #ffffff; color: #05080f;
+        font-size: 26px; font-weight: 800;
+        border-bottom: 2px solid #05080f;
+      }
+      .frame-dots { display: flex; gap: 9px; }
+      .frame-dots i { width: 17px; height: 17px; border-radius: 50%; display: block; }
+      .frame-dots i:nth-child(1) { background: #ff5f57; }
+      .frame-dots i:nth-child(2) { background: #febc2e; }
+      .frame-dots i:nth-child(3) { background: #28c840; }
+      .frame-shot { height: 500px; background: #0b0f18; }
+      .frame-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+      .frame-caption {
+        padding: 14px 20px 16px; background: #ffffff; color: #05080f;
+        font-size: 34px; font-weight: 800;
+        text-align: center; line-height: 1.35;
+        border-top: 2px solid #05080f;
       }
       .cue {
         /* left:50% 会让可用宽度只剩半个屏幕，max-width 形同虚设、字幕被迫折行；
@@ -92,29 +117,35 @@
       <audio id="vo" src="assets/mix_full.wav" data-start="0" data-duration="46.484"></audio>
 
       <div class="clip scene" id="scene1" data-start="0.0" data-duration="4.47" data-track-index="0" style="--glow:#38bdf8">
-        <h1 id="t1" style="font-size:88px"><span class="hl">Meta</span> 杀进前沿模型</h1>
+        <h1 id="t1" style="font-size:78px"><span class="hl">Meta</span> 杀进前沿模型</h1>
         <div class="rule" id="rule1"></div>
         <div class="sub" id="s1">这周三家巨头同时出手</div>
       </div>
       <div class="clip scene" id="scene2" data-start="4.47" data-duration="10.878" data-track-index="0" style="--glow:#22d3ee">
-        <h1 id="t2" style="font-size:88px"><span class="hl">Meta</span> 首发前沿模型</h1>
+        <h1 id="t2" style="font-size:78px">Meta 首发前沿模型</h1>
         <div class="rule" id="rule2"></div>
-        <div class="sub" id="s2">Muse Wonder定价对标GPT-6 Sol和Opus 5.5</div>
+        <div class="sub" id="s2">Muse Wonder 定价对标 GPT-6 Sol 与 Opus 5.5</div>
       </div>
       <div class="clip scene" id="scene3" data-start="15.348" data-duration="10.278" data-track-index="0" style="--glow:#60a5fa">
-        <h1 id="t3" style="font-size:70px"><span class="hl">Gemini 4 Argon</span></h1>
-        <div class="rule" id="rule3"></div>
+        <div class="frame">
+          <div class="frame-bar"><span>一周 AI 大事件</span><span class="frame-dots"><i></i><i></i><i></i></span></div>
+          <div class="frame-shot"><img src="assets/scene-3.png" alt="" /></div>
+          <div class="frame-caption"><span class="hl">Gemini 4 Argon</span></div>
+        </div>
         <div class="sub" id="s3">开发者企业消费者都能用</div>
       </div>
       <div class="clip scene" id="scene4" data-start="25.626" data-duration="11.574" data-track-index="0" style="--glow:#38bdf8">
-        <h1 id="t4" style="font-size:70px">英伟达开源 <span class="hl">1200 亿参数</span>模型</h1>
-        <div class="rule" id="rule4"></div>
-        <div class="sub" id="s4">Nemotron 3.5 Super VL面向常驻智能体</div>
+        <div class="frame">
+          <div class="frame-bar"><span>一周 AI 大事件</span><span class="frame-dots"><i></i><i></i><i></i></span></div>
+          <div class="frame-shot"><img src="assets/scene-4.jpeg" alt="" /></div>
+          <div class="frame-caption">英伟达开源 <span class="hl">1200 亿</span>参数</div>
+        </div>
+        <div class="sub" id="s4">Nemotron 3.5 Super VL 面向常驻智能体</div>
       </div>
       <div class="clip scene" id="scene5" data-start="37.2" data-duration="9.284" data-track-index="0" style="--glow:#a78bfa">
-        <h1 id="t5" style="font-size:88px">三家同周出手<span class="hl">谁最狠</span></h1>
+        <h1 id="t5" style="font-size:124px"><span class="hl">三家</span>同周出手</h1>
         <div class="rule" id="rule5"></div>
-        <div class="sub" id="s5">评论区聊聊下期接着看</div>
+        <div class="sub" id="s5">你觉得谁最狠</div>
       </div>
 
       <div class="cue" id="cue1" data-start="0.0" data-duration="2.105">Meta 杀进前沿模型了</div>
@@ -165,13 +196,11 @@
       tl.fromTo("#s2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 4.89);
       tl.to("#glow2", { opacity: 0, duration: 0.4 }, 14.948);
       tl.fromTo("#glow3", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 15.398);
-      tl.fromTo("#t3", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 15.468);
-      tl.fromTo("#rule3", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 15.688);
+      tl.fromTo("#scene3 .frame", { opacity: 0, y: 44, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 0.55 }, 15.448);
       tl.fromTo("#s3", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 15.768);
       tl.to("#glow3", { opacity: 0, duration: 0.4 }, 25.226);
       tl.fromTo("#glow4", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 25.676);
-      tl.fromTo("#t4", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 25.746);
-      tl.fromTo("#rule4", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 25.966);
+      tl.fromTo("#scene4 .frame", { opacity: 0, y: 44, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 0.55 }, 25.726);
       tl.fromTo("#s4", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 26.046);
       tl.to("#glow4", { opacity: 0, duration: 0.4 }, 36.8);
       tl.fromTo("#glow5", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 37.25);
