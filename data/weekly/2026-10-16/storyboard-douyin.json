@@ -1,0 +1,39 @@
+{
+  "scenes": [
+    {
+      "key": "s1",
+      "text": "Meta 杀进前沿模型了，这周三家巨头同时出手。",
+      "screen": "Meta杀进前沿模型",
+      "sub": "这周三家巨头同时出手",
+      "emphasis": "Meta"
+    },
+    {
+      "key": "s2",
+      "text": "Meta 的 Superintelligence Lab 发布 Muse Wonder 和 Muse Wonder Full。这是 Meta 第一次进入前沿模型竞争，定价跟 GPT-6 Sol、Opus 5.5 大致持平。",
+      "screen": "Meta首发前沿模型",
+      "sub": "定价跟GPT-6 Sol、Opus 5.5持平",
+      "emphasis": "Meta"
+    },
+    {
+      "key": "s3",
+      "text": "Google DeepMind 发布 Gemini 4 Argon，开发者、企业、消费者都能用。定价和 Vals Index 排名如果属实，前沿模型的比拼正在换赛道。",
+      "screen": "Gemini 4 Argon",
+      "sub": "开发者企业消费者都能用",
+      "emphasis": "Gemini 4 Argon"
+    },
+    {
+      "key": "s4",
+      "text": "NVIDIA 发布开源 1200 亿参数模型 Nemotron 3.5 Super VL，面向常驻智能体。开源权重加可自建部署，企业能在自己基础设施上跑智能体。",
+      "screen": "英伟达开源1200亿模型",
+      "sub": "开源权重加可自建部署",
+      "emphasis": "1200亿"
+    },
+    {
+      "key": "s5",
+      "text": "三家同周出手，你觉得谁最狠？评论区聊聊，下期接着看。",
+      "screen": "三家同周出手谁最狠",
+      "sub": "评论区聊聊下期接着看",
+      "emphasis": "谁最狠"
+    }
+  ]
+}

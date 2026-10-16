@@ -53,6 +53,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--no-deploy", action="store_true", help="不部署")
     parser.add_argument("--no-notify", action="store_true", help="不推送")
     parser.add_argument("--only-sources", default="", help="只用名字匹配这些关键词的源（逗号分隔，调试用）")
+    parser.add_argument("--weekly-only", action="store_true", help="只跑周报，不跑日报")
+    parser.add_argument("--weekly", action="store_true", help="日报跑完后强制跑周报（忽略周几）")
+    parser.add_argument("--no-weekly", action="store_true", help="跳过周报")
+    parser.add_argument("--week-end", default="", help="指定周报覆盖的周日日期 YYYY-MM-DD（测试用）")
+    parser.add_argument("--no-audio", action="store_true", help="周报只出文本，不配音")
     return parser.parse_args()
 
 
@@ -87,6 +92,12 @@ def main() -> int:
     now = now_local(cfg)
     date_str = now.strftime("%Y-%m-%d")
     generated_at = now.strftime("%H:%M")
+
+    if args.weekly_only:
+        import weekly as weekly_mod
+
+        weekly_mod.run(cfg, args, log)
+        return 0
 
     state = read_state()
     if state.get("last_date") == date_str and not args.force:
@@ -186,6 +197,15 @@ def main() -> int:
         }
     )
     log.info("=== 完成：%d 条卡片，降级=%s ===", len(cards), degraded)
+
+    if cfg.get("weekly", {}).get("enabled", True) and not args.no_weekly and not args.dry_run:
+        if now.weekday() == 0 or args.weekly:
+            try:
+                import weekly as weekly_mod
+
+                weekly_mod.run(cfg, args, log)
+            except Exception as exc:  # noqa: BLE001
+                log.warning("周报流程出错（不影响今天的日报）：%s", exc)
     return 0
 
 

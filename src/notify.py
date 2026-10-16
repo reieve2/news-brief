@@ -107,3 +107,68 @@ def send_alert(text: str) -> bool:
     except Exception as exc:  # noqa: BLE001
         logger.warning("告警推送异常：%s", exc)
         return False
+
+
+def build_weekly_markdown(
+    digest: dict, start, end, url: str, scripts: dict, timelines: dict
+) -> str:
+    groups = digest.get("groups") or []
+    total = sum(len(group.get("items") or []) for group in groups)
+    lines = [f"### 周报 · {start} ~ {end}"]
+    if digest.get("headline"):
+        lines.append(f"> {digest['headline']}")
+    lines.append(f"> {len(groups)} 组 / {total} 条")
+    lines.append("")
+    for group in groups:
+        lines.append(f"**{group.get('name', '')}**")
+        if group.get("summary"):
+            lines.append(group["summary"])
+        for item in group.get("items") or []:
+            lines.append(f"- {item.get('title', '')}")
+        lines.append("")
+    if timelines:
+        parts = " · ".join(f"{name} {value['total']:.0f} 秒" for name, value in timelines.items())
+        lines.append(f"配音：{parts}")
+    if scripts:
+        words = " · ".join(f"{name} {chars} 字" for name, chars in scripts.items())
+        lines.append(f"口播稿：{words}")
+    if url:
+        lines.append("")
+        lines.append(f"[查看完整周报]({url})")
+    return "\n".join(lines)
+
+
+def send_weekly(
+    digest: dict, start, end, url: str, scripts: dict, timelines: dict
+) -> bool:
+    """推送周报。格式和日报那条保持一致，只是内容换成一周的汇总。"""
+    webhook = (os.environ.get("DINGTALK_WEBHOOK") or "").strip()
+    secret = (os.environ.get("DINGTALK_SECRET") or "").strip()
+    if not webhook:
+        logger.warning("缺少 DINGTALK_WEBHOOK，跳过周报推送")
+        return False
+
+    body = {
+        "msgtype": "markdown",
+        "markdown": {
+            "title": f"周报 · {start} ~ {end}",
+            "text": build_weekly_markdown(digest, start, end, url, scripts, timelines),
+        },
+    }
+    request = urllib.request.Request(
+        signed_url(webhook, secret),
+        data=json.dumps(body).encode("utf-8"),
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=20) as response:
+            data = json.loads(response.read().decode("utf-8"))
+        if data.get("errcode") == 0:
+            logger.info("周报钉钉推送成功")
+            return True
+        logger.warning("周报推送返回错误：%s", data)
+        return False
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("周报推送异常：%s", exc)
+        return False

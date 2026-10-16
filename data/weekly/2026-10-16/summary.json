@@ -1,0 +1,20 @@
+{
+  "week_start": "2026-10-10",
+  "week_end": "2026-10-16",
+  "cards": 42,
+  "items": 38,
+  "groups": 5,
+  "digest_items": 12,
+  "page": "weekly-2026-10-16.html",
+  "page_url": "https://daily-aibrief.pages.dev/weekly-2026-10-16.html",
+  "scripts": {
+    "douyin": 324,
+    "bili": 994
+  },
+  "durations": {
+    "douyin": 42.984,
+    "bili": 153.376
+  },
+  "degraded": false,
+  "degraded_reasons": []
+}

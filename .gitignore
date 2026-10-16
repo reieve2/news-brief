@@ -6,6 +6,10 @@ out/
 __pycache__/
 *.pyc
 
+# 周报的音频和视频是产物，体积大不入库；每期的 JSON 和工程文件保留
+data/weekly/*/assets-*/
+data/weekly/*/video-*/assets/
+
 # wrangler files
 .wrangler
 .dev.vars*

@@ -1,10 +1,8 @@
-# 把 .bat 和 .vbs 统一改成 CRLF 换行——cmd 和 wscript 都不认 LF 换行
-$files = @(
-    "run_daily.bat",
-    "run_hidden.vbs",
-    "startup_brief.vbs"
-)
+# 把根目录下的 .bat 和 .vbs 统一改成 CRLF 换行——cmd 和 wscript 都不认 LF 换行
 $root = Split-Path -Parent $PSScriptRoot
+$files = Get-ChildItem -Path $root -File |
+    Where-Object { $_.Extension -in ".bat", ".vbs" } |
+    ForEach-Object { $_.Name }
 $utf8 = New-Object System.Text.UTF8Encoding($false)
 
 foreach ($name in $files) {

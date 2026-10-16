@@ -284,6 +284,7 @@ python tools/detect_proxy.py           探测本机代理端口
 python tools/selftest.py               用假数据渲染网页，检查排版
 python tools/test_deploy.py            单独测部署
 python tools/test_dingtalk.py          验证钉钉通道
+python tools/show_weekly.py            看最新一期周报的底稿和口播稿
 ```
 
 ## 术语点击解释
@@ -296,6 +297,50 @@ python tools/test_dingtalk.py          验证钉钉通道
 
 觉得标多了或标少了，改那个 prompt 里的规则；`src/compose.py` 里的 `TERM_LIMIT`
 是硬上限。模型给出的术语如果没在正文里原样出现，会被自动丢弃（`clean_terms`）。
+
+## 一周汇总（周报）
+
+每周一日报跑完后自动检查一次：如果上一个完整自然周（周一到周日）还没做过周报，就接着做。
+
+数据来自 `data/briefs/` 里这七天的存档，**不重新抓取**。流程是：跨天合并同一件事 →
+按可信度（排除「低」）和影响力挑出 10–12 条 → 按主题分 3–5 组、每组写两句归纳 →
+出底稿网页和两份口播稿 → 配音。
+
+两份口播稿：
+
+- **抖音版**：60 秒左右，讲 3 条，3 秒钩子 + 短句。
+- **B站版**：180 秒左右，讲 9 条，每条带「为什么重要」。
+
+配音用 edge-tts，音色、语速、段落间隔在 `config.yaml` 的 `weekly.versions` 里。
+产物落在 `data/weekly/<周日日期>/`：
+
+```
+digest.json           底稿（分组 + 条目）
+script-douyin.json    抖音口播稿
+script-bili.json      B站口播稿
+assets-douyin/        分段 mp3 + voice_timeline.json + cues.json
+assets-bili/
+summary.json          这一期的统计
+```
+
+`assets-*` 的目录写法和 `O:\ai-media` 里现有项目的约定一致，复制进对应项目就能渲染，
+**news-brief 本身不写那个目录**。
+
+手动跑：
+
+```
+python src/main.py --weekly-only                                   # 只做周报
+python src/main.py --weekly-only --week-end 2026-10-16 --force     # 指定覆盖到哪天，测试用
+python src/main.py --weekly-only --no-audio                        # 只出文本不配音
+python src/main.py --weekly                                        # 日报 + 强制做周报
+```
+
+规则在 `prompts/weekly_digest.md`（选材与分组）和 `prompts/weekly_script.md`（口播风格），
+直接改文字即可。`config.yaml` 的 `weekly.digest_limit` 是底稿条数硬上限。
+
+两个已经踩过的坑，改 prompt 时注意：**字数约束必须由代码算好告诉模型**，
+让它自己做「总字数 ÷ 段数」它不会执行（实测 1883 字对 900 字预算，三次重写纹丝不动）；
+**喂给口播稿的素材要只给要点**，给全文它就照着全文的长度写。
 
 ## 出问题先看这几个地方
 

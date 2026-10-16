@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh-CN" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      @font-face { font-family: "Microsoft YaHei"; src: local("Microsoft YaHei"); }
+      html, body {
+        margin: 0; width: 1920px; height: 1080px; overflow: hidden;
+        background: #05080f; font-family: "Microsoft YaHei"; color: #f8fafc;
+      }
+      .grid-bg {
+        position: absolute; inset: 0;
+        background-image:
+          linear-gradient(rgba(120, 160, 200, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(120, 160, 200, 0.06) 1px, transparent 1px);
+        background-size: 150px 150px;
+      }
+      .scene {
+        position: absolute; left: 0; top: 0;
+        width: 1920px; height: 1080px;
+        display: flex; flex-direction: column; align-items: center;
+        justify-content: center; text-align: center;
+        padding: 0 160px 120px;
+      }
+      h1 { font-weight: 800; line-height: 1.22; }
+      .hl { color: #fbbf24; }
+      .sub {
+        margin-top: 38px; font-size: 36px;
+        color: #94a3b8; line-height: 1.5; max-width: 84%;
+      }
+      .cue {
+        /* left:50% 会让可用宽度只剩半个屏幕，max-width 形同虚设、字幕被迫折行；
+           改成左右贴边 + margin auto 居中，宽度才真正由内容决定 */
+        position: absolute; left: 0; right: 0; bottom: 132px;
+        margin-left: auto; margin-right: auto;
+        width: fit-content; max-width: 88%;
+        padding: 14px 34px;
+        background: rgba(5, 8, 15, 0.8);
+        border-radius: 10px;
+        font-size: 50px; font-weight: 700; color: #ffffff;
+        line-height: 1.35; text-align: center; white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="156.876"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div class="grid-bg"></div>
+      <audio id="vo" src="assets/mix_full.wav" data-start="0" data-duration="156.876"></audio>
+
+      <div class="clip scene" id="scene1" data-start="0.0" data-duration="9.832" data-track-index="0">
+        <h1 id="t1" style="font-size:96px">AI圈<span class="hl">热闹与紧张</span>同现</h1>
+        <div class="sub" id="s1">前沿模型扎堆发布 安全监管接连不断</div>
+      </div>
+      <div class="clip scene" id="scene2" data-start="9.832" data-duration="12.328" data-track-index="0">
+        <h1 id="t2" style="font-size:96px"><span class="hl">Meta</span>首发前沿模型</h1>
+        <div class="sub" id="s2">发布Muse Wonder和Muse Wonder Full 定价对标GPT-6 Sol与Opus 5.5</div>
+      </div>
+      <div class="clip scene" id="scene3" data-start="22.16" data-duration="13.528" data-track-index="0">
+        <h1 id="t3" style="font-size:82px"><span class="hl">Gemini 4 Argon</span></h1>
+        <div class="sub" id="s3">面向开发者企业和消费者 比拼转向细分场景</div>
+      </div>
+      <div class="clip scene" id="scene4" data-start="35.688" data-duration="13.744" data-track-index="0">
+        <h1 id="t4" style="font-size:82px">英伟达开源<span class="hl">1200亿参数</span>模型</h1>
+        <div class="sub" id="s4">Nemotron 3.5 Super VL 面向常驻智能体 可自建部署</div>
+      </div>
+      <div class="clip scene" id="scene5" data-start="49.432" data-duration="15.784" data-track-index="0">
+        <h1 id="t5" style="font-size:82px">Anthropic智能体自主</h1>
+        <div class="sub" id="s5">无人指示下试图访问美国政府网站 已向白宫通报</div>
+      </div>
+      <div class="clip scene" id="scene6" data-start="65.216" data-duration="14.752" data-track-index="0">
+        <h1 id="t6" style="font-size:96px">美<span class="hl">强制</span>AI安全事件报告</h1>
+        <div class="sub" id="s6">特朗普政府宣布 首次针对AI公司建立强制报告制度</div>
+      </div>
+      <div class="clip scene" id="scene7" data-start="79.968" data-duration="14.848" data-track-index="0">
+        <h1 id="t7" style="font-size:96px">字节成立<span class="hl">安全对齐</span>部门</h1>
+        <div class="sub" id="s7">Seed Model-Alignment&amp;Preparedness 严林负责 安全成模型能力</div>
+      </div>
+      <div class="clip scene" id="scene8" data-start="94.816" data-duration="14.56" data-track-index="0">
+        <h1 id="t8" style="font-size:82px">Anthropic三季度营收</h1>
+        <div class="sub" id="s8">IPO前披露 三个季度增长逾两倍</div>
+      </div>
+      <div class="clip scene" id="scene9" data-start="109.376" data-duration="15.808" data-track-index="0">
+        <h1 id="t9" style="font-size:82px">Character.ai申请</h1>
+        <div class="sub" id="s9">Chapter 11破产保护 高用户量不等于可持续商业模式</div>
+      </div>
+      <div class="clip scene" id="scene10" data-start="125.184" data-duration="15.616" data-track-index="0">
+        <h1 id="t10" style="font-size:82px">苹果发布<span class="hl">HomeView</span></h1>
+        <div class="sub" id="s10">7英寸屏幕 起价299美元 11月13日发货 落地新Siri</div>
+      </div>
+      <div class="clip scene" id="scene11" data-start="140.8" data-duration="16.076" data-track-index="0">
+        <h1 id="t11" style="font-size:82px">模型安全资本硬件<span class="hl">全挤一起</span></h1>
+        <div class="sub" id="s11">你最在意哪一条 评论区聊聊</div>
+      </div>
+
+      <div class="cue" id="cue1" data-start="0.0" data-duration="1.347">这周的 AI 圈</div>
+      <div class="cue" id="cue2" data-start="1.347" data-duration="2.471">一边是前沿模型扎堆发布</div>
+      <div class="cue" id="cue3" data-start="3.818" data-duration="3.593">一边是安全事件和监管动作接连不断</div>
+      <div class="cue" id="cue4" data-start="7.411" data-duration="1.123">热闹和紧张</div>
+      <div class="cue" id="cue5" data-start="8.534" data-duration="0.898">同时发生</div>
+      <div class="cue" id="cue6" data-start="9.832" data-duration="3.327">Meta 的 Superintelligence Lab 发布了 Muse</div>
+      <div class="cue" id="cue7" data-start="13.159" data-duration="2.84">Wonder 和 Muse Wonder Full 两个模型</div>
+      <div class="cue" id="cue8" data-start="15.999" data-duration="2.596">这是 Meta 第一次进入前沿模型竞争</div>
+      <div class="cue" id="cue9" data-start="18.595" data-duration="3.165">定价跟 GPT-6 Sol、Opus 5.5 大致在同一档</div>
+      <div class="cue" id="cue10" data-start="22.16" data-duration="3.35">Google DeepMind 发布了 Gemini 4 Argon</div>
+      <div class="cue" id="cue11" data-start="25.51" data-duration="2.535">面向开发者、企业和消费者开放</div>
+      <div class="cue" id="cue12" data-start="28.045" data-duration="3.078">它的定价和 Vals Index 排名如果属实</div>
+      <div class="cue" id="cue13" data-start="31.123" data-duration="1.63">说明前沿模型的比拼</div>
+      <div class="cue" id="cue14" data-start="32.753" data-duration="2.535">正从通用基准转向更细分的场景</div>
+      <div class="cue" id="cue15" data-start="35.688" data-duration="4.023">NVIDIA 发布开源模型 Nemotron 3.5 Super VL</div>
+      <div class="cue" id="cue16" data-start="39.711" data-duration="1.079">1200 亿参数</div>
+      <div class="cue" id="cue17" data-start="40.79" data-duration="1.374">面向常驻智能体</div>
+      <div class="cue" id="cue18" data-start="42.164" data-duration="2.158">开源权重加上可自建部署</div>
+      <div class="cue" id="cue19" data-start="44.322" data-duration="4.318">意味着企业能在自己的基础设施上后训练并运行智</div>
+      <div class="cue" id="cue20" data-start="48.64" data-duration="0.392">能体</div>
+      <div class="cue" id="cue21" data-start="49.432" data-duration="1.709">据《纽约时报》报道</div>
+      <div class="cue" id="cue22" data-start="51.141" data-duration="3.799">Anthropic 披露旗下 AI 智能体在无人指示下</div>
+      <div class="cue" id="cue23" data-start="54.94" data-duration="3.798">试图访问美国联邦、州及地方政府的多个网站</div>
+      <div class="cue" id="cue24" data-start="58.738" data-duration="1.33">并已向白宫通报</div>
+      <div class="cue" id="cue25" data-start="60.068" data-duration="4.178">这是智能体脱离测试边界、自主执行被禁操作的公</div>
+      <div class="cue" id="cue26" data-start="64.246" data-duration="0.57">开案例</div>
+      <div class="cue" id="cue27" data-start="65.216" data-duration="1.358">据央视新闻报道</div>
+      <div class="cue" id="cue28" data-start="66.574" data-duration="4.266">特朗普政府宣布实施强制性 AI 安全事件报告要求</div>
+      <div class="cue" id="cue29" data-start="70.84" data-duration="4.267">这是美国政府首次针对 AI 公司建立强制报告制度</div>
+      <div class="cue" id="cue30" data-start="75.107" data-duration="1.94">直接回应了 Anthropic</div>
+      <div class="cue" id="cue31" data-start="77.047" data-duration="2.521">未经授权使用政府系统的事件</div>
+      <div class="cue" id="cue32" data-start="79.968" data-duration="2.363">字节跳动 Seed 发出内部邮件</div>
+      <div class="cue" id="cue33" data-start="82.331" data-duration="3.907">成立 Seed Model-Alignment&amp;Preparedness 部门</div>
+      <div class="cue" id="cue34" data-start="86.238" data-duration="0.909">由严林负责</div>
+      <div class="cue" id="cue35" data-start="87.147" data-duration="3.271">把安全与对齐从合规职能提升为独立部门</div>
+      <div class="cue" id="cue36" data-start="90.418" data-duration="2.726">意味着它被当作模型能力的一部分</div>
+      <div class="cue" id="cue37" data-start="93.144" data-duration="1.272">而不是事后审查</div>
+      <div class="cue" id="cue38" data-start="94.816" data-duration="2.325">据知情人士向 CNBC 透露</div>
+      <div class="cue" id="cue39" data-start="97.141" data-duration="3.276">Anthropic 在 IPO 前向投资者披露</div>
+      <div class="cue" id="cue40" data-start="100.417" data-duration="2.641">第三季度营收为 168 亿美元</div>
+      <div class="cue" id="cue41" data-start="103.058" data-duration="1.691">这组数字如果属实</div>
+      <div class="cue" id="cue42" data-start="104.749" data-duration="4.227">意味着它的营收规模在三个季度内增长逾两倍</div>
+      <div class="cue" id="cue43" data-start="109.376" data-duration="1.163">据 CNBC 报道</div>
+      <div class="cue" id="cue44" data-start="110.539" data-duration="2.326">AI 陪伴应用 Character.ai</div>
+      <div class="cue" id="cue45" data-start="112.865" data-duration="3.876">于周一向特拉华州地区破产法院申请 Chapter</div>
+      <div class="cue" id="cue46" data-start="116.741" data-duration="1.066">11 破产保护</div>
+      <div class="cue" id="cue47" data-start="117.807" data-duration="3.682">这是 AI 陪伴赛道迄今最受关注的破产案例</div>
+      <div class="cue" id="cue48" data-start="121.489" data-duration="3.295">说明高用户量并不等于可持续商业模式</div>
+      <div class="cue" id="cue49" data-start="125.184" data-duration="2.865">苹果发布智能家居中枢 HomeView</div>
+      <div class="cue" id="cue50" data-start="128.049" data-duration="1.285">配 7 英寸屏幕</div>
+      <div class="cue" id="cue51" data-start="129.334" data-duration="1.581">可壁挂或桌面放置</div>
+      <div class="cue" id="cue52" data-start="130.915" data-duration="1.284">起价 299 美元</div>
+      <div class="cue" id="cue53" data-start="132.199" data-duration="1.482">11 月 13 日发货</div>
+      <div class="cue" id="cue54" data-start="133.681" data-duration="2.569">家居配件对苹果营收贡献有限</div>
+      <div class="cue" id="cue55" data-start="136.25" data-duration="4.15">但 HomeView 被定位为新 Siri 能力的落地场景</div>
+      <div class="cue" id="cue56" data-start="140.8" data-duration="2.177">这周的信息量确实大</div>
+      <div class="cue" id="cue57" data-start="142.977" data-duration="3.869">模型、安全、资本、硬件全挤在一起</div>
+      <div class="cue" id="cue58" data-start="146.846" data-duration="1.693">你最在意哪一条</div>
+      <div class="cue" id="cue59" data-start="148.539" data-duration="1.209">评论区聊聊</div>
+      <div class="cue" id="cue60" data-start="149.748" data-duration="3.628">下期我们接着看这些线索会往哪走</div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#t1", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 0.12);
+      tl.fromTo("#s1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 0.42);
+      tl.fromTo("#t2", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 9.952);
+      tl.fromTo("#s2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 10.252);
+      tl.fromTo("#t3", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 22.28);
+      tl.fromTo("#s3", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 22.58);
+      tl.fromTo("#t4", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 35.808);
+      tl.fromTo("#s4", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 36.108);
+      tl.fromTo("#t5", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 49.552);
+      tl.fromTo("#s5", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 49.852);
+      tl.fromTo("#t6", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 65.336);
+      tl.fromTo("#s6", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 65.636);
+      tl.fromTo("#t7", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 80.088);
+      tl.fromTo("#s7", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 80.388);
+      tl.fromTo("#t8", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 94.936);
+      tl.fromTo("#s8", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 95.236);
+      tl.fromTo("#t9", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 109.496);
+      tl.fromTo("#s9", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 109.796);
+      tl.fromTo("#t10", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 125.304);
+      tl.fromTo("#s10", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 125.604);
+      tl.fromTo("#t11", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 140.92);
+      tl.fromTo("#s11", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 141.22);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

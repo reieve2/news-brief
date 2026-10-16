@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      @font-face { font-family: "Microsoft YaHei"; src: local("Microsoft YaHei"); }
+      html, body {
+        margin: 0; width: 1080px; height: 1920px; overflow: hidden;
+        background: #05080f; font-family: "Microsoft YaHei"; color: #f8fafc;
+      }
+      .grid-bg {
+        position: absolute; inset: 0;
+        background-image:
+          linear-gradient(rgba(120, 160, 200, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(120, 160, 200, 0.06) 1px, transparent 1px);
+        background-size: 150px 150px;
+      }
+      .scene {
+        position: absolute; left: 0; top: 0;
+        width: 1080px; height: 1920px;
+        display: flex; flex-direction: column; align-items: center;
+        justify-content: center; text-align: center;
+        padding: 0 110px 380px;
+      }
+      h1 { font-weight: 800; line-height: 1.22; }
+      .hl { color: #fbbf24; }
+      .sub {
+        margin-top: 38px; font-size: 38px;
+        color: #94a3b8; line-height: 1.5; max-width: 84%;
+      }
+      .cue {
+        /* left:50% 会让可用宽度只剩半个屏幕，max-width 形同虚设、字幕被迫折行；
+           改成左右贴边 + margin auto 居中，宽度才真正由内容决定 */
+        position: absolute; left: 0; right: 0; bottom: 480px;
+        margin-left: auto; margin-right: auto;
+        width: fit-content; max-width: 88%;
+        padding: 14px 34px;
+        background: rgba(5, 8, 15, 0.8);
+        border-radius: 10px;
+        font-size: 58px; font-weight: 700; color: #ffffff;
+        line-height: 1.35; text-align: center; white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="46.484"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div class="grid-bg"></div>
+      <audio id="vo" src="assets/mix_full.wav" data-start="0" data-duration="46.484"></audio>
+
+      <div class="clip scene" id="scene1" data-start="0.0" data-duration="4.47" data-track-index="0">
+        <h1 id="t1" style="font-size:88px"><span class="hl">Meta</span>杀进前沿模型</h1>
+        <div class="sub" id="s1">这周三家巨头同时出手</div>
+      </div>
+      <div class="clip scene" id="scene2" data-start="4.47" data-duration="10.878" data-track-index="0">
+        <h1 id="t2" style="font-size:88px"><span class="hl">Meta</span>首发前沿模型</h1>
+        <div class="sub" id="s2">定价跟GPT-6 Sol、Opus 5.5持平</div>
+      </div>
+      <div class="clip scene" id="scene3" data-start="15.348" data-duration="10.278" data-track-index="0">
+        <h1 id="t3" style="font-size:70px"><span class="hl">Gemini 4 Argon</span></h1>
+        <div class="sub" id="s3">开发者企业消费者都能用</div>
+      </div>
+      <div class="clip scene" id="scene4" data-start="25.626" data-duration="11.574" data-track-index="0">
+        <h1 id="t4" style="font-size:78px">英伟达开源<span class="hl">1200亿</span>模型</h1>
+        <div class="sub" id="s4">开源权重加可自建部署</div>
+      </div>
+      <div class="clip scene" id="scene5" data-start="37.2" data-duration="9.284" data-track-index="0">
+        <h1 id="t5" style="font-size:88px">三家同周出手<span class="hl">谁最狠</span></h1>
+        <div class="sub" id="s5">评论区聊聊下期接着看</div>
+      </div>
+
+      <div class="cue" id="cue1" data-start="0.0" data-duration="2.105">Meta 杀进前沿模型了</div>
+      <div class="cue" id="cue2" data-start="2.105" data-duration="2.215">这周三家巨头同时出手</div>
+      <div class="cue" id="cue3" data-start="4.47" data-duration="2.079">Meta 的 Superintelligence</div>
+      <div class="cue" id="cue4" data-start="6.549" data-duration="1.663">Lab 发布 Muse Wonder</div>
+      <div class="cue" id="cue5" data-start="8.212" data-duration="1.58">和 Muse Wonder Full</div>
+      <div class="cue" id="cue6" data-start="9.792" data-duration="0.749">这是 Meta</div>
+      <div class="cue" id="cue7" data-start="10.541" data-duration="1.829">第一次进入前沿模型竞争</div>
+      <div class="cue" id="cue8" data-start="12.37" data-duration="1.83">定价跟 GPT-6 Sol、Opus</div>
+      <div class="cue" id="cue9" data-start="14.2" data-duration="0.998">5.5 大致持平</div>
+      <div class="cue" id="cue10" data-start="15.348" data-duration="1.793">Google DeepMind 发布</div>
+      <div class="cue" id="cue11" data-start="17.141" data-duration="1.254">Gemini 4 Argon</div>
+      <div class="cue" id="cue12" data-start="18.395" data-duration="2.331">开发者、企业、消费者都能用</div>
+      <div class="cue" id="cue13" data-start="20.726" data-duration="1.523">定价和 Vals Index</div>
+      <div class="cue" id="cue14" data-start="22.249" data-duration="1.076">排名如果属实</div>
+      <div class="cue" id="cue15" data-start="23.325" data-duration="2.151">前沿模型的比拼正在换赛道</div>
+      <div class="cue" id="cue16" data-start="25.626" data-duration="1.987">NVIDIA 发布开源 1200</div>
+      <div class="cue" id="cue17" data-start="27.613" data-duration="1.887">亿参数模型 Nemotron</div>
+      <div class="cue" id="cue18" data-start="29.5" data-duration="1.192">3.5 Super VL</div>
+      <div class="cue" id="cue19" data-start="30.692" data-duration="1.391">面向常驻智能体</div>
+      <div class="cue" id="cue20" data-start="32.083" data-duration="1.987">开源权重加可自建部署</div>
+      <div class="cue" id="cue21" data-start="34.07" data-duration="2.583">企业能在自己基础设施上跑智</div>
+      <div class="cue" id="cue22" data-start="36.653" data-duration="0.397">能体</div>
+      <div class="cue" id="cue23" data-start="37.2" data-duration="1.577">三家同周出手</div>
+      <div class="cue" id="cue24" data-start="38.777" data-duration="1.578">你觉得谁最狠</div>
+      <div class="cue" id="cue25" data-start="40.355" data-duration="1.314">评论区聊聊</div>
+      <div class="cue" id="cue26" data-start="41.669" data-duration="1.315">下期接着看</div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#t1", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 0.12);
+      tl.fromTo("#s1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 0.42);
+      tl.fromTo("#t2", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 4.59);
+      tl.fromTo("#s2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 4.89);
+      tl.fromTo("#t3", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 15.468);
+      tl.fromTo("#s3", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 15.768);
+      tl.fromTo("#t4", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 25.746);
+      tl.fromTo("#s4", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 26.046);
+      tl.fromTo("#t5", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 37.32);
+      tl.fromTo("#s5", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 37.62);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

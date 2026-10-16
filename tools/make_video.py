@@ -1,0 +1,161 @@
+"""把一期周报的配音工程组装成可渲染的 HyperFrames 项目。
+
+用法：
+  python tools/make_video.py                       # 最新一期，生成工程
+  python tools/make_video.py 2026-10-16            # 指定期
+  python tools/make_video.py --copy                # 顺便复制到 ai-media 工作区
+  python tools/make_video.py --copy --render       # 复制并渲染出片
+  python tools/make_video.py --only douyin         # 只做抖音版
+"""
+
+import argparse
+import json
+import os
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+
+import hyperframes  # noqa: E402
+import storyboard as storyboard_mod  # noqa: E402
+import tts  # noqa: E402
+from common import load_config, setup_logging  # noqa: E402
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="生成周报视频工程")
+    parser.add_argument("period", nargs="?", default="", help="周报日期，默认最新一期")
+    parser.add_argument("--copy", action="store_true", help="复制到 ai-media 工作区")
+    parser.add_argument("--render", action="store_true", help="渲染出片（隐含 --copy）")
+    parser.add_argument("--only", default="", help="只做某个版本，例如 douyin")
+    return parser.parse_args()
+
+
+def main() -> int:
+    args = parse_args()
+    cfg = load_config()
+    log = setup_logging(cfg)
+    weekly_cfg = cfg.get("weekly") or {}
+
+    base = ROOT / "data" / "weekly"
+    dirs = sorted(path for path in base.glob("*") if path.is_dir())
+    if not dirs:
+        print("还没有生成过周报。")
+        return 1
+    target = base / args.period if args.period else dirs[-1]
+    if not target.exists():
+        print(f"找不到 {args.period}")
+        return 1
+
+    versions = list((weekly_cfg.get("versions") or {}).keys())
+    if args.only:
+        versions = [args.only]
+
+    gsap_src = Path(weekly_cfg.get("gsap") or "")
+    ai_media = Path(weekly_cfg.get("ai_media_dir") or "")
+
+    # hyperframes 从 PATH 里找 ffmpeg/ffprobe，把配置里的那个目录塞进去
+    render_env = os.environ.copy()
+    ffmpeg_dir = str(Path(weekly_cfg.get("ffmpeg") or tts.DEFAULT_FFMPEG).parent)
+    for key in list(render_env.keys()):
+        if key.upper() == "PATH":
+            render_env[key] = ffmpeg_dir + os.pathsep + render_env[key]
+            break
+    else:
+        render_env["PATH"] = ffmpeg_dir
+
+    for version in versions:
+        script_path = target / f"script-{version}.json"
+        assets = target / f"assets-{version}"
+        timeline_path = assets / "voice_timeline.json"
+        if not (script_path.exists() and timeline_path.exists()):
+            log.warning("跳过 %s：素材不齐（缺口播稿或音频）", version)
+            continue
+        if not (assets / "mix_full.wav").exists():
+            log.warning("跳过 %s：还没有混音整轨，先跑 tools/rebuild_audio.py", version)
+            continue
+
+        script = json.loads(script_path.read_text(encoding="utf-8"))
+        timeline = json.loads(timeline_path.read_text(encoding="utf-8"))
+        # 字幕从时间轴现算，避免用到旧版切法留下的文件
+        cue_width = hyperframes.LAYOUTS.get(version, {}).get("cue_width", 26)
+        cues = tts.build_cues(timeline["segments"], max_width=cue_width)
+        (assets / "cues.json").write_text(
+            json.dumps(cues, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+        board = storyboard_mod.load_or_build(
+            cfg, script, target / f"storyboard-{version}.json", log
+        )
+
+        project_dir = target / f"video-{version}"
+        hyperframes.write_project(
+            version, project_dir, board, timeline, cues, assets, gsap_src
+        )
+
+        if not (args.copy or args.render):
+            continue
+        if not str(ai_media):
+            log.warning("config 里没配 weekly.ai_media_dir，跳过复制")
+            continue
+
+        dest = ai_media / f"aibrief-weekly-{version}"
+        dest.mkdir(parents=True, exist_ok=True)
+        for item in project_dir.iterdir():
+            target_item = dest / item.name
+            if item.is_dir():
+                if target_item.exists():
+                    shutil.rmtree(target_item)
+                shutil.copytree(item, target_item)
+            else:
+                shutil.copy2(item, target_item)
+        # renders 是产物，重跑时不覆盖
+        (dest / "renders").mkdir(exist_ok=True)
+        log.info("已复制到：%s", dest)
+
+        if args.render:
+            log.info("%s 渲染前先跑一次工程检查…", version)
+            check = subprocess.run(
+                "npm run check",
+                cwd=str(dest),
+                shell=True,
+                env=render_env,
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                timeout=900,
+            )
+            check_out = ((check.stdout or "") + (check.stderr or "")).strip()
+            if check.returncode == 0:
+                log.info("%s 检查通过", version)
+            else:
+                log.warning(
+                    "%s 检查报错（返回码 %s）：\n%s", version, check.returncode, check_out[-1500:]
+                )
+            log.info("开始渲染 %s…", version)
+            result = subprocess.run(
+                "npm run render",
+                cwd=str(dest),
+                shell=True,
+                env=render_env,
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                timeout=3600,
+            )
+            output = (result.stdout or "") + (result.stderr or "")
+            renders = sorted((dest / "renders").glob("*.mp4")) if (dest / "renders").exists() else []
+            if renders:
+                log.info("渲染完成：%s", renders[-1])
+            else:
+                log.warning("没找到产物（返回码 %s）：\n%s", result.returncode, output[-1200:])
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
