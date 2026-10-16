@@ -1,6 +1,6 @@
 """把口播稿变成配音文件，以及视频工程要用的时间轴和字幕。
 
-输出格式对齐 O:\ai-media 里现有项目的 assets 写法：
+输出格式对齐 ai-media 工作区里现有项目的 assets 写法：
   voice_<key>.mp3        分段配音
   voice_timeline.json    分段文本 + 起止时间
   cues.json              字幕短句 + 起止时间
@@ -15,6 +15,8 @@ import re
 import subprocess
 from pathlib import Path
 
+from common import resolve_local_path
+
 logger = logging.getLogger("brief")
 
 # 现有三个项目的成片都比配音总长多 3.5 秒，留给片尾
@@ -26,8 +28,24 @@ SPLIT_RE = re.compile(r"[，。！？；,!?;：:]+")
 # 这些词落在行尾读起来会断气
 CONNECTORS = {"和", "与", "及", "或", "跟", "并", "而", "但", "在", "把", "被", "的", "了"}
 
-DEFAULT_FFPROBE = r"O:\ai-media\tools\ffmpeg\bin\ffprobe.exe"
-DEFAULT_FFMPEG = r"O:\ai-media\tools\ffmpeg\bin\ffmpeg.exe"
+# 本机路径一律放 .env（见 config.yaml 里 weekly 那节的说明），代码里不写死
+DEFAULT_FFPROBE = ""
+DEFAULT_FFMPEG = ""
+
+
+def ffprobe_path(cfg: dict) -> str:
+    weekly = (cfg or {}).get("weekly") or {}
+    return resolve_local_path(weekly.get("ffprobe"), "FFPROBE_PATH", DEFAULT_FFPROBE, "ffprobe")
+
+
+def ffmpeg_path(cfg: dict) -> str:
+    weekly = (cfg or {}).get("weekly") or {}
+    return resolve_local_path(weekly.get("ffmpeg"), "FFMPEG_PATH", DEFAULT_FFMPEG, "ffmpeg")
+
+
+def bgm_path(cfg: dict) -> str:
+    weekly = (cfg or {}).get("weekly") or {}
+    return resolve_local_path(weekly.get("bgm"), "BGM_PATH")
 
 
 class TTSError(RuntimeError):
@@ -38,7 +56,10 @@ def probe_duration(path: Path, ffprobe: str | None = None) -> float:
     """用 ffprobe 读音频真实时长（秒）。"""
     exe = ffprobe or DEFAULT_FFPROBE
     if not Path(exe).exists():
-        raise TTSError(f"找不到 ffprobe：{exe}，请在 config.yaml 的 weekly.ffprobe 里指定")
+        raise TTSError(
+            f"找不到 ffprobe（{exe or '未配置'}）。请在 .env 里设 FFPROBE_PATH，"
+            f"或把 ffmpeg 所在目录加进 PATH。"
+        )
     result = subprocess.run(
         [
             exe, "-v", "error",
@@ -264,7 +285,10 @@ def write_assets_dir(
 
 def _run_ffmpeg(ffmpeg: str, args: list[str], log: logging.Logger) -> None:
     if not Path(ffmpeg).exists():
-        raise TTSError(f"找不到 ffmpeg：{ffmpeg}，请在 config.yaml 的 weekly.ffmpeg 里指定")
+        raise TTSError(
+            f"找不到 ffmpeg（{ffmpeg or '未配置'}）。请在 .env 里设 FFMPEG_PATH，"
+            f"或把 ffmpeg 所在目录加进 PATH。"
+        )
     result = subprocess.run(
         [ffmpeg, "-y", "-hide_banner", "-loglevel", "error", *args],
         capture_output=True,

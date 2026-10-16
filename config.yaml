@@ -35,12 +35,14 @@ weekly:
   run_in_cloud: false       # 云端（GitHub Actions）是否也做周报；本地做才需要 ffprobe
   digest_limit: 12          # 底稿条目总数的硬上限
   max_items_to_model: 30    # 合并后最多送多少条给模型挑选
-  ffprobe: O:\ai-media\tools\ffmpeg\bin\ffprobe.exe
-  ffmpeg: O:\ai-media\tools\ffmpeg\bin\ffmpeg.exe
-  bgm: O:\ai-media\projects\aibrief-douyin\assets\bgm.wav   # 背景音乐素材，不足长度会自动循环
+  # 下面几个都是本机路径，放在 .env 里（这个文件不进 git）。
+  # 留空时依次回退：.env → PATH → 代码里的默认值。
+  ffprobe: ""               # .env: FFPROBE_PATH
+  ffmpeg: ""                # .env: FFMPEG_PATH
+  bgm: ""                   # .env: BGM_PATH（背景音乐素材，不足长度会自动循环）
   bgm_volume: 0.12          # BGM 相对配音的音量
-  gsap: O:\ai-media\projects\aibrief-douyin\assets\gsap.min.js
-  ai_media_dir: O:\ai-media\projects   # 加 --copy 时把工程复制到这里，目录名 aibrief-weekly-*
+  gsap: ""                  # .env: GSAP_PATH
+  ai_media_dir: ""          # .env: AI_MEDIA_DIR（--copy 时把工程复制到这里）
   versions:
     douyin:
       seconds: 50          # 实测 324 字 ≈ 43 秒，50 秒是校验区间的中值

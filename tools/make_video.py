@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 import hyperframes  # noqa: E402
 import storyboard as storyboard_mod  # noqa: E402
 import tts  # noqa: E402
-from common import load_config, setup_logging  # noqa: E402
+from common import load_config, resolve_local_path, setup_logging  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -55,12 +55,14 @@ def main() -> int:
     if args.only:
         versions = [args.only]
 
-    gsap_src = Path(weekly_cfg.get("gsap") or "")
-    ai_media = Path(weekly_cfg.get("ai_media_dir") or "")
+    gsap_value = resolve_local_path(weekly_cfg.get("gsap"), "GSAP_PATH")
+    gsap_src = Path(gsap_value) if gsap_value else None
+    ai_media_value = resolve_local_path(weekly_cfg.get("ai_media_dir"), "AI_MEDIA_DIR")
+    ai_media = Path(ai_media_value) if ai_media_value else None
 
     # hyperframes 从 PATH 里找 ffmpeg/ffprobe，把配置里的那个目录塞进去
     render_env = os.environ.copy()
-    ffmpeg_dir = str(Path(weekly_cfg.get("ffmpeg") or tts.DEFAULT_FFMPEG).parent)
+    ffmpeg_dir = str(Path(tts.ffmpeg_path(cfg)).parent)
     for key in list(render_env.keys()):
         if key.upper() == "PATH":
             render_env[key] = ffmpeg_dir + os.pathsep + render_env[key]
@@ -98,8 +100,8 @@ def main() -> int:
 
         if not (args.copy or args.render):
             continue
-        if not str(ai_media):
-            log.warning("config 里没配 weekly.ai_media_dir，跳过复制")
+        if ai_media is None:
+            log.warning("没有配置 AI_MEDIA_DIR（.env 里加一行），跳过复制")
             continue
 
         dest = ai_media / f"aibrief-weekly-{version}"

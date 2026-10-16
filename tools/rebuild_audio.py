@@ -41,8 +41,8 @@ def main() -> int:
     if len(sys.argv) > 2:
         versions = [sys.argv[2]]
 
-    ffprobe = weekly_cfg.get("ffprobe") or tts.DEFAULT_FFPROBE
-    ffmpeg = weekly_cfg.get("ffmpeg") or tts.DEFAULT_FFMPEG
+    ffprobe = tts.ffprobe_path(cfg)
+    ffmpeg = tts.ffmpeg_path(cfg)
 
     for version in versions:
         script_path = target / f"script-{version}.json"
@@ -59,7 +59,7 @@ def main() -> int:
             assets,
             timeline,
             ffmpeg=ffmpeg,
-            bgm=weekly_cfg.get("bgm"),
+            bgm=tts.bgm_path(cfg),
             bgm_volume=float(weekly_cfg.get("bgm_volume", 0.12)),
             log=log,
         )

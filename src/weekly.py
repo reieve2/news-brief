@@ -381,7 +381,7 @@ def run(cfg: dict, args, log) -> bool:
     scripts: dict[str, dict] = {}
     timelines: dict[str, dict] = {}
     want_audio = not getattr(args, "no_audio", False)
-    ffprobe = weekly_cfg.get("ffprobe") or tts.DEFAULT_FFPROBE
+    ffprobe = tts.ffprobe_path(cfg)
     if want_audio and not Path(ffprobe).exists():
         log.warning("找不到 ffprobe（%s），本次只出文本不配音", ffprobe)
         want_audio = False
@@ -473,8 +473,8 @@ def run(cfg: dict, args, log) -> bool:
             tts.build_full_tracks(
                 assets,
                 timeline,
-                ffmpeg=weekly_cfg.get("ffmpeg") or tts.DEFAULT_FFMPEG,
-                bgm=weekly_cfg.get("bgm"),
+                ffmpeg=tts.ffmpeg_path(cfg),
+                bgm=tts.bgm_path(cfg),
                 bgm_volume=float(weekly_cfg.get("bgm_volume", 0.12)),
                 log=log,
             )

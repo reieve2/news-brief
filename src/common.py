@@ -110,3 +110,25 @@ def setup_logging(cfg: dict) -> logging.Logger:
 
 def load_text(relative: str) -> str:
     return (ROOT / relative).read_text(encoding="utf-8").strip()
+
+
+def resolve_local_path(
+    cfg_value: str | None, env_name: str, default: str = "", exe_name: str = ""
+) -> str:
+    """本机相关路径的解析顺序：config → .env → PATH → 兜底默认值。
+
+    config.yaml 是公开的，所以这类路径优先放 .env（不进 git），
+    再退到 PATH 里找，最后才用代码里的兜底值。
+    """
+    import shutil
+
+    if cfg_value and str(cfg_value).strip():
+        return str(cfg_value).strip()
+    value = (os.environ.get(env_name) or "").strip()
+    if value:
+        return value
+    if exe_name:
+        found = shutil.which(exe_name)
+        if found:
+            return found
+    return default

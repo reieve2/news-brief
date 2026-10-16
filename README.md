@@ -233,18 +233,34 @@ python src/main.py
 
 ## 定时（本地版）
 
-已经装好两处触发，都指向 `run_daily.bat`（通过 `run_hidden.vbs` 静默运行，不弹黑窗）：
+`tools\install_tasks.ps1` 会在「启动」文件夹里放两个快捷方式，走 `run_hidden.vbs` 静默运行
+（不弹黑窗），**仓库里不写任何本机路径，路径只在安装时写进快捷方式**：
 
-1. **登录后 2 分钟**（主力）：`startup_brief.vbs` 放在「启动」文件夹里。
-2. **每晚 22:30**（兜底）：计划任务 `AI-Brief-Daily`。
+1. **登录后 2 分钟**：`AI-Brief.lnk` → `run_daily.bat`，出当天早报。
+2. **登录后 3 分钟**：`AI-Brief-Weekly.lnk` → `run_weekly.bat`，检查要不要出周报（周一至周三才有活干）。
 
-重新安装：`powershell -ExecutionPolicy Bypass -File tools\install_tasks.ps1`
+重装：`powershell -ExecutionPolicy Bypass -File tools\install_tasks.ps1`。
+加 `-WithFallbackTask` 才会额外注册每天 22:30 的本地兜底任务——走云端时不要加，会重复。
 
 同一天已经成功生成过，程序会自动跳过（除非加 `--force`）。
 日志在 `logs/` 下按日期存放，`logs/scheduler.log` 记录每次调度的起止和返回码。
 
 注意：`.bat` 和 `.vbs` 必须是 **CRLF 换行**，改成 LF 会让 cmd 把每行开头吃掉。
 改动这两个文件后跑一下 `tools/fix_line_endings.ps1`。
+`.ps1` 里如果字符串含中文，文件必须带 **UTF-8 BOM**，否则 PowerShell 5.1 按 GBK 解码会解析失败。
+
+## 本机路径放哪
+
+`config.yaml` 是公开的，所以 ffmpeg/ffprobe/BGM/素材目录这些本机路径一律写在 `.env` 里，
+代码按 **config → .env → PATH → 兜底** 的顺序找：
+
+```
+FFPROBE_PATH=...
+FFMPEG_PATH=...
+BGM_PATH=...
+GSAP_PATH=...
+AI_MEDIA_DIR=...
+```
 
 ## 云端 + 本地兜底（推荐的稳妥组合）
 
@@ -323,7 +339,7 @@ assets-bili/
 summary.json          这一期的统计
 ```
 
-`assets-*` 的目录写法和 `O:\ai-media` 里现有项目的约定一致，复制进对应项目就能渲染，
+`assets-*` 的目录写法和 ai-media 工作区里现有项目的约定一致，复制进对应项目就能渲染，
 **news-brief 本身不写那个目录**。
 
 手动跑：
@@ -354,7 +370,7 @@ python tools/make_video.py 2026-10-16 --copy --render    # 复制并渲染出片
 python tools/make_video.py 2026-10-16 --only douyin      # 只做抖音版
 ```
 
-工程在 `data/weekly/<日期>/video-<版本>/`，结构和 `O:\ai-media` 里的现成项目一致
+工程在 `data/weekly/<日期>/video-<版本>/`，结构和 ai-media 工作区里的现成项目一致
 （`index.html` 分镜 + `assets/` 音轨）。渲染需要 ffmpeg，`make_video.py` 会把配置里的
 ffmpeg 目录加进子进程 PATH——**hyperframes 只认 PATH，不认配置**。
 

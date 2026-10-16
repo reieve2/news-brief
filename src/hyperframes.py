@@ -1,6 +1,6 @@
 """把分镜 + 时间轴 + 字幕组装成一个 HyperFrames 视频工程。
 
-生成的目录结构和 O:\\ai-media 里的现成项目一致：index.html + assets/，
+生成的目录结构和 ai-media 工作区里的现成项目一致：index.html + assets/，
 复制过去（或直接在本地）跑 npx hyperframes render 就能出片。
 """
 
@@ -220,7 +220,7 @@ def write_project(
     timeline: dict,
     cues: dict,
     assets_src: Path,
-    gsap_src: Path,
+    gsap_src: Path | None = None,
 ) -> Path:
     """写出一个完整可渲染的 HyperFrames 项目目录。"""
     project_dir.mkdir(parents=True, exist_ok=True)
@@ -251,7 +251,8 @@ def write_project(
             shutil.copy2(source, assets_dir / name)
     for stale in assets_dir.glob("voice_*.mp3"):
         stale.unlink()
-    if gsap_src.exists():
+    # Path("") 会变成当前目录，所以必须先判空再判是不是文件
+    if gsap_src and Path(gsap_src).is_file():
         shutil.copy2(gsap_src, assets_dir / "gsap.min.js")
 
     logger.info("视频工程已生成：%s", project_dir)
