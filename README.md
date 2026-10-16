@@ -79,12 +79,17 @@ deploy:
 
 在你 fork 的仓库里：**Settings** → **Secrets and variables** → **Actions** → **New repository secret**
 
-依次添加两条（名字必须一模一样）：
+依次添加三条（名字必须一模一样）：
 
 | Name | Secret |
 | --- | --- |
 | `DEEPSEEK_API_KEY` | 第 3 步 (a) 复制的 key |
 | `CLOUDFLARE_API_TOKEN` | 第 3 步 (b) 复制的 token |
+| `CLOUDFLARE_ACCOUNT_ID` | 你的 Cloudflare 账户 ID（见下） |
+
+> **账户 ID 在哪找**：登录 <https://dash.cloudflare.com>，在任意域名的「概述」页右侧，
+> 或右上角头像 → Account ID，是一串 32 位字符（形如 `88802e9e4f55245f2ba3885bcbe9658f`）。
+> 这一条不能漏——只在本地跑时 wrangler 能自己找到账号，但在云端必须显式告诉它。
 
 > 想顺便把早报推到钉钉，再加 `DINGTALK_WEBHOOK`（机器人地址）和 `DINGTALK_SECRET`（选了「加签」才需要）。不用钉钉就跳过。
 
