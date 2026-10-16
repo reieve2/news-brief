@@ -18,6 +18,12 @@
           linear-gradient(90deg, rgba(120, 160, 200, 0.06) 1px, transparent 1px);
         background-size: 150px 150px;
       }
+      /* 每幕一层主题色光晕，叠在网格之上、内容之下 */
+      .glow {
+        position: absolute; inset: 0; opacity: 0;
+        background: radial-gradient(circle at 50% 36%, var(--glow) 0%, rgba(5, 8, 15, 0) 58%);
+        pointer-events: none;
+      }
       .scene {
         position: absolute; left: 0; top: 0;
         width: 1080px; height: 1920px;
@@ -26,10 +32,15 @@
         padding: 0 110px 380px;
       }
       h1 { font-weight: 800; line-height: 1.22; }
-      .hl { color: #fbbf24; }
+      .hl { color: var(--glow, #fbbf24); }
+      .rule {
+        height: 4px; width: 110px; margin-top: 28px;
+        background: var(--glow, #fbbf24); border-radius: 2px;
+        opacity: 0; transform-origin: center center;
+      }
       .sub {
-        margin-top: 38px; font-size: 38px;
-        color: #94a3b8; line-height: 1.5; max-width: 84%;
+        margin-top: 24px; font-size: 38px;
+        color: #94a3b8; line-height: 1.5; max-width: 84%; text-wrap: balance;
       }
       .cue {
         /* left:50% 会让可用宽度只剩半个屏幕，max-width 形同虚设、字幕被迫折行；
@@ -55,26 +66,36 @@
       data-height="1920"
     >
       <div class="grid-bg"></div>
+      <div class="glow" id="glow1" data-start="0.0" data-duration="4.47" style="--glow:#38bdf8"></div>
+      <div class="glow" id="glow2" data-start="4.47" data-duration="10.878" style="--glow:#22d3ee"></div>
+      <div class="glow" id="glow3" data-start="15.348" data-duration="10.278" style="--glow:#60a5fa"></div>
+      <div class="glow" id="glow4" data-start="25.626" data-duration="11.574" style="--glow:#38bdf8"></div>
+      <div class="glow" id="glow5" data-start="37.2" data-duration="9.284" style="--glow:#a78bfa"></div>
       <audio id="vo" src="assets/mix_full.wav" data-start="0" data-duration="46.484"></audio>
 
-      <div class="clip scene" id="scene1" data-start="0.0" data-duration="4.47" data-track-index="0">
-        <h1 id="t1" style="font-size:88px"><span class="hl">Meta</span>杀进前沿模型</h1>
+      <div class="clip scene" id="scene1" data-start="0.0" data-duration="4.47" data-track-index="0" style="--glow:#38bdf8">
+        <h1 id="t1" style="font-size:88px"><span class="hl">Meta</span> 杀进前沿模型</h1>
+        <div class="rule" id="rule1"></div>
         <div class="sub" id="s1">这周三家巨头同时出手</div>
       </div>
-      <div class="clip scene" id="scene2" data-start="4.47" data-duration="10.878" data-track-index="0">
-        <h1 id="t2" style="font-size:88px"><span class="hl">Meta</span>首发前沿模型</h1>
-        <div class="sub" id="s2">定价跟GPT-6 Sol、Opus 5.5持平</div>
+      <div class="clip scene" id="scene2" data-start="4.47" data-duration="10.878" data-track-index="0" style="--glow:#22d3ee">
+        <h1 id="t2" style="font-size:88px"><span class="hl">Meta</span> 首发前沿模型</h1>
+        <div class="rule" id="rule2"></div>
+        <div class="sub" id="s2">Muse Wonder定价对标GPT-6 Sol和Opus 5.5</div>
       </div>
-      <div class="clip scene" id="scene3" data-start="15.348" data-duration="10.278" data-track-index="0">
+      <div class="clip scene" id="scene3" data-start="15.348" data-duration="10.278" data-track-index="0" style="--glow:#60a5fa">
         <h1 id="t3" style="font-size:70px"><span class="hl">Gemini 4 Argon</span></h1>
+        <div class="rule" id="rule3"></div>
         <div class="sub" id="s3">开发者企业消费者都能用</div>
       </div>
-      <div class="clip scene" id="scene4" data-start="25.626" data-duration="11.574" data-track-index="0">
-        <h1 id="t4" style="font-size:78px">英伟达开源<span class="hl">1200亿</span>模型</h1>
-        <div class="sub" id="s4">开源权重加可自建部署</div>
+      <div class="clip scene" id="scene4" data-start="25.626" data-duration="11.574" data-track-index="0" style="--glow:#38bdf8">
+        <h1 id="t4" style="font-size:70px">英伟达开源 <span class="hl">1200 亿参数</span>模型</h1>
+        <div class="rule" id="rule4"></div>
+        <div class="sub" id="s4">Nemotron 3.5 Super VL面向常驻智能体</div>
       </div>
-      <div class="clip scene" id="scene5" data-start="37.2" data-duration="9.284" data-track-index="0">
+      <div class="clip scene" id="scene5" data-start="37.2" data-duration="9.284" data-track-index="0" style="--glow:#a78bfa">
         <h1 id="t5" style="font-size:88px">三家同周出手<span class="hl">谁最狠</span></h1>
+        <div class="rule" id="rule5"></div>
         <div class="sub" id="s5">评论区聊聊下期接着看</div>
       </div>
 
@@ -110,16 +131,32 @@
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
 
+      tl.fromTo("#glow1", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 0.05);
       tl.fromTo("#t1", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 0.12);
+      tl.fromTo("#rule1", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 0.34);
       tl.fromTo("#s1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 0.42);
+      tl.to("#glow1", { opacity: 0, duration: 0.4 }, 4.07);
+      tl.fromTo("#glow2", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 4.52);
       tl.fromTo("#t2", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 4.59);
+      tl.fromTo("#rule2", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 4.81);
       tl.fromTo("#s2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 4.89);
+      tl.to("#glow2", { opacity: 0, duration: 0.4 }, 14.948);
+      tl.fromTo("#glow3", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 15.398);
       tl.fromTo("#t3", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 15.468);
+      tl.fromTo("#rule3", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 15.688);
       tl.fromTo("#s3", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 15.768);
+      tl.to("#glow3", { opacity: 0, duration: 0.4 }, 25.226);
+      tl.fromTo("#glow4", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 25.676);
       tl.fromTo("#t4", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 25.746);
+      tl.fromTo("#rule4", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 25.966);
       tl.fromTo("#s4", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 26.046);
+      tl.to("#glow4", { opacity: 0, duration: 0.4 }, 36.8);
+      tl.fromTo("#glow5", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 37.25);
       tl.fromTo("#t5", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 37.32);
+      tl.fromTo("#rule5", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 37.54);
       tl.fromTo("#s5", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 37.62);
+      tl.to("#glow5", { opacity: 0, duration: 0.4 }, 46.084);
+      tl.to(".grid-bg", { backgroundPosition: "150px 150px", duration: 46.484, ease: "none" }, 0);
 
       window.__timelines["main"] = tl;
       tl.seek(0);

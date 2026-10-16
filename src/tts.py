@@ -15,7 +15,7 @@ import re
 import subprocess
 from pathlib import Path
 
-from common import resolve_local_path
+from common import resolve_local_path, spacing
 
 logger = logging.getLogger("brief")
 
@@ -27,6 +27,9 @@ SPLIT_RE = re.compile(r"[，。！？；,!?;：:]+")
 
 # 这些词落在行尾读起来会断气
 CONNECTORS = {"和", "与", "及", "或", "跟", "并", "而", "但", "在", "把", "被", "的", "了"}
+
+# 整行超宽时的优先断点
+SOFT_BREAKS = "，、；："
 
 # 本机路径一律放 .env（见 config.yaml 里 weekly 那节的说明），代码里不写死
 DEFAULT_FFPROBE = ""
@@ -174,19 +177,29 @@ def _rebalance(lines: list[str], limit: int) -> list[str]:
 
 
 def _hard_split(line: str, limit: int) -> list[str]:
-    """单个词太长（长英文词）时只能按宽度切开。"""
+    """整行放不下时切开。中文优先断在标点上，实在没有标点才按宽度硬切。"""
     if display_width(line) <= limit:
         return [line]
+
     pieces: list[str] = []
-    cut = ""
-    for char in line:
-        if display_width(cut + char) > limit and cut:
-            pieces.append(cut)
-            cut = char
-        else:
+    rest = line
+    while display_width(rest) > limit:
+        cut = ""
+        best = -1
+        for char in rest:
+            if display_width(cut + char) > limit:
+                break
             cut += char
-    if cut:
-        pieces.append(cut)
+            if char in SOFT_BREAKS:
+                best = len(cut)
+        if best > len(cut) * 0.5:  # 断点太靠前还不如硬切
+            pieces.append(rest[:best].strip())
+            rest = rest[best:].lstrip()
+        else:
+            pieces.append(cut)
+            rest = rest[len(cut):]
+    if rest:
+        pieces.append(rest)
     return pieces
 
 
@@ -215,7 +228,7 @@ def build_cues(segments: list[dict], size: tuple[int, int] = (1920, 1080), max_w
     """把每段口播词切成字幕短句，按显示宽度比例分配到该段的时间窗里。"""
     cues: list[dict] = []
     for seg in segments:
-        chunks = split_cue_text(seg["text"], max_width)
+        chunks = split_cue_text(spacing(seg["text"]), max_width)
         if not chunks:
             continue
         weights = [display_width(chunk) for chunk in chunks]

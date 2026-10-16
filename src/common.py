@@ -132,3 +132,15 @@ def resolve_local_path(
         if found:
             return found
     return default
+
+
+CJK_RE = r"[\u4e00-\u9fff]"
+
+
+def spacing(text: str) -> str:
+    """中英文之间补一个空格——模型常写成「Muse Wonder定价对标」，挤在一起不好读。"""
+    import re
+
+    text = re.sub(rf"({CJK_RE})([A-Za-z0-9])", r"\1 \2", text or "")
+    text = re.sub(rf"([A-Za-z0-9])({CJK_RE})", r"\1 \2", text)
+    return re.sub(r"\s{2,}", " ", text).strip()

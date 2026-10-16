@@ -12,6 +12,8 @@ import logging
 import shutil
 from pathlib import Path
 
+from common import spacing
+
 logger = logging.getLogger("brief")
 
 LAYOUTS = {
@@ -38,6 +40,30 @@ LAYOUTS = {
         "h1_sizes": [(8, 112), (11, 96), (14, 82), (99, 72)],
     },
 }
+
+# 每幕按内容主题换色调，模型在分镜阶段判定主题。
+# 同一主题给三个邻近色轮换，免得连续几幕同色、整片看起来一个调子。
+THEME_COLORS = {
+    "model": ["#38bdf8", "#22d3ee", "#60a5fa"],
+    "security": ["#fb7185", "#f97316", "#f43f5e"],
+    "capital": ["#fbbf24", "#fcd34d", "#fb923c"],
+    "hardware": ["#34d399", "#4ade80", "#2dd4bf"],
+    "other": ["#a78bfa", "#c084fc", "#818cf8"],
+}
+
+
+def build_theme_palette(scenes: list[dict]) -> list[str]:
+    """同一主题第几次出现，就用该主题的第几个色。"""
+    counters: dict[str, int] = {}
+    palette: list[str] = []
+    for scene in scenes:
+        theme = scene.get("theme", "other")
+        colors = THEME_COLORS.get(theme, THEME_COLORS["other"])
+        index = counters.get(theme, 0)
+        palette.append(colors[index % len(colors)])
+        counters[theme] = index + 1
+    return palette
+
 
 PACKAGE_JSON = {
     "name": "aibrief-weekly",
@@ -73,10 +99,10 @@ def pick_size(sizes: list[tuple[int, int]], text: str) -> int:
 
 def scene_title(screen: str, emphasis: str) -> str:
     """把强调词包上标色 span，其余部分转义。"""
-    safe_screen = html.escape(screen)
+    safe_screen = html.escape(spacing(screen))
     if not emphasis:
         return safe_screen
-    safe_em = html.escape(emphasis)
+    safe_em = html.escape(spacing(emphasis))
     return safe_screen.replace(safe_em, f'<span class="hl">{safe_em}</span>', 1)
 
 
@@ -99,33 +125,62 @@ def build_index_html(version: str, storyboard: dict, timeline: dict, cues: dict)
     total = float(timeline.get("video_duration") or timeline.get("total") or 0)
 
     scene_html: list[str] = []
+    glow_html: list[str] = []
     cue_html: list[str] = []
     anim: list[str] = []
+    palette = build_theme_palette(scenes)
 
     for index, (scene, (start, duration)) in enumerate(zip(scenes, spans), start=1):
         size = pick_size(layout["h1_sizes"], scene.get("screen", ""))
         title = scene_title(scene.get("screen", ""), scene.get("emphasis", ""))
         sub = scene.get("sub", "")
+        color = palette[index - 1]
+
+        glow_html.append(
+            f'      <div class="glow" id="glow{index}" data-start="{start}" '
+            f'data-duration="{duration}" style="--glow:{color}"></div>'
+        )
         scene_html.append(
             f'      <div class="clip scene" id="scene{index}" '
-            f'data-start="{start}" data-duration="{duration}" data-track-index="0">'
+            f'data-start="{start}" data-duration="{duration}" data-track-index="0" '
+            f'style="--glow:{color}">'
         )
         scene_html.append(
             f'        <h1 id="t{index}" style="font-size:{size}px">{title}</h1>'
         )
+        scene_html.append(f'        <div class="rule" id="rule{index}"></div>')
         if sub:
             scene_html.append(f'        <div class="sub" id="s{index}">{html.escape(sub)}</div>')
         scene_html.append("      </div>")
 
         anim.append(
+            f'      tl.fromTo("#glow{index}", {{ opacity: 0 }}, '
+            f'{{ opacity: 0.3, duration: 0.9 }}, {round(start + 0.05, 3)});'
+        )
+        anim.append(
             f'      tl.fromTo("#t{index}", {{ opacity: 0, y: 48 }}, '
             f'{{ opacity: 1, y: 0, duration: 0.5 }}, {round(start + 0.12, 3)});'
+        )
+        anim.append(
+            f'      tl.fromTo("#rule{index}", {{ scaleX: 0, opacity: 0 }}, '
+            f'{{ scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }}, '
+            f'{round(start + 0.34, 3)});'
         )
         if sub:
             anim.append(
                 f'      tl.fromTo("#s{index}", {{ opacity: 0, y: 20 }}, '
                 f'{{ opacity: 1, y: 0, duration: 0.42 }}, {round(start + 0.42, 3)});'
             )
+        # 场景淡出，避免切换时两个光晕同时是亮的
+        anim.append(
+            f'      tl.to("#glow{index}", {{ opacity: 0, duration: 0.4 }}, '
+            f'{round(start + duration - 0.4, 3)});'
+        )
+
+    anim.append(
+        f'      tl.to(".grid-bg", {{ backgroundPosition: "150px 150px", '
+        f'duration: {round(total, 3)}, ease: "none" }}, 0);'
+    )
 
     for index, cue in enumerate(cues.get("cues") or [], start=1):
         start = float(cue["start"])
@@ -155,6 +210,12 @@ def build_index_html(version: str, storyboard: dict, timeline: dict, cues: dict)
           linear-gradient(90deg, rgba(120, 160, 200, 0.06) 1px, transparent 1px);
         background-size: 150px 150px;
       }}
+      /* 每幕一层主题色光晕，叠在网格之上、内容之下 */
+      .glow {{
+        position: absolute; inset: 0; opacity: 0;
+        background: radial-gradient(circle at 50% 36%, var(--glow) 0%, rgba(5, 8, 15, 0) 58%);
+        pointer-events: none;
+      }}
       .scene {{
         position: absolute; left: 0; top: 0;
         width: {layout['width']}px; height: {layout['height']}px;
@@ -163,10 +224,15 @@ def build_index_html(version: str, storyboard: dict, timeline: dict, cues: dict)
         padding: {layout['pad']};
       }}
       h1 {{ font-weight: 800; line-height: 1.22; }}
-      .hl {{ color: #fbbf24; }}
+      .hl {{ color: var(--glow, #fbbf24); }}
+      .rule {{
+        height: 4px; width: 110px; margin-top: 28px;
+        background: var(--glow, #fbbf24); border-radius: 2px;
+        opacity: 0; transform-origin: center center;
+      }}
       .sub {{
-        margin-top: 38px; font-size: {layout['body_size']}px;
-        color: #94a3b8; line-height: 1.5; max-width: 84%;
+        margin-top: 24px; font-size: {layout['body_size']}px;
+        color: #94a3b8; line-height: 1.5; max-width: 84%; text-wrap: balance;
       }}
       .cue {{
         /* left:50% 会让可用宽度只剩半个屏幕，max-width 形同虚设、字幕被迫折行；
@@ -192,6 +258,7 @@ def build_index_html(version: str, storyboard: dict, timeline: dict, cues: dict)
       data-height="{layout['height']}"
     >
       <div class="grid-bg"></div>
+{chr(10).join(glow_html)}
       <audio id="vo" src="assets/mix_full.wav" data-start="0" data-duration="{total:.3f}"></audio>
 
 {chr(10).join(scene_html)}

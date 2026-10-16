@@ -18,6 +18,12 @@
           linear-gradient(90deg, rgba(120, 160, 200, 0.06) 1px, transparent 1px);
         background-size: 150px 150px;
       }
+      /* 每幕一层主题色光晕，叠在网格之上、内容之下 */
+      .glow {
+        position: absolute; inset: 0; opacity: 0;
+        background: radial-gradient(circle at 50% 36%, var(--glow) 0%, rgba(5, 8, 15, 0) 58%);
+        pointer-events: none;
+      }
       .scene {
         position: absolute; left: 0; top: 0;
         width: 1920px; height: 1080px;
@@ -26,10 +32,15 @@
         padding: 0 160px 120px;
       }
       h1 { font-weight: 800; line-height: 1.22; }
-      .hl { color: #fbbf24; }
+      .hl { color: var(--glow, #fbbf24); }
+      .rule {
+        height: 4px; width: 110px; margin-top: 28px;
+        background: var(--glow, #fbbf24); border-radius: 2px;
+        opacity: 0; transform-origin: center center;
+      }
       .sub {
-        margin-top: 38px; font-size: 36px;
-        color: #94a3b8; line-height: 1.5; max-width: 84%;
+        margin-top: 24px; font-size: 36px;
+        color: #94a3b8; line-height: 1.5; max-width: 84%; text-wrap: balance;
       }
       .cue {
         /* left:50% 会让可用宽度只剩半个屏幕，max-width 形同虚设、字幕被迫折行；
@@ -55,50 +66,72 @@
       data-height="1080"
     >
       <div class="grid-bg"></div>
+      <div class="glow" id="glow1" data-start="0.0" data-duration="9.832" style="--glow:#a78bfa"></div>
+      <div class="glow" id="glow2" data-start="9.832" data-duration="12.328" style="--glow:#38bdf8"></div>
+      <div class="glow" id="glow3" data-start="22.16" data-duration="13.528" style="--glow:#22d3ee"></div>
+      <div class="glow" id="glow4" data-start="35.688" data-duration="13.744" style="--glow:#60a5fa"></div>
+      <div class="glow" id="glow5" data-start="49.432" data-duration="15.784" style="--glow:#fb7185"></div>
+      <div class="glow" id="glow6" data-start="65.216" data-duration="14.752" style="--glow:#f97316"></div>
+      <div class="glow" id="glow7" data-start="79.968" data-duration="14.848" style="--glow:#f43f5e"></div>
+      <div class="glow" id="glow8" data-start="94.816" data-duration="14.56" style="--glow:#fbbf24"></div>
+      <div class="glow" id="glow9" data-start="109.376" data-duration="15.808" style="--glow:#fcd34d"></div>
+      <div class="glow" id="glow10" data-start="125.184" data-duration="15.616" style="--glow:#34d399"></div>
+      <div class="glow" id="glow11" data-start="140.8" data-duration="16.076" style="--glow:#c084fc"></div>
       <audio id="vo" src="assets/mix_full.wav" data-start="0" data-duration="156.876"></audio>
 
-      <div class="clip scene" id="scene1" data-start="0.0" data-duration="9.832" data-track-index="0">
-        <h1 id="t1" style="font-size:96px">AI圈<span class="hl">热闹与紧张</span>同现</h1>
-        <div class="sub" id="s1">前沿模型扎堆发布 安全监管接连不断</div>
+      <div class="clip scene" id="scene1" data-start="0.0" data-duration="9.832" data-track-index="0" style="--glow:#a78bfa">
+        <h1 id="t1" style="font-size:96px">模型扎堆 <span class="hl">安全不断</span></h1>
+        <div class="rule" id="rule1"></div>
+        <div class="sub" id="s1">热闹和紧张同时发生</div>
       </div>
-      <div class="clip scene" id="scene2" data-start="9.832" data-duration="12.328" data-track-index="0">
-        <h1 id="t2" style="font-size:96px"><span class="hl">Meta</span>首发前沿模型</h1>
-        <div class="sub" id="s2">发布Muse Wonder和Muse Wonder Full 定价对标GPT-6 Sol与Opus 5.5</div>
+      <div class="clip scene" id="scene2" data-start="9.832" data-duration="12.328" data-track-index="0" style="--glow:#38bdf8">
+        <h1 id="t2" style="font-size:82px"><span class="hl">Meta</span> 首次进入前沿模型</h1>
+        <div class="rule" id="rule2"></div>
+        <div class="sub" id="s2">发布 Muse Wonder 和 Muse Wonder Full 两个模型</div>
       </div>
-      <div class="clip scene" id="scene3" data-start="22.16" data-duration="13.528" data-track-index="0">
+      <div class="clip scene" id="scene3" data-start="22.16" data-duration="13.528" data-track-index="0" style="--glow:#22d3ee">
         <h1 id="t3" style="font-size:82px"><span class="hl">Gemini 4 Argon</span></h1>
-        <div class="sub" id="s3">面向开发者企业和消费者 比拼转向细分场景</div>
+        <div class="rule" id="rule3"></div>
+        <div class="sub" id="s3">面向开发者企业和消费者开放</div>
       </div>
-      <div class="clip scene" id="scene4" data-start="35.688" data-duration="13.744" data-track-index="0">
-        <h1 id="t4" style="font-size:82px">英伟达开源<span class="hl">1200亿参数</span>模型</h1>
-        <div class="sub" id="s4">Nemotron 3.5 Super VL 面向常驻智能体 可自建部署</div>
+      <div class="clip scene" id="scene4" data-start="35.688" data-duration="13.744" data-track-index="0" style="--glow:#60a5fa">
+        <h1 id="t4" style="font-size:82px">NVIDIA 开源 1200</h1>
+        <div class="rule" id="rule4"></div>
+        <div class="sub" id="s4">面向常驻智能体 可自建部署</div>
       </div>
-      <div class="clip scene" id="scene5" data-start="49.432" data-duration="15.784" data-track-index="0">
-        <h1 id="t5" style="font-size:82px">Anthropic智能体自主</h1>
-        <div class="sub" id="s5">无人指示下试图访问美国政府网站 已向白宫通报</div>
+      <div class="clip scene" id="scene5" data-start="49.432" data-duration="15.784" data-track-index="0" style="--glow:#fb7185">
+        <h1 id="t5" style="font-size:82px"><span class="hl">Anthropic</span> 智能体越</h1>
+        <div class="rule" id="rule5"></div>
+        <div class="sub" id="s5">试图访问政府网站 已向白宫通报</div>
       </div>
-      <div class="clip scene" id="scene6" data-start="65.216" data-duration="14.752" data-track-index="0">
-        <h1 id="t6" style="font-size:96px">美<span class="hl">强制</span>AI安全事件报告</h1>
-        <div class="sub" id="s6">特朗普政府宣布 首次针对AI公司建立强制报告制度</div>
+      <div class="clip scene" id="scene6" data-start="65.216" data-duration="14.752" data-track-index="0" style="--glow:#f97316">
+        <h1 id="t6" style="font-size:96px">美<span class="hl">强制</span> AI 安全报告</h1>
+        <div class="rule" id="rule6"></div>
+        <div class="sub" id="s6">首次针对 AI 公司建立强制报告制度</div>
       </div>
-      <div class="clip scene" id="scene7" data-start="79.968" data-duration="14.848" data-track-index="0">
+      <div class="clip scene" id="scene7" data-start="79.968" data-duration="14.848" data-track-index="0" style="--glow:#f43f5e">
         <h1 id="t7" style="font-size:96px">字节成立<span class="hl">安全对齐</span>部门</h1>
-        <div class="sub" id="s7">Seed Model-Alignment&amp;Preparedness 严林负责 安全成模型能力</div>
+        <div class="rule" id="rule7"></div>
+        <div class="sub" id="s7">由严林负责 提升为独立部门</div>
       </div>
-      <div class="clip scene" id="scene8" data-start="94.816" data-duration="14.56" data-track-index="0">
-        <h1 id="t8" style="font-size:82px">Anthropic三季度营收</h1>
-        <div class="sub" id="s8">IPO前披露 三个季度增长逾两倍</div>
+      <div class="clip scene" id="scene8" data-start="94.816" data-duration="14.56" data-track-index="0" style="--glow:#fbbf24">
+        <h1 id="t8" style="font-size:82px">Anthropic 营收 1</h1>
+        <div class="rule" id="rule8"></div>
+        <div class="sub" id="s8">第三季度营收 三个季度增长逾两倍</div>
       </div>
-      <div class="clip scene" id="scene9" data-start="109.376" data-duration="15.808" data-track-index="0">
-        <h1 id="t9" style="font-size:82px">Character.ai申请</h1>
-        <div class="sub" id="s9">Chapter 11破产保护 高用户量不等于可持续商业模式</div>
+      <div class="clip scene" id="scene9" data-start="109.376" data-duration="15.808" data-track-index="0" style="--glow:#fcd34d">
+        <h1 id="t9" style="font-size:82px">Character.ai 破</h1>
+        <div class="rule" id="rule9"></div>
+        <div class="sub" id="s9">申请 Chapter 11 破产保护</div>
       </div>
-      <div class="clip scene" id="scene10" data-start="125.184" data-duration="15.616" data-track-index="0">
-        <h1 id="t10" style="font-size:82px">苹果发布<span class="hl">HomeView</span></h1>
-        <div class="sub" id="s10">7英寸屏幕 起价299美元 11月13日发货 落地新Siri</div>
+      <div class="clip scene" id="scene10" data-start="125.184" data-duration="15.616" data-track-index="0" style="--glow:#34d399">
+        <h1 id="t10" style="font-size:82px">苹果发布 <span class="hl">HomeView</span></h1>
+        <div class="rule" id="rule10"></div>
+        <div class="sub" id="s10">7 英寸屏幕 起价 299 美元</div>
       </div>
-      <div class="clip scene" id="scene11" data-start="140.8" data-duration="16.076" data-track-index="0">
+      <div class="clip scene" id="scene11" data-start="140.8" data-duration="16.076" data-track-index="0" style="--glow:#c084fc">
         <h1 id="t11" style="font-size:82px">模型安全资本硬件<span class="hl">全挤一起</span></h1>
+        <div class="rule" id="rule11"></div>
         <div class="sub" id="s11">你最在意哪一条 评论区聊聊</div>
       </div>
 
@@ -126,8 +159,8 @@
       <div class="cue" id="cue22" data-start="51.141" data-duration="3.799">Anthropic 披露旗下 AI 智能体在无人指示下</div>
       <div class="cue" id="cue23" data-start="54.94" data-duration="3.798">试图访问美国联邦、州及地方政府的多个网站</div>
       <div class="cue" id="cue24" data-start="58.738" data-duration="1.33">并已向白宫通报</div>
-      <div class="cue" id="cue25" data-start="60.068" data-duration="4.178">这是智能体脱离测试边界、自主执行被禁操作的公</div>
-      <div class="cue" id="cue26" data-start="64.246" data-duration="0.57">开案例</div>
+      <div class="cue" id="cue25" data-start="60.068" data-duration="2.279">这是智能体脱离测试边界、</div>
+      <div class="cue" id="cue26" data-start="62.347" data-duration="2.469">自主执行被禁操作的公开案例</div>
       <div class="cue" id="cue27" data-start="65.216" data-duration="1.358">据央视新闻报道</div>
       <div class="cue" id="cue28" data-start="66.574" data-duration="4.266">特朗普政府宣布实施强制性 AI 安全事件报告要求</div>
       <div class="cue" id="cue29" data-start="70.84" data-duration="4.267">这是美国政府首次针对 AI 公司建立强制报告制度</div>
@@ -168,28 +201,62 @@
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
 
+      tl.fromTo("#glow1", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 0.05);
       tl.fromTo("#t1", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 0.12);
+      tl.fromTo("#rule1", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 0.34);
       tl.fromTo("#s1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 0.42);
+      tl.to("#glow1", { opacity: 0, duration: 0.4 }, 9.432);
+      tl.fromTo("#glow2", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 9.882);
       tl.fromTo("#t2", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 9.952);
+      tl.fromTo("#rule2", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 10.172);
       tl.fromTo("#s2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 10.252);
+      tl.to("#glow2", { opacity: 0, duration: 0.4 }, 21.76);
+      tl.fromTo("#glow3", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 22.21);
       tl.fromTo("#t3", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 22.28);
+      tl.fromTo("#rule3", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 22.5);
       tl.fromTo("#s3", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 22.58);
+      tl.to("#glow3", { opacity: 0, duration: 0.4 }, 35.288);
+      tl.fromTo("#glow4", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 35.738);
       tl.fromTo("#t4", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 35.808);
+      tl.fromTo("#rule4", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 36.028);
       tl.fromTo("#s4", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 36.108);
+      tl.to("#glow4", { opacity: 0, duration: 0.4 }, 49.032);
+      tl.fromTo("#glow5", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 49.482);
       tl.fromTo("#t5", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 49.552);
+      tl.fromTo("#rule5", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 49.772);
       tl.fromTo("#s5", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 49.852);
+      tl.to("#glow5", { opacity: 0, duration: 0.4 }, 64.816);
+      tl.fromTo("#glow6", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 65.266);
       tl.fromTo("#t6", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 65.336);
+      tl.fromTo("#rule6", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 65.556);
       tl.fromTo("#s6", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 65.636);
+      tl.to("#glow6", { opacity: 0, duration: 0.4 }, 79.568);
+      tl.fromTo("#glow7", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 80.018);
       tl.fromTo("#t7", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 80.088);
+      tl.fromTo("#rule7", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 80.308);
       tl.fromTo("#s7", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 80.388);
+      tl.to("#glow7", { opacity: 0, duration: 0.4 }, 94.416);
+      tl.fromTo("#glow8", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 94.866);
       tl.fromTo("#t8", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 94.936);
+      tl.fromTo("#rule8", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 95.156);
       tl.fromTo("#s8", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 95.236);
+      tl.to("#glow8", { opacity: 0, duration: 0.4 }, 108.976);
+      tl.fromTo("#glow9", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 109.426);
       tl.fromTo("#t9", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 109.496);
+      tl.fromTo("#rule9", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 109.716);
       tl.fromTo("#s9", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 109.796);
+      tl.to("#glow9", { opacity: 0, duration: 0.4 }, 124.784);
+      tl.fromTo("#glow10", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 125.234);
       tl.fromTo("#t10", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 125.304);
+      tl.fromTo("#rule10", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 125.524);
       tl.fromTo("#s10", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 125.604);
+      tl.to("#glow10", { opacity: 0, duration: 0.4 }, 140.4);
+      tl.fromTo("#glow11", { opacity: 0 }, { opacity: 0.3, duration: 0.9 }, 140.85);
       tl.fromTo("#t11", { opacity: 0, y: 48 }, { opacity: 1, y: 0, duration: 0.5 }, 140.92);
+      tl.fromTo("#rule11", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 0.85, duration: 0.55, ease: "power2.out" }, 141.14);
       tl.fromTo("#s11", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.42 }, 141.22);
+      tl.to("#glow11", { opacity: 0, duration: 0.4 }, 156.476);
+      tl.to(".grid-bg", { backgroundPosition: "150px 150px", duration: 156.876, ease: "none" }, 0);
 
       window.__timelines["main"] = tl;
       tl.seek(0);

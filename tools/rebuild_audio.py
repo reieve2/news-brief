@@ -15,12 +15,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import tts  # noqa: E402
-from common import load_config, setup_logging  # noqa: E402
+from common import load_config, load_env, setup_logging  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def main() -> int:
+    load_env()
     cfg = load_config()
     log = setup_logging(cfg)
     weekly_cfg = cfg.get("weekly") or {}

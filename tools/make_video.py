@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 import hyperframes  # noqa: E402
 import storyboard as storyboard_mod  # noqa: E402
 import tts  # noqa: E402
-from common import load_config, resolve_local_path, setup_logging  # noqa: E402
+from common import load_config, load_env, resolve_local_path, setup_logging  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -37,6 +37,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+    load_env()
     cfg = load_config()
     log = setup_logging(cfg)
     weekly_cfg = cfg.get("weekly") or {}

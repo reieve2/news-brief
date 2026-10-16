@@ -11,6 +11,7 @@ from model import ModelError, chat_json
 logger = logging.getLogger("brief")
 
 SCREEN_MAX = 14
+THEMES = {"model", "security", "capital", "hardware", "other"}
 
 
 def build_storyboard(cfg: dict, script: dict, log) -> dict:
@@ -41,6 +42,9 @@ def build_storyboard(cfg: dict, script: dict, log) -> dict:
         screen = str(scene.get("screen") or "").strip()
         sub = str(scene.get("sub") or "").strip()
         emphasis = str(scene.get("emphasis") or "").strip()
+        theme = str(scene.get("theme") or "").strip().lower()
+        if theme not in THEMES:
+            theme = "other"
 
         if not screen:
             screen = (seg.get("text") or "")[:SCREEN_MAX]
@@ -57,6 +61,7 @@ def build_storyboard(cfg: dict, script: dict, log) -> dict:
                 "screen": screen,
                 "sub": sub,
                 "emphasis": emphasis,
+                "theme": theme,
             }
         )
 
