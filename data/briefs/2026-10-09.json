@@ -1,0 +1,419 @@
+{
+  "date": "2026-10-09",
+  "generated_at": "19:58",
+  "cards": [
+    {
+      "title": "Anthropic 发布 Claude Haiku 5.5，操作能力大幅提升",
+      "what": "Anthropic 发布 Claude Haiku 5.5。据雷峰网报道，该模型在 OSWorld 2.1 计算机操作评测中从上一代 15.7% 提升至 72.4%，Sonnet 5.5 为 83.9%。知识工作评测 GDPval-AA v2.1 得 1620 分，上一代 735 分。Anthropic 称平均运行成本下降约 75%。模型加入自适应推理机制，支持 100 万 Token 上下文。",
+      "background": "Haiku 系列此前定位为处理摘要、分类、信息提取等高频任务，优势是速度快、成本低。此次升级将能力扩展至计算机操作和知识工作，部分评测接近 Sonnet 5.5。但 Anthropic 在发布材料中仍指出，Sonnet 5.5 和 Opus 5.5 更适合复杂智能体编程任务，Haiku 5.5 主要面向范围明确的子任务。",
+      "why": "计算机操作能力从 15.7% 跃升至 72.4%，意味着 Haiku 级别模型可承担更多长链路界面操作任务。但 Terminal-Bench 4.0 中 Haiku 5.5 仅 39.2%，Sonnet 5.5 达 70.6%，说明复杂编程仍是分界线。定价分层和分词器更新也影响实际成本核算。",
+      "next": "若企业将 Haiku 5.5 用于高频子任务、由更大模型主导复杂编程，可能降低部分工作负载成本。但发布材料未提供完整调用次数和 Token 分布，实际节省幅度需按对应工作负载验证。迁移时还需检查推理预算、响应解析和多轮消息处理方式。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "OSWorld 2.1",
+          "gloss": "评测模型通过计算机界面完成长链路任务的基准，涉及界面理解、操作执行和根据环境反馈继续完成任务。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/ai/n2GjuJRnM4utgaun.html"
+        }
+      ]
+    },
+    {
+      "title": "谷歌云发布 Gemini Agent，支持多模型",
+      "what": "10 月 8 日，谷歌云在 Gemini at Work 2026 发布会上推出面向企业客户的 Gemini Agent，定位「通用工作智能体」，支持 Gemini Enterprise、Workspace 及第三方服务。谷歌称用户只需给出目标即可完成问答、知识型工作、媒体内容创作和编程，还可充当团队中的 PM、财务分析师等角色。目前支持 Gemini 和 Claude 模型，未来将兼容闭源与开源模型，并提供 API 供开发者集成。",
+      "background": "企业级 AI 竞争正从模型能力转向智能体落地。谷歌云此次将 Agent 定位为「团队成员」而非单纯助手，并罕见地同时支持竞争对手 Anthropic 的 Claude 模型，显示其策略是让平台层而非模型层成为企业入口。同日 Anthropic 也发布了面向企业工作流的 Claude Haiku 5.5，双方在企业市场的正面竞争正在加剧。",
+      "why": "智能体若真能承担 PM、财务分析等岗位职责，企业采购 AI 的评估标准将从「模型跑分」转向「任务完成率与集成成本」。谷歌云开放 API 并兼容多模型，意味着企业可能不再绑定单一模型供应商，模型层的议价能力会被平台层稀释，这对整个 AI 产业链的分工有直接影响。",
+      "next": "若谷歌云按计划开放 API 并扩展模型兼容范围，企业客户可能先在知识型任务上试点，再逐步扩大到跨系统流程。关键前提是 Agent 在多模型切换下的稳定性和权限管理能否达到企业合规要求；若这两点不达标，落地节奏可能慢于发布会预期。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "Gemini Agent",
+          "gloss": "谷歌云推出的企业级智能体产品，用户给出目标后由它自主规划并执行问答、内容生成、编程等任务，可接入 Gemini Enterprise、Workspace 和第三方服务。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/372143"
+        }
+      ]
+    },
+    {
+      "title": "Manus 完成逾 5 亿美元融资，估值 40 亿美元",
+      "what": "据 Solidot 援引联合早报报道，中国 AI 企业 Manus 的母公司蝴蝶效应于 10 月 8 日宣布完成超过 5 亿美元融资，由博裕资本和 IDG 领投，腾讯、红杉中国、真格基金跟投。投后估值达 40 亿美元。报道称创始人肖弘已解除边控，公司此前曾因 Meta 的收购交易被中国监管部门要求撤回而陷入风波。",
+      "background": "去年 12 月 Meta 曾斥资 20 亿美元收购 Manus，但该交易被中国监管部门要求撤回，使公司一度卷入中美科技博弈、前途未卜。此次融资被描述为公司的「重启」，也是中国 AI 应用领域迄今规模最大的单轮融资之一。",
+      "why": "若报道属实，40 亿美元估值使 Manus 成为中国估值最高的 AI 智能体初创企业，说明在收购受阻后，中国资本仍愿意为头部 AI 应用公司提供大额资金。这也反映出中美科技博弈背景下，中国 AI 企业融资路径与退出方式正在发生变化。",
+      "next": "接下来值得关注的是这笔资金将投向何处，以及 Manus 是否会重新寻求海外收购或上市路径。若中美监管环境没有松动，公司可能更依赖国内资本与市场；但相关走向目前只有单一来源报道，仍需更多信息确认。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [],
+      "sources": [
+        {
+          "name": "Solidot",
+          "url": "https://www.solidot.org/story?sid=85554"
+        }
+      ]
+    },
+    {
+      "title": "Omdia：2026Q3 全球 PC 出货量同比下滑 21%",
+      "what": "Omdia 报告称，2026 年第 3 季度全球 PC 出货量降至 5,810 万台，同比下滑 21.2%，其中桌面端 1,170 万台、下滑 23.5%，移动端 4,640 万台、下滑 20.6%。该机构预测 2026Q4 同比萎缩 24%，2027 年再降 7%。Omdia 首席分析师 Ben Yeh 指出，存储器在 PC 物料成本中的占比已从正常时期约 15% 升至近 40%。",
+      "background": "Omdia 将本轮下滑归因于「提前拉货需求消退」（pull-forward demand subsides）。研究总监 Ishan Dutt 提到，头部 OEM 预计 2026H1 销量出现两位数收缩，零售商报告销售均价两位数上涨。PC 供应商及 ODM 已从 2026Q3 开始缩减生产，渠道则在应对库存水平上升。",
+      "why": "存储器占物料成本近四成，意味着 PC 的成本结构已被存储价格重塑，整机涨价与需求收缩可能互相强化。出货量连续下滑叠加渠道库存上升，会沿供应链传导至 ODM 排产与上游存储采购节奏，头部厂商之间的分化（HP 受影响更重，华硕、Apple 相对和缓）也值得跟踪。",
+      "next": "若 Omdia 的成本占比判断成立，PC 厂商可能继续压缩低毛利机型、把涨价传导给零售端，2026Q4 与 2027 年的出货预测能否兑现，取决于存储价格走势与渠道去库存速度。需注意这是单一机构数据，尚无其他来源交叉验证。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "ODM",
+          "gloss": "原始设计制造商，指按品牌方需求设计并代工生产整机的厂商，PC 品牌多将生产外包给这类合作伙伴。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/011/016.htm"
+        }
+      ]
+    },
+    {
+      "title": "软件工程术语创造者 Margaret Hamilton 去世",
+      "what": "阿波罗登月计划期间担任 MIT 仪器实验室软件工程部主管的计算机科学家 Margaret Hamilton 于 9 月 30 日去世，享年 90 岁。她 1965 年加入 MIT 仪器实验室，成为阿波罗计划首位程序员并很快成为团队负责人，领导开发阿波罗载人任务机载飞行软件。她的团队设计了优先级驱动的软件，使阿波罗 11 号飞船计算机在检测到“1202 错误”后仍完成登月。",
+      "background": "Hamilton 1936 年出生于印第安纳州 Paoli，1959 年移居波士顿后在 MIT 气象系首次接触编程，与气象学教授 Edward N. Lorenz 合作开发天气预报软件。1961 年她在 MIT 林肯实验室参与美国首个防空系统 SAGE 项目，为 AN/FSQ-7 原型机编写软件，并在此期间开始关注软件可靠性问题。",
+      "why": "她被广泛认为是“软件工程”这一术语的创造者，将写代码从临时性工作提升为一门工程学科。她在阿波罗计划中提出的优先级驱动设计，是软件可靠性工程早期的关键实践，影响了此后对关键任务软件容错与错误恢复的处理方式。",
+      "next": "目前材料仅来自 Solidot 与 OSCHINA 两家转载，细节基本一致，但均未给出更多一手信息。后续可能会有 MIT 或相关机构发布更完整的纪念内容，以及对其在 SAGE 与阿波罗项目中具体贡献的技术性回顾。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "优先级驱动",
+          "gloss": "一种任务调度方式：为每个任务分配优先级，系统在资源有限或出错时优先执行或恢复高优先级任务。阿波罗飞船计算机借此在过载触发 1202 错误时仍能保住关键任务。"
+        },
+        {
+          "term": "1202 错误",
+          "gloss": "阿波罗 11 号登月过程中飞船计算机发出的执行溢出报警，表示计算机无法及时处理全部任务。由于软件采用优先级调度，系统丢弃低优先级任务后继续运行，最终完成登月。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Solidot",
+          "url": "https://www.solidot.org/story?sid=85557"
+        },
+        {
+          "name": "OSCHINA",
+          "url": "https://www.oschina.net/news/502922/margaret-hamilton-computing-pioneer-dies"
+        }
+      ]
+    },
+    {
+      "title": "星动纪元VPP2登顶RoboDojo具身榜单",
+      "what": "清华持股的星动纪元自研世界动作模型VPP2在RoboDojo仿真榜单登顶，综合平均成功率32.26%、平均得分39.26分，均列第一。该成绩超过GPT-6-Astra的22.48%与28.97分。VPP2在泛化、精细操作、记忆三个维度也居首，且未额外加数据、未用Agent RSI等增强手段。团队称其已开源。",
+      "background": "RoboDojo由香港大学MMLab牵头、全球近20所机构共建，含42项双臂操作任务，覆盖泛化、精准操作、长程任务、记忆、开放词汇指令理解五个维度，专挑环境变化、物体偏移、长程记忆等机器人薄弱环节出题。世界动作模型（WAM）路线长期存在视频预测漂亮但动作执行跑偏、加动作训练后泛化能力下降的问题。",
+      "why": "VPP2把视频预测与动作学习解耦、分阶段训练，先练预测泛化再练行动泛化，说明性能提升可来自预训练与训练范式而非堆参数或加数据。14B参数模型在指令遵循测试中以90%成功率超过64B的Cosmos3（78%）。真机零样本测试中平均成功率58.5%，高于π0.5的40%，10类任务拿下9类最佳。",
+      "next": "若VPP2的仿真优势能在更多真实场景长期稳定复现，世界动作模型路线可能从「预测未来」转向「把预测转化为通用行动」。星动纪元称已与中国邮政、顺丰在5个省市、10余个物流中心常态化运营，但这是否意味着VPP2已规模化部署仍待验证。GPT类模型负责规划、WAM负责执行的组合能否成为通用范式，取决于后续真机数据与反馈闭环。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "世界动作模型（WAM）",
+          "gloss": "一类具身模型路线：先借助视频预测理解物理世界接下来如何变化，再把这种预测转化为机器人动作。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/10/502125.html"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Techmeme",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "TechCrunch",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Verge",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Ars Technica",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Wired",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Engadget",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "OpenAI News",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Google Research",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "BAIR",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Platformer",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Sifted",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "EE Times",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Lobsters",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "TLDR AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 16,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": true,
+  "degraded_reason": "源可用率偏低（13/56）"
+}

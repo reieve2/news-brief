@@ -2,7 +2,6 @@
 .env.bak*
 *.bak-*
 logs/
-data/
 out/
 __pycache__/
 *.pyc

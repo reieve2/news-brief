@@ -1,0 +1,407 @@
+{
+  "date": "2026-10-15",
+  "generated_at": "12:24",
+  "cards": [
+    {
+      "title": "谷歌发布 Gemini 4 Argon，输出上限 100 万词元",
+      "what": "据报道，谷歌 Gemini 4 Argon 已面向全球开发者和企业开放，可通过 AI Studio、Gemini 平台 API 使用，同时支持 Google Antigravity 的 Google AI Ultra 订阅用户以及 Gemini 应用和搜索 AI 模式的 Ultra 与 Pro 订阅用户。该模型输出词元上限 100 万个，限时入门定价为输入每百万 Tokens 2 美元、输出每百万 Tokens 10 美元、缓存输入每百万 Tokens 0.1 美元，2026 年 11 月 30 日促销结束后价格翻倍。",
+      "background": "谷歌称该模型擅长编码、金融、法律、网络安全、科学等领域的复杂现实任务，在多步骤任务上的深度和精度使其在多个基准测试中表现优于其他前沿模型，目前在衡量金融、编码、法律和税务等领域模型性能的 Vals Index 中排名第一。这一发布延续了前沿模型在长输出与专业领域任务上的竞争。",
+      "why": "输出上限拉到 100 万词元，意味着单次调用可以生成远超以往的长文档、长代码或长分析结果，对需要一次性产出完整交付物的场景影响直接。同时入门定价与后续翻倍的安排，会让开发者在 11 月 30 日前集中评估和迁移，短期内可能改变 API 选型。",
+      "next": "如果促销期结束后价格确实翻倍，部分对成本敏感的团队可能转向其他模型或压缩调用量；但若该模型在 Vals Index 等基准上的领先能转化为实际任务质量优势，高价也可能被接受。前提是这些基准成绩在第三方复现中站得住。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "Vals Index",
+          "gloss": "材料中提到的模型性能排名指标，用于衡量模型在金融、编码、法律和税务等关键经济领域任务上的表现。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/372304"
+        }
+      ]
+    },
+    {
+      "title": "阶跃开源 Step 5 Preview 权重，支持百万 token 上下文",
+      "what": "阶跃正式释放 Step 5 Preview 模型权重，开放 BF16 与 FP8 版本、技术博客和配套开源开发工具。据官方介绍，该模型面向长程 Agent 任务设计，采用稀疏 MoE 架构，总参数量 600B、每 token 激活 27B，支持 100 万 token 上下文，原生支持文本与视觉输入。权重已上线 Hugging Face 和 ModelScope，可通过 vLLM、SGLang 或 Transformers 部署。",
+      "background": "该模型近期在 OpenRouter 周调用量、日调用量榜单中均位居全球第二，说明开放权重前已有实际调用规模。官方同步公开技术博客，披露 92 层窄深架构、Sparse GQA、FP32 关键状态精度与细粒度梯度裁剪等设计，以及百万级可验证环境和面向长程任务的强化学习方案。",
+      "why": "百万 token 上下文加上稀疏 MoE 的低激活参数，直接针对长程 Agent 任务的成本与稳定性问题。开放权重并提供多芯片平台、多推理框架适配，意味着开发者可以自行部署兼容 OpenAI 接口的服务，把模型接入自有数据、工具和系统，而不必依赖闭源 API。",
+      "next": "若官方公布的调用量排名和架构设计在第三方复现中得到验证，百万 token 上下文可能成为长程 Agent 模型的竞争基线，并推动更多厂商跟进开放权重。但材料仅来自官方介绍与单一媒体报道，实际长上下文下的推理成本、稳定性与任务表现仍需独立评测确认。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "稀疏 MoE",
+          "gloss": "混合专家架构，模型包含多个专家子网络，每个 token 只激活其中少数几个，因此总参数量可以很大而单次推理的计算量保持在较低水平。"
+        },
+        {
+          "term": "Sparse GQA",
+          "gloss": "在分组查询注意力（GQA）基础上引入稀疏计算，通过块级索引合并减少注意力计算量，用于降低百万 token 长上下文的开销。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/013/268.htm"
+        }
+      ]
+    },
+    {
+      "title": "字节跳动洽谈采购联发科数据中心 ASIC 芯片",
+      "what": "据彭博社报道，字节跳动正与联发科深入洽谈定制芯片供货事宜，联发科将提供数量待定的专用集成电路（ASIC），用于支撑字节跳动数据中心运行。若交易落地，字节跳动或成为联发科 ASIC 业务继谷歌之后的第二大客户。此前字节跳动已与高通达成类似协议，采购数百万颗 AI 芯片。",
+      "background": "字节跳动无法采购英伟达等厂商最顶尖的 AI 芯片，华为等本土厂商也难以完全满足其算力需求，因此转向与芯片设计公司合作。在美国出口管制规则下，只要采购的 AI 算力不超过特定阈值，这类合作模式是允许的。字节跳动今年资本开支最高或提升至 700 亿美元，用于扩建数据中心与 AI 基础设施。",
+      "why": "对联发科而言，这笔合同有助于其摆脱对手机业务的依赖，在数据中心赛道与高通、博通竞争。联发科预计今年 AI 芯片营收约 20 亿美元，目标明年在 800 亿美元的数据中心芯片市场拿下 15% 份额。对字节跳动而言，这是在出口管制下获取算力的替代路径之一。",
+      "next": "如果洽谈顺利，协议可能在未来数月内落地，但具体芯片数量、交付时间和算力规格尚未披露。字节跳动是否会同时扩大与高通、联发科的双线合作，以及美国出口管制规则是否调整，将影响这类合作的可持续性。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "ASIC",
+          "gloss": "专用集成电路，为特定客户平台或用途量身定制的芯片，与通用 GPU 相比在特定任务上能效更高，但灵活性较低。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/013/279.htm"
+        }
+      ]
+    },
+    {
+      "title": "Ledger 证实部分硬件钱包被植入间谍芯片",
+      "what": "Ledger 证实由马来西亚零售商 CryptoBilis 经销的部分 Ledger X 硬件钱包被植入恶意芯片，导致客户加密货币被盗，已要求 CryptoBilis 停止销售。Tibane Labs 分析发现，被篡改钱包售价仅为原型号一半，原装电池被换成更小电池以腾出空间安装恶意电路，该电路基于 Arm Cortex-M4 架构的 ST STM32G431KBU6 芯片，并配有微型 eSIM 和屏蔽式 LTE 模块用于发送信号。",
+      "background": "硬件钱包本应离线保存私钥，但供应链环节的物理篡改可绕过这一前提。此次事件中攻击者通过替换电池、在 OLED 屏下加装芯片等方式植入硬件，说明零售分销渠道已成为攻击面。CryptoBilis 作为东南亚大型零售商，其经销的低价钱包是主要载体。",
+      "why": "这是硬件钱包供应链攻击的罕见实证：攻击者用 OCR 读取屏幕字体，在用户设置过程中窃取密钥，绕过了设备本身的加密设计。对依赖硬件钱包的加密资产持有者而言，购买渠道和价格异常可能直接意味着私钥泄露，硬件钱包的信任模型需要重新审视。",
+      "next": "若 Ledger 和 CryptoBilis 的排查范围扩大，可能披露更多受影响批次和地区。用户或需通过官方渠道验证设备真伪，硬件钱包厂商可能加强防拆检测和供应链溯源。但具体影响范围仍取决于后续调查，目前仅涉及 CryptoBilis 经销的部分 Ledger X。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "OCR",
+          "gloss": "光学字符识别，把图像中的文字转成可编辑文本。此处指间谍芯片通过摄像头读取硬件钱包屏幕上的字体，从而在设置过程中截获密钥。"
+        },
+        {
+          "term": "eSIM",
+          "gloss": "嵌入式 SIM 卡，直接焊在电路板上，无需插拔实体卡即可接入蜂窝网络。此处用于让恶意芯片通过 LTE 模块远程发送窃取的数据。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Solidot",
+          "url": "https://www.solidot.org/story?sid=85604"
+        }
+      ]
+    },
+    {
+      "title": "华为量产首款逻辑折叠芯片麒麟9050",
+      "what": "华为在终端创新技术沟通会上宣布，首款采用逻辑折叠技术的麒麟9050系列已量产，麒麟9050 Pro通过跨层重新设计电路缩短数据传输距离。华为称，对比搭载麒麟9030 Pro的Mate 80 Pro Max，搭载麒麟9050 Pro的Mate 90 Pro Max的CPU主频提升12.7%、性能提升25%，GPU性能提升40%、功耗降低45%，NPU算力提升140%、功耗降低66%。",
+      "background": "华为提出「韬定律」，把创新焦点放到压缩信号传播和计算等待的时间上。逻辑折叠将多颗Die按逻辑关系分层布局，用密集垂直互连连接，使原本沿平面绕行的数据获得更短路径。华为半导体业务无线终端芯片产品管理部部长徐松余透露，下一代「麒麟2027」芯片已在华为手上，测试结果符合预期。",
+      "why": "逻辑折叠把优化范围从单层电路扩大到跨层布局，竞争门槛延伸到互连、设计工具和制造协同。麒麟9050系列互连规模超过5000万混合键合、超过500万有效信号互连，顶层金属间距720纳米，混合键合间距1.5微米。华为称混合键合间距与顶层金属间距的比例小于3是有效逻辑折叠的重要条件。",
+      "next": "若混合键合间距继续缩小、互连增加，更多逻辑模块可能参与跨层布局，但每代产品是否需要更多层、更大缓存或更高频率仍由产品需求决定。散热和良率是绕不开的工程问题，华为表示将与产业伙伴共同提升良率。这些推测的前提是制造与设计工具链能持续跟上。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "逻辑折叠",
+          "gloss": "华为提出的芯片布局方法：把多颗Die按逻辑关系分层堆叠，用密集垂直互连连接，让原本需沿平面绕行的数据走更短路径，从而缩短关键路径、改善时钟走线和能效。"
+        },
+        {
+          "term": "混合键合",
+          "gloss": "一种将两片晶圆或Die的金属焊盘直接键合实现垂直互连的封装技术，可提供比传统凸点更密的连接。麒麟9050系列互连规模超过5000万混合键合，键合间距1.5微米。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/chips/4EHlprZnXovvP0XD.html"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Techmeme",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "TechCrunch",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Verge",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Ars Technica",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Wired",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Engadget",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "OpenAI News",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Google Research",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "BAIR",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Platformer",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Sifted",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "EE Times",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Lobsters",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "TLDR AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 19,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": true,
+  "degraded_reason": "源可用率偏低（13/56）"
+}

@@ -1,0 +1,445 @@
+{
+  "date": "2026-10-13",
+  "generated_at": "22:30",
+  "cards": [
+    {
+      "title": "Meta 发布首个前沿模型 Muse Wonder",
+      "what": "Meta 的 Superintelligence Lab 发布 Muse Wonder 和 Muse Wonder Full 两个模型，据称是该公司首个前沿模型。Meta 称两者在基准测试上得分与 Fable 5.1、GPT-6 Astra 相当，在编程等复杂任务上表现更好。Wonder 通过 Meta Model API 提供，定价为每百万输入 token 4 美元、每百万输出 token 20 美元；Wonder Full 仅面向 Muse Code 订阅者，不走 API。",
+      "background": "Meta 自去年 8 月由 Scale AI 创始人 Alexandr Wang 重组 AI 团队后，只发布了轻量模型 Muse Spark 和 Muse agent，一直未推出 OpenAI、Anthropic 那种级别的前沿模型。据 Meta 博文，这两个模型在俄亥俄州中部今年上线的 Prometheus 数据中心训练完成。",
+      "why": "这是 Meta 首次进入前沿模型竞争，且定价与 GPT-6 Sol、Opus 5.5 大致相当，意味着前沿模型市场多了一个有分量的供给方。Meta 特别强调模型的「active memory」能力，称其在 MemoryBench 上得分高于 Fable、Opus 和 Astra，指向长期个人助手这一方向。",
+      "next": "如果 Meta 公布的基准分数在第三方复现中成立，前沿模型的定价和竞争格局可能进一步收紧；Wonder Full 仅限订阅、不走 API 的做法，也可能被解读为 Meta 试图用模型能力绑定自有 agent 产品。不过这些基准目前均来自 Meta 自己的模型卡，独立验证结果尚未出现。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "active memory",
+          "gloss": "Meta 对模型一项能力的称呼：模型能跨天、周、月保留并综合用户此前提供的信息，用于支撑长期运行的个人助手。"
+        },
+        {
+          "term": "MemoryBench",
+          "gloss": "Meta 在发布中提到的基准测试，用于考察模型的持续学习与记忆构建能力，即模型能否在长期交互中积累和使用信息。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/"
+        }
+      ]
+    },
+    {
+      "title": "字节跳动 Seed 单独设立大模型安全与对齐部门",
+      "what": "字节跳动 Seed 发出内部邮件，宣布成立「Seed Model-Alignment&Preparedness」部门，由严林负责，汇报给 Seed 负责人吴永辉。原 Responsible AI 团队及部分 Chat 团队成员转入该部门。据报道，部门将围绕模型规范制定、安全评估体系建设、对齐训练、防护系统搭建和风险监控投入，并加强与外部研究机构和第三方评测的公开合作。",
+      "background": "据报道，智能体逃逸引发的网络攻击等事件频繁发生，大模型安全风险日益凸显。此前国内大模型研究团队的安全与对齐工作大多被纳入公司整体安全合规体系，字节跳动 Seed 是国内首家单独成立安全与对齐部门的前沿 AI 实验室。Seed 内部判断，安全与对齐已不只是风险防范，而是决定模型能否规模化应用的核心能力。",
+      "why": "把安全与对齐从公司合规体系中拆出来，独立成前沿实验室的一级部门，意味着它被当作模型能力的组成部分而非事后审查。该部门同时覆盖智能体安全与 CBRN 等前沿能力风险，若这一组织方式被同行跟进，可能改变国内大模型安全投入的资源配置方式。",
+      "next": "如果该部门按邮件所述推进，接下来可能看到模型规范、安全评估体系和第三方评测合作的具体产出，以及对齐训练与防护系统的公开进展。前提是内部邮件内容属实且投入落地；目前信息仅来自单一来源，实际编制规模与优先级仍待观察。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "对齐",
+          "gloss": "让模型的行为与人类意图和安全约束保持一致，属于训练与评估环节的技术方向，而非单纯的内容过滤。"
+        },
+        {
+          "term": "CBRN",
+          "gloss": "化学、生物、放射、核的英文缩写，指模型可能被滥用于这类高风险领域的能力，是前沿模型安全评估中的一类重点风险。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/industrynews/jX1ndNxDJ94n6bUu.html"
+        }
+      ]
+    },
+    {
+      "title": "微软发布 Azure Maia 300，称将成主要推理芯片",
+      "what": "据 Data Center Dynamics 报道，微软在 2026 年 10 月 13 日发布 Azure Maia 300，并称该芯片将成为其「主要推理系统」。报道同时提到，上一代 Maia 200 已在多个地区完成部署。材料未披露 Maia 300 的具体规格、性能指标、量产时间或部署范围。",
+      "background": "微软自研 Maia 系列用于承载 Azure 上的 AI 推理负载，Maia 200 已在多个地区落地，说明该系列已进入规模化部署阶段。此次把新一代产品定位为「主要推理系统」，意味着微软在推理环节进一步向自研芯片倾斜，而非完全依赖外部供应商。",
+      "why": "推理是 AI 服务中持续发生的成本项，自研推理芯片直接影响单位算力成本和供给稳定性。若 Maia 300 真成为微软的主要推理系统，将改变云厂商在推理侧的芯片采购结构，也会影响其他加速器供应商在 Azure 中的份额。",
+      "next": "接下来需要观察 Maia 300 是否公布具体性能与能效数据、何时在哪些区域上线，以及微软是否披露其与现有第三方加速器的配比。若这些信息缺失，仅凭「主要推理系统」的表述，尚难判断实际替代规模。",
+      "confidence": "低",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "推理",
+          "gloss": "指模型训练完成后，用已训练好的模型对用户输入进行计算并生成输出的过程，与训练相比更贴近线上服务的持续开销。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Data Center Dynamics",
+          "url": "https://www.datacenterdynamics.com/en/news/microsoft-unveils-azure-maia-300-says-chip-will-be-its-primary-inference-system/"
+        }
+      ]
+    },
+    {
+      "title": "NVIDIA 在 OCP 峰会上开放 Vera Rubin 架构",
+      "what": "在圣何塞 OCP 全球峰会上，NVIDIA 通过 MGX 开放架构向 OCP 贡献了 Vera Rubin 机架与计算托盘设计，并发布面向 DSX AI Factory 的开源软件组件。Cisco、Google、Meta、Microsoft、Visionbay 等参与。MGX 1.2 规范新增机架级盲插液冷、液冷 5000A 母线，支持最高 250kW 机架部署。",
+      "background": "AI 工厂规模从兆瓦级走向吉瓦级，单靠先进计算不足以支撑建设。NVIDIA 此前已通过 MGX 推进机架级参考设计，此次把第三代 MGX 设计提交 OCP 的 Open DC Initiative，并配套开源软件，意在把自家设计变成行业可采纳的标准。",
+      "why": "开放机架与液冷规范降低了系统厂商的集成门槛，也让供电、冷却、网络接口趋于统一。对从业者而言，这意味着 AI 工厂的部署与运维可能从定制工程转向可复用的模块化方案，同时 NVIDIA 通过标准制定巩固其在加速计算基础设施中的位置。",
+      "next": "如果 OCP 成员跟进采纳 MGX 1.2 与相关开源组件，机架级液冷和 250kW 高密度部署可能加速落地。但标准能否被广泛采用取决于其他厂商的配合程度，材料未说明具体时间表，实际推进节奏仍待观察。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "MGX",
+          "gloss": "NVIDIA 提出的模块化机架级参考架构，定义计算托盘、供电、冷却和网络的通用接口，供系统厂商据此构建兼容的 AI 服务器机架。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "NVIDIA Blog",
+          "url": "https://blogs.nvidia.com/blog/ocp-global-summit-vera-rubin-scale-ai-factories/"
+        }
+      ]
+    },
+    {
+      "title": "千问推出 Personal Agent「千问Go!」并开放体验申请",
+      "what": "10月13日，千问官方公众号发布消息，Personal Agent「千问Go!」的体验申请页面已在千问APP上线，用户可通过APP内指定入口提交申请，千问将逐步为更多用户开放体验资格。据雷峰网记者体验，该功能可完成航班延误理赔、场馆及演出预约、餐厅筛选预订、商品比价下单以及求职投递等任务；有用户测试后称，通过它沟通平台客服提交理赔申请，获得了70元赔偿。",
+      "background": "官方公告称，让每个人拥有专属AI助理是千问一直以来的目标，此前依托阿里生态与开放平台，千问已具备购物、出行、物流等数十领域的个人办事能力。此次推出内嵌于千问APP的Personal Agent，是在既有办事能力基础上向更多类型、更多领域个人事务的扩展。",
+      "why": "个人助理类 Agent 的竞争重点正从对话能力转向能否真正替用户完成跨平台操作。千问Go! 把理赔、预约、比价下单、求职投递等需要多步操作、涉及第三方平台的任务作为卖点，若这些流程能稳定跑通，意味着 Agent 开始进入实际事务处理环节，而不只是信息查询。",
+      "next": "按官方说法，千问Go! 将基于收集到的使用反馈持续优化产品体验。如果体验申请按计划逐步放量，接下来值得观察的是这些任务在真实场景中的完成率和失败处理方式，以及它能否覆盖公告之外更多领域的事务；目前公开信息仅有官方公告与记者、用户的个别测试，尚不足以判断其稳定性。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "Personal Agent",
+          "gloss": "个人智能体，指能代表用户自主执行多步任务的 AI 程序，区别于只做问答的聊天助手，通常需要调用外部工具或平台接口来完成操作。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/industrynews/GalDeSPl8orEfNoI.html"
+        }
+      ]
+    },
+    {
+      "title": "苹果发布智能家庭中枢 HomeView，299 美元 11 月开售",
+      "what": "苹果推出首款智能家庭中枢 Apple HomeView，标准版与壁挂版均为 299 美元，10 月 13 日起在美英加澳印新六国开启预购，11 月 13 日正式开售。设备搭载 A18 芯片、6.98 英寸 1088×1088 显示屏和 1200 万像素摄像头，运行基于 Apple Intelligence 的 Siri AI，支持 Wi-Fi 6E、蓝牙 6.0 与 Thread，需搭配 iOS/iPadOS 27.2 以上设备使用。",
+      "background": "苹果此前在智能家居领域只有 HomePod 与 Apple TV，缺少带屏中枢，而亚马逊 Echo Show 与谷歌 Nest Hub 已占据该品类多年。此次发布同时推出 Apple Home Collection 摄像头、恒温器和门锁，由苹果与 LG 电子、施耐德电气联合开发，显示苹果试图以中枢加配件的方式补齐家庭入口。",
+      "why": "带屏中枢是智能家居的交互入口，苹果把面部识别、个人上下文调用和端侧 Siri 放进家庭共享设备，等于把 Apple Intelligence 的隐私架构延伸到多人共用场景。设备不在欧盟销售，因 Siri AI 在欧盟 iOS 中不可用，也说明苹果 AI 功能的地区可用性正在直接影响硬件上市范围。",
+      "next": "若 HomeView 销量符合预期，苹果可能把 Siri AI 的地区支持与 Home 配件线继续扩展，欧盟上市时间取决于苹果与欧盟监管的协商进展。壁挂版 PoE 供电支架要到 2027 年初才上市，说明有线安装场景的配套尚未就绪，短期内该品类仍以无线版本为主。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "Thread",
+          "gloss": "一种基于 IP 的低功耗网状网络协议，专为智能家居设备设计，能让门锁、传感器等设备直接互联并接入互联网，无需依赖厂商私有网关。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/012/566.htm"
+        }
+      ]
+    },
+    {
+      "title": "Character.AI 申请 Chapter 11 破产保护",
+      "what": "Character.AI 已申请 Chapter 11 破产保护，并同意以 2000 万美元向 Disney 出售部分资产及一项非独占永久技术许可。公司在法庭文件中称资产与负债均在 5000 万至 1 亿美元之间。CEO Colin Adams 表示，出售流程预计 11 月底或 12 月初完成，期间平台继续运营，但目前尚无资产竞标方或买家。",
+      "background": "Character.AI 由前 Google 工程师 Noam Shazeer 和 Daniel De Freitas 于 2021 年底创立，2022 年 9 月以 1.5 亿美元融资达到独角兽估值。2024 年 8 月 Google 以 27 亿美元授权其模型，两位创始人回归 Google。此后公司遭遇与未成年人自杀相关的诉讼、德州调查，并禁止未成年人使用平台。",
+      "why": "这是消费级 AI 产品商业化困境的一个标志性案例。Character.AI 曾拥有 2000 万月活用户和极高使用时长，但高互动意味着更高的推理成本，而订阅和广告收入未能覆盖。它说明用户规模与使用时长并不自动转化为可持续的商业模式。",
+      "next": "若出售流程中出现可执行的竞标，平台可能继续运营；若无人接盘，Adams 表示平台将被关停。Disney 已接收部分前员工并提供过渡服务，可能成为资产的主要去向。最终结果取决于未来数周是否出现买家，目前尚无确定报价。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "Chapter 11",
+          "gloss": "美国破产法第 11 章，允许企业在法院监督下继续运营并重组债务，而非直接清算关闭。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy/"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 7,
+      "error": ""
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 9,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 26,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 17,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}

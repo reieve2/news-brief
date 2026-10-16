@@ -1,0 +1,407 @@
+{
+  "date": "2026-10-12",
+  "generated_at": "12:14",
+  "cards": [
+    {
+      "title": "OpenAI 将 GPT-6.1 Sol 默认上下文提至 500k",
+      "what": "OpenAI 的 Thibault Sottiaux 宣布，Codex 和 Work 环境下 GPT-6.1 Sol 的默认上下文长度从 272k 提升至 500k，增幅约 80%。他称该数值经过充分测试，是多数用户体验与性能的平衡点，可降低上下文压缩触发频率。模型最大上下文上限仍为 1M，支持手动调整；从订阅扣除使用量时不再收取长上下文费用。",
+      "background": "此前默认值为 272k，长上下文任务容易触发压缩，导致细节丢失。OpenAI 称未来还会继续提高上限，此次先调整默认值。材料未说明该调整是否同步适用于其他环境或模型，也未给出具体测试数据。",
+      "why": "默认值决定大多数用户实际拿到的上下文窗口，提升后长文档、长代码库等任务更少被压缩打断。取消长上下文计费则降低了使用高上下文任务的成本门槛，可能影响开发者对上下文管理策略的设计。",
+      "next": "如果默认值提升后未出现明显的延迟或成本问题，OpenAI 可能继续上调默认值或把 1M 上限变为默认。其他厂商是否跟进调整默认上下文与计费方式，取决于各自推理成本与竞争压力，目前尚无相关消息。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "上下文压缩",
+          "gloss": "当对话或输入超出模型上下文窗口时，系统把较早内容摘要或截断以腾出空间，可能丢失细节。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/011/736.htm"
+        }
+      ]
+    },
+    {
+      "title": "华为展出麒麟 9050 Pro，称全球首款逻辑折叠芯片",
+      "what": "据 IT之家现场消息，10 月 12 日华为终端创新技术沟通会在上海练秋湖启幕，麒麟 9050 Pro 在线下展出，位于 HUAWEI Mate XT 2 非凡大师三折叠手机展台，被称作全球首款逻辑折叠芯片。该芯片 9 月 7 日已随 Mate XT 2 首发亮相。华为称其集成灵犀 CPU、马良 GPU 和达芬奇架构 NPU，NPU 支持端侧部署 30B 参数混合专家架构大模型。",
+      "background": "麒麟 9050 Pro 此前已用于 Mate 90 Pro Max 典藏版与 Mate 90 RS 非凡大师，华为在 10 月 1 日发布会上公布 Mate 90 Pro Max 整机性能较上代提升 31%。这是华为时隔多年再次公开展示麒麟芯片，但「逻辑折叠」的具体技术含义尚未由官方说明。",
+      "why": "端侧跑 30B 参数 MoE 大模型，意味着旗舰手机的本地推理能力上了一个量级，对隐私敏感和离线场景有实际意义。同时华为重新公开展示麒麟芯片，说明其自研芯片路线在经历多年沉默后进入新的对外披露节奏。",
+      "next": "按会议安排，明天上午是芯片专场，若官方届时解释「逻辑折叠」的架构含义并给出实测数据，该芯片的定位会更清晰；若仍只有营销表述，则需等待第三方拆解与跑分验证。以上推测基于 IT之家对议程的描述。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "逻辑折叠",
+          "gloss": "华为用于描述麒麟 9050 Pro 的表述，被称作全球首款逻辑折叠芯片。材料未给出官方技术定义，具体指何种电路或封装结构尚不明确。"
+        },
+        {
+          "term": "混合专家架构",
+          "gloss": "MoE，把大模型拆成多个专家子网络，每次推理只激活其中一部分，从而在总参数量很大时控制实际计算量。这里是说 NPU 能在端侧跑 30B 参数规模的 MoE 模型。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/011/756.htm"
+        }
+      ]
+    },
+    {
+      "title": "何恺明团队发布视觉原生 Harness 框架 VISTA",
+      "what": "何恺明团队在论文《VISTA: A Visual Harness for Reasoning in an Interactive World》中提出视觉原生 Harness 框架 VISTA。它让现有多模态模型直接观察环境、无损保存原始画面，并在推理时按需回看、放大和检查细节，无需从头训练模型。搭配 VISTA，Claude Opus 5.0 完成 ARC-AGI-3 全部 25 个公开游戏，相对人类动作效率得分满分 100，所用动作数比首次游玩的人类基线少 57.4%。",
+      "background": "此前 Harness 主要通过任务清单、进度文件和代码等文字手段保存任务状态，帮助模型跨上下文窗口推进长任务。但进入真实视觉环境后，物体的位置、朝向和动作前后的变化难以完整转写成文字，早期画面也会被移出上下文或被摘要替代。VISTA 要解决的就是在不额外训练基础模型的前提下，让智能体按需重新检查过去看到的视觉信息。",
+      "why": "VISTA 改变的不是模型本身，而是模型获取、保存和使用视觉信息的方式，把视觉经验变成可随时调用的上下文。在 GameWorld 的 170 项任务中，同一 GPT-5.6 Sol 的成功率从 40.0% 提升到 63.3%；AI GameStore 综合得分从 47.3 升至 140.3。这说明现有模型的能力还有较大释放空间，且框架只需少量适配即可迁移到不同任务。",
+      "next": "团队已将更接近物理世界的具身任务列为后续研究方向。如果视觉档案机制在持续变化的环境中同样有效，类似的 Harness 设计可能被更多多模态智能体采用。不过目前验证集中在游戏、迷宫和连线题等基准上，具身场景的效果尚待检验，这一判断依赖后续实验能否复现当前收益。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "Harness",
+          "gloss": "指包裹在模型外层的脚手架程序，负责管理任务状态、工具调用和上下文交接，使模型能跨多个上下文窗口持续推进长任务，本身不改变模型权重。"
+        },
+        {
+          "term": "ARC-AGI-3",
+          "gloss": "一套交互式视觉推理基准，不预先提供游戏规则和目标，智能体需要通过观察和行动自行摸索如何通关。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/10/502628.html"
+        }
+      ]
+    },
+    {
+      "title": "智谱 GLM-5.3-Highspeed 曝光，实测 490 tokens/s",
+      "what": "据量子位报道，智谱在 Zcode 3.15.1 中灰度上线 GLM-5.3-Highspeed 模型，订阅用户随机获得体验资格。网友 @leo114119 晒出的实测速度达 490 tokens/s。该模型已被 Pi 的模型目录收录，上下文窗口 100 万 token，最大生成 131,072 token，分 low、high、max 三档思考强度，配置与 GLM-5.3 普通版一致。",
+      "background": "智谱今年 5 月推出 GLM-5.1-highspeed，输出速度 400 tokens/s；上个月发布的 GLM-5.3-FlashX 最高 200 tokens/s，而 GLM-5.3-Flash 在 Z.ai API 上约 60 tokens/s。此次高速版延续了智谱在推理速度上的迭代节奏，目前仍处于随机灰度阶段。",
+      "why": "490 tokens/s 若属实，将明显高于智谱此前公开的高速模型，对长程任务和实时交互场景意义较大。同时该模型被猜测与 OpenCode 上的匿名模型 Omen Alpha 有关，说明厂商正通过匿名渠道测试新模型，社区对模型身份的追踪已成为一种新的信息获取方式。",
+      "next": "如果灰度反馈持续正面，智谱可能在未来数周内正式发布该模型并开放 API。但 490 tokens/s 目前仅为单个网友实测，实际速度可能受套餐、负载和网络影响；Omen Alpha 的真实身份也尚无定论，需等待官方或更多独立测试确认。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "tokens/s",
+          "gloss": "每秒生成的 token 数量，衡量大模型推理输出速度的常用指标。"
+        },
+        {
+          "term": "灰度",
+          "gloss": "指新功能或新模型只向部分用户随机开放，用于小范围测试和收集反馈。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/10/502649.html"
+        }
+      ]
+    },
+    {
+      "title": "Meta 等提出 Context Language Models，让模型自管上下文",
+      "what": "Meta、MIT 与华盛顿大学的研究人员提出 Context Language Models（CLM），让语言模型自行管理和编辑上下文，而不是依赖预先设定的摘要、压缩与信息检索机制。据 InfoQ 报道，该方法在性能与计算效率两方面都报告了显著提升。",
+      "background": "长上下文场景下，模型通常靠固定的摘要、压缩或检索流程来控制上下文窗口，这些机制由外部预设，模型本身无法决定保留或丢弃什么。研究团队认为把这一控制权交给模型自身，可以同时改善效果与算力开销。",
+      "why": "上下文管理直接决定长任务的表现与推理成本。若模型能自主编辑上下文，可能减少对外部检索和摘要管线的依赖，改变长上下文应用的工程做法，并降低单位任务的算力消耗。",
+      "next": "目前只有论文层面的结果，尚不清楚是否开源、在哪些任务和模型规模上验证。若后续有独立复现，可能被集成进长上下文推理流程；若只在特定设置下有效，影响会有限。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "Context Language Models",
+          "gloss": "一种让语言模型自己管理和编辑上下文内容的建模范式，区别于由外部预设摘要、压缩、检索规则的做法。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "InfoQ 英文",
+          "url": "https://www.infoq.com/news/2026/10/context-language-models/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Techmeme",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "TechCrunch",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Verge",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Ars Technica",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Wired",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 13,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 26,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}

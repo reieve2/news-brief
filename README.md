@@ -1,7 +1,195 @@
-# 每日 AI 科技早报
+# 每日 AI 早报
 
-每天自动抓取全球 AI / 科技资讯，用 DeepSeek 挑出 5–8 条最值得知道的事，写成深度卡片，  
-渲染成手机网页并推送到钉钉。
+每天中午，把全网 50 多个信息源（Hacker News、TechCrunch、量子位、IT之家、少数派、arXiv……）
+里的 AI 与科技动态，自动筛成 5-7 张卡片。每条讲清「是什么 · 背景 · 为什么重要 · 接下来」，
+正文里带虚线的术语点一下就有解释。
+
+**在线读**：<https://ai-daily-brief-q2d.pages.dev>　**往期**：页面底部　**订阅**：见下
+
+---
+
+# 一、我只想每天看到早报（不用装任何东西）
+
+**第一步**：手机浏览器打开 <https://ai-daily-brief-q2d.pages.dev>，然后「分享 → 添加到主屏幕」。
+以后点一下图标就能看，和 App 一样。
+
+**第二步（可选，但推荐）**：用 RSS 订阅，让它每天自动送到你面前。
+
+> **RSS 是什么？** 一种很老但完全免费、没有广告的订阅方式。你把一个网址交给阅读器，
+> 它就把新内容自动收进来。不用注册账号、不用给手机号、没有算法推荐，也不会漏掉某一期。
+
+怎么订：
+
+1. 复制这个网址：`https://ai-daily-brief-q2d.pages.dev/feed.xml`
+2. 装一个阅读器，把网址粘进去：
+   - iPhone：NetNewsWire（免费）或 Reeder
+   - 安卓：Feedly、Inoreader
+   - 电脑：浏览器扩展 Feedbro，或邮件客户端 Thunderbird
+3. 完成。以后每期自动出现，不用你记着来刷。
+
+就这些。不需要注册、不需要安装、不需要懂技术。
+
+---
+
+# 二、我想自己搭一套
+
+## 先看清楚你要付出什么
+
+| 你要有 | 说明 |
+| --- | --- |
+| 一个 GitHub 账号 | 免费注册。托管版靠它的免费服务器定时跑 |
+| 一个 DeepSeek 账号 | 注册免费，负责筛选和写卡片。按量付费，日常用一天几分钱到几毛钱 |
+| 一个 Cloudflare 账号 | 免费注册，用来放网页 |
+| 一点点耐心 | 下面每一步都是点按钮或复制粘贴，不需要懂编程 |
+
+不需要买服务器、不需要买域名、不需要显卡，也不需要电脑常开。
+
+## 路线 A：托管版（推荐，电脑不用常开）
+
+整套跑在 GitHub 的免费服务器上，每天中午自动抓取、生成、部署。配置一次，之后不用管。
+
+### 第 1 步 · 把仓库复制到你自己的账号
+
+点本页面右上角的 **Fork**，等几秒。这样你就有了一个属于自己的副本，之后所有改动都在你的副本里。
+
+### 第 2 步 · 改一个名字，避免撞车
+
+在你 fork 出来的仓库里，打开 `config.yaml`，把这两行改成你自己的：
+
+```yaml
+deploy:
+  project_name: ai-daily-brief     # 改成 my-ai-brief-加上你的名字，比如 my-ai-brief-tom
+```
+
+> 为什么：Cloudflare 的项目名全球唯一，不改的话会和别人的撞车，部署会失败。
+
+### 第 3 步 · 准备两个密钥
+
+**（a）DeepSeek 的 key** —— 去 <https://platform.deepseek.com> 注册登录，
+左侧菜单找 **API keys** → 创建 → 复制那串 `sk-` 开头的字符。
+
+**（b）Cloudflare 的 token** —— 去 <https://dash.cloudflare.com> 注册（免费），然后：
+
+1. 打开 <https://dash.cloudflare.com/profile/api-tokens>
+2. **Create Token** → **Custom token**
+3. Permissions 选 `Account` → `Cloudflare Pages` → `Edit`
+4. Account Resources 选你自己的账号，创建后复制那串 token
+
+### 第 4 步 · 把密钥存进仓库
+
+在你 fork 的仓库里：**Settings** → **Secrets and variables** → **Actions** → **New repository secret**
+
+依次添加两条（名字必须一模一样）：
+
+| Name | Secret |
+| --- | --- |
+| `DEEPSEEK_API_KEY` | 第 3 步 (a) 复制的 key |
+| `CLOUDFLARE_API_TOKEN` | 第 3 步 (b) 复制的 token |
+
+> 想顺便把早报推到钉钉，再加 `DINGTALK_WEBHOOK`（机器人地址）和 `DINGTALK_SECRET`（选了「加签」才需要）。不用钉钉就跳过。
+
+### 第 5 步 · 跑一次试试
+
+仓库页面点 **Actions** → 左侧选「每日早报」→ 右侧 **Run workflow** → 绿色按钮。
+
+大约 2-3 分钟。跑完后：
+
+- Actions 的日志末尾会出现一个 `https://xxxx.pages.dev` 地址，**那就是你的早报站**；
+- 仓库的 `data/briefs/` 目录里会多出一个当天日期的 JSON，这就是归档。
+
+### 第 6 步 · 以后不用管了
+
+每天北京时间中午 12 点自动跑一次。想改时间，编辑 `.github/workflows/daily-brief.yml` 里的：
+
+```yaml
+- cron: "0 4 * * *"     # GitHub 用 UTC，北京时间 = UTC + 8，所以 04:00 = 12:00
+```
+
+## 路线 B：本地版（装在自己电脑上）
+
+适合想改代码、或者不想把 key 交给 GitHub 的人。
+
+### 步骤 1 · 装 Python
+
+去 <https://www.python.org/downloads/> 下载安装。
+
+> ⚠️ 安装界面第一屏有个复选框 **Add Python to PATH**，一定要勾上。
+> 忘了勾，后面所有命令都会报「找不到 python」，这是新手最常踩的坑。
+
+### 步骤 2 · 下载项目并装依赖
+
+```
+git clone https://github.com/reieve2/news-brief
+cd news-brief
+pip install -r requirements.txt
+```
+
+（没装过 git 的话，在 GitHub 页面点绿色 **Code** → **Download ZIP**，解压后进入文件夹执行第二行。）
+
+### 步骤 3 · 填两样东西
+
+**① DeepSeek 的 key（必须）** —— 在项目根目录新建一个文本文件，命名 `.env`（注意开头有个点），内容：
+
+```
+DEEPSEEK_API_KEY=粘贴你复制的 key
+DINGTALK_WEBHOOK=
+DINGTALK_SECRET=
+```
+
+**② 代理（可选，但在国内很关键）** —— 打开 `config.yaml`，找到 `network.proxy`，填你能用的代理地址（例如 `http://127.0.0.1:7890`）。
+
+> 不填也能跑，但**国外的源会全部抓不到**，早报会退化成只有中文源——那一期网页上会明确标注「降级版本」。
+
+### 步骤 4 · 先试跑一次
+
+```
+python src/main.py --dry-run --limit 2 --only-sources 雷峰网,IT之家
+```
+
+`--dry-run` 的意思是「只在本地生成网页，不推送、不上传」。跑完打开 `out/index.html` 看排版，
+满意了再去掉参数跑完整版：
+
+```
+python src/main.py
+```
+
+### 步骤 5 · 设成每天自动跑
+
+- **Windows**：`powershell -ExecutionPolicy Bypass -File tools\install_tasks.ps1`
+- **Mac / Linux**：把 `python src/main.py` 加进 crontab（`crontab -e`）
+
+---
+
+# 三、常见问题
+
+**Q：DeepSeek 的 key 会被盗用吗？**
+A：托管版存在 GitHub 的 Secrets 里（只有 Actions 运行时能读到，别人看不到）；
+本地版只存在你自己电脑的 `.env` 文件里（这个文件默认不进 git）。两种都不会被上传到别处。
+
+**Q：一共要花多少钱？**
+A：GitHub Actions 和 Cloudflare Pages 都在免费额度内（公开仓库的 Actions 完全免费）。
+唯一的开销是 DeepSeek 的模型调用，按量付费，一天几分钱到几毛钱。
+
+**Q：跑不起来怎么办？**
+A：按顺序查三样 ——
+① 报「找不到 python」：装 Python 时没勾 Add Python to PATH，重装一次；
+② 报网络错误：本地版多半是代理没开或没填对；
+③ 报权限错误：检查 `.env` 文件名是不是被系统改成了 `.env.txt`。
+
+**Q：能改成别的领域吗（比如财经、医药）？**
+A：能。`config.yaml` 的 `sources` 就是源清单，换成你要的源；选材和成卡的规则在 `prompts/` 目录，直接改里面的文字。
+
+**Q：为什么是中文？能出英文版吗？**
+A：`config.yaml` 里 `brief.language` 改成 `en` 即可。
+
+**Q：托管版和本地版能同时跑吗？**
+A：可以但不建议——同一天会重复调用模型、重复部署。挑一条就好。
+
+---
+
+# 技术细节
+
+以下是给想改代码的人看的，只想用的话上面就够了。
 
 ## 一次性准备
 
@@ -9,32 +197,20 @@
    ```
    pip install -r requirements.txt
    ```
-2. 填 `.env`
-   ```
-   DINGTALK_WEBHOOK=...   # 已填好
-   DINGTALK_SECRET=       # 机器人安全设置选了「加签」才需要填
-   DEEPSEEK_API_KEY=...   # 去 platform.deepseek.com 拿
-   ```
+2. 填 `.env`（见上文）
 3. 改 `config.yaml`
-   - `network.proxy`：填你的代理地址，例如 `http://127.0.0.1:7890`。  
+   - `network.proxy`：填你的代理地址，例如 `http://127.0.0.1:7890`。
      标记 `proxy: true` 的源会走它，中文源直连不消耗代理流量。
    - `site.base_url`：第一次部署成功后程序会自动回填，不用手动改。
    - `sources`：增删源就在这里，`weight` 越高质量越被看重。
-4. 部署授权（只在第一次需要）
+4. 部署授权（本地版第一次需要）
    ```
    npx wrangler login
    ```
-   浏览器里授权一次。**但自动运行的任务没有交互窗口，wrangler 用不了这种方式**，  
-   所以还要建一个 API token：
-   1. 打开 <https://dash.cloudflare.com/profile/api-tokens>
-   2. Create Token → Custom token
-   3. Permissions 选 `Account` → `Cloudflare Pages` → `Edit`
-   4. Account Resources 选你自己的账号，创建后复制
-   5. 把它填进 `.env` 的 `CLOUDFLARE_API_TOKEN`
+   浏览器里授权一次。**但自动运行的任务没有交互窗口，wrangler 用不了这种方式**，
+   所以还要建一个 API token（步骤同路线 A 第 3 步 (b)），填进 `.env` 的 `CLOUDFLARE_API_TOKEN`。
 
 ## 日常使用
-
-手动跑一次完整流程：
 
 ```
 python src/main.py
@@ -42,36 +218,27 @@ python src/main.py
 
 常用参数：
 
-| 参数                            | 作用               |
-| ----------------------------- | ---------------- |
-| `--dry-run`                   | 只在本地生成网页，不部署、不推送 |
-| `--force`                     | 忽略「今天已生成过」，强制重跑  |
-| `--limit 3`                   | 只出 3 条，调试用       |
-| `--only-sources 机器之心,量子位`     | 只用名字匹配的源，调试用     |
-| `--no-deploy` / `--no-notify` | 跳过部署 / 跳过推送      |
+| 参数 | 作用 |
+| --- | --- |
+| `--dry-run` | 只在本地生成网页，不部署、不推送 |
+| `--force` | 忽略「今天已生成过」，强制重跑 |
+| `--limit 3` | 只出 3 条，调试用 |
+| `--only-sources 雷峰网,IT之家` | 只用名字匹配的源，调试用 |
+| `--no-deploy` / `--no-notify` | 跳过部署 / 跳过推送 |
 
-第一次建议这样试：
-
-```
-python src/main.py --dry-run --limit 2 --only-sources 雷峰网,IT之家
-```
-
-然后打开 `out/index.html` 看排版。
-
-## 定时
+## 定时（本地版）
 
 已经装好两处触发，都指向 `run_daily.bat`（通过 `run_hidden.vbs` 静默运行，不弹黑窗）：
 
-1. **登录后 2 分钟**（主力）：`startup_brief.vbs` 放在「启动」文件夹里。  
-   开机触发在 Windows 上需要管理员权限，放启动文件夹不需要，效果一样。
+1. **登录后 2 分钟**（主力）：`startup_brief.vbs` 放在「启动」文件夹里。
 2. **每晚 22:30**（兜底）：计划任务 `AI-Brief-Daily`。
 
 重新安装：`powershell -ExecutionPolicy Bypass -File tools\install_tasks.ps1`
 
-两次都跑没坏处：同一天已经成功生成过，程序会自动跳过（除非加 `--force`）。  
+同一天已经成功生成过，程序会自动跳过（除非加 `--force`）。
 日志在 `logs/` 下按日期存放，`logs/scheduler.log` 记录每次调度的起止和返回码。
 
-注意：`.bat` 和 `.vbs` 必须是 **CRLF 换行**，改成 LF 会让 cmd 把每行开头吃掉。  
+注意：`.bat` 和 `.vbs` 必须是 **CRLF 换行**，改成 LF 会让 cmd 把每行开头吃掉。
 改动这两个文件后跑一下 `tools/fix_line_endings.ps1`。
 
 ## 目录
@@ -79,10 +246,11 @@ python src/main.py --dry-run --limit 2 --only-sources 雷峰网,IT之家
 ```
 config.yaml          配置：源清单、代理、条数、时间窗
 .env                 密钥（不进 git）
+.github/workflows/   托管版的定时任务
 prompts/             选材与成卡的两个 prompt，可以直接改
 src/                 程序
 data/briefs/         每天早报的 JSON 存档
-out/                 生成的网页（部署的就是这个目录）
+out/                 生成的网页（部署的就是这个目录，不进 git）
 logs/                运行日志
 ```
 
@@ -102,23 +270,24 @@ python tools/test_dingtalk.py          验证钉钉通道
 
 ## 术语点击解释
 
-卡片里的技术术语带虚线，点一下从屏幕底部滑出解释。解释是生成早报时一起写好的，  
+卡片里的技术术语带虚线，点一下从屏幕底部滑出解释。解释是生成早报时一起写好的，
 藏在网页里，点击瞬间展开，不需要联网、不依赖电脑开机。
 
-规则写在 `prompts/compose.md` 的 terms 部分：只标技术术语（不标公司名、人名、产品名、  
+规则写在 `prompts/compose.md` 的 terms 部分：只标技术术语（不标公司名、人名、产品名、
 模型名），每张卡片最多 2 个，同一个词在一期里只标第一次出现的地方。
 
-觉得标多了或标少了，改那个 prompt 里的规则就行；`src/compose.py` 里的 `TERM_LIMIT`  
+觉得标多了或标少了，改那个 prompt 里的规则；`src/compose.py` 里的 `TERM_LIMIT`
 是硬上限。模型给出的术语如果没在正文里原样出现，会被自动丢弃（`clean_terms`）。
 
 ## 出问题先看这几个地方
 
 - **钉钉收不到**：先跑 `python tools/test_dingtalk.py`，看返回的 errcode。
-- **某几个源老是空的**：看 `logs/` 里对应的报错，多半是这个源改版或下线了，  
+- **某几个源老是空的**：看 `logs/` 里对应的报错，多半是这个源改版或下线了，
   在 `config.yaml` 里换掉或删掉即可。
-- **网页没更新**：看 `data/state.json` 里的 `last_date`，判断是不是被「当天已生成」拦下了，  
+- **网页没更新**：看 `data/state.json` 里的 `last_date`，判断是不是被「当天已生成」拦下了，
   加 `--force` 重跑。
-- **代理没开**：外文源会全部失败，早报会退化成只有中文源，钉钉里会标注「降级版本」。
+- **代理没开**：外文源会全部失败，早报会退化成只有中文源，网页上会标注「降级版本」。
+- **托管版失败**：仓库的 Actions 页面能看到完整日志；常见原因是 Secrets 名字打错，或 `deploy.project_name` 和别人撞车。
 
 ## 许可
 

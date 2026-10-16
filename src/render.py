@@ -97,7 +97,15 @@ TEMPLATE = env.from_string(
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
+<meta name="description" content="{{ meta_desc }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ meta_desc }}">
+<meta property="og:site_name" content="{{ heading }}">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="application/rss+xml" title="{{ heading }} RSS" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f6feb'/%3E%3Ctext x='50%25' y='50%25' dy='.35em' text-anchor='middle' font-family='system-ui' font-size='34' font-weight='700' fill='white'%3EAI%3C/text%3E%3C/svg%3E">
 <title>{{ page_title }}</title>
 <style>
   :root {
@@ -177,6 +185,13 @@ TEMPLATE = env.from_string(
     font-size: 24px; line-height: 1; padding: 0 4px; cursor: pointer;
   }
   .sheet-gloss { margin: 0; font-size: 15px; line-height: 1.78; }
+  .about {
+    margin: 14px 0 4px; border: 1px solid var(--line); border-radius: 10px;
+    padding: 10px 14px; background: var(--card); font-size: 14px; line-height: 1.72;
+  }
+  .about summary { cursor: pointer; color: var(--accent); font-weight: 600; outline: none; }
+  .about p { margin: 10px 0 0; color: var(--ink); }
+  .about a { color: var(--accent); }
   footer { color: var(--dim); font-size: 12px; text-align: center; margin-top: 26px; line-height: 2; }
   footer a { color: var(--dim); }
   .archive li { margin-bottom: 8px; }
@@ -198,6 +213,13 @@ TEMPLATE = env.from_string(
   <header>
     <h1>{{ heading }}</h1>
     <div class="sub">{{ date_str }} · 共 {{ cards|length }} 条 · 生成于 {{ generated_at }}</div>
+    <details class="about">
+      <summary>这是什么？</summary>
+      <p>每天自动从 50 多个国内外信息源（Hacker News、TechCrunch、量子位、IT之家、少数派、arXiv 等）
+      抓取 AI 与科技动态，由 AI 去重、打分、筛选后写成卡片。每条讲清「是什么 · 背景 · 为什么重要 · 接下来」，
+      正文里带虚线的术语点一下就有解释。</p>
+      <p>每天中午更新。想看往期点底部「往期早报」；想每天自动收到，把 <a href="feed.xml">RSS</a> 加进阅读器即可。</p>
+    </details>
     {% if term_count %}<div class="term-hint">正文里带虚线的术语，点一下看解释</div>{% endif %}
   </header>
 
@@ -222,7 +244,7 @@ TEMPLATE = env.from_string(
 {% endif %}
 
 <footer>
-  <a href="archive.html">往期早报</a>
+  <a href="archive.html">往期早报</a> · <a href="feed.xml">RSS 订阅</a>
   {% if source_note %}<br>{{ source_note }}{% endif %}
   {% if generated_at %}<br>{{ generated_at }} 生成{% endif %}
 </footer>
@@ -307,6 +329,7 @@ def render_brief(cfg: dict, cards: list[dict], date_str: str, generated_at: str,
     prepared, term_count = prepare_cards(cards)
     html = TEMPLATE.render(
         page_title=f"{cfg['site'].get('title', '早报')} · {date_str}",
+        meta_desc=f"{date_str} AI 早报，共 {len(cards)} 条：" + "、".join(c["title"] for c in cards[:3]),
         heading=cfg["site"].get("title", "早报"),
         date_str=date_str,
         generated_at=generated_at,
@@ -324,9 +347,67 @@ def render_brief(cfg: dict, cards: list[dict], date_str: str, generated_at: str,
     (directory / "index.html").write_text(html, encoding="utf-8")
 
     render_archive(cfg, directory)
+    render_feed(cfg, directory)
     logger.info("网页已生成：%s", dated)
     return dated
 
+
+FEED_ITEM = """  <item>
+    <title>{title}</title>
+    <link>{url}</link>
+    <guid isPermaLink="false">{guid}</guid>
+    <pubDate>{pub}</pubDate>
+    <description>{desc}</description>
+  </item>"""
+
+
+def render_feed(cfg: dict, directory: Path, limit: int = 30) -> None:
+    """生成 RSS：让读者用阅读器订阅，不依赖任何第三方服务。"""
+    briefs_dir = directory.parent / "data" / "briefs"
+    if not briefs_dir.exists():
+        return
+    site = cfg.get("site", {})
+    base = (site.get("base_url") or "").rstrip("/")
+    title = site.get("title", "早报")
+    from email.utils import format_datetime
+    from datetime import datetime, timezone
+
+    items: list[str] = []
+    for path in sorted(briefs_dir.glob("*.json"), reverse=True)[:limit]:
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:  # noqa: BLE001
+            continue
+        date = path.stem
+        cards = data.get("cards", [])
+        if not cards:
+            continue
+        desc = "；".join(c.get("title", "") for c in cards[:6])
+        try:
+            dt = datetime.strptime(date, "%Y-%m-%d").replace(hour=12, tzinfo=timezone.utc)
+            pub = format_datetime(dt)
+        except ValueError:
+            pub = ""
+        items.append(FEED_ITEM.format(
+            title=f"{title} · {date}",
+            url=f"{base}/{date}.html",
+            guid=f"{base}/{date}.html",
+            pub=pub,
+            desc=desc,
+        ))
+
+    feed = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0">\n<channel>\n'
+        f"<title>{title}</title>\n"
+        f"<link>{base}/</link>\n"
+        "<description>每天从 50 多个信息源自动抓取、筛选、成卡的 AI 科技早报。</description>\n"
+        "<language>zh-cn</language>\n"
+        + "\n".join(items)
+        + "\n</channel>\n</rss>\n"
+    )
+    (directory / "feed.xml").write_text(feed, encoding="utf-8")
+    logger.info("RSS 已生成：%s", directory / "feed.xml")
 
 def render_archive(cfg: dict, directory: Path) -> None:
     briefs_dir = directory.parent / "data" / "briefs"
@@ -343,6 +424,7 @@ def render_archive(cfg: dict, directory: Path) -> None:
 
     html = TEMPLATE.render(
         page_title="往期早报",
+        meta_desc="每日 AI 科技早报的往期列表。",
         is_archive=True,
         archive=items,
         heading="往期早报",
