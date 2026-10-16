@@ -52,6 +52,13 @@ def main() -> int:
         print(f"找不到 {args.period}")
         return 1
 
+    brand = str(weekly_cfg.get("brand") or "一周 AI 大事件")
+    try:
+        issue = sorted(path.name for path in dirs).index(target.name) + 1
+    except ValueError:
+        issue = 0
+    brand_sub = f"第 {issue} 期" if issue else ""
+
     versions = list((weekly_cfg.get("versions") or {}).keys())
     if args.only:
         versions = [args.only]
@@ -96,7 +103,15 @@ def main() -> int:
 
         project_dir = target / f"video-{version}"
         hyperframes.write_project(
-            version, project_dir, board, timeline, cues, assets, gsap_src
+            version,
+            project_dir,
+            board,
+            timeline,
+            cues,
+            assets,
+            gsap_src,
+            brand=brand,
+            brand_sub=brand_sub,
         )
 
         if not (args.copy or args.render):

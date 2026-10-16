@@ -25,6 +25,9 @@ LAYOUTS = {
         "cue_font": 58,
         "cue_bottom": 480,
         "cue_width": 26,
+        "brand_top": 150,
+        "brand_size": 78,
+        "brand_sub_size": 32,
         "pad": "0 110px 380px",
         "h1_sizes": [(6, 124), (8, 104), (10, 88), (12, 78), (99, 70)],
     },
@@ -36,6 +39,9 @@ LAYOUTS = {
         "cue_font": 50,
         "cue_bottom": 132,
         "cue_width": 44,
+        "brand_top": 54,
+        "brand_size": 56,
+        "brand_sub_size": 24,
         "pad": "0 160px 120px",
         "h1_sizes": [(8, 112), (11, 96), (14, 82), (99, 72)],
     },
@@ -118,7 +124,14 @@ def scene_times(timeline: dict) -> list[tuple[float, float]]:
     return spans
 
 
-def build_index_html(version: str, storyboard: dict, timeline: dict, cues: dict) -> str:
+def build_index_html(
+    version: str,
+    storyboard: dict,
+    timeline: dict,
+    cues: dict,
+    brand: str = "",
+    brand_sub: str = "",
+) -> str:
     layout = LAYOUTS.get(version, LAYOUTS["douyin"])
     scenes = storyboard.get("scenes") or []
     spans = scene_times(timeline)
@@ -246,6 +259,24 @@ def build_index_html(version: str, storyboard: dict, timeline: dict, cues: dict)
         font-size: {layout['cue_font']}px; font-weight: 700; color: #ffffff;
         line-height: 1.35; text-align: center; white-space: nowrap;
       }}
+      /* 全片常驻的品牌花字：不加 data-start，所以不受场景切换影响 */
+      .brand {{
+        position: absolute; left: 0; right: 0; top: {layout['brand_top']}px;
+        text-align: center; pointer-events: none;
+      }}
+      .brand-main {{
+        display: inline-block;
+        font-size: {layout['brand_size']}px; font-weight: 900; letter-spacing: 2px;
+        color: #ffffff;
+        -webkit-text-stroke: 7px #05080f;
+        paint-order: stroke fill;
+        text-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
+      }}
+      .brand-sub {{
+        margin-top: 10px;
+        font-size: {layout['brand_sub_size']}px; font-weight: 700;
+        letter-spacing: 3px; color: #38bdf8;
+      }}
     </style>
   </head>
   <body>
@@ -264,6 +295,11 @@ def build_index_html(version: str, storyboard: dict, timeline: dict, cues: dict)
 {chr(10).join(scene_html)}
 
 {chr(10).join(cue_html)}
+
+      <div class="brand">
+        <div class="brand-main">{html.escape(spacing(brand))}</div>
+        {f'<div class="brand-sub">{html.escape(spacing(brand_sub))}</div>' if brand_sub else ''}
+      </div>
     </div>
 
     <script>
@@ -288,6 +324,8 @@ def write_project(
     cues: dict,
     assets_src: Path,
     gsap_src: Path | None = None,
+    brand: str = "",
+    brand_sub: str = "",
 ) -> Path:
     """写出一个完整可渲染的 HyperFrames 项目目录。"""
     project_dir.mkdir(parents=True, exist_ok=True)
@@ -295,7 +333,8 @@ def write_project(
     assets_dir.mkdir(exist_ok=True)
 
     (project_dir / "index.html").write_text(
-        build_index_html(version, storyboard, timeline, cues), encoding="utf-8"
+        build_index_html(version, storyboard, timeline, cues, brand=brand, brand_sub=brand_sub),
+        encoding="utf-8",
     )
     (project_dir / "package.json").write_text(
         json.dumps(PACKAGE_JSON, ensure_ascii=False, indent=2), encoding="utf-8"

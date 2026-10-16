@@ -54,6 +54,24 @@
         font-size: 58px; font-weight: 700; color: #ffffff;
         line-height: 1.35; text-align: center; white-space: nowrap;
       }
+      /* 全片常驻的品牌花字：不加 data-start，所以不受场景切换影响 */
+      .brand {
+        position: absolute; left: 0; right: 0; top: 150px;
+        text-align: center; pointer-events: none;
+      }
+      .brand-main {
+        display: inline-block;
+        font-size: 78px; font-weight: 900; letter-spacing: 2px;
+        color: #ffffff;
+        -webkit-text-stroke: 7px #05080f;
+        paint-order: stroke fill;
+        text-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
+      }
+      .brand-sub {
+        margin-top: 10px;
+        font-size: 32px; font-weight: 700;
+        letter-spacing: 3px; color: #38bdf8;
+      }
     </style>
   </head>
   <body>
@@ -125,6 +143,11 @@
       <div class="cue" id="cue24" data-start="38.777" data-duration="1.578">你觉得谁最狠</div>
       <div class="cue" id="cue25" data-start="40.355" data-duration="1.314">评论区聊聊</div>
       <div class="cue" id="cue26" data-start="41.669" data-duration="1.315">下期接着看</div>
+
+      <div class="brand">
+        <div class="brand-main">一周 AI 大事件</div>
+        <div class="brand-sub">第 1 期</div>
+      </div>
     </div>
 
     <script>
