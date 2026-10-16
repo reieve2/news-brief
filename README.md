@@ -342,6 +342,36 @@ python src/main.py --weekly                                        # 日报 + �
 让它自己做「总字数 ÷ 段数」它不会执行（实测 1883 字对 900 字预算，三次重写纹丝不动）；
 **喂给口播稿的素材要只给要点**，给全文它就照着全文的长度写。
 
+## 周报视频
+
+两版口播稿可以直接变成短视频：配音、混音、分镜、字幕都在这边生成好，
+输出一个完整的 HyperFrames 工程，复制到 `ai-media` 就能渲染。
+
+```
+python tools/make_video.py 2026-10-16                    # 只生成工程
+python tools/make_video.py 2026-10-16 --copy             # 顺便复制到 ai-media
+python tools/make_video.py 2026-10-16 --copy --render    # 复制并渲染出片
+python tools/make_video.py 2026-10-16 --only douyin      # 只做抖音版
+```
+
+工程在 `data/weekly/<日期>/video-<版本>/`，结构和 `O:\ai-media` 里的现成项目一致
+（`index.html` 分镜 + `assets/` 音轨）。渲染需要 ffmpeg，`make_video.py` 会把配置里的
+ffmpeg 目录加进子进程 PATH——**hyperframes 只认 PATH，不认配置**。
+
+改了音色、语速或 BGM 之后不用重跑整期周报，重建音频就行：
+
+```
+python tools/rebuild_audio.py 2026-10-16
+```
+
+分镜（屏幕大字 + 副标题）由 `prompts/storyboard.md` 控制，结果缓存在
+`storyboard-<版本>.json`；改了口播稿要删掉缓存才会重算。
+
+字幕断行在 `src/tts.py` 的 `split_cue_text`：英文按词边界断，连接词（和、的、与）不落行尾，
+最后一行太短会从前一行回补。每行宽度上限按版本给（竖屏 26、横屏 44 个显示宽度单位）。
+`.cue` 的定位必须用 `left:0; right:0; margin:auto` 居中——用 `left:50%` 的话可用宽度
+只剩半个屏幕，`max-width` 形同虚设，字幕会莫名其妙折行。
+
 ## 出问题先看这几个地方
 
 - **钉钉收不到**：先跑 `python tools/test_dingtalk.py`，看返回的 errcode。
