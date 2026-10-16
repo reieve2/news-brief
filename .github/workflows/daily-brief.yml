@@ -4,6 +4,9 @@ on:
   schedule:
     # GitHub 用 UTC；04:00 UTC = 北京时间 12:00
     - cron: "0 4 * * *"
+  push:
+    paths:
+      - '.github/workflows/daily-brief.yml'
   workflow_dispatch:
 
 permissions:
