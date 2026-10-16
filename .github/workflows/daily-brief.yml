@@ -34,7 +34,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: 云端直连（清空本地代理配置）
-        run: sed -i 's|^  proxy: http.*|  proxy: ""|' config.yaml
+        run: |
+          sed -i 's|^  proxy: http.*|  proxy: ""|' config.yaml
+          grep -n "proxy:" config.yaml | head -2
 
       - name: 生成并部署早报
         env:
