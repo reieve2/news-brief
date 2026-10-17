@@ -24,10 +24,14 @@ LOG = ROOT / "logs" / "fallback.log"
 
 def log(message: str) -> None:
     line = f"[{datetime.now():%Y-%m-%d %H:%M:%S}] {message}"
-    LOG.parent.mkdir(parents=True, exist_ok=True)
-    with LOG.open("a", encoding="utf-8") as handle:
-        handle.write(line + "\n")
     print(line)
+    try:
+        LOG.parent.mkdir(parents=True, exist_ok=True)
+        with LOG.open("a", encoding="utf-8") as handle:
+            handle.write(line + "\n")
+    except OSError as exc:
+        # 写日志失败不能把兜底本身带崩（2026-10-17 就是栽在这：权限被拒直接 exit 1）
+        print(f"[WARN] 写日志失败：{exc}")
 
 
 def online_has(date_str: str, base_url: str, attempts: int = 3) -> bool | None:
