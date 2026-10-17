@@ -1,0 +1,444 @@
+{
+  "date": "2026-10-17",
+  "generated_at": "16:09",
+  "cards": [
+    {
+      "title": "谷歌发布 Gemini 4 Argon，API 限时半价",
+      "what": "谷歌面向全球开发者、企业及付费订阅用户开放 Gemini 4 Argon，官方称其加强了编程、专业知识工作和复杂任务持续执行能力。第三方 Artificial Analysis 智能指数中，Argon High 与 GPT-6 Astra Max、Claude Fable5.1 Max 并列 53 分；API 首发价每百万输入 token 2 美元、输出 10 美元，优惠至 11 月 30 日，12 月 1 日起恢复为 4 美元和 20 美元。",
+      "background": "Gemini 4 Pro 版本此前多次跳票，今年 9 月 30 日才宣布首期限量开放，此次 Argon 正式版距上一代旗舰已间隔较长时间。谷歌同期发布 217 页安全报告，并称 Argon 在 Gray Swan 间接提示词注入评测中经 15 次自适应攻击尝试后攻击成功率为 0.7%。",
+      "why": "在同等智能指数分数下，Argon High 平均每任务成本 1.99 美元，比 Astra 低约 39%，首发价约为 Opus5.5 的一半、Astra 的五分之一，价格可能改变开发者的模型选型。编程方面，Argon 在 ADK 项目上无人值守连续工作 11 小时，提出涉及 32 个文件的 6 项优化方案并跑完 16892 项测试，其中两项被合并。",
+      "next": "若半价期后开发者留存率能维持，谷歌可能借成本优势抢回部分 API 份额；但 Argon 在 FrontierSWE 和 Terminal-bench 上仍落后于主要竞品，且体验者 Ethan Mollick 指出复杂多智能体任务仍有差距，实际大规模表现待观察。前提是第三方评测与用户反馈能复现官方数据。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "token",
+          "gloss": "大模型处理文本的基本单位，API 按输入和输出 token 数量计费。"
+        },
+        {
+          "term": "间接提示词注入",
+          "gloss": "攻击者把恶意指令藏在模型会读取的外部内容（如网页、文档）中，诱导模型执行非预期操作的安全攻击方式。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/10/503701.html"
+        }
+      ]
+    },
+    {
+      "title": "DeepSeek 上线 Search/Fetch API，API 短暂出现 V4.1 Flash 快照",
+      "what": "DeepSeek 宣布 Search 与 Fetch API 正式上线，均基于自研搜索引擎，为 Agent 与 RAG 应用提供实时网页内容。Search 按 query 返回结构化结果，Fetch 抓取单页并以 Markdown 返回标题与正文。两者按成功请求计费，每千次 5 元，各限每秒 5 次查询。同日 API 列表短暂出现 deepseek-v4.1-flash-1017 条目后被移除，官方未说明。",
+      "background": "DeepSeek 于 9 月 10 日发布 V4.1 Flash，是其新模型结构系列中尺寸最小的模型，原生支持多模态视觉理解，调用名改为 deepseek-flash。此前 V4-Flash-0731、V4-Pro-0813 等日期后缀快照已是其惯用命名方式，因此 1017 条目被外界解读为潜在新快照。同日 DeepSeek Harness 发布 v0.2.1-rc1。",
+      "why": "搜索与抓取 API 把实时网页能力直接做进 DeepSeek 自家 API，Agent 与 RAG 应用不必再外接搜索服务，按成功请求计费也降低了空结果与失败的成本。对开发者而言，这减少了工具链拼接；对搜索 API 供应商而言，多了一个自带模型与鉴权体系的竞争者。",
+      "next": "若 1017 确为新快照，按此前节奏可能在未来数周内以正式版本上线，但官方尚未确认，需观察 API 列表是否再次出现该条目。Search/Fetch 的免费窗口到 11 月 1 日结束，之后通过 Claude Code 与 Codex 触发的搜索将开始计费，届时用量数据可反映实际采用情况。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "RAG",
+          "gloss": "检索增强生成，先从外部知识库或网页检索相关内容，再拼进提示词交给模型生成回答，用于补充模型训练数据之外的信息。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/014/291.htm"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic 称 Claude 自主设计出更优量子电路",
+      "what": "Anthropic 于 10 月 16 日发布研究称，Claude 在几乎无需人工干预的情况下，针对化学、优化、物理模拟、数论和数值计算等 8 类量子计算任务，设计出比已发表最优方案更高效的量子电路。评估程序按「量子比特数 × 量子门数」打分，Claude 依据反馈迭代改进。其中椭圆曲线点加法任务经约 53 小时自主探索，提出无需存储完整分支历史即可反向运行的可逆算法。",
+      "background": "量子设备目前通常只有数百到数千个量子比特，且对热、振动和电磁噪声敏感，量子比特与运行时间都是稀缺资源。减少电路所需的量子比特数和量子门数，是让量子计算走向实用的关键路径之一。Anthropic 此次用通俗语言描述任务并配自动评估程序，把电路设计变成可自动迭代的搜索问题。",
+      "why": "若结果成立，说明大模型能在有明确评分函数的科学工程问题上自主产出新结构，而不只是微调既有方案。研究团队认为这类进展有望降低实用量子应用对硬件规模的要求，让新药设计、电池、催化剂等问题的量子方案更早落地。",
+      "next": "后续关键在独立复现：目前结果由 Anthropic 自行发布与评估，若外部团队用同一评分标准验证并扩展到更多任务，结论才更稳固。研究本身也指出，电路设计只是容错量子计算的一环，纠错与硬件控制仍需协同突破，因此短期内更可能先影响电路设计工具链，而非直接推动硬件落地。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "量子门",
+          "gloss": "对一个或多个量子比特施加的幺正变换，相当于经典逻辑门（如 AND、NOT）的量子版本，但作用对象是叠加态和纠缠态。"
+        },
+        {
+          "term": "可逆算法",
+          "gloss": "量子计算中每一步都可由逆操作还原的算法，因为量子门本身是幺正的、可逆的，所以经典中依赖丢弃信息的步骤需要改写。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/014/317.htm"
+        }
+      ]
+    },
+    {
+      "title": "Replit CEO 称已停止与 Anthropic 合作",
+      "what": "Replit CEO Amjad Masad 在 TechCrunch Disrupt 活动上表示，公司已不再与 Anthropic 合作，原因包括成本、合作与性能，并称内部与公开基准显示 Sol 和 Astra 在从零构建应用上表现更好。但熟悉双方合作的人士否认合作已终止，称合作仍在进行；Replit 官网和博客近期仍显示使用 Claude 模型。",
+      "background": "Replit 今年 8 月宣布与 OpenAI 建立合作，但此前未有任何停止使用 Anthropic 的迹象。9 月底的博客仍引用 Claude Fable 5 和 5.1 运行 Replit Agent 生产环境，产品员工也在社交平台推广 Opus 5.5。CEO 表态与内部人士说法、公开材料互相矛盾。",
+      "why": "Replit 是面向创业者和开发者的 AI 编程平台，其模型供应商选择反映编程场景中成本与性能的权衡。若合作确实终止，将影响 Anthropic 在编程工具市场的份额；若未终止，则暴露高管公开表态与公司实际运营之间的信息差。",
+      "next": "Replit 尚未回应 TechCrunch 的澄清请求。若后续官方确认终止，Anthropic 可能失去一个高增长编程平台客户；若内部人士说法属实，则需解释 CEO 表态为何与运营现状不符。前提是双方之一给出正式说明。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/"
+        }
+      ]
+    },
+    {
+      "title": "Meta 发布开放权重模型 Muse Spark Open，与苹果合作在 Mac 本地运行",
+      "what": "Meta 于 10 月 15 日发布开放权重模型 Muse Spark Open，总参数 8160 亿，每次推理激活 420 亿，支持 100 万 token 上下文。Meta 称两台顶配 M5 Ultra Mac Studio 即可在 Apple 的 MLX 框架下运行整个模型。扎克伯格发帖感谢苹果 CEO John Ternus 的合作，Ternus 回复称赞。此前 10 月 2 日，苹果因 Meta 的 AI 智能体 Muse 被指控读取私人消息而调整了系统规则。",
+      "background": "苹果与 Meta 长期关系紧张：2021 年苹果推出 App 跟踪透明度，Meta 称 2022 年因此损失约 100 亿美元收入；2019 年苹果曾吊销 Facebook 企业开发者证书。此次合作据报由 2025 年加入 Meta 超级智能团队的 Daniel Gross 牵线。苹果 CEO 已由 John Ternus 接替库克，Meta 则在 Llama 4 口碑下滑后由 Alexandr Wang 组建超级智能实验室，转向 Muse 系列。",
+      "why": "对苹果而言，这是继接入 OpenAI 和 Google 模型后，又一次借助外部模型补足自研短板，且以「数据不出门」的本地运行契合其隐私叙事，为高价 Mac Studio 预热。对 Meta 而言，开放权重模型需要开发者生态，而开发者多用 Mac；同时权重也上架亚马逊、谷歌、微软云平台，苹果只是其分发网络中的一个节点。",
+      "next": "若 Meta 后续公布完整评测跑分且表现符合其宣称，Muse Spark Open 可能吸引一批 Mac 开发者试用；但报道提到 Meta 尚未发布具体跑分，且读者评论显示信任度不足。苹果一边为防 Meta 的 Agent 调整系统规则、一边为 Meta 的模型站台，这种「拦数据、放模型」的平衡能否持续，取决于双方在隐私与生态上的利益是否继续一致。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "MLX",
+          "gloss": "苹果推出的机器学习框架，针对 Apple Silicon 的统一内存架构优化，让模型在 Mac 上本地训练和推理。"
+        },
+        {
+          "term": "开放权重",
+          "gloss": "模型参数公开可下载，但训练数据和代码未必公开，与完全开源的模型有区别。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/372458"
+        }
+      ]
+    },
+    {
+      "title": "豆包 SAEP 公示结束，155 款应用拒绝 AI 自动化操作",
+      "what": "10 月 14 日，豆包手机助手的《屏幕自动化操作声明协议》（SAEP）结束 30 天公示期。据极客公园报道，明确拒绝 AI 自动化操作的应用共 155 款，名单当日经两轮更新。腾讯 66 款、阿里 23 款、美团 11 款、快手 14 款，覆盖社交、电商、支付、娱乐等核心品类，Kimi、DeepSeek 等 AI 产品也在列。",
+      "background": "豆包 2025 年 12 月推出手机助手技术预览版，2026 年 9 月 14 日发布消费者版并启动 SAEP 公示，两天后努比亚 NaviX Ultra 开售。此前微信、淘宝等应用已出现登录异常和人机验证，9 月下旬部分用户在该机型登录《王者荣耀》时触发风控封禁，促使豆包把隐性拦截转为公开声明规则。",
+      "why": "这是超级 App 首次以公开名单的形式，对 AI Agent 跨应用操作划定边界。拒绝与否大致沿「是否拥有独立流量入口与生态闭环」划分：依赖自有首页流量的平台拒绝倾向更强，依赖外部订单分发的平台更倾向观望。支付、登录等高风险场景的操作责任归属仍无行业标准。",
+      "next": "按 SAEP 规则，未提交拒绝声明的应用将按风险层级逐步开放权限，已拒绝者可随时调整声明。若后续出现责任划分或分成机制，部分观望平台可能转向开放；但前提是 AI 厂商与 App 方就风控误判和事故责任达成可执行约定，目前尚无此类协议公开。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "SAEP",
+          "gloss": "Screen Automation Execution Protocol，豆包手机助手推出的屏幕自动化操作声明协议。第三方开发者可声明是否允许 AI 在其应用内执行屏幕识别、模拟点击、内容填写等操作，并可细化到具体页面和功能。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/372436"
+        }
+      ]
+    },
+    {
+      "title": "Salience Labs 完成 1.25 亿美元 B 轮融资，AMD 与 Intel 参投",
+      "what": "据 Data Center Dynamics 报道，光交换初创公司 Salience Labs 完成 1.25 亿美元 B 轮融资，AMD 与 Intel 参与本轮投资。公司称这笔资金将用于继续开发和部署其光路交换技术。报道未披露本轮估值、其他投资方及具体产品落地时间。",
+      "background": "随着 AI 数据中心规模扩大，电交换在带宽和功耗上的瓶颈愈发明显，光交换被视为替代或补充方案，也因此吸引芯片厂商关注。AMD 与 Intel 同时参投一家光交换初创公司，说明两家都在为下一代互连架构提前布局。",
+      "why": "光路交换若能在数据中心规模化部署，可能改变机架间与集群间的网络拓扑和能耗结构。芯片厂商直接下注，意味着这项技术正从实验室走向产品化，其进展会影响未来 AI 集群的网络方案选择。",
+      "next": "若资金按计划投入研发与部署，接下来可能看到 Salience Labs 公布试点客户或量产时间表。前提是光交换在可靠性和成本上能达到数据中心要求；目前报道未给出这些指标，实际落地节奏仍不确定。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "光路交换",
+          "gloss": "Optical circuit switching，在光层直接建立端到端的专用光通路来转发数据，无需把光信号转成电信号再交换，理论上可降低功耗和时延，但通路建立较慢，适合大流量、相对稳定的连接。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Data Center Dynamics",
+          "url": "https://www.datacenterdynamics.com/en/news/optical-switching-startup-salience-labs-raises-125m-with-amd-and-intel-participating-in-round/"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 13,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 26,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 0,
+      "error": "请求失败"
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
