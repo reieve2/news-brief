@@ -240,7 +240,8 @@ python src/main.py
 2. **登录后 3 分钟**：`AI-Brief-Weekly.lnk` → `run_weekly.bat`，检查要不要出周报（周一至周三才有活干）。
 
 重装：`powershell -ExecutionPolicy Bypass -File tools\install_tasks.ps1`。
-加 `-WithFallbackTask` 才会额外注册每天 22:30 的本地兜底任务——走云端时不要加，会重复。
+默认只装启动项，不注册任何计划任务。走云端时不要加 `-WithFallbackTask`——那会额外注册
+一个 22:30 的本地任务，和云端重复。
 
 同一天已经成功生成过，程序会自动跳过（除非加 `--force`）。
 日志在 `logs/` 下按日期存放，`logs/scheduler.log` 记录每次调度的起止和返回码。
@@ -265,6 +266,10 @@ AI_MEDIA_DIR=...
 ## 云端 + 本地兜底（推荐的稳妥组合）
 
 只用云端已经够用；如果担心哪天云端没跑成导致断更，可以再挂一个本地兜底检查：
+
+> **时间安排（2026-10-17 调整）**：本地兜底检查每天 **18:00** 跑。原来放在 13:00，
+> 但 GitHub Actions 的定时任务官方不保证准时，实测有一次延迟到 16:09 才跑完——
+> 13:00 检查会误判"线上还没有"然后重复生成。18:00 给云端留了六小时余量。
 
 ```
 python tools/local_fallback.py           # 检查线上有没有今天的早报，没有才本地补一次
