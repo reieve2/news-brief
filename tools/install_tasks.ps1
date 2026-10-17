@@ -1,5 +1,6 @@
 ﻿# 装启动项：登录后跑早报，再晚一点检查周报。
 #
+# 只装周报：早报交给云端 GitHub Actions 每天 07:00 跑，本地再挂一个登录触发会撞车。
 # 路径只在装的时候写进启动文件夹的快捷方式里，仓库本身不含任何本机路径。
 # 22:30 那个本地兜底任务已经不在这里注册了——云端 GitHub Actions 出早报、
 # local_fallback 负责补跑，两边重复会白花钱。
@@ -24,7 +25,6 @@ function New-StartupLink($name, $arguments, $description) {
     Write-Host "启动项已创建: $path"
 }
 
-New-StartupLink "AI-Brief.lnk" "`"$launcher`" 120 run_daily.bat" "每日 AI 科技早报"
 New-StartupLink "AI-Brief-Weekly.lnk" "`"$launcher`" 180 run_weekly.bat" "每周 AI 周报"
 
 if ($WithFallbackTask) {

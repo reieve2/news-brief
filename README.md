@@ -233,11 +233,14 @@ python src/main.py
 
 ## 定时（本地版）
 
-`tools\install_tasks.ps1` 会在「启动」文件夹里放两个快捷方式，走 `run_hidden.vbs` 静默运行
+早报交给云端 GitHub Actions（每天 07:00），本地**只装周报**的启动项。
+`tools\install_tasks.ps1` 会在「启动」文件夹里放一个快捷方式，走 `run_hidden.vbs` 静默运行
 （不弹黑窗），**仓库里不写任何本机路径，路径只在安装时写进快捷方式**：
 
-1. **登录后 2 分钟**：`AI-Brief.lnk` → `run_daily.bat`，出当天早报。
-2. **登录后 3 分钟**：`AI-Brief-Weekly.lnk` → `run_weekly.bat`，检查要不要出周报（周一至周三才有活干）。
+**登录后 3 分钟**：`AI-Brief-Weekly.lnk` → `run_weekly.bat`，检查要不要出周报（周一至周三才有活干）。
+
+2026-10-17 卸掉了早报的登录启动项（原来登录后 2 分钟跑 `run_daily.bat`）：
+它和云端 07:00 那次会撞车，同一天生成两份、花两遍钱。
 
 重装：`powershell -ExecutionPolicy Bypass -File tools\install_tasks.ps1`。
 默认只装启动项，不注册任何计划任务。走云端时不要加 `-WithFallbackTask`——那会额外注册
