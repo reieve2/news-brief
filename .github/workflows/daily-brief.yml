@@ -2,8 +2,9 @@ name: 每日早报
 
 on:
   schedule:
-    # GitHub 用 UTC；04:00 UTC = 北京时间 12:00
-    - cron: "0 4 * * *"
+    # GitHub 用 UTC；前一天 23:00 UTC = 北京时间当天 07:00
+    # 定时任务可能延迟几十分钟到几小时，所以本地兜底放在 18:00 检查
+    - cron: "0 23 * * *"
   push:
     paths:
       - '.github/workflows/daily-brief.yml'
