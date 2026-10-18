@@ -1,0 +1,448 @@
+{
+  "date": "2026-10-18",
+  "generated_at": "08:39",
+  "cards": [
+    {
+      "title": "DeepSeek 发布 V4.1-Flash-1017 并开放自研搜索 API",
+      "what": "据量子位报道，DeepSeek 发布新模型 DeepSeek-V4.1-Flash-1017，网页端、APP 与 API 已同步切换；配套 DeepSeek Harness 升级至 0.2.1 版本。官方称新模型针对 Harness 做了专项优化，基准测试中代码与 Agent 任务能力提升，同时任务运行时间与输出长度下降。此外开放自研搜索 Search 与 Fetch 两个 API。",
+      "background": "报道称发布前模型列表曾短暂出现该条目，API 系统指纹也发生变化，被蹲更新的用户提前发现；此前 DeepSeek 刚经历一次服务崩溃与补偿。官方将这次更新描述为「性能—费用的帕累托改进」，即在不牺牲任务表现的前提下压缩 token 消耗。",
+      "why": "对开发者而言，这意味着 Agent 类任务的单位成本可能下降，且搜索 API 补齐了「上网查资料」这一环，可直接在 Harness、Claude Code 或 Codex 中调用。若官方基准成立，性价比路线会继续压低同类 API 的定价预期。",
+      "next": "按报道，搜索 API 限时免费至 11 月 1 日，之后按每千次成功请求 5 元计价，届时调用量能否维持取决于实际检索质量。官方基准多为自测，第三方复现结果尚未出现；若独立评测确认性能与成本同时改善，其他厂商可能跟进类似定价。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "系统指纹",
+          "gloss": "API 接口返回的一串标识哈希，用于区分后端服务的模型版本或部署配置；它变化通常说明后台已换版本。"
+        },
+        {
+          "term": "帕累托改进",
+          "gloss": "一种资源重新分配方式：在不使任何一方变差的前提下让至少一方变好。此处指模型性能提升的同时成本没有上升。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/10/504067.html"
+        }
+      ]
+    },
+    {
+      "title": "OpenAI 确认自研人形机器人，2027 年出演示样机",
+      "what": "奥尔特曼在《Sources》播客中确认 OpenAI 将亲自制造人形机器人，称核心是研发驱动机器人运转的「大脑」而非外观。他预计 2027 年拿出亮眼的演示样机，但机器人走上街头还需数年。OpenAI 招聘页面挂有 27 个机器人方向岗位，涵盖运动控制、状态估计、执行器控制及自研机电一体化执行器。",
+      "background": "OpenAI 此前通过 Dactyl 项目在仿真环境中训练机械手操控实物，并挑战过魔方，积累了实体 AI 训练经验。当前特斯拉 Optimus、小鹏 IRON 等已推进人形机器人落地，硬件与运动控制成为竞争焦点。OpenAI 短期目标据招聘启事是打造协助技术工人建设基础设施的通用机器人。",
+      "why": "这标志 OpenAI 从纯软件模型向实体 AI 延伸，试图把大模型能力迁移到物理世界。若「大脑」路线成立，机器人竞争的重心可能从硬件形态转向通用控制模型，对现有机器人厂商的软件栈构成直接压力。",
+      "next": "若 2027 年演示样机如期出现，外界关注点将集中在它能否在非结构化环境中完成抓取、行走等任务。前提是 OpenAI 能补齐运动控制与执行器硬件短板；否则演示可能仍限于受控场景。目前尚无售价、上市日期或隐私规范。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "Dactyl",
+          "gloss": "OpenAI 早期的机器人手研究项目，用仿真环境训练机械手操控真实物体，再把策略迁移到实体硬件上。"
+        },
+        {
+          "term": "机电一体化执行器",
+          "gloss": "把电机、传动机构、传感器和热管理集成在一起的驱动部件，决定机器人关节的力量、精度和响应速度。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/014/433.htm"
+        }
+      ]
+    },
+    {
+      "title": "亚马逊收购 DuckLabs，DuckDB 接入 Aurora PostgreSQL",
+      "what": "亚马逊宣布收购 DuckDB 背后的公司 DuckLabs，两位联合创始人 Hannes Mühleisen 和 Mark Raasveldt 将加入 AWS 并继续领导团队与开源项目。DuckDB 及 DuckLake、Quack 等组件仍以 MIT 许可开源，由 DuckDB Foundation 监督。收购后首个用户功能落地 Amazon Aurora PostgreSQL，允许单条查询同时处理 Aurora 中的事务数据和 S3 上的 Iceberg、Parquet 历史数据。",
+      "background": "据 AWS 工程师 Andy Warfield 描述，双方合作始于 S3 Tables 项目，过去两年在 Lambda 启动 DuckDB 查询、ATTACH/CONNECT 命令集成上逐步加深。AWS 技术副总裁 Mai-Lan Tomsen Bukovec 称 DuckDB 面向 1TB 以下的快速分析查询，适合 AI agent 先做小规模探查再决策的模式。",
+      "why": "这起收购把一款广受欢迎的开源分析数据库纳入云厂商体系，同时承诺维持 MIT 许可和基金会治理，回应了社区对开源项目被收编后走向的担忧。对用户而言，Aurora 内直接查询 S3 数据省去了反向 ETL 管道，可能改变事务库与数据湖之间的数据集成方式。",
+      "next": "若开源治理承诺兑现，DuckDB 的迭代节奏和社区信任可能维持；但 Reddit 上已有用户担心创新放缓，后续需观察 AWS 是否将更多能力做成仅限自家服务的功能。Aurora 之外，其他 AWS 分析服务是否跟进集成 DuckDB，取决于该功能的使用情况和客户反馈。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "反向 ETL",
+          "gloss": "把数据仓库或数据湖中的加工结果反向写回业务数据库、SaaS 等操作系统的流程，常用于让业务系统用上分析结果；这里指为合并事务数据与历史数据而复制数据的管道。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "InfoQ 英文",
+          "url": "https://www.infoq.com/news/2026/10/amazon-acquires-ducklabs/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global"
+        }
+      ]
+    },
+    {
+      "title": "Replit 将 OpenAI 设为默认模型，CEO 称不再与 Anthropic 合作",
+      "what": "Replit CEO Amjad Masad 在 TechCrunch Disrupt 上表示，公司已不再与 Anthropic 合作，OpenAI 的 ChatGPT 成为默认模型，Claude 仍可供用户选择。他称决定基于成本、合作与性能，内部基准显示 OpenAI 模型在从零构建应用上表现更好。但知情人士称双方合作仍在，Replit 网站近期仍在推广 Anthropic 模型。",
+      "background": "Replit 此前依赖 Anthropic 的 Claude 模型运行平台，Masad 称其曾是 Anthropic 前五大客户。今年 8 月 Replit 宣布与 OpenAI 合作，但未表明终止与 Anthropic 的关系。此次公开表态与知情人士说法矛盾，且公司近期内容仍在推广 Claude，使合作状态不明。",
+      "why": "默认模型决定多数用户实际调用哪家模型，切换可能显著改变 Replit 对 Anthropic 的支出。对开发者而言，平台默认模型变化会影响代码生成体验；对模型厂商，头部编码平台的选择是竞争风向标。",
+      "next": "若 Masad 说法属实，Replit 对 Anthropic 的支出可能下降，但 Claude 仍作为可选模型保留。鉴于知情人士否认合作终止，双方关系可能并非完全切断，后续需看 Replit 官方是否澄清合作状态及默认模型切换的实际范围。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/"
+        }
+      ]
+    },
+    {
+      "title": "NVIDIA RTX Spark 笔记本上市，起价 2399 美元",
+      "what": "NVIDIA 宣布 RTX Spark 笔记本正式开售，起价 2399 美元，来自 ASUS、Dell、HP、Lenovo、Microsoft 和 MSI。该机搭载 Blackwell RTX GPU 与 Grace CPU，最高 128GB 统一内存、最高 1 petaflop AI 算力，定位轻薄 Windows PC 上的本地 AI、内容创作与游戏。NVIDIA 称在全球六地举办零售发布活动。",
+      "background": "NVIDIA 此前已预告该产品，10 月 15 日发布预热文章，此次为零售落地。把 GPU 与自研 CPU 封装为单颗 superchip，是 NVIDIA 将数据中心加速计算经验延伸到 PC 端的动作，瞄准在本地运行 AI 工作负载的需求。",
+      "why": "128GB 统一内存和 1 petaflop 级算力意味着部分模型推理可完全在本地完成，减少对云端的依赖。对开发者而言，Windows PC 成为一个新的本地 AI 运行目标，可能影响端侧 AI 应用的部署方式。",
+      "next": "若本地 AI 工作流在开发者中形成实际需求，其他 PC 芯片厂商可能跟进类似的高内存统一架构；但 2399 美元起价能否支撑销量，取决于本地 AI 应用是否足够成熟，目前尚无独立评测数据。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "superchip",
+          "gloss": "把 CPU、GPU 等多个芯片裸片封装在同一基板上的集成方案，芯片间通过高带宽互连共享内存，区别于传统主板上分离的 CPU 与 GPU。"
+        },
+        {
+          "term": "统一内存",
+          "gloss": "CPU 与 GPU 共享同一块物理内存池，无需在两者之间显式拷贝数据，大模型可直接驻留其中。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "NVIDIA Blog",
+          "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-windows-laptops-celebration/"
+        }
+      ]
+    },
+    {
+      "title": "JASM 第二晶圆厂转产 3nm 获日本经产省批准",
+      "what": "据日本经济产业省官网公示，台积电控股的在日合资子公司 JASM 第二晶圆厂转产 3nm 的计划已获批准。该厂原规划生产 40nm、12nm、6nm，总月产能 6.3 万片；现调整为仅生产 3nm，月产能 6000 片，预计 2028 年 12 月完工并同月投产。JASM 第一晶圆厂也舍弃 12/16nm 节点，调整为月产 4.5 万片 22/28nm 和 5000 片 40nm。",
+      "background": "JASM 是台积电在日本的合资子公司，第二晶圆厂原按成熟制程规划。此次转产 3nm 意味着日本本土将首次具备先进制程产能，日本经产省的批准是项目落地的前置条件。同一时间第一晶圆厂砍掉 12/16nm，显示 JASM 整体在向更先进或更基础的节点两端收缩。",
+      "why": "对日本而言，这是本土先进逻辑制程从无到有的节点；对台积电而言，海外先进产能布局从美国扩展到日本。但 3nm 月产能仅 6000 片，规模远小于原规划的 6.3 万片，说明这是小批量、以供应链本地化为目标的配置，而非大规模量产转移。",
+      "next": "若按公示时间表推进，2028 年底投产前还需完成设备导入和客户认证。后续可观察日本政府是否追加补贴、台积电是否把更多先进节点放在日本，以及第一晶圆厂砍掉 12/16nm 后原有客户如何转单。以上推测基于当前公示信息，项目仍可能调整。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "3nm",
+          "gloss": "指 3 纳米级制程节点，是芯片制造中衡量晶体管密度的代际名称，数字越小通常代表同一面积内可集成更多晶体管、能效更高。"
+        },
+        {
+          "term": "晶圆",
+          "gloss": "制造芯片用的圆形硅片，一片晶圆上可切割出大量芯片；月产能通常以「万片晶圆」为单位衡量工厂规模。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/014/423.htm"
+        }
+      ]
+    },
+    {
+      "title": "游戏反编译社区网站 decomp.dev 因 AI 宣布关闭",
+      "what": "协作游戏逆向工程网站 decomp.dev 宣布将关闭。管理员 Encounter 在官网声明称，GPT-6-Astra 等前沿模型让反编译变得快且容易，基于人工的社区协作模式已瓦解，且无法再区分哪些项目由人工主导、哪些由 AI 完成。该站此前以人工匹配反编译为主，中等规模游戏常以年计。",
+      "background": "匹配反编译长期依赖大量志愿者逐段比对编译产物与源码，耗时以年计。Encounter 称，近期前沿模型在遵循复杂指令、交叉检索符号与调试信息、在充分指引下编写自然代码方面明显更强，使人工协作的产出难以被识别和归功。",
+      "why": "这是 AI 直接改变开源协作组织形态的案例：当单个模型加少量人工审查就能完成过去需要社区数年的工作，以贡献者身份和归属为核心的协作平台失去存在基础。它也提示，AI 生成代码的归属与可审计性问题正从讨论变成现实。",
+      "next": "若更多逆向工程项目转向模型辅助，类似社区可能继续收缩或转为纯 AI 流水线加人工审查。前提是前沿模型能力维持当前增速；声明未给出关闭时间表，也未说明项目数据如何处置，需看后续公告。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "匹配反编译",
+          "gloss": "通过比对编译后的二进制与原始源码，使反编译结果在函数、变量层面与源码一致的过程，常用于游戏与软件逆向工程。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Solidot",
+          "url": "https://www.solidot.org/story?sid=85638"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 13,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 26,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 17,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
