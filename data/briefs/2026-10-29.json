@@ -1,0 +1,448 @@
+{
+  "date": "2026-10-29",
+  "generated_at": "10:05",
+  "cards": [
+    {
+      "title": "Google DeepMind 发布 Gemini 4 Carbon，主打网络安全与长程任务",
+      "what": "Google DeepMind 发布 Gemini 4 Carbon，称其在 Artificial Analysis Intelligence Index v5.0 上以 59 分排名第一，并在 SEC-bench Pro（88.2%）、ExploitGym（54.8%）、CWE-bench（71.0%）三个网络安全基准上领先。该模型先向部分网络安全防御者开放，再通过 Fairwind Program 逐步扩大访问，定价与 Argon 相同。",
+      "background": "Carbon 建立在两周前发布的 Gemini 4 Argon 之上，DeepMind 称这体现了前沿推进的速度。公司表示正参与美国政府自愿的发布前模型测试流程，并先向受信任的网络安全防御方开放，以在扩大访问前收集反馈、迭代防护措施。",
+      "why": "Carbon 将竞争焦点引向网络安全防御全流程——漏洞发现、可利用性验证与补丁生成，并强调长程 agentic 工作流可连续运行数天。若外部基准可复现，模型在安全运维中的实际采用可能加速，同时也会提高对模型滥用风险的关注。",
+      "next": "若反馈积极，Carbon 可能按博文所述逐步开放给开发者、企业和消费者；但具体时间未公布。其安全基准成绩为无防护措施下评测，实际部署效果和滥用防护仍需观察。美国政府测试流程的结果也可能影响发布节奏。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "SEC-bench Pro",
+          "gloss": "一个评估模型在真实软件中自主发现安全漏洞能力的基准测试，分数越高表示找到的漏洞越多。"
+        },
+        {
+          "term": "ExploitGym",
+          "gloss": "一个评估模型验证漏洞是否可被利用的基准测试，用于判断哪些漏洞应优先修复。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Google DeepMind",
+          "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/"
+        }
+      ]
+    },
+    {
+      "title": "Apple 发布触屏 MacBook Pro，起价 2899 美元",
+      "what": "Apple 于 10 月 28 日发布带触屏的 MacBook Pro，14 英寸起价 2899 美元，16 英寸起价 3399 美元。新机提供 M5 Pro 和 M5 Max 芯片选项，最高 128GB 统一内存和 16TB 存储，配备 14/16 英寸 PROLED XDR 显示屏，峰值亮度 2000 尼特，对比度 10000000:1。10 月 30 日开启预购，11 月 6 日上市。",
+      "background": "Apple 过去长期反对触屏 Mac，Jobs 曾称其「人体工学糟糕」，此前仅通过 Touch Bar 做过有限尝试并已移除。此次发布前约三年已有相关传闻，且是 CEO John Ternus 上任后的第二款重要产品，他 9 月刚推出首款折叠设备 iPhone Duo。",
+      "why": "这是 Apple 对笔记本交互方式的一次明确转向，触屏从被公开否定变为旗舰卖点。新铰链设计专门解决触控时的屏幕稳定问题，显示规格和重量也同步升级，可能影响高端笔记本的竞争基准。",
+      "next": "若预购和首销反馈积极，Apple 可能将触屏下放到更低端 MacBook 产品线；但起价比昨日发布的 M6 标准版 MacBook Pro 高约 900 美元，市场是否接受这一溢价尚待观察。前提是后续销售数据公开或供应链有进一步消息。",
+      "confidence": "高",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "PROLED XDR",
+          "gloss": "Apple 为新款 MacBook Pro 命名的显示屏技术，材料中仅给出峰值亮度和对比度参数，未说明具体背光或面板类型。"
+        },
+        {
+          "term": "统一内存",
+          "gloss": "Apple Silicon 芯片上 CPU 与 GPU 共享的同一块内存，无需在两者间复制数据，容量最高可选 128GB。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/28/apple-launches-its-new-touchscreen-macbook-pro/"
+        },
+        {
+          "name": "Tom's Hardware",
+          "url": "https://www.tomshardware.com/laptops/apple-launches-new-macbook-with-touchscreen-and-oled-starts-at-usd2-899"
+        }
+      ]
+    },
+    {
+      "title": "微软 2027 财年第一财季营收 922.79 亿美元，Azure 同比增 48%",
+      "what": "微软发布 2027 财年第一财季（2026 年 7 月至 9 月）财报：营收 922.79 亿美元，同比增长 19%；归母净利润 366.29 亿美元，同比增长 32%；经营利润 459.15 亿美元，同比增长 21%。Microsoft Cloud 营收 639 亿美元，同比增长 30%；Azure 营收同比增长 48%。这是微软采用新双部门结构后的首份财报。",
+      "background": "这是微软改用 Agents and Infra、Devices and Consumer 两个部门后的首份财报，Azure 营收被纳入报告范围。IT之家称，营收、经营利润、每股收益均超出市场一致预期，Azure 增速较上季度进一步加快。该文由 AI 自动分析生成，并附有免责声明。",
+      "why": "Azure 同比增长 48%，Microsoft Cloud 同比增长 30%，说明云与 AI 基础设施仍是微软的主要增长来源；商业剩余履约义务（RPO）同比增长 73% 至 6770 亿美元，意味着已签约但尚未确认的收入规模较大。与此同时，Windows OEM 及设备业务下滑 22%，拖累 Devices and Consumer 部门营收同比下降 3%，两块业务的走势明显分化。",
+      "next": "微软称将在财报电话会中给出后续财季指引。若商业 RPO 的高增速能按管理层说法逐步转化为收入，Azure 的增长势头可能延续；但资本开支仍主要投向 AI 数据中心，设备业务能否止跌尚不明朗。以上判断依赖电话会指引和后续季度兑现情况。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "RPO",
+          "gloss": "剩余履约义务（Remaining Performance Obligation），指已签约但尚未确认收入的合同金额，用来衡量未来收入的锁定程度。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/019/257.htm"
+        }
+      ]
+    },
+    {
+      "title": "微软单季从 OpenAI 相关安排获 100 亿美元收入",
+      "what": "微软在监管文件中披露，截至 9 月 30 日的季度，从与 OpenAI 的商业安排（含收入分成）中获得 100 亿美元收入，约占其当季总营收 923 亿美元的 11%。2026 财年全年来自 OpenAI 的收入为 241 亿美元。截至 9 月底，来自 OpenAI 的未结应收款为 72 亿美元，高于 6 月底的 60 亿美元。",
+      "background": "两家公司在 2025 年 10 月放松了此前的独家绑定，OpenAI 得以与其他云厂商合作，同时承诺额外采购 250 亿美元 Azure 服务；2026 年 4 月的协议又规定 OpenAI 需继续与微软分成至 2030 年（设有上限）。微软持股比例从 6 月的约 25% 降至 9 月的 24%。",
+      "why": "这组数字量化了两家公司在业务上逐渐竞争的同时，财务上仍高度互相依赖。对微软而言，OpenAI 相关收入已占单季营收约一成，是投资者评估其 AI 业务成色时无法绕开的集中度风险；对 OpenAI 而言，分成与 Azure 采购承诺构成长期成本约束。",
+      "next": "若当前季度节奏延续，微软来自 OpenAI 的年化收入将达约 400 亿美元，但这一推算依赖分成比例和 Azure 消费结构不变。由于披露未拆分收入分成与 Azure 云服务的具体占比，后续财报或监管问询可能要求更细的口径；OpenAI 与其它云厂商的合作推进速度，则可能影响这一收入的增速。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "收入分成",
+          "gloss": "OpenAI 按约定比例把自身收入分给微软的安排。据报道该比例为 20%，但两家公司均未公开确认；2026 年 4 月协议规定分成持续至 2030 年并设有上限。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/"
+        }
+      ]
+    },
+    {
+      "title": "Google 借 Oracle 云向外部客户销售 TPU",
+      "what": "Alphabet 宣布 Oracle 将在其云上提供 Google 的 TPU，这是 TPU 首次在 Google 自有基础设施之外可用。Google 今年第二季度才开始向外部数据中心开放 TPU。此举发生在 Alphabet 第三季度财报发布前一天，被视为在 AI 芯片市场挑战 Nvidia 的举措。",
+      "background": "Google 自 2013 年起自研 TPU，长期只服务于自家云。随着 AI 芯片成为增长引擎，Google 云负责人 Thomas Kurian 寻求外部渠道扩张。此前 Google 已向外部数据中心开放 TPU，Oracle 是其最新合作伙伴。",
+      "why": "TPU 外销意味着 Google 从垂直整合转向对外供货，直接与 Nvidia 在 AI 芯片市场竞争。分析师对 TPU 收入规模预测差异大，TD Cowen 预计 2027 年 625 亿美元，Wells Fargo 预计 990 亿美元，反映市场高度不确定。",
+      "next": "若 Oracle 渠道验证可行，Google 可能接入更多云伙伴；但 CFO 称 TPU 收入大头在 2027 年确认，短期财报贡献有限。外销毛利率低于云业务，可能拖累整体利润率。前提是 TPU 产能和外部需求匹配。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "TPU",
+          "gloss": "张量处理单元，Google 自研的 AI 专用芯片，用于加速机器学习计算。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/10/28/google-alters-cloud-playbook-turning-to-partners-to-sell-more-ai-chips.html"
+        }
+      ]
+    },
+    {
+      "title": "PyTorch 2.15 发布：重写 NCCL 后端成默认",
+      "what": "PyTorch 2.15 发布，重写的 NCCL 后端成为所有 nccl 进程组的默认，并带飞行记录器在集合通信挂起时转储现场；新增基于 NIXL 的单边传输 API；FSDP2 与流水线并行获得更细的精度与通信控制；Apple Silicon 支持 FP8 与解码专用内核；AMD、Intel GPU 支持扩展。该版本含 3117 个提交、583 名贡献者。",
+      "background": "PyTorch 2.x 系列正从研究优先框架转向面向大规模生产训练与推理的硬件无关平台。2.14 预览了重写的 NCCL 后端（nccl2）并引入 NVGEMM，2.15 将其转为默认，同时把低精度解码优化扩展到 NVIDIA Blackwell 与 Apple Silicon。",
+      "why": "集群规模下单个 GPU 卡住即可拖停整个训练任务，飞行记录器让挂起时各 rank 的现场可事后分析，减少手工复现。重写后端默认化意味着升级即切换通信路径，回滚开关 TORCH_DIST_USE_NCCL2=0 成为关键运维手段。",
+      "next": "若重写后端在社区大规模训练中稳定，nccl-legacy 回滚路径可能在后续版本被移除；NIXL 单边传输目前标记为 API Unstable，其接口可能随反馈调整。以上推测基于发布博客的版本演进叙述，尚无独立验证。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "NCCL",
+          "gloss": "NVIDIA 的集合通信库，多 GPU 训练时负责卡间数据交换，PyTorch 在 NVIDIA 硬件上的分布式后端即基于它。"
+        },
+        {
+          "term": "FSDP2",
+          "gloss": "PyTorch 的全分片数据并行第二代实现，把模型参数、梯度、优化器状态切分到各 rank，以降低单卡显存占用。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "PyTorch Blog",
+          "url": "https://pytorch.org/blog/pytorch-2-15-release-blog/"
+        }
+      ]
+    },
+    {
+      "title": "蚂蚁百灵开源 Ling-3.1-flash-1019，面向个人智能体",
+      "what": "10月28日，蚂蚁集团旗下百灵大模型开源 Ling-3.1-flash-1019，并同步开源基础模型 Ling-3.1-flash-base。据量子位报道，新版本在 Artificial Analysis Intelligence Index v4.3.2 得44分，较上一版提升3分；AutomationBench-AA 从62%升至68%，CritPt 从18%升至26%。base 模型以 BF16 权重、MIT 许可证开放。",
+      "background": "该版本面向 Personal Agent 场景，与10月27日升级的灵光2.0相呼应——后者主打跨会话记忆、长程任务调度与独立云主机，可在用户退出对话后继续运行任务。这类持续办事的需求，要求底层模型能理解目标、调用工具并推进多步骤流程，百灵称其研发重点正从问答转向任务执行。",
+      "why": "个人智能体从演示走向真实事务，瓶颈往往不在单轮问答，而在长程任务中的状态保持与工具调用。百灵把基座与后训练模型一并开源，并给出多项 agent 类基准的分数，为开发者提供了可继续预训练、做领域适配的起点，也让这类能力的评测有了可对比的公开参照。",
+      "next": "若灵光2.0等应用持续产生真实任务反馈，百灵可能沿 base—后训练—应用对齐的循环继续迭代，视觉语言版本 Ling-3.1-flash-VL 据称后续对外发布。开源权重能否被社区用于垂直场景改造，取决于实际工具调用稳定性，目前仅有厂商自报的基准分数可供参考。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [],
+      "sources": [
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/10/505928.html"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 11,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 26,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 19,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
