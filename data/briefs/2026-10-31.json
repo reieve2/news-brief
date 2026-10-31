@@ -1,0 +1,447 @@
+{
+  "date": "2026-10-31",
+  "generated_at": "10:01",
+  "cards": [
+    {
+      "title": "苹果国行 Apple 智能接入阿里千问，11 月 4 日开放测试",
+      "what": "苹果宣布首批 Apple 智能功能将在中国推出，并与阿里巴巴合作，在 Siri、写作工具和视觉智能中接入千问。功能自 11 月 4 日起随 iOS 开发者 Beta 版开放测试，计划于 12 月随 iOS 27.3 正式面向中国用户推出。用户登录千问账户或通过「通过 Apple 登录」即可在系统内使用，无需跳转独立应用。",
+      "background": "Apple 智能自 2024 年发布以来，国行版本一直未实质性落地。此次是国行首次获得落地进展，苹果选择与阿里合作接入千问，以覆盖文本与图像理解能力。阿里巴巴此前曾确认，千问的集成范围将延伸至 iOS、iPadOS、macOS 和 visionOS，但其他平台需获得必要审批后才能推出。",
+      "why": "对苹果而言，这是其 AI 功能进入中国市场的关键一步，通过与本地模型厂商合作解决合规与能力供给问题。对阿里而言，千问进入 iOS 系统级入口，意味着其模型获得海量终端用户触达。对开发者来说，系统级 AI 能力的开放可能改变应用交互方式，但首批功能以基础高频场景为主，Siri AI 等下一代功能并未包含在内。",
+      "next": "若 11 月开发者 Beta 测试顺利，12 月 iOS 27.3 正式版将按计划推送。其他平台（iPadOS、macOS、visionOS）的推出时间取决于审批进度，存在延后可能。本次更新不包含 Siri AI 及 WWDC 2026 宣布的其他下一代功能，这些功能何时入华尚无时间表。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/020/389.htm"
+        }
+      ]
+    },
+    {
+      "title": "天数智芯天垓300实测吞吐达H200的1.05倍",
+      "what": "天数智芯媒体开放日披露第三方测试结果：在典型PD分离部署下，天垓300折算单卡端到端吞吐达H200的1.05倍；GLM-5.3的64K长上下文场景下MoE吞吐为H200的1.15倍；8K至128K长上下文Agent场景首字延迟较H200降低约10%至30%。测试覆盖四大主流模型、三类场景。",
+      "background": "国产AI芯片长期以峰值算力为宣传指标，但客户采购更看重每秒有效Token产出。天数智芯称已服务380多个客户、覆盖30多个行业，此次公开与H200的实机对比，意在把竞争焦点从参数表转向系统效率与交付能力。",
+      "why": "这是国产通用GPU首次公开宣称在高端推理负载上小幅领先H200，说明硬件层面已具备直接竞争的基础。但报道同时指出，从性能接近到客户采购、持续扩容，仍隔着系统效率、软件适配和稳定交付三道关。",
+      "next": "若第三方测试结果可被独立复现，国产GPU的比拼将转向软件栈与异构系统集成。天数智芯展示的AFD分离方案（GPU承担Prefill与Decode中的Attention、XPU承担FFN）称Decode延迟降低60%，但该数据来自其自身展示，实际部署效果待客户验证。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "PD分离部署",
+          "gloss": "把大模型推理拆成Prefill（处理输入、计算密集）和Decode（逐Token生成、访存密集）两个阶段，分别部署在不同实例上，以按各自负载特性配置资源。"
+        },
+        {
+          "term": "AFD分离",
+          "gloss": "在PD分离基础上进一步把Decode阶段的Attention与FFN拆开，由不同芯片分别承担，属于异构分工方案。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/chips/748GRHfg9VPRbp7x.html"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic 递交 S-1，营收与算力成本细节待解",
+      "what": "Anthropic 本周提交了超过 300 页的 IPO 招股书。文件显示，2026 年上半年营收 16.29 亿美元，收入成本 2.38 亿美元，毛利率约 85%；营收同比增速从第二季度约 144% 放缓至第三季度约 47%。文件称，几乎所有收入成本都与算力和基础设施相关。",
+      "background": "这是首家纯 AI 实验室以完整招股书形式公开财务基本面，被 CNBC 称为最受关注的 IPO 之一。分析师此前只能从融资和合作消息推测其收入结构，这份文件首次给出可比数据，但管理层未解释增速放缓的原因。",
+      "why": "85% 毛利率说明推理业务本身可能已具备软件级经济性，但增速骤降和算力承诺的用途不明，使未来利润率难以判断。七位联合创始人通过一股 Class F 股份掌握 50.1% 投票权，这种治理结构在上市公司中没有先例，可能影响定价。",
+      "next": "若招股书后续补充算力承诺中训练与推理的拆分，市场对利润率的预期可能重新调整；估值区间据报道在 1 万亿至 2 万亿美元之间，最终定价取决于路演反馈。前提是 Anthropic 在正式上市前披露更多分部数据。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "S-1",
+          "gloss": "美国公司申请 IPO 时向 SEC 提交的注册声明，包含业务、财务、风险因素和股权结构，是上市前最完整的公开披露文件。"
+        },
+        {
+          "term": "Class F 股份",
+          "gloss": "Anthropic 设置的特殊类别股票，一股即拥有相当于总投票权 50.1% 的效力，由七位联合创始人持有，用于在上市后保留控制权。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/10/30/anthropic-ipo-s1-revenue-compute.html"
+        }
+      ]
+    },
+    {
+      "title": "联发科确认第二家 AI ASIC 客户，2028 年量产",
+      "what": "联发科在 10 月 30 日财报电话会上确认获得第二家 AI ASIC 客户，官方未公布名称，项目预计 2028 年量产并贡献营收。联发科澄清该客户并非中国公司，否认了市场关于字节跳动的猜测。其首款数据中心 AI 加速器已于 2026 年 9 月开始小量出货，第一家客户为谷歌，合作围绕 TPU。",
+      "background": "联发科正从手机芯片向数据中心 AI 加速器扩张，首款产品刚进入小批量出货阶段，第二家客户被视为该业务能否规模化的关键。市场此前传闻字节跳动在洽谈采购联发科 AI 芯片，联发科此次主动澄清客户非中国公司，意在切断这一猜测。",
+      "why": "AI ASIC 是云厂商绕开通用 GPU 的定制算力路线，联发科若能在谷歌之外再拿下大客户，意味着定制芯片代工格局多了一个台积电之外的参与者。对从业者而言，这关系到未来几年 AI 加速器的供应来源和成本结构。",
+      "next": "若 2028 年量产节点不变，第二家客户的身份可能在后续财报或供应链披露中逐渐清晰；联发科称第二代 AI ASIC 研发进度符合计划，但多芯片设计中较大裸片仍需额外数周流片。前提是先进封装良率提升按计划推进，否则量产时间可能后移。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "ASIC",
+          "gloss": "专用集成电路，为特定任务定制的芯片。AI ASIC 指专为 AI 计算设计的加速器，相比通用 GPU 可针对特定模型做优化，但灵活性较低。"
+        },
+        {
+          "term": "流片",
+          "gloss": "把设计好的芯片版图送去晶圆厂试产，是芯片从设计走向量产的关键节点，流片完成意味着设计基本定型。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/020/400.htm"
+        }
+      ]
+    },
+    {
+      "title": "Google 首个太空数据中心卫星上线并运行 Gemma 4",
+      "what": "Google Suncatcher 项目的原型太空数据中心卫星已上线并与地面通信。该卫星搭载四块 TPU，发电功率最高 1 kW，但一次只能开启一块运行约 20 分钟。地面工程师本周发送首个提示词，让预载的 Google DeepMind Gemma 4 模型写一首关于太空的俳句，并报告卫星周边轨道条件。Google 发言人称卫星运行正常。",
+      "background": "该卫星本月早些时候与 100 多艘航天器搭乘 SpaceX Falcon 9 升空。经过约三周调试后进入工作状态。Google 此前在地面粒子加速器中测试过 TPU 的抗辐射能力，但需在真实太空环境中验证。Suncatcher 计划在 2027 年再发射两颗卫星，支持更高发电功率和星间光链路。",
+      "why": "这是 TPU 首次在轨执行推理任务，测试热应力和空间辐射对芯片的实际影响。辐射可能导致比特翻转并静默损坏数据，地面测试认为对推理影响有限、对训练影响更大，现在可在真实环境验证。若成功，将为在轨分布式推理网络铺路。",
+      "next": "Google 将继续测试 TPU 在热应力和辐射下的表现。若本颗卫星验证通过，按计划 2027 年发射两颗搭载先进芯片的卫星，演示更高功率和星间光链路。但这一路线依赖 Starship 实现完全快速复用；Suncatcher 研究者估计 SpaceX 需飞行 Starship 1800 次才能达到此前火箭的学习驱动降本效果，时间表存在不确定性。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "TPU",
+          "gloss": "Tensor Processing Unit，Google 自研的专用 AI 加速芯片，针对矩阵运算优化，主要用于模型推理和训练。"
+        },
+        {
+          "term": "比特翻转",
+          "gloss": "bit flip，指宇宙射线等高能粒子击中存储单元，使某个比特从 0 变成 1 或反之，可能导致数据静默损坏而不触发常规监控。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/"
+        }
+      ]
+    },
+    {
+      "title": "OpenAI 将遵守 robots.txt 中统一的 AI 训练偏好信号",
+      "what": "OpenAI 宣布将遵守 robots.txt 中一个由多方共用的信号，供网站运营方一次性向多个参与该机制的 AI 提供商表达内容是否可用于基础生成式 AI 训练。此前网站需针对各家爬虫分别维护规则。OpenAI 称将在未来数月内实现该信号，并另行公布实现细节；现有爬虫控制规则继续有效。",
+      "background": "该信号源自 IETF 的 AI Preferences 工作组，OpenAI 与其他参与方在同日共同宣布。此前网站只能逐个识别各家 AI 爬虫并分别写规则，维护成本高，这是推动统一信号的直接原因。",
+      "why": "如果多家提供商跟进，网站方对训练数据使用的表达成本会明显下降，robots.txt 可能成为 AI 训练偏好的事实标准入口。但该机制是自愿遵守，实际约束力取决于有多少提供商参与并执行。",
+      "next": "取决于其他 AI 提供商是否跟进遵守，以及 OpenAI 数月后公布的实现细节是否覆盖全部爬虫。若参与方有限，网站方仍需维护逐家规则，统一信号的效果会打折扣。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "robots.txt",
+          "gloss": "网站根目录下的纯文本文件，用规则告诉爬虫哪些路径可以抓取，是搜索引擎时代形成的自愿遵守惯例。"
+        },
+        {
+          "term": "IETF",
+          "gloss": "互联网工程任务组，负责制定互联网协议标准的国际组织，其工作组产出的规范通常以 RFC 形式发布。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "OpenAI News",
+          "url": "https://openai.com/index/helping-websites-express-ai-training-preferences"
+        }
+      ]
+    },
+    {
+      "title": "英伟达与MIT发布基于MiniMax H3的视频增强模型权重",
+      "what": "英伟达与麻省理工学院研究人员组成的 Efficient-Large-Model 团队在 Hugging Face 发布视频增强项目 Open-H3-Regenerate-2K 的模型权重，配套推理代码开放在 NVlabs/Sana 仓库。该方案基于 MiniMax H3，把低分辨率视频草稿重新生成为高分辨率视频，支持 2560×1440 输出，最高可做 3840×2160 的 4K 重生成。",
+      "background": "MiniMax H3 于今年 8 月开放权重，一个月内下载量超过 2400 万次，产生 300 多个公开衍生模型。官方 H3-Regenerate-2K 只通过 API 提供，社区缺少可自行部署的高分辨率重生成实现，此次发布填补了这一空缺。",
+      "why": "官方高分辨率重生成环节此前只能调用 API，现在有了开放权重版本，团队可在本地部署并继续微调。团队测试显示，在单张 B200 上约 5 秒视频的细化加 2K 解码耗时从 87.26 秒降至 22.45 秒；在 RefinerBench-150 上，UniPercept 平均分为 60.0，高于官方 API 的 53.4。",
+      "next": "若社区继续沿用 H3 的微调路径，可能出现更多面向 4K 和实时场景的衍生实现；官方 API 在运动平滑度上仍占优，两者是否会走向互补而非替代，取决于后续评测口径是否统一。以上为基于现有材料的推测。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [],
+      "sources": [
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/10/506743.html"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 11,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 26,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
