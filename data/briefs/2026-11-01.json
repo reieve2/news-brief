@@ -1,0 +1,423 @@
+{
+  "date": "2026-11-01",
+  "generated_at": "09:52",
+  "cards": [
+    {
+      "title": "DeepSeek 发布 Super-agent 双层架构设计",
+      "what": "DeepSeek Harness 团队发布《Super-agent 设计探索》一文，提出由 Router 层与 Worker 层组成的双层架构：Router 承接人类交互、维护全局上下文并分派任务，Worker 在隔离会话中并发执行。文章还介绍了事件驱动、投机执行、异步 ReAct Loop、Watchdog 等机制，并给出原型实现 dsh-superagent-prototype，明确其非正式产品。",
+      "background": "现有 Agent 多以单一 Session 为基本单位，Session 之间相互独立，用户并行推进多项工作需手动切换并维护上下文。DeepSeek 团队观察到一个人通常只能同时跟进 3 至 5 个活跃 Session，且本地设备离线后任务会停止，因此提出向持续在线、并行处理多任务的形态演进。",
+      "why": "该设计把瓶颈从模型单任务能力转向人的注意力与多任务调度，Router/Worker 分离、事件直通与异步工具调用都是可复用的工程思路。团队公布的初步实验显示，Super-agent 的任务完成时间 p50/p95 为 12.4/15.7 分钟，中性提示下单 Session 方案 p95 为 29.5 分钟，但实验基于合成负载与简化环境。",
+      "next": "若该路线在真实负载下成立，Agent 系统可能从单会话工具转向常驻的多任务协作者；但文章自列 Router 扩展性、长程记忆、A2A 通信与提示词注入等未解问题，原型能否产品化取决于这些问题的进展。需注意实验仅评估调度与协作，不衡量单任务执行能力。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "投机执行",
+          "gloss": "在用户明确请求前，根据环境信号在后台提前开展可能用得上的工作，例如收到会议邀约后先查日程冲突、准备回复草稿，确认需要后再交付结果，以减少等待时间。"
+        },
+        {
+          "term": "ReAct Loop",
+          "gloss": "Agent 交替进行推理与行动、根据工具返回结果继续下一步的循环。文中将其改为异步：耗时工具调用以 start()/stop() 形式在后台运行，前台对话可继续接收新消息。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/020/615.htm"
+        }
+      ]
+    },
+    {
+      "title": "阿里与 Apple 合作，千问接入 Apple 智能",
+      "what": "据报道，阿里巴巴与 Apple 达成合作，将千问集成至 Apple 智能。中国用户可在 Siri、系统写作工具和视觉智能中调用千问的文本与图像理解、内容生成能力。功能将于 11 月 4 日随 iOS 开发者 Beta 版开放测试，12 月随 iOS 27.3 正式版向中国用户推出。用户需主动授权，请求与回复不会被阿里用于模型训练。",
+      "background": "Apple 智能在中国市场需要本地大模型合作方，此前 Apple 已与阿里接触的消息多次传出。此次由阿里 CEO 吴泳铭公开表态确认，并给出明确的测试与发布节奏，说明双方已完成集成与合规安排。功能仅面向在中国购买支持 Apple 智能的 iPhone 或设备定位与 Apple 账户国家/地区均设为中国用户。",
+      "why": "这是 Apple 首次将第三方大模型深度嵌入系统级入口，Siri、写作工具和视觉智能的调用量级远超独立 App。对阿里而言，千问获得中国 iPhone 用户的默认分发渠道；对行业而言，系统级 AI 入口的竞争从模型能力转向与终端厂商的绑定，隐私授权与数据不用于训练成为合作的前提条件。",
+      "next": "若 11 月 Beta 测试顺利，12 月 iOS 27.3 正式版将按计划推送。后续需观察两点：一是 Apple 是否将合作扩展至更多地区或更多功能入口；二是其他终端厂商是否跟进类似系统级模型集成。前提是 Beta 阶段未出现合规或体验问题，且双方未披露排他性条款。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/industrynews/es0ZV9LsDEsG7QLE.html"
+        }
+      ]
+    },
+    {
+      "title": "OpenAI 将本轮融资目标从约 300 亿美元下调至最高 200 亿美元",
+      "what": "据 CNBC 确认及《金融时报》报道，OpenAI 将新一轮融资目标从最高约 300 亿美元下调至最高 200 亿美元，投后估值目标 1.25 万亿美元。该轮融资仍在进行、尚未关闭，具体数字可能变化；部分投资者选择缩减认购额度，阿联酋投资者与 Coatue 领投。OpenAI 未立即回应置评请求。",
+      "background": "此次下调发生在科技股整体抛售、投资者对 AI 支出回报审查趋严的一周。英特尔因营收指引疲软跌 25%，美光跌 5.5%，英伟达跌 4%；微软、Alphabet、亚马逊上周公布的资本开支数字或预测均低于分析师预期，Alphabet 因搜索收入不及预期经历最差交易日。",
+      "why": "这是 AI 基础设施投资热潮出现降温信号的一个具体案例：融资目标收缩与超大规模厂商资本开支预期下修同时发生，说明公开市场对 AI 投入回报的耐心正在收紧，可能影响后续 AI 公司的融资节奏与估值预期。",
+      "next": "若市场情绪不改善，该轮融资可能以低于 1.25 万亿美元估值或更小规模完成；但融资尚未关闭，最终条款仍可能变化。后续需观察其他 AI 公司融资是否跟随下调，以及超大规模厂商下一季度资本开支指引是否继续低于预期。",
+      "confidence": "高",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "投后估值",
+          "gloss": "post-money valuation，指融资完成后公司总价值，等于投资前估值加上本轮新注入资金，是衡量融资稀释后公司定价的口径。"
+        },
+        {
+          "term": "资本开支",
+          "gloss": "capex，企业用于购置或建设长期资产的支出，在 AI 语境下主要指数据中心、GPU 等基础设施投入。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/10/31/openai-fundraising-20-billion-valuation.html"
+        }
+      ]
+    },
+    {
+      "title": "五大科技巨头承诺 AI 基建投入超 3 万亿美元",
+      "what": "据彭博社报道，Alphabet、Meta、微软、亚马逊和甲骨文披露的租赁、建筑、能源及设备采购承诺合计超过 3 万亿美元。其中 Alphabet 合同承诺超 1 万亿美元，接近一年前的八倍；Meta 超 8000 亿美元，近半为尚未生效的数据中心租约，最长分 30 年支付。五家公司租赁付款承诺合计 1.3 万亿美元，其他采购承诺 1.9 万亿美元。",
+      "background": "这轮承诺规模上升，源于数据中心建设竞赛加剧，各公司披露的长期合同大幅增长。同时，Alphabet 和 Meta 因大举投资 AI 出现自由现金流由正转负，甲骨文是首家因投资 AI 数据中心而自由现金流为负的大型科技公司，并预计到 2028 年恢复正值。五家公司的支出并非全部用于数据中心，披露口径也不一致，因此难以直接比较。",
+      "why": "这些数字反映 AI 基础设施投入已从年度资本开支延伸到跨越数十年的合同承诺，把未来现金流锁定在数据中心上。甲骨文的负自由现金流和 Alphabet、Meta 的现金流变化，说明投入正在挤压当期财务弹性。这些承诺能否收回投资，是当前商界争论的核心，也影响后续融资和建设节奏。",
+      "next": "若 AI 需求持续增长，这些长期合同可能继续扩大，供应商融资和客户预付款等安排或更常见；若回报不及预期，部分项目可能延期或重新谈判。前提是各公司披露口径保持一致且需求不出现明显回落。甲骨文能否如预期在 2028 年恢复正自由现金流，是观察这轮投入可持续性的一个节点。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "自由现金流",
+          "gloss": "企业经营活动产生的现金流减去资本开支后的余额，反映公司可自由支配的现金。为负意味着当期投入超过经营现金流入，需要外部融资或动用现金储备。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/020/632.htm"
+        }
+      ]
+    },
+    {
+      "title": "Google 披露 PageBreak 安全智能体，已发现 500+ XSS 漏洞",
+      "what": "据 Google 发表的论文，其 AI 安全智能体 PageBreak 自今年 1 月全面运行以来，在自家 Web 应用中发现了 500 多个 XSS 漏洞。该智能体用 Gemini 模型自主调查潜在漏洞，但只有在确定性验证器于运行环境中成功复现漏洞后才上报，据称误报率接近零。Google 未提供对这 500 多个漏洞的独立验证。",
+      "background": "AI 生成的漏洞报告往往看似可信但实际有误，产品团队需逐一核查，负担很重。PageBreak 因此把「模型提假设、代码验证器复现」作为设计前提，验证器由安全工程师编写、位于智能体循环之外。Google 的 monorepo 代码可见性、连接实时 HTTP 流量与源码的安全信号，以及带认证访问的扫描基础设施，为这套闭环提供了条件。",
+      "why": "它给出了一种可复用的 AI 安全智能体工程范式：用确定性验证把模型的发散输出收敛为高置信度报告，避免误报淹没产品团队。同时 Google 承认验证器覆盖不足会带来漏报风险，这提示「近零误报」与「低漏报」之间存在取舍，评估此类系统时不能只看误报率。",
+      "next": "Google 称正将 PageBreak 与 CodeMender 等智能体安全项目集成，长期目标是让产品团队只负责验证 AI 生成的修复。若集成顺利，漏洞发现到修复的链路可能进一步自动化；但验证器覆盖范围能否扩展到更多漏洞类型、以及外部独立验证能否出现，仍是这套方案可信度的关键前提。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "XSS",
+          "gloss": "跨站脚本（Cross-Site Scripting），一类 Web 漏洞：攻击者把恶意脚本注入页面，在其他用户浏览器中执行，从而窃取会话或冒充操作。"
+        },
+        {
+          "term": "确定性验证器",
+          "gloss": "由安全工程师手写的普通代码，不依赖模型判断，而是在运行环境中用真实 payload 复现漏洞；只有复现成功才确认漏洞存在，以此压低误报。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "InfoQ 英文",
+          "url": "https://www.infoq.com/news/2026/10/google-pagebreak-security-agent/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global"
+        }
+      ]
+    },
+    {
+      "title": "Cloudflare 后量子 GeoKey Manager 进入封闭测试，弃用属性加密",
+      "what": "Cloudflare 将 GeoKey Manager 的后量子重建版本投入封闭测试，用 ML-KEM-768 与 X25519 混合方案保护地理围栏密钥，取代 2022 年起使用的属性基加密。测试于 10 月 23 日面向现有 Data Localization Suite 客户开放，正式可用计划在 2027 年第一季度。密钥仅存于通过验证的区域服务器的内核内存中，任何检查失败都会拒绝请求。",
+      "background": "GeoKey Manager 于 2017 年推出用于 TLS 密钥，2022 年转向密文策略属性基加密。Cloudflare 称放弃该方案有两个原因：没有生产可用的后量子变体，且客户不需要它设计时支持的大量区域。此次重建同时应对数据主权规则和“先收集、后解密”攻击。",
+      "why": "这是 Cloudflare 后量子路线的一部分，此前已在 IPsec 服务采用混合 ML-KEM，并公布了量子安全 CA 计划。该设计采用 fail-closed（失败即拒绝），在区域规模下可能因密钥供应或轮换故障导致区域性服务中断，这是从业者关注的核心权衡。",
+      "next": "封闭测试将检验客户是否接受“检查失败即拒绝服务”在区域规模下的表现。若测试中暴露出供应或轮换的可用性问题，Cloudflare 可能在正式可用前调整失败策略；但公司称 fail-closed 是刻意设计，短期内改变的可能性较低。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "ML-KEM-768",
+          "gloss": "一种后量子密钥封装机制，基于模格密码学，被 NIST 标准化为 FIPS 203，用于抵抗量子计算机攻击。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "InfoQ 英文",
+          "url": "https://www.infoq.com/news/2026/10/cf-pq-geokey-manager/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 26,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 19,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
