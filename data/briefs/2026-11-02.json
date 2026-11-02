@@ -1,0 +1,436 @@
+{
+  "date": "2026-11-02",
+  "generated_at": "10:06",
+  "cards": [
+    {
+      "title": "美团龙猫发布 LongCat-2.5 原生多模态模型",
+      "what": "美团龙猫发布面向长程智能体任务的 LongCat-2.5，总参数 1.6 万亿，每 token 激活约 480 亿。据官方介绍，模型在 LongCat-2.0 基础上强化原生视觉理解与智能体编程，训练中加入长程轨迹数据和大规模长程强化学习，并将视觉信号表示为多层级离散 token，与文本统一处理。",
+      "background": "该模型延续龙猫系列迭代，官方称其训练链路围绕数据合成、环境构建与跨 Harness 混合训练扩展，并把真实 Agent 失败轨迹转为可验证训练任务。基础设施上，官方称优化了国产算力上的长上下文训练与 W4A4 推理，以支撑长程 RL。",
+      "why": "长程智能体任务要求模型在复杂代码库和完整项目构建中端到端工作，是当前模型能力竞争的一个方向。LongCat-2.5 以 1.6T 总参数、约 480 亿激活的稀疏结构切入，并强调原生视觉与编程结合，若评测属实，将加剧这一细分方向的竞争。",
+      "next": "官方称 Github、HuggingFace 即将上线，在线体验与 API 已开放。若权重和评测细节随后公开，第三方可验证其长程任务表现；否则外界只能依赖官方口径。是否开源权重目前材料未明确，需等待后续披露。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "W4A4",
+          "gloss": "一种低精度推理量化方案，权重和激活值都用 4 位表示，可降低显存占用和算力开销，但通常需要额外处理数值稳定性。"
+        },
+        {
+          "term": "Harness",
+          "gloss": "指智能体运行框架，负责把模型输出转化为工具调用、环境交互和任务执行，跨 Harness 训练即让模型适配多种此类框架。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/020/873.htm"
+        }
+      ]
+    },
+    {
+      "title": "DeepSeek 公布 Super-agent 架构，内部实例已持续运行",
+      "what": "10 月 31 日晚，DeepSeek Harness 团队在官方公众号发文《Super-agent 设计探索：迈向更自主的 Agent 系统》，提出让 Agent 脱离单次手动会话绑定、跨会话保持上下文并并行推进多项任务。团队称通过双层架构、事件驱动、异步多信道交互、存算分离与外部 Watchdog 突破限制，内部实例已参与问题复现与修复、代码审查响应及自身迭代。",
+      "background": "DeepSeek 认为模型能力提升催生个人助手集中涌现，但现有 Agent 的多任务上限取决于人的注意力，难以支撑多任务与团队协作规模。该文由上海证券报等转载，属团队自述的技术设计探索，未披露基准数据或第三方复现。",
+      "why": "把 Agent 从「一次会话一个任务」改为常驻、并行的连续实体，是当前 Agent 工程的主要瓶颈之一；存算分离与外部 Watchdog 等思路若成立，会影响上下文管理与调度层的设计取向。但材料只有团队自述，效果尚无外部验证。",
+      "next": "若该架构细节后续公开，可能出现围绕会话状态持久化与多任务调度的复现与对比评测；内部实例的实际产出效率是否披露，将决定外界能否判断其价值。以上推测基于团队继续发布技术细节的前提。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "Watchdog",
+          "gloss": "外部看门狗机制：独立于主流程的监控组件，检测到任务卡死或异常时触发重启或干预，避免单个会话故障拖垮整个系统。"
+        },
+        {
+          "term": "存算分离",
+          "gloss": "把会话状态与上下文的存储同执行计算拆开，计算实例可替换、可扩展，状态集中保存以便跨会话恢复和多个任务并行。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/373243"
+        }
+      ]
+    },
+    {
+      "title": "OpenAI、谷歌、微软、Anthropic 将采用统一的 AI 抓取退出标准",
+      "what": "四家公司宣布将采用一项新标准，让内容发布方通过 robots.txt 一次性向多家 AI 企业声明是否允许抓取自家内容用于模型训练，无需逐家单独设置。该标准由 Anthropic 技术负责人 Kevin Kelley 向 IETF 提出。Anthropic 已率先采纳，OpenAI 计划未来几个月落实，谷歌和微软预计明年支持；Meta 表示支持通用信号但未给出落地计划。",
+      "background": "robots.txt 原本用于告知爬虫哪些内容可抓取，适用搜索索引、网页归档和 AI 训练。目前网站必须向每家 AI 企业分别声明训练偏好，而 AI 爬虫持续抓取内容用于训练，令发布方难以逐一管理。统一信号试图把这一分散流程收敛到既有协议里。",
+      "why": "如果主要模型厂商都执行同一信号，发布方对训练数据使用的控制将从逐家谈判变成一次声明，降低合规成本；对 AI 公司而言，这也是在监管压力下用行业自律换取规则确定性的一次尝试。但 Meta 等未承诺落地，实际约束力仍取决于采纳范围。",
+      "next": "接下来要看 IETF 是否将该提案推进为正式标准，以及 OpenAI、谷歌、微软能否按各自时间表落地。若采纳方有限或爬虫不遵守信号，发布方可能转向技术封禁或法律途径；若覆盖面扩大，robots.txt 有望成为训练数据授权的默认入口。以上判断依赖各公司兑现公开承诺。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "robots.txt",
+          "gloss": "网站根目录下的纯文本文件，用协议约定告知网络爬虫哪些路径可以抓取、哪些禁止，是搜索引擎和爬虫长期遵循的事实标准。"
+        },
+        {
+          "term": "IETF",
+          "gloss": "互联网工程任务组，负责制定和推广互联网基础协议标准的国际组织，HTTP、DNS 等协议规范均出自其手。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/020/837.htm"
+        }
+      ]
+    },
+    {
+      "title": "AWS 称大块预留云容量已售罄至 2027 年",
+      "what": "Amazon CEO Andy Jassy 在 a16z 播客中表示，AWS 的大块承诺云容量到 2027 年基本售罄，2028 年已有相当部分被分配，公司仍为 On Demand、EC2 和 Bedrock 保留余量。他称 2026 年容量已用完，并称今年约 2200 亿美元资本支出还可继续加码。",
+      "background": "AI 训练与推理需求推高 GPU 及通用算力预订，AWS 通过 On-Demand Capacity Reservations 和 Capacity Blocks for ML 出售容量保障，后者今年 1 月已全线涨价约 15%。Reddit 与分析师讨论显示，普通 EC2 按需实例近期也出现获取困难，其他云厂商同样有容量约束。",
+      "why": "若大块容量被长期锁定，中小团队按需获取算力会更难，可能推高短期价格并促使企业转向预留实例，反而加剧容量囤积。同时，2200 亿美元是总资本支出而非 AI 专项，Jassy 的表态也需与剩余履约义务数据对照才能判断真实锁定程度。",
+      "next": "Amazon 第三季度财报的剩余履约义务披露将显示承诺容量的合同收入占比，可用来验证「售罄」说法。若按需实例紧张持续，企业可能更多采用预留实例或多云分散，但分析师 David Linthicum 认为报道夸大了售罄程度，后续争论可能集中在预留块与日常可分配容量之间的区别。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "Capacity Blocks for ML",
+          "gloss": "AWS 面向机器学习负载的容量预留产品，客户在指定可用区按固定时间窗口预订 GPU 实例，用于有明确起止时间的训练任务。"
+        },
+        {
+          "term": "剩余履约义务",
+          "gloss": "财报中已签约但尚未确认收入的合同金额，常用来衡量云厂商已锁定订单的规模。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "InfoQ 英文",
+          "url": "https://www.infoq.com/news/2026/11/aws-capacity-sold-out/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global"
+        }
+      ]
+    },
+    {
+      "title": "Pika 基于 MiniMax H3 开源 H3 Flex，六步生成音视频",
+      "what": "Pika 发布 MiniMax H3 衍生模型 Pika H3 Flex，开放适配器权重与推理代码。模型通过六步去噪联合生成画面与同步立体声音频，原生支持 480P、768P，可生成约 5 至 15 秒视频，支持文本、首尾帧和多模态参考输入。发布含两套 LoRA 适配器，并提供 ComfyUI 工作流与 Hugging Face Diffusers 接入方式。",
+      "background": "MiniMax H3 于今年 8 月开源，据雷峰网报道，一个月内下载量超过 2400 万次，产生超过 300 个公开衍生模型。此前已有 Running Hub、fal、FastVideo、英伟达与 MIT 等围绕 H3 做场景化后训练与推理优化，Pika 此次是在这一衍生模型潮中加入音视频联合生成方向。",
+      "why": "把教师模型 50 步去噪蒸馏到 6 步，并保持权重与采样方案不变，意味着开源音视频生成在消费级或单机多卡环境下的可用性提升。Pika 公布的对比评测称 H3 Flex 在五项视觉和音频质量指标上得分最高，并在 DesignArena 文生视频榜单排第八，为榜单中排名最高的开源视频模型。",
+      "next": "如果六步蒸馏的质量在第三方复现中成立，围绕 H3 的衍生模型可能进一步向少步数、音视频同步方向集中；Pika 的 API 高分辨率增强与音频分轨则可能成为其商业化落点。但上述评测为 Pika 自行公布，第三方独立验证结果尚未出现，实际表现仍需观察。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "LoRA",
+          "gloss": "低秩适配（Low-Rank Adaptation），在冻结基座模型权重的前提下插入少量可训练参数，用较低成本把模型调向特定任务或风格。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/industrynews/MK1z0js4sqcp1xca.html"
+        }
+      ]
+    },
+    {
+      "title": "币安热钱包被盗63亿美元后恢复提现",
+      "what": "币安称其热钱包被盗约63亿美元代币资产，已恢复比特币、以太坊和BNB智能链的提现，并称已覆盖90%受影响资产，其中前十大代币100%有背书。FBI认定朝鲜对此负责，称攻击者将资产换成以太坊准备进一步洗钱。币安动用用户安全资产基金、部分期货保险基金和公司金库补充资产。",
+      "background": "这是有记录以来最大规模的加密货币盗窃案。币安最初称可能涉及一名DevOps工程师的笔记本电脑被入侵，但联合CEO Richard Teng后来表示攻击过程更复杂，并非单一工程师权限被滥用。被盗资产中剩余10%为流动性较低的小市值代币，补足需要更长时间。",
+      "why": "事件暴露了中心化交易所热钱包和内部运维权限的集中风险。币安称将自行承担财务影响而非用户，但90%覆盖指的是资产背书恢复，不等于从攻击者手中追回90%资金。朝鲜被指参与，也使案件涉及国家背景的网络犯罪与洗钱链条。",
+      "next": "币安表示将继续通过市场和场外渠道买入剩余代币，目标覆盖率达到100%。若安全检查和调查进展顺利，提现服务可能逐步全面恢复；但攻击具体路径尚未查明，后续是否出现挤兑或监管追问，取决于调查披露和用户信心。",
+      "confidence": "高",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "热钱包",
+          "gloss": "保持联网、便于频繁收发的加密货币钱包，私钥在线管理，便利性高但攻击面大于离线冷钱包。"
+        },
+        {
+          "term": "DevOps",
+          "gloss": "开发与运维协作的工程实践，强调自动化部署和基础设施管理；此处指相关工程师的笔记本电脑可能被入侵。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/10/31/binance-hack-asset-coverage-withdrawals.html"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 14,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 26,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 17,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
