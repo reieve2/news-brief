@@ -1,0 +1,439 @@
+{
+  "date": "2026-11-03",
+  "generated_at": "11:50",
+  "cards": [
+    {
+      "title": "美团发布LongCat-2.5，全程国产算力训练",
+      "what": "美团11月2日发布新一代大模型LongCat-2.5，据雷峰网报道，该模型面向长程智能体任务，为原生多模态模型，总参数1.6万亿，全程在国产算力上训练，被称为目前国产算力上完成的最大训练任务。",
+      "background": "LongCat-2.5延续了LongCat系列此前的研发方向。报道以「国芯国模」概括其定位，即在国产芯片上训练国产模型，这与国内推动算力自主的产业背景相关。",
+      "why": "1.6万亿参数规模的训练全程跑在国产算力上，若属实，说明国产芯片在大规模训练任务上的可用性又向前一步；对做智能体与多模态方向的团队，也提供了一个新的国产基座选项。",
+      "next": "接下来值得关注的是模型权重是否开放、评测成绩与推理成本。上述判断依赖美团后续公布技术细节；目前仅有单一来源报道，具体训练规模与芯片型号尚未披露。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "长程智能体任务",
+          "gloss": "指需要模型连续多步规划、调用工具并维持状态的任务，对上下文长度和稳定性要求较高。"
+        },
+        {
+          "term": "原生多模态",
+          "gloss": "指模型从训练阶段就同时处理文本、图像等多种模态，而非在语言模型上后期拼接视觉模块。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/industrynews/mUPVr3RF0MHNmn3t.html"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic 修订 S-1：Q3 营收 170 亿美元，采购承诺 8954 亿美元",
+      "what": "Anthropic 向 SEC 提交修订版 S-1，补充第三季度财务数据。截至 9 月 30 日的九个月营收 332.4 亿美元，同比增长约 1200%；同期净亏损 1040 亿美元，主要来自可转换票据和衍生负债的公允价值变动。第三季度营收约 170 亿美元，同比增长约 1127%，但环比增速从第二季度的 144% 降至约 47%。",
+      "background": "Anthropic 上周公布招股书，但初版只含上半年财务数据，此次修订补齐第三季度。公司正筹备上市路演，而华尔街对 AI 基建的债务融资与超大规模厂商现金流承压的担忧正在升温，微软、Alphabet、亚马逊上周财报加剧了这种情绪。",
+      "why": "数据同时显示高增长与明显减速：同比仍在三位数增长，环比增速却从 144% 掉到 47%。8954 亿美元采购与租赁承诺几乎全部指向算力和基础设施，意味着未来数年现金流被长期锁定，这将成为路演中投资者定价的核心变量。",
+      "next": "若利率维持高位、超大规模厂商现金流继续承压，Anthropic 依赖的算力交付节奏可能被推迟，其收入爬坡与承诺支出之间的缺口会被放大。前提是招股书披露的承诺结构与当前融资环境不变；OpenAI 已暗示 2027 年上市，两者的时间差也会影响市场对 Anthropic 的估值参照。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "S-1",
+          "gloss": "美国公司首次公开发行时向 SEC 提交的注册说明书，包含业务、财务和风险因素等披露内容；修订版用于补充或更新其中的数据。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html"
+        }
+      ]
+    },
+    {
+      "title": "Marvell 以 1150 亿美元全股票收购 Lumentum",
+      "what": "Marvell 已签署协议，以全股票方式收购光芯片与网络设备商 Lumentum，企业价值 1150 亿美元（含债务），股权价值约 800 亿美元。每股 Lumentum 换 4.5 股 Marvell 普通股。交易预计在 2028 年上半年完成，尚需双方股东及监管批准。",
+      "background": "两家公司有共同战略投资者 Nvidia：2026 年 3 月 Nvidia 向 Lumentum 投资 20 亿美元支持激光元件研发与扩产，同月又向 Marvell 投资 20 亿美元强化其光网络与芯片组合。Marvell 称收购后将成 AI 连接领域领导者，产品覆盖芯片到数据中心。",
+      "why": "这是科技史上规模最大的并购之一，超过微软 2022 年收购动视暴雪的 687 亿美元和戴尔 2016 年收购 EMC 的 670 亿美元。若完成，Marvell 将从定制芯片设计延伸到光互连与网络设备，改变 AI 数据中心供应链的竞争格局。",
+      "next": "交易需通过股东投票和反垄断审查，预计 2028 年上半年才能完成，期间监管机构可能要求附加条件。鉴于 Nvidia 同时持股两家公司，审查方可能关注其对 AI 连接供应链的影响。若获批，Marvell 将直接与博通等光互连厂商竞争。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/02/in-one-of-the-largest-deals-in-tech-history-marvell-buys-lumentum-for-115b/"
+        }
+      ]
+    },
+    {
+      "title": "MIT 提出权重空间编程：GPT-6 Astra 直接改 Qwen3.5-0.8B 权重",
+      "what": "MIT CSAIL 研究者提出「权重空间编程」：让 GPT-6 Astra 在 Python 环境中直接读取并修改 Qwen3.5-0.8B 的权重，仅改动约 0.016%（131072 个）参数，未用梯度下降或反向传播。据称 MATH-500 成绩从 7.9% 升至 48.1%，GSM8K 从 13.8% 升至 67.1%，IFEval 从 21.0% 升至 62.3%。",
+      "background": "研究由 Rikiya Takehi 等四人完成，Takehi 于 11 月 2 日在博客发布。团队发现 Qwen3.5-0.8B 答数学题时反复生成相同内容，96 次测试中 85 次耗尽 32768 Token 上限；Astra 定位到第 15、19 层 MLP 的重复方向并削弱该信号。",
+      "why": "若结果可复现，意味着大模型可绕过训练流程直接改写另一个网络的权重，把「调参」变成可定位、可解释的编辑操作。对照实验中 Gemma 3 270M 提升有限，说明该方法主要消除已有能力的障碍，而非凭空创造能力。",
+      "next": "前提是结果经独立复现：后续可能有人把该方法用于更多模型和任务，检验其是否只在「推理循环」这类明确故障上有效；也可能引发对模型权重被外部模型直接篡改的安全讨论。目前仅为单一团队博客发布，尚无同行评审信息。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "MLP",
+          "gloss": "多层感知机，Transformer 中位于注意力层之后的前馈网络，通常占模型参数的大部分，常被认为存储事实性知识。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/021/337.htm"
+        }
+      ]
+    },
+    {
+      "title": "韩国2027年预算拟投4.7万亿韩元自研主权AI模型",
+      "what": "韩国总统李在明在国会公布2027年预算案，总支出提高12.8%至820.9万亿韩元，其中21.3万亿韩元投向半导体、物理AI和AI数据中心，接近2026年水平的两倍；另拨4.7万亿韩元开发其称为「世界最高性能」的主权AI模型，并计划培养2000名半导体设计专才。",
+      "background": "AI算力需求推高半导体出口，韩国10月出口同比增长93.7%至1153亿美元，前10个月累计9300亿美元首破9000亿；IMF预计其2026年经济增长3.3%。李在明称新增债券仅用于偿还旧债，政府债务净增「几乎为零」。",
+      "why": "这是韩国迄今最大规模预算，把主权AI模型与半导体、物理AI、数据中心打包投资，意味着在中美之外，出口导向型经济体正用财政手段争夺AI全栈能力；其半导体出口景气能否支撑这笔支出，是预算落地的关键变量。",
+      "next": "若国会审议通过，资金将流向主权模型研发、AI数据中心与校企「合同系」人才培养；但「世界最高性能」缺乏可验证指标，实际效果取决于模型评测结果与半导体出口能否延续增势。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "主权AI模型",
+          "gloss": "指一国政府主导、以本国语言和数据训练、强调自主可控的大模型，区别于依赖外国公司的通用模型。"
+        },
+        {
+          "term": "物理AI",
+          "gloss": "指让AI系统在机器人、自动驾驶等物理世界中感知和行动的技术方向，区别于纯软件形态的模型。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/02/south-korea-ai-spending-budget.html"
+        }
+      ]
+    },
+    {
+      "title": "FuriosaAI 融资 6.2 亿美元，估值约 29 亿美元",
+      "what": "据 Data Center Dynamics 报道，韩国芯片初创公司 FuriosaAI 完成 6.2 亿美元融资，投后估值约 29 亿美元。公司表示，这笔资金将用于加速其第三代 AI 推理芯片的开发。报道未披露本轮投资方名单与具体条款。",
+      "background": "FuriosaAI 主攻 AI 推理芯片，与训练芯片相比，推理芯片更强调能效与部署成本。随着推理负载在数据中心占比上升，一批专注推理的初创公司获得资本关注；该公司称新资金将直接投入第三代产品研发。",
+      "why": "在 Nvidia 主导的 AI 芯片格局下，单笔 6.2 亿美元融资说明资本仍愿意押注推理专用芯片这一细分方向。对从业者而言，这关系到未来推理算力是否有 Nvidia 之外的可行替代供给。",
+      "next": "若资金按计划投入，第三代推理芯片的流片与量产时间表可能成为下一个观察点。但报道未给出产品时间表，融资能否转化为可部署的芯片和客户订单仍待验证。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [],
+      "sources": [
+        {
+          "name": "Data Center Dynamics",
+          "url": "https://www.datacenterdynamics.com/en/news/furiosaai-raises-620m-at-a-post-money-valuation-of-approximately-29bn/"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic 称可能即将达到递归自我改进门槛",
+      "what": "Anthropic 在修订版 S-1A 的风险因素中称，其内部估计与对未来模型的预期显示，公司可能「即将」满足其 Responsible Scaling Policy 对「由 AI 导致的进展急剧加速」的定义。但公司同时表示，目前没有任何模型被认定越过该门槛，并承诺在可预见的未来让人类留在研发流程中。",
+      "background": "RSI（递归自我改进）今年成为 AI 圈热词，此前多被视为难以定义和验证的目标。Anthropic 此次在 IPO 申报文件中主动披露这一判断，并承认过去曾在使用 AI 加速研发时、事后才识别出能力跃升。S-1 兼具披露与营销功能，这一说法也受到质疑。",
+      "why": "若公司自认接近 RSI，意味着能力提升速度可能快于安全、对齐与验证措施的跟进速度。Anthropic 已承认过去未能及时识别能力加速，这使「人类监督能否跟上」从理论问题变成需要治理安排的现实问题。",
+      "next": "Anthropic 表示正考虑更新 Responsible Scaling Policy，以保持人类对前沿模型开发的控制。若其后续模型被正式认定越过门槛，可能触发更严格的内部暂停或外部监管讨论；但前提是该定义能被清晰量化，且申报文件中的表述经得起独立验证。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "RSI",
+          "gloss": "递归自我改进（recursive self-improvement），指 AI 系统能有效参与改进下一代自身，从而形成能力加速循环。"
+        },
+        {
+          "term": "Responsible Scaling Policy",
+          "gloss": "Anthropic 制定的负责任扩展政策，为不同能力等级的前沿模型设定安全评估与部署门槛。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 17,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 26,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
