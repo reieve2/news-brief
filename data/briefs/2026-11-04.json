@@ -1,0 +1,431 @@
+{
+  "date": "2026-11-04",
+  "generated_at": "10:54",
+  "cards": [
+    {
+      "title": "DeepSeek 完成 159 亿美元融资，10 月全球风投达 590 亿美元",
+      "what": "据 Crunchbase 数据，2026 年 10 月全球风险投资总额 590 亿美元，同比增长 45%。其中中国公司 DeepSeek 完成 159 亿美元融资，估值 900 亿美元，为中国科技公司史上最大私募融资，也是全球最大创业融资交易。同月美国和中国公司分别融资 280 亿和 206 亿美元。",
+      "background": "这是 Crunchbase 的月度统计，数据截至 11 月 2 日。10 月融资高度集中：7 家公司合计占全球融资额 40% 以上，AI 驱动公司占 66%。DeepSeek 此轮融资使其成为估值第三高的私营前沿实验室，仅次于 Anthropic 和 OpenAI。",
+      "why": "单笔 159 亿美元融资刷新纪录，显示资本正加速向少数前沿 AI 实验室集中。中国单月融资额自 2018 年 6 月以来首次突破 200 亿美元，可能意味着中国 AI 融资环境回暖。但 40% 的融资集中于 7 家公司，也引发对这轮周期广度的担忧。",
+      "next": "Crunchbase 称 Anthropic 计划 11 月 IPO，可能成为史上最大 IPO。若成真，可能进一步吸走公开市场资金，并检验投资者对前沿 AI 实验室的估值接受度。但该信息来自单一来源，具体规模和时间仍待确认。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [],
+      "sources": [
+        {
+          "name": "Crunchbase News",
+          "url": "https://news.crunchbase.com/venture/october-2026-global-startup-funding-strong-china-deepseek/"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic 更新招股书：Q3 营收 169.6 亿美元，算力承诺 8954 亿美元",
+      "what": "11 月 2 日，Anthropic 向 SEC 提交更新后的 S-1 招股文件，首次披露截至 9 月底的第三季度数据：营收 169.6 亿美元，环比增长 47%，增速低于第二季度的 144%；当季营业亏损 5.67 亿美元，而第二季度曾实现 9.74 亿美元营业利润。文件还披露约 8954 亿美元的 AI 基础设施支出承诺，涉及亚马逊、谷歌等合作伙伴。",
+      "background": "Anthropic 正在推进 IPO，S-1 更新是上市流程中的例行补充披露，因此首次公开季度财务细节。营收增速从 144% 降至 47%、利润由正转负，同时叠加近 9000 亿美元的长期算力承诺，说明公司在扩张期把大量资金锁定在上游基础设施上。",
+      "why": "这是少数几家头部模型公司首次把收入、亏损与算力承诺放在同一份公开文件里，为外界提供了衡量「模型公司真实单位经济」的样本。8954 亿美元的承诺规模远超当期营收，意味着未来数年现金流被长期合约绑定，也解释了行业对算力融资渠道的依赖。",
+      "next": "若 IPO 推进，后续招股书可能继续补充第四季度数据与算力承诺的付款节奏。公司已警告部分算力供应依赖第三方融资，若相关资金出现问题，可能影响交付时间和成本；这一风险是否在路演中被追问，将影响定价。前提是上市进程不因市场环境推迟。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "S-1",
+          "gloss": "美国公司申请 IPO 时向 SEC 提交的注册声明文件，包含业务、财务、风险因素等披露内容，后续可用修正案补充新数据。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/373358"
+        }
+      ]
+    },
+    {
+      "title": "Meta 拟发债至多 250 亿美元，为 AI 支出融资",
+      "what": "据 CNBC 报道，Meta 于 11 月 3 日启动债券发行，目标融资 200 亿至 250 亿美元，其中约三分之二为美元、三分之一为欧元，最终定价预计当日下午公布。Meta 拒绝置评。此前标普将该公司评级展望从 AA- 稳定下调至 AA- 负面，理由是资本开支存在不确定性且自由现金流为负。",
+      "background": "Meta 上月财报显示，全年资本开支指引为 1350 亿至 1450 亿美元，较原区间下限上调 50 亿美元，当季自由现金流为 -21.2 亿美元。公司此前已在 4 月发债 250 亿美元，并表示计划融资 950 亿美元用于 AI 计划，其中先通过公开增发募资 350 亿美元，再通过 at-the-market 计划募资 600 亿美元。",
+      "why": "大型科技公司正把 AI 基建支出从经营现金流转向债务和股权融资，Meta 的负自由现金流与评级展望下调说明这一模式开始影响其信用状况。若更多公司跟进，AI 资本开支的融资成本将成为观察这轮投入能否持续的关键变量。",
+      "next": "若本次定价顺利，Meta 可能继续按 950 亿美元融资计划推进后续股权发行；若评级机构进一步下调评级，其发债成本或将上升。前提是 AI 资本开支指引不再上调、自由现金流未转正，这两点目前均无来源支持。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "at-the-market",
+          "gloss": "一种股权融资方式，公司按当前市价在二级市场分批增发股票，而非一次性定价大宗发行，可灵活控制发行节奏和规模。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/03/meta-bond-sale-ai-funding.html"
+        }
+      ]
+    },
+    {
+      "title": "AMD 三季度数据中心收入近乎翻倍，股价盘后涨 8%",
+      "what": "AMD 公布 2026 年第三季度财报：营收 133.8 亿美元，同比增长 45%，高于 LSEG 预期的 130.9 亿美元；调整后每股收益 2.09 美元，高于预期的 1.95 美元。数据中心业务收入同比近乎翻倍，占总营收 64%，一年前为 47%。财报发布后股价盘后上涨 8%。",
+      "background": "AMD 今年股价累计上涨约 125%，但财报前连续三天下跌，市场普遍担心 AI 基础设施支出过度。此前 Intel 也披露数据中心收入增长 78%，却因指引疲弱和交付能力担忧单日暴跌 29%，使投资者对芯片股预期分化。",
+      "why": "数据中心已占 AMD 营收近三分之二，收入结构从 PC 转向 AI 基础设施。CEO 苏姿丰称 agentic AI 应用带动服务器 CPU 需求回升，AMD 在 GPU 之外多了一条增长线，也意味着其业绩与 AI 资本开支周期绑定更深。",
+      "next": "AMD 预计第四季度营收约 170 亿美元，高于分析师平均预期的 162 亿美元，并称已锁定晶圆、基板、先进封装和内存供应。若这些供应落实、agentic AI 部署继续扩大，2027 年服务器收入翻倍的目标有可能实现；反之，AI 支出放缓的担忧会先反映在估值上。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "agentic AI",
+          "gloss": "能自主规划并连续执行多步任务的 AI 应用形态，区别于单轮问答；这类应用长时间运行在虚拟机上，因此带动服务器 CPU 需求。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/03/amd-amd-q3-earnings-report-2026-.html"
+        }
+      ]
+    },
+    {
+      "title": "Fal 完成 13 亿美元融资，估值翻倍至 160 亿美元",
+      "what": "旧金山 AI 推理初创公司 Fal 完成 13 亿美元融资，由 Bessemer 领投，Nvidia、Sound Ventures、T. Rowe Price 参投。据 Bloomberg 报道，此轮融资使 Fal 估值达到 160 亿美元，是 4 月份 80 亿美元估值的两倍。Fal 同时宣布 E 轮和 F 轮融资，两轮合计募资 16.5 亿美元，其中 E 轮由 Sequoia 领投。",
+      "background": "Fal 成立于 2021 年，托管并运行 AI 视频、图像和音频模型。据 Bloomberg 报道，该公司今年早些时候年化收入已超过 8 亿美元。此轮融资正值推理服务需求飙升之际，尤其是依赖开源模型的客户。提供推理服务的 Baseten、Fireworks AI 和 Modal 等公司也在快速增长，并以更高估值完成大额融资。",
+      "why": "推理是 AI 模型训练完成后实际运行并生成输出的环节，正成为 AI 基础设施竞争的关键战场。Fal 估值在约半年内翻倍，反映市场对推理服务的强烈需求。但据多位了解推理公司财务的人士称，由于购买或租赁算力成本高昂，这类公司的毛利率仍然很薄。",
+      "next": "如果推理需求继续增长且开源模型被更广泛采用，Fal 及同类公司可能继续获得融资并扩大算力规模；但前提是它们能改善毛利率，否则高估值可能面临压力。目前各公司财务细节未公开，毛利率偏薄的说法来自匿名信源，需后续数据验证。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/ai-inference-startup-fal-doubles-its-valuation-to-16b-as-demand-surges/"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic 公布模型身份验证系统 FlashProve",
+      "what": "Anthropic 周二发布博客称，正在开发开源系统 FlashProve，通过密码学证明验证某段输出确实来自声称的模型。系统要求模型发布方公开每个模型的「指纹」，指纹不暴露模型权重，验证可在本地设备完成。研究团队同时公开了技术规范和部分代码，但表示暂无部署计划。",
+      "background": "闭源模型厂商不公开权重，用户难以确认调用的模型是否被暗中替换。Anthropic 称该系统可防止厂商偷偷换成更便宜或更贵的模型来压缩成本或夸大性能，也可验证第三方声称某任务由前沿模型完成。",
+      "why": "若可行，它为「可验证推理」提供了不泄露权重的方案，让商业闭源模型也能被第三方核验。这对模型审计、采购和监管都有直接价值，但当前只是中间研究进展，尚未经过部署检验。",
+      "next": "研究团队明确表示希望他人接手改进，因此下一步更可能是外部研究者复现规范、补齐代码，而非 Anthropic 自家产品化。能否被其他实验室接受并公开指纹，是这套系统能否成立的前提。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "可验证推理",
+          "gloss": "provable inference，指用密码学证明让验证方在不接触模型权重的情况下，确认某段输出由特定模型生成。"
+        },
+        {
+          "term": "指纹",
+          "gloss": "模型发布方公开的一段数据，可与具体输出匹配并做密码学验证，但不泄露定义模型行为的权重。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/"
+        }
+      ]
+    },
+    {
+      "title": "国行 Apple 智能开始开发者测试，接入阿里千问",
+      "what": "11 月 4 日，苹果推送 iOS 27.3 首个开发者 Beta 版，国行 iPhone 开始测试首批 Apple 智能功能，包括实时翻译、照片消除、写作工具和通知摘要。苹果与阿里巴巴合作，国内用户可在 Siri、写作工具和视觉智能中调用千问，覆盖文本与图像理解。正式版计划 12 月推出，首批支持 iPhone 15 Pro 系列、iPhone 16 及后续机型、iPhone Air 和 iPhone Duo。",
+      "background": "苹果 AI 入华需满足本地化要求，此前国行 Apple 智能迟迟未落地。此次选择与阿里合作接入千问，是苹果在中国市场推进 AI 功能的具体路径。报道称 WWDC 2026 发布的新版 Siri AI 暂未包含在本次测试中，说明当前开放的是相对早期的功能集。",
+      "why": "这是苹果 AI 首次在国行设备上进入可测试状态，对国内开发者与用户都是关键节点。对苹果而言，中国是其最大市场之一，AI 功能缺位会削弱新品竞争力；对阿里而言，千问成为系统级入口的调用对象，意味着其模型能力获得苹果背书。",
+      "next": "若开发者测试反馈平稳，12 月正式版可能按计划推送，覆盖范围或随新机型扩大。但新版 Siri AI 未纳入本次测试，其入华时间仍不确定。后续需观察苹果是否将千问调用扩展到更多系统场景，以及监管审批是否影响正式版上线节奏。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "千问",
+          "gloss": "阿里巴巴推出的大模型系列，提供文本与图像理解能力，可通过 API 或应用调用。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/373427"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 26,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 17,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
