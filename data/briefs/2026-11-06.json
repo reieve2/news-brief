@@ -1,0 +1,436 @@
+{
+  "date": "2026-11-06",
+  "generated_at": "11:10",
+  "cards": [
+    {
+      "title": "OpenAI 发布 GPT-6 Cyber 安全模型",
+      "what": "OpenAI 发布 GPT-6 Cyber，称这是面向网络安全的模型，用于发现可被利用的漏洞并开发修复方案。据 OpenAI 介绍，该模型经过训练，会把行动限制在授权范围内。来源未披露模型规模、可用范围、定价或具体评测数据。",
+      "background": "该消息来自 OpenAI 官方新闻页，发布时间为 2026 年 11 月 5 日。材料只有标题和摘要，没有说明此前是否有相关预告，也没有说明与既有安全模型的关系。",
+      "why": "把漏洞发现与修复交给模型，核心风险在于越权探测和误报。OpenAI 强调「授权范围内」这一训练目标，说明这类能力能否落地，取决于权限边界是否可控，而不只是漏洞识别率。",
+      "next": "接下来值得关注的是第三方评测、授权范围的具体定义，以及是否向企业客户开放。若只有厂商自述而无独立验证，外界对其实际攻防能力的判断仍会保留。",
+      "confidence": "低",
+      "importance": 5,
+      "terms": [],
+      "sources": [
+        {
+          "name": "OpenAI News",
+          "url": "https://openai.com/index/introducing-gpt-6-cyber"
+        }
+      ]
+    },
+    {
+      "title": "百度开源文心5.5 Flash Base，2800亿参数MoE基座",
+      "what": "11月5日，百度开源基座模型文心5.5 Flash Base（ERNIE 5.5 Flash Base）。据雷峰网报道，该模型采用MoE架构，总参数2800亿，每Token激活140亿，预训练用33.5万亿Token，预训练上下文最高128K，微调与推理支持最长100万Token。百度称其在知识、推理、数学、代码、多语言、长上下文等基准上取得同尺寸模型SOTA，超过DeepSeek-V4-Flash-Base等。",
+      "background": "大模型应用从文本问答转向长文档分析、多轮交互和智能体任务，输入信息量与显存开销同步上升，效率成为基座模型研发主线。百度此次围绕注意力机制、专家路由和训练目标做系统优化，并以开源基座形式提供给开发者微调。",
+      "why": "基座模型决定下游微调与定制的起点，开源可降低企业构建专用模型的训练成本。若百度所称的同尺寸SOTA成立，说明在参数规模不变的前提下，架构与训练范式的效率优化仍能带来能力增量，对长上下文与Agent场景的推理成本有直接影响。",
+      "next": "接下来需看第三方在公开基准上的复现结果，以及社区基于该基座微调的实际表现；若复现一致，同尺寸开源模型的竞争重心可能进一步转向注意力与路由效率而非单纯堆参数。以上推测基于当前仅有厂商自述评测的前提。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "MoE",
+          "gloss": "混合专家架构，每层包含多个专家网络，每个Token只激活其中少数几个，从而在总参数量很大时控制单次计算量。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/industrynews/XOv7MDFAP99kUMEW.html"
+        },
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/11/507787.html"
+        }
+      ]
+    },
+    {
+      "title": "Google 发布 Gemini Omni 1.2 Flash 视频生成模型",
+      "what": "Google DeepMind 发布 Gemini Omni 1.2 Flash，原生支持最长 15 秒视频生成，较 1.1 的 10 秒延长，可按 1 秒步长指定 3 至 15 秒时长。支持多轮对话式编辑、更强参考图一致性，720p 定价每秒钟 0.07 美元，较 1.1 降价 30%。已在 Gemini API、Google Cloud、Google Vids 和 Gemini for business 全面可用。",
+      "background": "上一代 Omni 1.1 只能生成 10 秒片段，且修改细节需整段重新生成，成本高、一致性差。此次升级针对广告、电商素材等需要角色与商品跨镜头保持一致的生产场景，同时用降价和草稿分辨率工作流降低批量生成成本。",
+      "why": "15 秒单次生成加多轮编辑，意味着广告片和商品展示视频可以在一次会话内迭代完成，不必反复重生成。降价 30% 与 360p 草稿再上采样的流程，直接压低规模化视频生产的单位成本，对视频生成工具的价格竞争有直接影响。",
+      "next": "若多轮编辑在长片段上确实保持一致性，视频生成产品的竞争点可能从单次画质转向编辑工作流与单位成本。前提是第三方实测能复现官方演示中的参考一致性和口型同步效果；目前这些效果均来自 Google 自述。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "参考图一致性",
+          "gloss": "reference adherence，指生成视频时对输入的人物、商品或风格参考图细节的保持程度，如人脸、服装剪裁、包装字体和品牌色在不同镜头间是否走样。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Google DeepMind",
+          "url": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/"
+        }
+      ]
+    },
+    {
+      "title": "安世半导体起诉母公司闻泰科技索赔134亿元",
+      "what": "安世半导体11月3日在荷兰阿姆斯特丹地方法院起诉母公司闻泰科技及创始人张学政，索赔20亿美元（约134.36亿元）。安世指控安世中国、安世上海违反内部协议，并在中国另建独立供应链、干扰其运营构成不公平商业行为。闻泰回应称未收到正式送达的传票、法院未立案，不认可全部指控与索赔金额，将聘海外律师应诉。",
+      "background": "争端源于2025年9月：荷兰政府以担忧关键技术外流为由介入安世，荷兰法院随后限制闻泰对安世的控制权，闻泰仍是母公司但无法有效管理。安世芯片一度在东莞封装后出口受阻，引发汽车行业芯片短缺，控制权博弈由此升级为跨境诉讼。",
+      "why": "子公司起诉母公司、且母公司称未立案，说明双方对程序状态各执一词。安世是全球车规级功率半导体重要供应商，控制权归属未定会持续影响其供应链与客户交付，也给中资控股海外半导体资产的治理与合规带来样本。",
+      "next": "若阿姆斯特丹法院正式受理并送达，闻泰将进入应诉程序，管辖权与索赔金额可能先成争点。案件推进节奏取决于荷兰法院立案安排，短期内控制权僵局难解；供应链是否再度紧张，要看安世中国与荷兰实体的运营切割程度。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "车规级功率半导体",
+          "gloss": "满足汽车行业可靠性、温度与寿命认证标准的功率器件，用于电源转换、电机驱动等环节，认证周期长、替换成本高。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/zaobao/uojoiQ2Owilfvr8B.html"
+        }
+      ]
+    },
+    {
+      "title": "中期选举民主党胜选，纳指跌 5.52%，芯片股重挫",
+      "what": "据路透社报道，美国民主党在中期选举中赢得国会控制权，投资者担忧 AI 监管收紧与数据中心建设放缓。周四美股科技板块遭大规模抛售，市值单日蒸发约 3.2 万亿美元，纳斯达克综合指数跌 5.52%，费城半导体指数跌约 12.3%，英伟达跌约 9.3%，闪迪跌约 22%，美光、西部数据、AMD 跌幅均在 17% 左右。",
+      "background": "AI 数据中心扩张带来的电力和水资源消耗已引发多地社区反对，Meta 总裁麦考密克称数据中心成为公众反对 AI 扩张的集中目标。民主党同时宣布推动《禁止人工超级智能法案》，草案要求暂停先进 AI 研发直至联邦专属监管机构运作，并设新内阁级 AI 部门。市场把选举结果与监管风险直接挂钩。",
+      "why": "这轮抛售是政策预期而非业绩变化驱动的，说明 AI 产业链估值对监管信号高度敏感。法案草案把 ASI 研发与核武器级刑罚并列，并主张全球禁止与出口管制，若进入立法程序，将直接影响前沿模型公司的研发节奏与算力采购计划。",
+      "next": "法案目前只是草案，能否进入委员会审议取决于民主党内部优先级与跨党支持，短期更可能停留在象征性提案阶段。若监管讨论持续升温，数据中心选址与电力审批可能先行放缓；反之若立法受阻，被抛售的芯片与存储股存在修复空间。以上判断以法案未快速推进为前提。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "费城半导体指数",
+          "gloss": "由费城证券交易所编制的半导体行业股价指数，覆盖全球主要芯片设计与制造公司，常被视为芯片板块整体走势的基准。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/373554"
+        }
+      ]
+    },
+    {
+      "title": "OpenAI 发布数据中心政策蓝图，承诺停用 NDA",
+      "what": "OpenAI 于 11 月 5 日发布数据中心政策蓝图与系列承诺，适用于其自有并运营的数据中心：征求社区意见、公开建设计划、不使用保密协议约束公职人员，并重申承担全部供电成本。此前两天，10 个州 41 项地方公投中 40 项否决或限制数据中心开发。",
+      "background": "夏季以来两党选民对数据中心的反对迅速升温，担忧集中在电费上涨、环境损害和就业流失。中期选举结果被视为对 AI 扩张的明确否决，OpenAI 在选后两天推出该蓝图，其全球事务官称文件自 8 月起起草，已与数十名议员和候选人沟通。",
+      "why": "这是 AI 公司首次将社区协商、建设透明和承担电费写成可被立法参照的承诺，直接回应选举层面的反弹。Meta、微软、Google、Anthropic 此前已有类似表态，行业自律标准可能被政策制定者采纳为法律，影响后续数据中心选址与审批节奏。",
+      "next": "若新国会 1 月下旬开会后采纳该蓝图，其他 AI 公司可能被迫跟进更严格的社区与费用条款；但承诺无约束力，实际执行取决于地方审批和电价监管。前提是选举反弹持续转化为立法压力，且 OpenAI 不因算力扩张目标而放松承诺。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "NDA",
+          "gloss": "保密协议（Non-Disclosure Agreement），双方约定不对外披露特定信息的法律合同。OpenAI 承诺不再用它与公职人员约束数据中心相关信息。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/05/openai-to-pay-for-data-center-power-after-election-shows-ai-concern.html"
+        }
+      ]
+    },
+    {
+      "title": "NVIDIA 发布 Cosmos 3 交互式世界模拟开源模型",
+      "what": "Hugging Face 博客发布 NVIDIA Cosmos 3 系列开源模型，用于交互式世界模拟。页面列出 nvidia/Cosmos3-Nano-Sim-Auto，标注为 15B 参数，更新于 6 天前，下载量 3.28k、点赞 19。来源仅给出模型页信息，未披露训练数据、评测结果或许可证细节。",
+      "background": "世界模型方向近期成为视频生成与机器人训练的交叉热点，厂商倾向以开放权重形式发布以吸引开发者试用。此次发布通过 Hugging Face 博客与模型页同步上线，属于常规的模型卡发布路径，材料未说明与上一代 Cosmos 的差异。",
+      "why": "对技术从业者而言，15B 规模且面向交互式模拟的开放模型，可能降低做可控视频生成与仿真环境原型验证的门槛。但当前仅有模型页数据，缺少基准与许可信息，实际可用性仍需自行验证。",
+      "next": "若后续公布评测基准、许可证与推理代码，社区可能围绕其做微调与机器人仿真实验；若仅有权重而无完整文档，采用速度可能受限。以上推测基于该模型页目前信息不完整的现状。",
+      "confidence": "低",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "15B",
+          "gloss": "指模型参数量约 150 亿，属于中等规模，通常可在单机多卡上做推理或轻量微调。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 16,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 9,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 16,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
