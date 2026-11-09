@@ -1,0 +1,439 @@
+{
+  "date": "2026-11-09",
+  "generated_at": "10:22",
+  "cards": [
+    {
+      "title": "Anthropic 34亿美元购入1.7GW燃气发电机组",
+      "what": "据英国《金融时报》报道，9月下旬 Anthropic 以34亿美元从得州设备供应商 OnePWR Solutions 接手总功率1.7GW的重型燃气发电机组订单，该订单原为 OnePWR 两年前向卡特彼勒下达。报道称这是 AI 公司迄今最大一笔发电设备采购，部分机组近期交付，其余两年内到位。",
+      "background": "AI 数据中心用电需求激增，燃气轮机与发电机组交货期已延长至数年。此前 xAI 斥资20亿美元购入移动式燃气轮机，Alphabet 于2025年底收购能源开发商 Intersect。Anthropic 选择接手涨价前签订的旧订单，而非收购公司或单纯购买设备。",
+      "why": "这显示头部 AI 公司正绕过公用事业公司直接锁定发电能力，电力正从运营成本变为需提前数年资本锁定的战略资源。以旧订单方式入场，也意味着设备交付时间而非资金成为新的竞争变量。",
+      "next": "若报道属实，Anthropic 将在未来两年逐步获得自发电能力，降低对电网和第三方算力租赁的依赖。其他资金充裕的 AI 公司可能效仿直接采购或接手存量设备订单，进一步推高燃气发电设备价格与交付周期。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "1.7GW",
+          "gloss": "吉瓦，功率单位，1GW 等于 10 亿瓦。1.7GW 约相当于一座大型燃气电站的装机容量，用于衡量发电机组的总输出能力。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/023/989.htm"
+        }
+      ]
+    },
+    {
+      "title": "台积电应英伟达要求考虑生产 3D DRAM",
+      "what": "据 Solidot 援引路透社报道，台积电正考虑进入内存芯片行业，生产名为 3D DRAM 的先进内存芯片，这一要求来自其最大客户英伟达。台积电可能新建工厂，也可能收购现有工厂改造为内存生产基地，但尚不清楚计划何时开始生产。该项目由负责先进封装业务的副总裁徐国晋领导。",
+      "background": "台积电目前是逻辑代工厂，内存业务长期由三星电子、SK 海力士与美光主导。英伟达作为其最大客户提出这一要求，说明先进内存供应已成为其芯片路线的约束条件。报道未说明英伟达提出要求的具体时间与形式，也未给出投资规模。",
+      "why": "若台积电真的进入内存制造，将首次在先进内存领域与三星、SK 海力士、美光正面竞争，并可能改变 AI 芯片所需内存的供应格局。由负责先进封装的副总裁牵头，暗示该项目与封装环节的内存集成需求相关，而非单纯扩充标准内存产能。",
+      "next": "目前仍处于考虑阶段，报道未给出时间表。若按报道所述推进，下一步可能先确定是新建还是收购改造，并取决于台积电对资本开支与客户订单承诺的评估；也不排除最终不进入该领域。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "3D DRAM",
+          "gloss": "把存储单元做成立体堆叠结构的 DRAM 技术路线，区别于传统平面缩放，目标是在更小面积内提高容量，是先进内存的候选方向之一。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Solidot",
+          "url": "https://www.solidot.org/story?sid=85826"
+        }
+      ]
+    },
+    {
+      "title": "英伟达调查黄仁勋与涉华间谍指控女子关系",
+      "what": "英伟达董事会启动独立调查，审查CEO黄仁勋与Megaspeed高管Alice Huang的关系。据《纽约时报》和《金融时报》报道，美国情报机构担忧Alice Huang向北京传递信息。黄仁勋在致员工邮件中承认婚外情并道歉，称对妻子和家庭造成伤害。董事会表示目前没有理由认为国家安全或英伟达机密受损，但将审查所有可用信息。",
+      "background": "英伟达正处于中美AI芯片出口管制的争议中心。Megaspeed是英伟达客户，曾被指控帮助受限制的中国企业获取英伟达AI芯片，英伟达此前称已就规避出口管制调查过该公司。黄仁勋一直主张扩大对华AI芯片出口。三名众议院共和党委员会主席已致信要求黄仁勋11月18日闭门简报。",
+      "why": "事件将CEO个人关系与国家安全、出口管制两条线交织。董事会调查结果可能影响黄仁勋继续担任CEO的稳定性，而国会介入意味着英伟达对华出口政策将面临更严格审视。英伟达第三季度财报将于11月17日发布，时间点敏感。",
+      "next": "若董事会调查未发现机密泄露，黄仁勋可能继续任职，但国会闭门简报和媒体追问会持续施压。若调查出现新证据，董事会可能面临是否调整CEO的安排。前提是调查独立且信息逐步公开；目前董事会声明与情报机构报道之间存在张力，后续需观察双方说法是否一致。",
+      "confidence": "高",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "出口管制",
+          "gloss": "一国政府限制特定商品或技术出口的法规。美国对英伟达最先进AI芯片实施对华出口限制，仅批准部分较旧型号出口。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-investigation-china-spy.html"
+        },
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/"
+        },
+        {
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy"
+        }
+      ]
+    },
+    {
+      "title": "上海交大 AutoDNA 实现自主分子生物学实验，成果登《自然》",
+      "what": "上海交通大学 IPADS 实验室陈海波、王肇国团队与樊春海、王飞团队合作，构建 AI 原生科学实验室装置 AutoDNA（思源一号），实现自主分子生物学实验操作，成果发表于《自然》并获该刊官网首页头条报道。该装置通过模型、实验与仪器协同设计，覆盖需微米级定位和微升级液体处理的实验场景。",
+      "background": "现有 AI 自主科学实验室多由专家预先配置仪器、规定流程和优化规则，AI 只接入文献检索、方案生成或数据分析等局部环节，属“外挂式”架构，难以适应分子生物学实验流程复杂、仪器多样、对实时执行和操作精度要求严格的特点。AutoDNA 因此转向 AI 原生架构。",
+      "why": "分子生物学实验长期依赖人工操作，流程长、精度要求高。AutoDNA 将多智能体、仪器能力抽象与高精度自动化硬件结合，使模型能贯通“设计—实验—优化”全过程，并在核酸检测、酶促 DNA 合成、癌症检测等场景完成验证，为 AI 自主实验室从局部辅助走向端到端执行提供了可参考的架构。",
+      "next": "若该架构能在更多实验类型上复现，AI 自主实验室可能从单点工具转向可迭代的实验平台；但论文目前展示的是有限场景验证，跨实验室迁移、长期稳定性和实验结果的可靠性仍需独立评估。前提是后续有第三方团队在非原班设备上复现。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/024/001.htm"
+        }
+      ]
+    },
+    {
+      "title": "多家公司开放具身模型 API，机器人可云端调用",
+      "what": "据报道，10 月 Physical Intelligence 开放模型 API 测试，开发者可上传机器人数据微调模型并通过云端推理驱动机器人；同月 Dream Labs 推出按作业时长计费的 Dream API；11 月 3 日原力灵机升级 Dexmal MaaS，支持数据上传、训练、部署及基于真机失败的迭代。",
+      "background": "此前具身模型能力多通过发布视频展示，开发者难以直接验证。近期部分模型开始具备跨本体迁移和一定范围内的新任务适应能力，同时云端推理与动作分块等工程方案试图缓解延迟问题，使模型作为服务对外提供成为可能。",
+      "why": "这意味着具身模型的竞争从演示效果转向外部开发者能否基于它做出可用应用。模型需适配不同本体和真实任务，后训练与数据迭代能力成为服务差异化的关键，行业分工可能向模型公司提供基础能力、开发者构建应用演变。",
+      "next": "若跨本体泛化与后训练工具持续成熟，更多本体厂商和场景团队可能接入这类 API；但远程推理的延迟、不同硬件的适配效果仍需验证。原力灵机披露的物流供包节拍与成功率能否在更多场景复现，将影响这种模式的推广速度。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "后训练",
+          "gloss": "在基础模型训练完成后，用特定任务或场景的数据继续训练模型，使其适应具体应用。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/373683"
+        }
+      ]
+    },
+    {
+      "title": "Meta 首席战略官 Wehner 离职，出任 Fireworks CFO",
+      "what": "Meta 首席战略官 Dave Wehner 宣布离职，加入 AI 基础设施创业公司 Fireworks 担任 CFO。Wehner 于 2012 年加入 Facebook，2014 至 2022 年任 Meta CFO。Fireworks 成立于 2022 年，提供开放模型的推理与训练平台，7 月完成 D 轮融资时估值 175 亿美元，投资方包括 Nvidia 和 Sequoia Capital。",
+      "background": "Fireworks 由前 Meta 和 Google 员工创立，专注帮企业定制和运行开放模型，与 OpenAI、Anthropic 竞争。据 Business Insider 报道，该公司正初步洽谈以 300 亿至 400 亿美元估值再融资。Wehner 称自己越来越看好 Fireworks 的技术人才和务实的产品方向。",
+      "why": "这是 Meta 高层又一次流向 AI 创业公司，反映大模型基础设施层对成熟财务与运营人才的争夺。Fireworks 若以更高估值融资，需要能支撑扩张的财务管理，Wehner 的 Meta CFO 经历正好对应这一需求。",
+      "next": "若 Business Insider 报道的融资洽谈推进，Fireworks 可能在短期内确认新一轮融资，Wehner 的到任时点也会与之配合。前提是该公司能向投资人证明其开放模型平台在 OpenAI 和 Anthropic 竞争下的增长路径；目前融资估值仍属早期洽谈，存在变数。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/07/dave-wehner-meta-fireworks-cfo.html"
+        }
+      ]
+    },
+    {
+      "title": "Entire 推出面向 AI 编码代理的 Git 协作平台",
+      "what": "Entire 发布专为人类开发者与 AI 编码代理协作设计的 Git forge。其核心是 trails：每次推送后，云端沙箱中的评审代理会基于代码质量、安全性、slop 等维度打分并给出理由，分数未达标则触发新一轮代理迭代。平台还引入 continuous memory，通过 entire-graph 和 entire-brain 两个开源工具保留仓库知识供代理跨会话复用。",
+      "background": "传统 PR 模型围绕异步人工代码评审设计，当代理高速生成、评审和迭代代码时，PR 时间线变成只有代理阅读的审计日志，人类难以据此判断能否合并。Entire CEO 为前 GitHub CEO Thomas Dohmke。源码管理领域近期出现多个新玩家，包括 Zed DeltaDB、Anthropic Scion、Cursor Origin 等。",
+      "why": "它把合并决策的依据从人工阅读 diff 转向可量化的 eval 分数和门禁条件，试图解决代理编码中「推理过程丢失」的问题。若这类工具被采用，代码评审的默认读者将从人变成代理，人类角色转向设定阈值和例外处理，可能改变 Git 平台的核心交互范式。",
+      "next": "Entire 目前仅有单一来源报道，实际采用情况待观察。若 trails 的评分能稳定区分可合并与需迭代的变更，其他 Git 平台可能跟进类似 eval 门禁机制；反之，若分数与人类判断偏差大，代理协作仍会回到人工兜底。前提是评审代理的评分质量经得起真实仓库检验。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "Git forge",
+          "gloss": "基于 Git 的代码托管与协作平台，在版本控制之上提供 PR、评审、权限等协作功能，GitHub、GitLab 是典型代表。"
+        },
+        {
+          "term": "slop",
+          "gloss": "此处指 AI 生成的低质量、冗余或缺乏实质内容的代码；Entire 将其作为评审代理的一个评分维度。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "InfoQ 英文",
+          "url": "https://www.infoq.com/news/2026/11/entire-git-forge-coding-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 19,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
