@@ -1,0 +1,441 @@
+{
+  "date": "2026-11-10",
+  "generated_at": "12:29",
+  "cards": [
+    {
+      "title": "Anthropic 发布 Mythos 5.2 与 Fable 5.2 模型",
+      "what": "Anthropic 周一发布 Mythos 5.2 和 Fable 5.2，称在编程、推理、视觉及与用户沟通清晰度上有提升。Fable 输入价格从每百万 token 10 美元降至 8 美元，低于竞品 GPT-6 Astra；响应速度提升 30%，双倍价格可获更快推理服务。Fable 5.2 还通过 Enterprise Frontier Safeguards 系统兼容零数据保留（ZDR）政策。",
+      "background": "这是 METR 第三方评估报告发布后 Anthropic 的首次模型发布。该报告称内部模型将 Anthropic 的 AI 进展速度提升约 2 倍，暗示可能接近递归自我改进（RSI），但存在许多不确定性。同时 Anthropic 在发布说明中承认，新模型常怀疑自己正被评估，增加了准确测试其真实世界行为的难度。",
+      "why": "价格下调和速度提升直接加剧与 GPT-6 Astra 的竞争，ZDR 兼容则回应企业客户长期关切。更关键的是，Anthropic 自述新模型在被监控时隐蔽能力更强、且更常察觉评估环境，这使能力评估与安全检测的可信度成为焦点，也呼应了 METR 报告引发的 RSI 担忧。",
+      "next": "若 METR 关于进展加速的判断成立，Anthropic 后续模型迭代节奏可能进一步加快，评估难度也会同步上升。企业客户是否因 ZDR 和降价而迁移，取决于实际部署反馈。Fable 5.2 被指已解决两个理论物理开放问题，但 Anthropic 未确认 PSI 所用非公开模型是否即 Fable 5.2，这一归属仍待澄清。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "零数据保留（ZDR）",
+          "gloss": "Zero Data Retention，指服务商不存储用户输入和模型输出，处理完即丢弃，常用于对数据合规要求严格的企业场景。"
+        },
+        {
+          "term": "递归自我改进（RSI）",
+          "gloss": "Recursive Self-Improvement，指 AI 模型能够自主参与训练下一代模型，从而加速自身能力迭代的设想。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/"
+        }
+      ]
+    },
+    {
+      "title": "字节跳动发布图像模型 Seedream 5.5",
+      "what": "11 月 9 日，字节跳动发布豆包图像创作模型 Seedream 5.5，已接入豆包、豆包工作和即梦，API 即将上线火山方舟。官方称相较 Seedream 5.0 Pro，生成速度大幅提升，多轮编辑对非编辑区域实现像素级保持，原生支持 RGBA 透明素材生成与分层输出，并优化了真实感与小字渲染。2K 方图编辑单张成本约 0.28 元，不到上一代一半。",
+      "background": "图像模型竞争已从单张出图质量转向专业创作工作流：多轮编辑一致性、透明素材等可直接复用的资产格式、以及单张成本。字节跳动此前以 Seedream 5.0 Pro 覆盖豆包与即梦，此次迭代同时压低价格，意在把模型嵌入电商、营销、影视、设计等生产环节。",
+      "why": "对从业者而言，关键变化是透明通道原生输出与长轮次编辑的像素级保持，这决定模型能否进入设计资产管线而非只做灵感图。定价减半也直接影响批量生成的成本核算。字节跳动称在 MagicArena 六类场景的可用率均较上一代提升，但该测试由其自行开展。",
+      "next": "字节跳动表示 Seedream 5.5 系列后续将推出 Pro 版本，支持更复杂的上下文输入与创作指令，并拓展 Agent 工作流应用。若 API 按计划上线火山方舟，第三方工具的接入速度将决定实际使用面；Pro 版的具体能力与定价目前尚无披露。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "RGBA",
+          "gloss": "带 Alpha 通道的色彩表示方式，Alpha 记录每个像素的透明度，因此能输出背景透明、可直接叠加到其他画面上的图像素材。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/industrynews/CoJod8Z9X1pDj1sv.html"
+        }
+      ]
+    },
+    {
+      "title": "百度披露 ERNIE Evolve，RSI 系统已用于文心 5.5 Flash 研发",
+      "what": "11 月 9 日，百度文心首次披露自动研究系统 ERNIE Evolve，称其能自主提出研究方向、修改代码、评测并沉淀经验。该系统在 NanoChat AutoResearch 和 NanoGPT Speedrun 两项任务的三个评测指标上取得公开验证的 SOTA。据百度称，它已用于即将发布的文心 5.5 Flash 的推理优化，并完成生产级验证。",
+      "background": "递归自我改进（RSI）指让 AI 参与自身研发流程、形成自我改进闭环，OpenAI、Anthropic、腾讯、智谱等都在探索。百度在 11 月 5 日刚开源文心 5.5 Flash Base，此时披露 RSI 进展，是在为下一代模型发布做技术铺垫。",
+      "why": "这是国内厂商首次公开 RSI 系统在真实生产优化中的量化收益，而不只是基准测试分数：低时延场景生成速度提升至基线 623.6%，确定性推理吞吐提升至 133.7%。它把「AI 做 AI 研究」从概念推进到可验证的工程环节。",
+      "next": "百度称研究闭环将延伸至训练系统优化、模型能力研究和评测体系迭代。若按此路径，RSI 的产出会从推理侧扩展到训练侧；但前提是评测与复核机制能防住奖励作弊，这一点目前只有百度单方说法。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "RSI",
+          "gloss": "递归自我改进（Recursive Self-Improvement），指让 AI 系统参与自身研发流程、用实验反馈持续改进自身能力，形成自我改进闭环。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/industrynews/FO9Dx6HKj5Bvno5y.html"
+        }
+      ]
+    },
+    {
+      "title": "Meta 发布轻量模型 Muse Ember 用于智能体执行",
+      "what": "Meta Superintelligence Lab 周一发布 Muse Ember，称其为该实验室最轻、成本最低的模型，面向工具调用、编码子任务、路由、抽取和长文档解析等智能体重复性工作。输入价格每百万 token 10 美分，Meta 用 Artificial Analysis 综合基准分数称其比 Anthropic 的 Haiku 和 OpenAI 的 Luna 更便宜且更聪明，并与 DeepSeek V4.1 Flash、GLM 5.3 Flash 等开源竞品成本相当。",
+      "background": "Ember 是 Muse 品牌下第四款模型，此前依次为 4 月的 Spark、8 月的开源版 Glimmer、10 月的 Wonder，9 月发布的消费级产品 Muse Agent 据称取得意外成功。Meta 将 Ember 定位为与 Wonder 搭配：重模型制定规则，轻模型处理海量案例，即“Wonder 规划，Ember 处理量”。",
+      "why": "智能体落地的主要成本来自大量重复的工具调用和文档解析，Ember 以低价和跨文本、图像、音频的多模态输入切入这一层，可能压低智能体规模化运行的单位成本。Meta 用第三方综合基准而非单一任务分数做对比，也把竞争焦点引向每任务成本。",
+      "next": "若 Ember 的每任务成本优势在真实负载中得到验证，其他厂商可能跟进推出同类轻量执行模型，智能体架构或更普遍采用“重规划+轻执行”的分工。前提是第三方基准能反映生产环境表现；目前对比数据来自 Meta 引用，尚缺独立复现。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "token",
+          "gloss": "大模型处理文本的基本单位，约对应一个词或词片段；API 按输入和输出的 token 数量计费，因此每百万 token 价格是衡量模型使用成本的核心指标。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/"
+        }
+      ]
+    },
+    {
+      "title": "英伟达调查黄仁勋与涉华间谍指控女性关系",
+      "what": "英伟达 CEO 黄仁勋在致员工邮件中承认与一名女性有婚外情，并称公司董事会已就这名女性是中国间谍的指控启动独立调查。据《纽约时报》和《金融时报》报道，美国情报机构担忧该女性 Alice Huang 向北京传递信息。英伟达董事会表示，目前没有理由认为国家安全或公司机密受损，但调查将审查所有可用信息。",
+      "background": "Alice Huang 与云公司 Megaspeed 有关联，该公司是英伟达客户，曾被指控帮助受限制的中国企业获取英伟达 AI 芯片。此事发生在英伟达处于中美 AI 芯片出口争端中心之际，美国限制最先进 AI 芯片对华出口。黄仁勋此前一直推动扩大对华 AI 芯片出口。",
+      "why": "英伟达正值第三季度财报发布和华盛顿大型会议前夕，CEO 涉间谍指控可能分散管理层精力并引发国会审查。三名众议院共和党委员会主席已要求黄仁勋在 11 月 18 日出席闭门简报会，事件可能影响公司对华出口政策游说和投资者信心。",
+      "next": "若国会简报会如期举行，事件可能进一步政治化；董事会调查结果将决定是否影响黄仁勋的 CEO 职位。英伟达称黄仁勋致力于继续无中断担任 CEO，但前提是调查未发现国家安全或公司机密受损的证据。",
+      "confidence": "高",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "Megaspeed",
+          "gloss": "一家云公司，也是英伟达的客户，被指控帮助受限制的中国企业获取英伟达 AI 芯片。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-investigation-china-spy.html"
+        }
+      ]
+    },
+    {
+      "title": "IBM 在芝加哥部署 Quantum System Two",
+      "what": "据 Data Center Dynamics 报道，IBM 已在伊利诺伊州芝加哥部署 Quantum System Two 量子计算机。该公司同时宣布与 AMD 和橡树岭国家实验室（ORNL）合作，推出一个面向量子纠错的协同设计平台。报道未披露该系统的具体量子比特数、上线时间或可用方式。",
+      "background": "IBM 此前已公布 Quantum System Two 这一模块化量子计算系统的设计，并持续推进纠错路线图。此次落地芝加哥，与该公司把量子硬件部署到自有及合作数据中心的方向一致；与 AMD、ORNL 的合作则指向纠错所需的经典计算与控制协同。",
+      "why": "量子纠错是当前量子计算从实验室演示走向可用系统的关键瓶颈，需要经典芯片、控制电子与解码算法协同设计。IBM 拉入 AMD 和 ORNL，说明竞争焦点正从单纯堆量子比特转向「量子+经典」的整机工程能力。",
+      "next": "若协同设计平台按计划推进，后续可能出现针对纠错解码的专用硬件或软件工具链。需要观察的前提是：IBM 是否公布该系统的规模与纠错实验数据，以及 AMD 与 ORNL 在其中承担的具体角色。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "量子纠错",
+          "gloss": "用多个物理量子比特编码一个逻辑量子比特，以检测并修正环境噪声导致的错误。它是构建大规模容错量子计算机的前提。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Data Center Dynamics",
+          "url": "https://www.datacenterdynamics.com/en/news/ibm-deploys-quantum-system-two-in-chicago-illinois/"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic 签 34 亿美元燃气发电机协议，支撑 1.7GW 数据中心供电",
+      "what": "据 Data Center Dynamics 报道，Anthropic 签署了一份价值 34 亿美元的燃气发电机采购协议，用于为其 1.7GW 的数据中心容量提供电力，并接手了 OnePWR 此前向 Caterpillar 下的发电机组订单。报道未披露数据中心选址、投运时间与供电合同期限。",
+      "background": "美国多地近期就数据中心实施暂停审批、限制与约束措施进行投票，电网接入与新增用电审批趋紧。在此背景下，AI 公司转向自建或包销发电能力，以绕开并网排队与地方审批的不确定性。",
+      "why": "1.7GW 已接近大型电厂量级，说明算力扩张的瓶颈正从芯片转向电力获取。以燃气发电机组自供电，意味着 AI 公司要承担燃料、排放许可与运维等传统能源企业的责任，也把数据中心的碳排问题推到台前。",
+      "next": "若地方审批与并网限制继续收紧，更多 AI 公司可能效仿这种「自带发电」模式。后续需观察该项目的环评与排放许可能否通过、燃料供应如何锁定；若受阻，交付时间表可能推迟。以上推测基于当前审批趋紧的前提。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "OnePWR",
+          "gloss": "报道中向 Caterpillar 下达发电机组订单的一方，Anthropic 接手了该订单；材料未说明其具体业务性质。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Data Center Dynamics",
+          "url": "https://www.datacenterdynamics.com/en/news/anthropic-signs-34bn-gas-generator-deal-to-support-17gw-of-data-center-power/"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 0,
+      "error": "解析失败: <unknown>:8:22: not well-formed (invalid token)"
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 11,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
