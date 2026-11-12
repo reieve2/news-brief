@@ -1,0 +1,448 @@
+{
+  "date": "2026-11-12",
+  "generated_at": "11:36",
+  "cards": [
+    {
+      "title": "英伟达董事会据报准备罢免黄仁勋，股价盘后跌超9%",
+      "what": "《华尔街日报》报道称，英伟达董事会准备最快于周三开会决定CEO黄仁勋的去留，公司股价盘后跌超9%。此前《纽约时报》报道黄仁勋与公司医疗健康业务副总裁Kimberly Powell存在婚外情。数日前，黄仁勋承认与Alice Huang有婚外情，后者被美国情报官员认为是中国国家安全部间谍。英伟达董事会已就间谍指控启动独立调查，并聘请Wachtell, Lipton, Rosen & Katz律所。",
+      "background": "黄仁勋周日向员工承认对妻子不忠并道歉。据《纽约时报》报道，他与Powell今年3月在圣何塞一家酒店被拍到举止亲密。英伟达董事会已就间谍指控展开独立调查。英伟达本周股价此前已下跌7%，正走向连续第六周下跌，反映市场对AI基建可持续性的担忧。",
+      "why": "黄仁勋是英伟达和当前AI行情的标志性人物，若董事会真的罢免他，将直接冲击公司治理与战略连续性，并波及整个AI算力供应链的信心。同时，CEO与可能涉及中国情报的婚外情指控叠加，使事件超出个人丑闻，涉及国家安全与公司风险管控。",
+      "next": "若董事会周三会议确认罢免，英伟达将面临CEO交接和战略重估，股价短期波动可能加剧；若董事会选择留任，则需解释调查结论。鉴于报道来自单一媒体且公司未回应，后续走向取决于董事会声明和独立调查结果。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-affair-employee.html"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic 启动 IPO 路演，估值目标近 1.4 万亿美元",
+      "what": "Anthropic 已启动 IPO 投资者路演，计划发行 8.25 亿股，发行价区间 70 至 78 美元，最高募资 643.5 亿美元；按上限计算完全稀释估值接近 1.4 万亿美元。同时 Google 与英伟达各出资 100 亿美元领投私募配售，多家科技公司合计投资 260 亿美元。招股文件显示，2026 年前九个月营收 332 亿美元，经营亏损 13 亿美元。",
+      "background": "据招股文件，Anthropic 2026 年前九个月营收从去年同期的 25 亿美元增至 332 亿美元，增速极高；同期净亏损 1040 亿美元中 943 亿来自可转换债券等金融工具的公允价值变动，属非经营性账面影响。七名联合创始人将在 IPO 中合计出售 17.5 亿美元股票。",
+      "why": "若按区间上限定价，这将是 AI 行业迄今规模最大的上市交易之一，且 Google、英伟达、AMD、微软等同时以私募配售入股，把主要芯片与云厂商的利益与 Anthropic 绑定。其披露的营收增速也为观察大模型公司商业化进度提供了少有的公开财务样本。",
+      "next": "接下来取决于路演定价落在 70 至 78 美元区间的哪一端，以及承销商 30 天超额配售权是否行使。若按中间价 74 美元计算，IPO 与私募配售合计净募资约 846 亿美元。上市后市场会重点关注其经营亏损能否随营收规模收窄，但这一判断依赖后续财报披露。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "完全稀释估值",
+          "gloss": "把公司所有可能转为普通股的股份（如期权、可转换债券）都算进去后得出的估值，比只算已发行股份的估值更高，常用于 IPO 定价参考。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/373796"
+        }
+      ]
+    },
+    {
+      "title": "百度发布文心 5.5 Flash Preview，权重将于 11 月 25 日开源",
+      "what": "11 月 11 日，百度发布基础模型文心 5.5 Flash Preview，总参数 2800 亿、每 Token 激活 140 亿，支持最长 100 万 Token 上下文。据雷峰网报道，模型在 Terminal-Bench、AutomationBench 等基准上取得有竞争力的得分，生成速度超过每秒 200 tokens，已上线百度智能云千帆平台开放 API 调用，权重将于 11 月 25 日面向全球开源社区发布。",
+      "background": "据雷峰网报道，该模型采用混合稀疏注意力架构、多路由器 MoE、ECHO 多 Token 预测等技术以降低计算与显存开销，并首次引入自研 RSI 技术，由 ERNIE Evolve 参与推理优化。百度近期在公开材料中多次提及 RSI 方向，此次是将其落到具体模型版本上。",
+      "why": "2800 亿总参数只激活 140 亿，是典型的稀疏 MoE 路线，直接决定推理成本；百万 Token 上下文与每秒 200 tokens 以上的速度组合，面向的是长周期编码和知识工作这类实际负载。API 定价与后续开源权重若如期落地，会改变同参数规模模型的性价比参照。",
+      "next": "若 11 月 25 日权重按计划开源，社区大概率会先复现其基准得分并核验百万上下文下的实际速度与显存占用；RSI 由 ERNIE Evolve 参与推理优化的效果目前只有厂商单方说法，需第三方评测验证。前提是开源范围与许可证允许商用。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "RSI",
+          "gloss": "材料中称其为百度自研技术，由 ERNIE Evolve 参与模型推理优化，即让模型参与自身研究与优化的路径；具体机制材料未展开。"
+        },
+        {
+          "term": "ECHO 多 Token 预测",
+          "gloss": "一次前向预测多个后续 Token 而非逐个生成，用于提升解码速度，是文中「每秒超过 200 tokens」的技术支撑之一。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/industrynews/sqz0hf4DoTPX5mqI.html"
+        }
+      ]
+    },
+    {
+      "title": "DeepMind 发布 AlphaGenome 2，可预测变异在特定细胞类型中的效应",
+      "what": "Google DeepMind 发布 AlphaGenome 2，这是一个条件式 DNA 序列模型，输入 DNA 序列和指定细胞类型或状态，预测基因表达、染色质可及性、组蛋白修饰和 DNA 甲基化等读出。模型基于 68 种组织、超过 1.07 亿个单细胞图谱训练，在 TenK10K 数据集上识别出的因果变异比例从 16% 提升到 30%。即日起通过 AlphaGenome API 开放非商业研究使用，商业研究为私有预览。",
+      "background": "去年发布的 AlphaGenome 采用并行输出方式，同时预测数千个 bulk 组织实验，容量被摊薄，难以区分相近细胞类型。单细胞图谱（如 Human Cell Atlas）积累了大量数据，但如何预测 DNA 变异在特定细胞中的表达效应仍是未解问题。AlphaGenome 2 改为条件模型，把细胞类型作为输入贯穿整个架构，从组织平均值细化到单细胞分辨率。",
+      "why": "许多疾病相关变异只在特定细胞类型中起作用，bulk 组织模型会将其平均掉。AlphaGenome 2 能对新 profiled 的细胞状态做零样本预测，并支持跨模态插补——输入单细胞基因活性即可预测未测量的染色质可及性，帮助研究者优先安排实验。对遗传学和药物靶点发现而言，这意味着变异筛选的分辨率从组织级提升到细胞级。",
+      "next": "如果独立研究团队能在更多细胞类型和疾病队列上复现 TenK10K 上的提升幅度，这类条件模型可能成为变异解读的常规工具。商业预览的定价和许可条款将决定药企采用速度。前提是 API 的预测质量在训练分布外保持稳定，且单细胞编码器对稀有细胞类型的泛化能力得到验证。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "染色质可及性",
+          "gloss": "染色质可及性指 DNA 被核小体包裹的紧密程度，开放区域通常对应活跃的调控元件，是 ATAC-seq 等实验测量的核心读出。"
+        },
+        {
+          "term": "跨模态插补",
+          "gloss": "跨模态插补指用一种实验模态的数据推断另一种未测量的模态，例如从单细胞基因表达预测同一细胞的染色质可及性。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Google DeepMind",
+          "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/"
+        }
+      ]
+    },
+    {
+      "title": "OpenAI 季度营收首次突破 100 亿美元",
+      "what": "据 Bloomberg 援引匿名消息，OpenAI 第三季度营收首次超过 100 亿美元，较第二季度的 67 亿美元增长近 50%。调整后运营利润率从第二季度的 -150% 收窄至 -109%。TechCrunch 称 OpenAI 年化营收运行率已达 500 亿美元。OpenAI 未公开确认这些数字。",
+      "background": "OpenAI 此前营收增速约 18%，并在企业市场落后于 Anthropic。Anthropic 称截至 10 月底年化营收运行率达 810 亿美元，且正寻求 1.4 万亿美元估值 IPO。两家公司年化营收计算口径不同：Anthropic 计入云合作伙伴销售额，OpenAI 只计部分合作销售中自身份额。",
+      "why": "若数据属实，OpenAI 营收增速从 18% 跃升至近 50%，说明降价、折扣、模型改进和企业级 Agent 产品的组合开始见效。但亏损率仍高达 -109%，且企业市场份额仍落后 Anthropic，盈利路径尚未验证。",
+      "next": "若 IPO 推进，Anthropic 的估值和营收披露将给 OpenAI 带来对标压力。前提是双方继续按当前口径披露数据；若口径差异被市场忽略，两家增速对比可能失真。OpenAI 是否公开确认季度数据，将影响这批数字的可信度。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "年化营收运行率",
+          "gloss": "把某一期（如单季或单月）营收按比例折算成全年数字，用于快速比较增速，不代表实际全年收入。"
+        },
+        {
+          "term": "调整后运营利润率",
+          "gloss": "剔除部分非经常性项目后的运营利润占营收比例，负值表示运营亏损；此处 -109% 意味着每 1 美元营收对应约 1.09 美元运营亏损。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/"
+        }
+      ]
+    },
+    {
+      "title": "英国 Fractile 获 7.2 亿美元 C 轮融资",
+      "what": "英国 AI 芯片初创公司 Fractile 完成 7.2 亿美元 C 轮融资，由英国主权 AI 基金等投资，据英国政府称估值超过 50 亿英镑。公司采用 DRAM 堆叠在芯片上的设计，并配套机器学习编译器，计划明年交付首批芯片和系统。",
+      "background": "AI 推理成本高企，专用芯片成为降低成本的路径之一，Axelera、Etched、OLIX 等初创公司均在推进。英国政府通过主权 AI 基金入股，意在让本国在支撑未来经济的硬件中占有更大份额。",
+      "why": "这是欧洲 AI 芯片领域规模最大的融资之一，表明资本愿意押注挑战现有 GPU 架构的专用推理芯片。Fractile 的全栈方案若成功，可能为长链条 agentic AI 任务提供更低成本的算力选择。",
+      "next": "按 CEO 说法，资金将用于明年流片和交付首批系统。若流片顺利，Fractile 将进入客户验证阶段；但专用芯片从样片到量产通常需要数年，且其 DRAM 堆叠方案能否兑现性能承诺尚待观察。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "DRAM",
+          "gloss": "动态随机存取存储器，最常见的系统内存类型。Fractile 的方案是将 DRAM 堆叠在芯片上，试图绕过内存带宽与容量之间的传统取舍。"
+        },
+        {
+          "term": "机器学习编译器",
+          "gloss": "将大模型的计算图转换为特定芯片可执行指令的软件层，用于优化模型在该芯片上的执行速度。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/11/with-720m-round-britains-fractile-gets-a-leg-up-in-the-race-for-ai-chips/"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic 与微软再签 43 亿美元算力协议",
+      "what": "据 Data Center Dynamics 报道，Anthropic 与微软签署了新一轮价值 43 亿美元的算力协议。报道称，Anthropic 可能取消与 neocloud 厂商 Lambda 的合同。报道未披露协议的具体期限、算力规模或涉及的微软产品线。",
+      "background": "Anthropic 此前已与微软建立算力合作，此次是在既有关系上追加投入。同一来源还提到，美国多地近期通过数据中心暂停令与限制措施，算力供给端的不确定性上升，这可能促使模型公司锁定长期算力合同。",
+      "why": "对 Anthropic 而言，这属于算力来源的重新配置：如果取消 Lambda 的合同，说明它正在把训练和推理负载向超大规模云厂商集中。对 neocloud 阵营来说，这显示大客户可能被头部云厂商以长期协议锁定，从而削弱中小算力供应商的议价空间。",
+      "next": "接下来需要观察 Anthropic 是否正式终止与 Lambda 的合同，以及微软方面是否披露协议细节。如果地方数据中心限制继续扩大，其他模型公司可能跟进签订类似的长期算力协议；但报道未给出时间表，这一走向仍不确定。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "neocloud",
+          "gloss": "指专门提供 GPU 算力的新型云服务商，通常以租赁英伟达 GPU 集群为主业，规模小于 AWS、Azure 等超大规模云厂商。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Data Center Dynamics",
+          "url": "https://www.datacenterdynamics.com/en/news/anthropic-signs-another-43bn-in-compute-agreements-with-microsoft/"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 12,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 19,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
