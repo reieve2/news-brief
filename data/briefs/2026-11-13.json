@@ -1,0 +1,439 @@
+{
+  "date": "2026-11-13",
+  "generated_at": "11:08",
+  "cards": [
+    {
+      "title": "Google 发布 Gemini 4 Hydrogen 模型",
+      "what": "Google DeepMind 发布 Gemini 4 Hydrogen，定位为快速执行与 agentic 工作流模型，与侧重长程推理的 Gemini 4 Carbon、Argon 形成分工。据官方博客，它在 Artificial Analysis Intelligence Index 默认高思考档得 51 分，超过 Argon 的 50 分，最高 xhigh 档达 54 分；100 万 token 上下文窗口统一定价，输入每百万 token 1.50 美元、输出 7.50 美元。同日上线 Google AI Studio、Gemini API、Gemini 应用与搜索等各档服务。",
+      "background": "Google 此前已推出 Gemini 4 Carbon 与 Argon 两款前沿模型，主打深度长程推理。此次 Hydrogen 面向日常编码、测试验证等高频执行场景，并承接从 Gemini 3.8 Flash 迁移的团队。官方同时推出 Antigravity 中的 Orchestrator，可在同一会话内动态切换 Carbon 与 Hydrogen，说明多模型协作正成为产品化方向。",
+      "why": "模型能力竞争正从单一跑分转向速度、成本与多模型编排。官方称 Hydrogen 在 Terminal-Bench 4.1 得分 57%，远高于 3.8 Flash 的 18.2%，任务完成快 2.5 倍，虚构声明减少 5 倍以上；Orchestrator 在 Terminal-Bench 4.0 上接近 Carbon 成功率，配额消耗少 24%、快 19%。对开发者而言，选型维度从「最强」变为「最合适」。",
+      "next": "若 Orchestrator 的多模型切换在真实项目中稳定，其他厂商可能跟进类似的模型路由层。Hydrogen 宣称的提速与降本数据目前主要来自 Google 自述及合作方早期测试，尚待第三方独立复现；Hacker News 讨论热度较高，社区反馈可能影响企业采用节奏。",
+      "confidence": "高",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "Terminal-Bench 4.1",
+          "gloss": "评估模型在终端环境中完成实际命令行任务的基准测试，分数反映任务成功率。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Google DeepMind",
+          "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/"
+        },
+        {
+          "name": "钛媒体",
+          "url": "https://www.tmtpost.com/8203746.html"
+        },
+        {
+          "name": "Hacker News",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        }
+      ]
+    },
+    {
+      "title": "黄仁勋辞任英伟达CEO，CFO临时接任",
+      "what": "英伟达11月12日美股盘前公告，黄仁勋辞去总裁、CEO及董事会成员职务，即刻生效。CFO 科莱特·克雷斯出任临时CEO并继续兼管财务，董事哈维·琼斯出任董事会主席。公告未写辞职理由。消息公布后英伟达盘前跌10%，当日收跌13%。路透社报道称辞职与婚外情丑闻发酵有关。",
+      "background": "黄仁勋1993年参与创办英伟达并任CEO至今33年，是公司对外的核心符号。公告未说明原因，而路透社给出丑闻说法，两者并不一致。同日美国商务部拟扩大AI芯片出口管制，英伟达同时面临人事与监管两条线的变动。",
+      "why": "CEO在任33年后即刻离任且无交接期，临时由CFO兼任，战略连续性存疑。当日AI概念股普跌，CoreWeave跌9.1%、Nebius跌16.2%，而AMD、博通逆势涨3.7%和5.6%，市场已在重新定价竞争格局。做空者本周账面收益达96亿美元。",
+      "next": "董事会称内外人选都考虑，正式CEO任命的时间与方向尚不明朗。若临时管理层维持现有产品与供货节奏，客户与供应链的短期冲击可能有限；若人事悬而未决叠加出口新规落地，波动可能延续。前提是公告之外没有更多未披露信息。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/373907"
+        }
+      ]
+    },
+    {
+      "title": "EUROPA 在 JUPITER 上训练 1T 参数 MoE 模型",
+      "what": "EUROPA 联盟（Domyn、Fraunhofer IAIS 和 IIS）在 EuroHPC 的 JUPITER 超算上，用 PyTorch 和 TorchTitan 将约 1 万亿参数的 MoE 模型预训练吞吐从每 GPU 90 tokens/s 提升到约 1,300 tokens/s。实验配置为 951.9B 总参数、每 token 激活 32.8B，使用 384 块 NVIDIA GH200。",
+      "background": "EuroHPC Frontier AI Grand Challenge 旨在验证主权开源 AI 能否用共享公共资源达到前沿水平。EUROPA 被选中开发至少 400B 参数、支持 24 种欧盟官方语言并符合 EU AI Act 的开放 MoE 模型。JUPITER 是供数百个项目共享的公共研究基础设施，其互连和内存配置与专用 AI 集群不同。",
+      "why": "此前在共享公共基础设施上做万亿参数级预训练被认为不可行。该工作说明通过 PyTorch 层面的细粒度优化（如 FlexShard、激活检查点卸载到 Grace CPU），公共超算也能支撑前沿规模训练，对依赖公共算力的开源模型团队有直接参考价值。",
+      "next": "若这些优化被合并回 TorchTitan 和 PyTorch 主线，其他公共超算用户可能复用类似方案。但该结果目前来自单一来源的博客，且吞吐数字依赖 JUPITER 特定硬件配置，能否在互连更慢或内存更小的集群上复现尚待验证。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "FlexShard",
+          "gloss": "TorchTitan 中新增的分片放置机制，允许控制每个参数由哪个 rank 持有。这里按整个专家分片，使每个 rank 拥有完整专家矩阵，从而在本地跑 Muon 的 Newton-Schulz 迭代而无需通信。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "PyTorch Blog",
+          "url": "https://pytorch.org/blog/training-a-1t-parameter-moe-on-eu-public-infrastructure-with-pytorch-and-torchtitan/"
+        }
+      ]
+    },
+    {
+      "title": "姚期智与杨植麟联合发布 TCSExam，Kimi K3 刷新图论构造纪录",
+      "what": "姚期智与杨植麟等联合研究提出 TCSExam，用 100 项理论计算机科学任务评测 AI Agent 的科研能力，分定理证明、Solver 工程、数学构造、开放猜想四条轨道。据雷峰网报道，Kimi K3 在 124 个点、禁止三角形与四边形的图构造任务中造出 630 条边，超过此前 629 条的参考纪录，并通过程序验证。",
+      "background": "团队称，此前难以区分模型是「运气好撞上」还是真正完成推导，因此不再沿用传统基准，转而搭建可独立验证的评测框架，用 Lean 4、程序检查器和 Checkpoint 机制分别核验证明、算法与中间推导。这也是两位研究者首次联合署名。",
+      "why": "报道认为，这是 AI 首次在「极值构造」这类研究级任务上把人类参考纪录推进一步，且结果可被机器核验。但多一条边是否算真正突破、是否只是搜索蒙对，仍存争议，TCSExam 的意义在于把这类争论转成可检验的交付物。",
+      "next": "若该框架被数学界复用，AI 科研评测可能从答题转向提交可核验证书。前提是形式化转写能忠实于原始命题——报道已指出这一环节存在偏差风险。模型能否自主发现关键引理、规划长程证明，仍需更多实验验证。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "Lean 4",
+          "gloss": "一种交互式定理证明器兼编程语言，证明写成代码后由内核按形式逻辑规则逐步检查，因此可作为机器可核验的数学证明载体。"
+        },
+        {
+          "term": "Checkpoint",
+          "gloss": "TCSExam 把复杂证明拆成的中间目标。验证某一 Checkpoint 时，系统把其他 Checkpoint 的命题临时当作假设，检查模型能否完成当前推导，用于定位能力缺口而非认定整体证明成立。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/ai/3vRqaeAILJdgRlhL.html"
+        }
+      ]
+    },
+    {
+      "title": "百度发布文心 5.5 Flash Preview，主打效率与开源",
+      "what": "据雷峰网报道，百度 11 月 11 日发布文心 5.5 Flash Preview，已上线千帆平台，Web 端与 API 同步开放。官方称模型权重将于 11 月 25 日前以 Apache 2.0 许可证开源，支持 SGLang 和 vLLM 部署。这是文心一周内第三次动作，此前 11 月 5 日开源基座模型文心 5.5 Flash Base，11 月 9 日披露 RSI 进展。",
+      "background": "报道称文心长期存在感不高，未达外界预期。今年 7 月复旦大学博士孙天祥出任百度基础模型研发部（BMU）负责人并进入模型委员会，本周三连击被视为其接手后的首份答卷。报道认为今年模型竞争分层，旗舰模型卷榜单上限，效率档模型卷成本曲线，文心选择后者。",
+      "why": "报道给出的关键数字是总参数 2800 亿、每 token 仅激活 140 亿，API 折后闲时输入 0.5 元、输出 2 元每百万 token。若这些效率设计成立，竞争焦点会从参数规模转向单位 token 成本与推理速度，开源权重则直接降低开发者试用门槛。",
+      "next": "报道称百度世界 2026 将披露更多模型信息，权重能否按期以 Apache 2.0 发布是第一个观察点。若开源落地且定价维持，可能带动调用量；但报道也指出定价、演示和单次实测只是入场券，能否转化为开发者实际调用尚待观察。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "RSI",
+          "gloss": "即递归自我改进（Recursive Self-Improvement），指 AI 系统参与改进自身或后续模型的研究流程。报道中文心 11 月 9 日披露的 ERNIE Evolve 即属此类自动研究系统。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/ai/b3ASOkGmqznTQWCH.html"
+        }
+      ]
+    },
+    {
+      "title": "Nvidia 私下确认可追踪芯片位置以打击走私",
+      "what": "据 MIT Technology Review 报道，伊利诺伊州众议员 Bill Foster 称，Nvidia 代表在技术讨论中私下向他表示，公司技术上可以实现《芯片安全法案》要求的防走私追踪措施，但未留下书面记录。与此同时，Nvidia 所属的半导体行业协会曾公开称此类追踪要求「未经测试、可能不可行」。Nvidia 未回应置评请求。",
+      "background": "《芯片安全法案》于 2025 年 5 月提出，要求对先进 AI 芯片进行地理追踪以防走私至中国，是参议院国防授权法案中三项芯片安全法案之一。Nvidia CEO 黄仁勋辞职及据报与一名涉嫌中国间谍的绯闻，使该法案重新受到关注。2025 年 12 月 Nvidia 推出的 Fleet Intelligence 工具可监控芯片在不同数据中心的表现，公司向路透社确认该工具能显示芯片所在国家，但未说明能否用于防走私。",
+      "why": "这是 Nvidia 首次被曝私下承认追踪技术可行，与其公开立场及行业协会的反对形成矛盾。若法案通过，芯片追踪将成为合规要求，影响 AI 芯片出口管制执行方式。Foster 表示，Nvidia 相关争议已增强国会同僚对该规则的支持。",
+      "next": "Foster 称计划在新年提出更严格的立法，要求先进 GPU 运行需许可证，并在连接前验证许可证有效性。若《芯片安全法案》被纳入国防授权法案，追踪机制只能定位芯片，无法断开已走私芯片。前提是法案按当前文本通过，且 Nvidia 未公开改变立场。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [],
+      "sources": [
+        {
+          "name": "MIT Technology Review",
+          "url": "https://www.technologyreview.com/2026/11/12/1148483/nvidia-chip-tracking/"
+        }
+      ]
+    },
+    {
+      "title": "Nebius 计划 2027 年支出 400 亿美元，微软数据中心延期",
+      "what": "Nebius 在第三季度财报电话会上宣布 2027 年计划支出 400 亿美元，远超华尔街预期。公司计划用客户预付款和以客户合同为担保的贷款来融资。其最大客户之一微软位于新泽西州 Vineland 的数据中心已延期数月，原定 2025 和 2026 年交付的容量，目前仅略超一半计划年底前交付，其余推迟到 2027 年第二季度。Nebius 将 2026 年营收预期下调 2 亿美元至 30 亿美元，股价当日下跌 17%。",
+      "background": "Nebius 的融资模式依赖客户预付款和合同担保贷款，本质是用数据中心未来价值为建设融资。但微软近期被报道正在收紧对第三方运营项目的监管，并重新评估是否签署新协议。Nebius 称延期来自其不控制的第三方站点，自身建设项目按时或提前。",
+      "why": "这一案例检验了 neocloud 以客户合同为杠杆的融资模式能否承受交付延期。微软合同价值高达 194 亿美元，且包含延期财务处罚和终止条款。若交付持续延误，Nebius 将面临成本累积而收入下滑，融资链条可能承压。",
+      "next": "若微软不接受新交付日期，可能触发合同中的处罚或终止条款，但微软尚未公开取消任何项目。Nebius 称 2027 年大部分新增容量来自自建站点，若自建按时交付，融资模式或可维持；否则预付款覆盖 85% 支出的假设将受考验。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "neocloud",
+          "gloss": "新型云服务商，通常指专门提供 AI 算力租赁、而非传统综合云服务的公司，常以 GPU 集群为核心产品。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/12/nebius-tests-the-neocloud-playbook-with-40-billion-in-planned-spending/"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
