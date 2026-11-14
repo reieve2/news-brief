@@ -1,0 +1,435 @@
+{
+  "date": "2026-11-14",
+  "generated_at": "10:54",
+  "cards": [
+    {
+      "title": "黄仁勋辞任英伟达CEO，CFO临时接任",
+      "what": "英伟达宣布黄仁勋辞去总裁、CEO及董事职务，即刻生效。执行副总裁兼CFO Colette Kress出任临时CEO并保留原职，董事会启动正式CEO遴选，同时考虑内外候选人。公司任命Harvey C. Jones为首位董事会主席。消息公布后盘前股价一度跌至150.13美元，跌幅约13.58%，开盘后跌幅收窄至约4.63%。",
+      "background": "黄仁勋1993年联合创办英伟达并掌舵33年，此次为首次换帅。量子位报道称，2025年1月DeepSeek引发市场对AI算力投入重估时，英伟达曾单日收跌约17%、市值蒸发约5930亿美元。此次辞职发生在英伟达定于11月17日公布2027财年第三季度业绩之前。",
+      "why": "黄仁勋是英伟达战略与产品路线的核心符号，突然离职直接触发市场对战略连续性的重估。临时CEO为财务背景，董事会称运营与产品路线图不受中断，但正式继任者未定，投资者需判断管理层变动是否影响客户承诺与AI算力供应节奏。",
+      "next": "若董事会按公告在内外候选人中遴选，正式CEO人选及过渡期长短将决定市场情绪能否稳定；11月17日财报电话会是观察管理层表态的最近节点。前提是公司运营与产品路线图如公告所称未受中断，否则股价波动可能持续。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [],
+      "sources": [
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/11/509995.html"
+        }
+      ]
+    },
+    {
+      "title": "OpenAI 推出 ChatGPT Wallet，代理可代用户付款",
+      "what": "OpenAI 发布 ChatGPT Wallet，称其为一种安全支付方式：ChatGPT Work、Codex 和 dots 中的代理可在用户批准后完成购买，并沿用现有银行卡保护机制。官方未披露支持的卡组织、地区范围或上线时间。",
+      "background": "代理（agent）已能执行写代码、调用工具等任务，但付款环节一直需要人工接管，成为端到端自动化的断点。OpenAI 此时把支付能力接入自家产品线，是把代理从「建议」推进到「执行」的一步，但摘要未说明风控与授权流程的具体设计。",
+      "why": "让代理直接花钱，意味着授权边界、误购责任和退款归属都要重新定义。若「用户批准」只是单次点击确认，风险仍集中在用户侧；若引入额度与白名单，则可能成为代理支付的事实标准，影响其他厂商的跟进方式。",
+      "next": "接下来需观察 OpenAI 是否公布授权粒度（单笔、额度、商户白名单）与纠纷处理规则。若这些细节缺位，企业客户可能暂缓在 Work 中启用该功能；反之，其他代理平台可能被迫跟进类似的钱包方案。以上取决于官方后续文档。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "Codex",
+          "gloss": "OpenAI 的代码生成模型与相关产品线，此处指可在其中调用代理的产品入口。"
+        },
+        {
+          "term": "dots",
+          "gloss": "OpenAI 旗下一款产品名称，材料未说明其具体形态。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "OpenAI News",
+          "url": "https://openai.com/index/introducing-chatgpt-wallet"
+        }
+      ]
+    },
+    {
+      "title": "Cerebras 三季度营收超预期，宣布与微软达成合作",
+      "what": "Cerebras Systems 公布 2026 年第三季度财报，调整后每股收益 12 美分，市场预期为亏损 14 美分；核心营收 2.309 亿美元，高于预期的 2.147 亿美元，同比增长 70%。公司同时宣布与微软签署合作协议，CEO Andrew Feldman 称微软于 10 月签约，收入预计从 2027 年第一季度开始体现。财报发布后股价周五上涨约 7%。",
+      "background": "Cerebras 今年 5 月在纳斯达克上市，此后股价累计下跌约 47%。公司此前已与 Amazon、Oracle 达成合作，此次再添微软这一超大规模云厂商客户。Feldman 称 GPU 交付周期长、成本高，为 Cerebras 创造了硬件销售机会；公司还表示正在评估融资方案以应对需求增长。",
+      "why": "Cerebras 是英伟达在 AI 芯片市场的主要挑战者之一，与微软的合作意味着其硬件进入又一家顶级云厂商的采购体系。但营收增速已从二季度的 103% 放缓至 70%，2027 年营收翻三倍的指引也略低于分析师预期的 29.2 亿美元，说明增长叙事仍待验证。",
+      "next": "若 Feldman 所说的时间表成立，微软相关收入将在 2027 年第一季度首次计入财报，届时可检验合作的实际规模。公司称正评估融资选项，可能意味着需要外部资金支撑产能扩张；但融资形式与规模尚未披露，具体走向仍不确定。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "超大规模云厂商",
+          "gloss": "hyperscaler，指自建大规模数据中心、对外提供云服务的少数几家巨头，如 Amazon、Microsoft、Google。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/12/cerebras-systems-cbrs-q3-earnings-report-2026.html"
+        }
+      ]
+    },
+    {
+      "title": "llama.cpp 发布 v1.0.0，确立语义化版本规则",
+      "what": "Hugging Face 博客宣布 llama.cpp 与底层张量库 ggml 同步发布 v1.0.0。项目方称此后公共 C API 的破坏性变更将以主版本号提升标识，次版本号对应向后兼容的功能、后端更新与模型支持，补丁号仅修 bug。项目启动 3.5 年来已有大量下游应用依赖其库接口。",
+      "background": "llama.cpp 以量化、优化后端和可移植 C/C++ 实现，支持从消费级本地机器到企业服务器运行多模态 LLM。随着本地 AI 与隐私需求上升，下游集成增多，接口稳定性成为开发者关注点，此次版本号规则正是对这一压力的回应。",
+      "why": "对依赖 llama.cpp 的下游项目而言，主版本号现在明确代表 API/ABI 不兼容，升级决策有了可预期依据。项目方同时表示会对版本边界执行更严格，这降低了库接口变动带来的隐性迁移成本。",
+      "next": "若该规则被严格执行，后续破坏性变更将集中在主版本发布中，下游可据此规划升级窗口。前提是 ggml-org 各项目一致遵循同一套语义化版本约定，且发行渠道的分发同步跟上。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "ABI",
+          "gloss": "应用二进制接口，规定编译后的程序与库在机器码层面如何互相调用。ABI 不兼容意味着已编译的下游程序可能需要重新编译才能使用新版本库。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
+        }
+      ]
+    },
+    {
+      "title": "西湖大学成立世界模型研究中心，发布 40 亿参数 Awomo-0.5",
+      "what": "西湖大学成立世界模型研究中心，校长施一公揭牌。同时发布首版基础模型 Awomo-0.5，仅 40 亿参数，采用「概念世界模型」路线，据称在 6 项国际公开评测的不同榜单同时登顶，涉及物理推理、机器人操作和泛化任务。团队称在 RoboTwin-c2r 双臂操作任务成功率 80.6%，在 MolmoSpaces 零样本操作基准达 73.4%。",
+      "background": "世界模型赛道此前以创业公司为主，近几个月高校和地方政府开始组织力量入场：7 月北大与逆矩阵科技成立联合实验室，10 月极佳视界牵头的通用世界模型北京市重点实验室揭牌。西湖大学团队自 2023 年起研究世界模型，今年初在校外创办西湖数智（Awomo），此次将合作扩展为校级交叉科研平台。",
+      "why": "概念世界模型走隐空间路线，不逐帧生成视频，而是在模型内部建立可组合的物理概念表示，与 JEPA 同属一类但有所区别。若该路线成立，物理知识可跨任务复用，减少机器人、自动驾驶等场景各自重复训练模型的成本。40 亿参数在多项评测登顶，为该路线提供了初步验证。",
+      "next": "据团队介绍，评测成绩目前集中在机器人仿真操作领域，距离证明跨领域通用能力仍有距离。后续能否把同一套物理知识迁移到生物、材料等真实场景，取决于跨学科研究能否转化为模型持续扩展的动力；若仿真榜单成绩无法在真实场景复现，该路线的说服力将受限。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "概念世界模型",
+          "gloss": "西湖大学团队提出的技术路线：不把逐帧生成未来画面作为核心目标，而是在隐空间里把物体属性、空间关系、材质和接触状态表示为可组合、可复用的物理概念，每个概念同时对应语言描述和物理现象，再用这些概念推演后续状态。"
+        },
+        {
+          "term": "JEPA",
+          "gloss": "Joint Embedding Predictive Architecture，由 Yann LeCun 推动的隐空间预测架构，在潜空间里做表征预测而非重建像素。概念世界模型与其同属隐空间路线，区别在于前者把潜空间内容定义为可组合的物理概念。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/academic/nhzldlwI6rJVyXIl.html"
+        }
+      ]
+    },
+    {
+      "title": "英伟达发布端到端自动驾驶模型 Alpamayo 2 Edge",
+      "what": "英伟达 11 月 10 日发布端到端自动驾驶模型 Alpamayo 2 Edge，VLM 骨干约 2.45B、动作专家约 0.2B，运行在车规级芯片 DRIVE AGX Thor 上。模型被要求生成因果链推理，并用特殊标记在常规场景下跳过显式推理。英伟达称经闭环强化学习后驾驶表现较未使用该轮 RL 的较优检查点提升 48.9%。",
+      "background": "车载算力有限、响应时间要求严格，让模型在车里做长推理与及时输出轨迹存在矛盾。此前端到端模型输入图像直接输出轨迹，中间过程是黑箱，被诟病说不清为什么这么开。英伟达因此把推理长度也纳入计算资源分配，用自动标注的因果链数据训练模型按场景调整推理深度。",
+      "why": "这套方案把「推理该多长」变成模型自己学习的决策，并用评分器 AlpaJudge 把解释质量转成训练信号，再接入仿真做闭环强化学习。它展示了从架构、自动标注、强化学习到车载部署的完整路径，也暴露一个工程矛盾：过早跳过推理可能漏掉交通因素，频繁长推理又拖慢响应。",
+      "next": "英伟达披露的 48.9% 提升和 160–190 ms 时延均来自其自身仿真与参考配置，若后续在真实车辆、不同道路条件和传感器组合下复现，这套架构才具备说服力。前提是闭环仿真结果能外推到实车；否则推理质量与驾驶安全之间的差距仍需独立评测验证。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/ai/1jG5k34DSlHSSJE9.html"
+        }
+      ]
+    },
+    {
+      "title": "Nebius 计划 2027 年支出 400 亿美元，微软数据中心延期",
+      "what": "Nebius 在第三季度财报电话会上宣布 2027 年计划支出 400 亿美元，远超华尔街预期。公司计划用客户预付款和以客户合同为担保的贷款来融资。但其最大客户之一微软位于新泽西州 Vineland 的数据中心已延期数月，原定 2025 和 2026 年交付的容量，目前仅略超一半计划年底前交付，其余推迟到 2027 年第二季度。Nebius 将 2026 年营收预期下调 2 亿美元至 30 亿美元，股价当日下跌 17%。",
+      "background": "Nebius 的融资模式依赖客户预付款和合同担保贷款，用数据中心的未来价值为建设融资。但微软近期被报道正在收紧对第三方运营项目的审查，并已放弃 Nscale 德州数据中心的扩容选项。Nebius 称延期源于其不控制的第三方站点，即 DataOne 运营的设施，该站点因无证运行天然气发电机被新泽西州监管机构罚款 110 万美元，并面临噪音诉讼。",
+      "why": "这暴露了 neocloud 模式的核心风险：收入依赖按时交付，而交付依赖第三方站点，融资又依赖合同预付款。一旦延期，成本堆积而收入下滑，合同中的延期罚则和微软的终止权会进一步放大财务压力。Nebius 的案例可能影响市场对其他依赖类似融资结构的 neocloud 公司的估值。",
+      "next": "如果微软不正式接受新交付日期，可能触发合同中的终止权或罚款条款，Nebius 的预付款融资链条将承压。若第三方站点继续延期，Nebius 可能需动用更多现金或资产担保贷款来填补缺口。其自建站点能否按计划在 2027 年提供大部分新增容量，是观察其融资模式能否成立的关键前提。",
+      "confidence": "高",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "neocloud",
+          "gloss": "指专门提供 AI 算力租赁的新兴云服务商，通常不自建全部数据中心，而是依赖第三方站点和客户预付款快速扩张，与 AWS、Azure 等传统超大规模云厂商区分。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/12/nebius-tests-the-neocloud-playbook-with-40-billion-in-planned-spending/"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 13,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 16,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
