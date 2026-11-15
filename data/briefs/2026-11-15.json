@@ -1,0 +1,435 @@
+{
+  "date": "2026-11-15",
+  "generated_at": "10:23",
+  "cards": [
+    {
+      "title": "星舰飞船首次被发射塔机械臂捕获回收",
+      "what": "当地时间 11 月 14 日，SpaceX 在星舰第 15 次试飞中首次用发射塔机械臂接住从轨道返回的第二级飞船。飞船在升空约 22.5 小时后完成约 14 圈轨道飞行，再入大气层并完成着陆点火，最终落入机械臂之间。一级超重型助推器 B22 因返航途中出现低燃料告警，捕获程序取消，改在墨西哥湾溅落。",
+      "background": "SpaceX 计划用星舰在 LEO 轨道构建由百万艘航天器组成的 AI 数据中心星座，组装巨型结构需要极高发射频率。公司称双筷子式抓取能更快完成飞船检查、修复和重新发射，是实现该频率的关键。此前第 14 次试飞已完成入轨、返回、溅落并部署 26 颗卫星。",
+      "why": "这是星舰第二级首次完成发射塔捕获，意味着飞船回收从溅落推进到塔上抓取，为快速复用提供了可验证的路径。若复用节奏成立，SpaceX 设想的轨道 AI 数据中心星座在发射成本与频次上才具备讨论基础。",
+      "next": "SpaceX 表示很可能在下一次飞船飞行任务中再次尝试该手段。若下一次能同时完成一级与二级捕获，双捕获目标将得到验证；但 B22 的低燃料告警说明助推器返航余量仍是变量，双捕获能否如期实现取决于后续任务对燃料与捕获程序的调整。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "LEO",
+          "gloss": "低地球轨道（Low Earth Orbit），通常指高度约 2000 公里以下的近地轨道，是多数通信卫星和空间站所在的轨道区域。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/027/253.htm"
+        }
+      ]
+    },
+    {
+      "title": "黄仁勋辞任英伟达 CEO，请愿恢复其职务签名破 12 万",
+      "what": "英伟达董事会 11 月 12 日宣布，黄仁勋辞去总裁、CEO 及董事会成员职务，即刻生效，执行副总裁兼 CFO 科莱特·克雷斯出任临时 CEO。随后网上出现「Stand with Jensen」请愿，要求董事会恢复其 CEO 职务，截至 IT之家发文已收集超 12 万个签名，较前一天增长约 6.3 万，签名者包括现任与前任员工、股东、合作伙伴，马斯克也参与签名。",
+      "background": "据 IT之家相关报道，路透社称黄仁勋被指就婚外情误导英伟达高层，董事会已启动独立调查；请愿组织者则担心他在未经正当程序、没有几天申辩时间的情况下被迫离职。公司仍按原计划于 11 月 17 日发布 2027 财年第三季度财报并召开电话会议。",
+      "why": "CEO 在财报发布前一周即刻离任，且离职原因与董事会调查相关，使公司治理和信息披露成为焦点。请愿规模一天增长六万，说明员工、股东与合作伙伴对程序正当性存在公开质疑，这可能影响市场对管理层稳定性的判断。",
+      "next": "若董事会调查细节在 11 月 17 日财报会或之后披露，请愿压力可能进一步上升；若调查结论支持董事会决定，请愿大概率难以改变结果。前提是董事会未因签名规模或马斯克等公开声援而调整处理方式。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/027/252.htm"
+        }
+      ]
+    },
+    {
+      "title": "微软 Microsoft 365 全球宕机超 24 小时",
+      "what": "微软周六表示，影响各国企业和政府所用 Microsoft 365 应用的全球服务中断已经结束，持续超过 24 小时。Teams、Outlook、Copilot 等应用受影响，数十个国家出现通信问题。微软称未发现外部干扰，将问题归咎于服务器故障。这是微软历史上持续时间最长的中断之一，也是今年的第二次。",
+      "background": "微软称根本原因是服务器故障，未发现外部干扰。英国国家网络安全中心前负责人 Ciaran Martin 认为，此次事故在规模上类似亚马逊 AWS 和 CrowdStrike 事故，影响可能更严重。日本政府 IT 基础设施受影响，英国 NHS 工作人员被迫改用纸质记录。",
+      "why": "这次中断暴露出各国政府和企业普遍依赖极少数大型科技公司的基础设施，单点故障即可同时冲击通信、医疗记录和政府系统，风险集中度问题再次被摆上台面。",
+      "next": "微软可能面临对故障根因和恢复流程的进一步追问，监管方也可能加强对关键云服务集中依赖的审查。若后续披露显示故障源于内部变更或健康检查机制，云厂商的运维透明度将成为关注点。以上为基于现有报道的推测。",
+      "confidence": "高",
+      "importance": 4,
+      "terms": [],
+      "sources": [
+        {
+          "name": "Solidot",
+          "url": "https://www.solidot.org/story?sid=85886"
+        }
+      ]
+    },
+    {
+      "title": "DeepSeek 开放全家桶应用 API，含语音接口",
+      "what": "DeepSeek 宣布正式开放全家桶应用 API，将联网搜索、深度思考搜索、文件上传、链接阅读等 App 功能拆分为独立接口，支持单独调用、分别计费。语音能力首次开放，包括 ASR 和 TTS。官方还开源了一套轻量级聊天前端 Demo，称开发者可 1:1 复刻完整 DeepSeek App。",
+      "background": "此前 DeepSeek 已于 10 月 17 日开放自研 Search 和 Fetch 接口，但开发者需自行串联工具调用与模型衔接。此次将搜索流程自动化，并补上此前缺失的官方语音接口，同时以五折价格推广语音能力。",
+      "why": "对开发者而言，搜索、文件解析、语音识别等基础能力可直接调用，降低了搭建 AI 应用的门槛和成本。语音识别折后 0.39 元/小时，低于报道中列出的 OpenAI 和 Google Cloud 同类服务价格。",
+      "next": "若低价策略吸引足够开发者，可能出现一批基于 DeepSeek 接口的语音助手、会议记录类应用。但官方称现有对话产品只是较基础形态，其 C 端产品策略是否随之调整尚不明确，需观察后续定价和接口稳定性。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "ASR",
+          "gloss": "自动语音识别（Automatic Speech Recognition），把音频转成文字的技术。"
+        },
+        {
+          "term": "TTS",
+          "gloss": "文本转语音（Text-to-Speech），把文字合成为语音的技术。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/11/510003.html"
+        }
+      ]
+    },
+    {
+      "title": "百度词元所发布首日新增超100家供应商",
+      "what": "11月14日百度称，11月12日于百度世界2026发布的「词元所」在发布首日新增申请入驻供应商超100家、新增接入客户超1000家。李彦宏将其定位为「大模型的交易所」，平台一端汇聚模型提供商，一端服务企业个人，用户可购买模型Token。平台主打验真与征信：模型入平台前需通过模型指纹比对、能力测试、性能与可用性测试，上线后接受定期抽检拨测与全链路实时监测，结果沉淀为供应商信用评级。",
+      "background": "李彦宏称今年前9个月几乎每天都有不止一款新模型发布，调用需求同步爆发；而市面上的词元中转站不对模型效果、服务稳定性、响应速度负责，模型真实性也无从考证。词元所试运行期间入驻供应资源超100个，日均调用突破5000万次，已上架40余款模型，覆盖DeepSeek、Kimi、智谱GLM、MiniMax及文心系列，入驻方含模型原厂与第三方推理服务商。",
+      "why": "模型调用层长期缺乏对真实性、稳定性的第三方核验，买方难以判断买到的Token是否来自宣称的模型。若验真与信用评级机制成立，模型服务将像商品一样可检索、可比价，第三方推理服务商获得公开变现渠道。工信部专家盘和林认为，这为存量算力增加了可检索、可比价的变现出口，提升算力可售性与配置效率。",
+      "next": "接下来要看两件事：一是信用评级能否形成对供应商的实际约束，即抽检拨测发现问题后是否有下架或降级机制；二是新增的100多家供应商与1000多家客户能否转化为持续调用量。若评级缺乏公开透明度，平台可能退化为又一个中转站。以上判断基于现有报道，尚无第三方数据验证。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "词元中转站",
+          "gloss": "转售大模型API调用额度的中间服务商，用户通过它间接调用各家模型；报道称这类服务通常不对模型效果、稳定性和真实性负责。"
+        },
+        {
+          "term": "拨测",
+          "gloss": "由平台侧主动发起、按计划对线上服务进行的探测性调用，用于持续检查可用性、响应速度和返回质量，而非依赖供应商自报数据。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/industrynews/cqPXhF38rM4VcVa7.html"
+        }
+      ]
+    },
+    {
+      "title": "UniPat AI 发布湿实验预测基准 SPU，前沿模型平均分不足 0.5",
+      "what": "UniPat AI 牵头发布 Science Prediction Universe（SPU）基准，含 100 个公开任务与 16 个私有任务，共 4207 个湿实验，覆盖化学、材料、生物、医学。模型在 8 小时、单块 H20 条件下自主检索并提交实验条件排序，以 Spearman 相关系数评分。首轮 12 款模型 13 种配置中，最高分 Claude Opus 5.5 为 0.486。",
+      "background": "AI for Science 的评测正从文献问答、数据分析走向真实实验环节，已有 BrainBench、ScienceAgentBench 等基准，但多侧重判断结果或已有数据分析。SPU 把自主研究过程与湿实验结果预测合并考察，并引入未发表私有任务，以降低模型提前见过答案的可能。",
+      "why": "湿实验成本高、周期长，实验前预测是科研流程中价值最高的一步。SPU 显示当前前沿模型仅约半数任务超过随机水平，且提高推理强度、增加工具调用和 GPU 算力都未显著提升得分，说明瓶颈在判断依据的选择而非算力。",
+      "next": "若 SPU 的公开任务按计划以 Harbor 任务包发布，团队可先用同类任务筛选模型再投入正式实验。研究团队提出的改进方向是让模型更早发现错误假设并调整排序依据；但该基准能否预测模型在真实课题上的表现，仍需更多独立复现。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "H20",
+          "gloss": "英伟达面向中国市场推出的 GPU 型号，此处指每个任务运行环境配备的算力卡。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/11/510232.html"
+        }
+      ]
+    },
+    {
+      "title": "Google Cloud Compute Engine API 启用不可变日期版本",
+      "what": "Google Cloud 宣布 Compute Engine API 的日期版本化正式可用，在长期存在的 /v1 之外新增不可变的季度快照版本，如 2026-09-01。调用方通过 X-Goog-Api-Version 请求头或 $apiVersion 查询参数选择版本，路径仍为 /compute/v1/。不指定版本的请求继续使用 /v1，且 /v1 无终止日期。",
+      "background": "据 Google 软件工程师 Michael Murstein 说明，/v1 是单一可变的生产接口，全球客户共享，任何行为改进都可能破坏现有脚本或需要多年迁移。Google 称新方案为基于接口的版本化，遵循其 AIP-185 规范，要求稳定版本用日期命名、预览版本有时间限制。",
+      "why": "这是三大云厂商中最后一个允许在请求中固定 API 版本的。Azure Resource Manager 一直要求日期戳 api-version 参数，AWS 仅在 SDK 内保留日期戳服务模型、不暴露请求级版本选择。对使用 Compute Engine API 的团队，版本固定意味着升级节奏可控。",
+      "next": "Google 未公布 /v1 的终止日期，也未说明预览版本如何转为稳定版，更未表态其他 Google Cloud API 是否跟进。若后续有更多 API 采用该方案，客户端的版本管理复杂度可能上升；但前提是 Google 公布迁移时间表。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "AIP-185",
+          "gloss": "Google 的 API 改进提案之一，规定 API 版本命名规则：稳定版本必须用日期（YYYY-MM-DD），预览版本必须带时间限制。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "InfoQ 英文",
+          "url": "https://www.infoq.com/news/2026/11/compute-engine-api-versioning/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 12,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 17,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
