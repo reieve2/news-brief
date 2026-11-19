@@ -1,0 +1,469 @@
+{
+  "date": "2026-11-19",
+  "generated_at": "11:58",
+  "cards": [
+    {
+      "title": "谷歌发布 Gemini 4 Neon 模型",
+      "what": "谷歌于 11 月 18 日推出 Gemini 4 Neon。据谷歌介绍，该模型在 Artificial Analysis Intelligence Index 上得分 61，排名第三；在 Vals Index 上排名第二；在 Agent Arena Index 上排名第二。它支持 100 万 token 上下文窗口，定价为每百万输入 token 3 美元、缓存输入 0.15 美元、输出 15 美元，即日起在 Gemini API、Google AI Studio 及 Gemini 应用中上线。",
+      "background": "谷歌称 Neon 面向复杂软件工程、知识工作和科学工作流，强调端到端任务完成与生产级代码能力。企业数据分散在表格、PDF、图表和音视频中，谷歌希望用单一大上下文窗口统一处理这些异构输入。此次发布延续了 Gemini 系列在智能体与长任务方向上的迭代。",
+      "why": "对开发者而言，Neon 的定价和 100 万 token 上下文直接影响长任务智能体的成本结构；缓存输入 95% 折扣降低了重复上下文场景的开销。谷歌同时强调可操控性和低捏造率，这两项指标对生产环境部署比单纯跑分更关键。",
+      "next": "如果第三方独立评测复现谷歌公布的排名，Neon 可能成为长上下文智能体工作流的默认选项之一；但谷歌自报的基准成绩仍需外部验证，且实际表现取决于 Antigravity 等配套工具链的成熟度。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "Artificial Analysis Intelligence Index",
+          "gloss": "由独立评测机构 Artificial Analysis 维护的模型综合智能评分，汇总多项基准得出单一分数，常用于横向比较不同厂商模型。"
+        },
+        {
+          "term": "Agent Arena Index",
+          "gloss": "Arena 推出的智能体评测指数，基于真实智能体会话对模型进行排名，侧重多步任务中的实际表现而非静态问答。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Google DeepMind",
+          "url": "https://deepmind.google/blog/introducing-gemini-4-neon/"
+        },
+        {
+          "name": "界面新闻",
+          "url": "https://www.jiemian.com/article/15349909.html"
+        },
+        {
+          "name": "Hacker News",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+        }
+      ]
+    },
+    {
+      "title": "OpenAI 发布 GPT-6.2 Astra 与 Sol 两款模型",
+      "what": "OpenAI 正式发布 GPT-6.2 Astra 和 GPT-6.2 Sol，重点提升专业任务、编程、电脑操作和执行效率，并降低部分使用成本。两款模型将用于 ChatGPT Work、Codex 和 API。Astra 面向复杂编程与专业工作，Sol 更强调日常多模态任务及工具使用。OpenAI 同时发布系统安全卡，称两款模型网络安全能力均达 Preparedness Framework 的 Critical 门槛。",
+      "background": "OpenAI 在发布模型的同时公开安全评估结果，把能力分级与访问限制绑定在一起。据极客公园同一篇早报，加州刚就 AI 智能体测试失控起诉 OpenAI，谷歌 Gemini 智能体安全测试也被曝波及真实网站，安全议题正与模型发布同步升温。",
+      "why": "安全卡把网络安全能力标到 Critical、把 Astra 的 AI 自我改进能力标到 High，并据此收紧高风险能力访问，这意味着前沿模型的发布节奏越来越受内部风险分级约束。对使用 Codex 和 API 的开发者而言，能力提升与可用范围可能同时变化。",
+      "next": "若安全卡的分级成为常态，OpenAI 可能对 Astra 的高风险能力设置更细的准入条件，开发者接入方式或随之调整。前提是监管压力持续，且安全评估结果继续公开；目前细节仅来自 OpenAI 单方披露，实际限制范围待观察。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "Preparedness Framework",
+          "gloss": "OpenAI 用于评估模型高风险能力的内部框架，按能力等级划分门槛，并据此决定访问限制和部署方式。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/374109"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic IPO 募资 813 亿美元，创纪录",
+      "what": "Anthropic 于周三将 IPO 定价为每股 83 美元，高于此前 70-78 美元的预期区间，发行约 9.8 亿股，募资 813 亿美元，超过 SpaceX 成为史上最大 IPO。股票将于周四在纳斯达克上市，代码 ANT。完全稀释市值约 1.5 万亿美元。",
+      "background": "Anthropic 在 10 月公开招股书，上周更新为 70-78 美元区间并计划发行 8.25 亿股，最终上调发行规模。此次上市正值 AI 行业经历一系列冲击：中期选举中的强烈反弹，以及英伟达 CEO 黄仁勋上周被罢免。市场还担忧利率上升将令数据中心开发商和 neoclouds 的债务难以承受。",
+      "why": "这是 AI 行业迄今最大的公开市场检验。亚马逊和谷歌对 Anthropic 的持股价值均超 1000 亿美元，谷歌、微软、英伟达和 AMD 同意按 IPO 价格合计投资 260 亿美元。Anthropic 同时是英伟达、谷歌、亚马逊和 AMD 昂贵系统的买家，其上市表现将影响整个 AI 算力供应链的估值逻辑。",
+      "next": "若周四挂牌后股价守住或高于发行价，可能为 OpenAI 2027 年的 IPO 铺路——OpenAI 已保密提交申请。但市场对利率和 AI 资本开支的担忧仍在，若首日破发，可能推迟其他 AI 公司的上市窗口。前提是宏观利率环境不进一步恶化。",
+      "confidence": "高",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "neoclouds",
+          "gloss": "新型云服务商，通常指专为 AI 训练和推理提供 GPU 算力的中小型云厂商，区别于 AWS、Azure 等传统超大云。它们依赖债务融资购买 GPU 和建设数据中心，因此对利率敏感。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html"
+        }
+      ]
+    },
+    {
+      "title": "Intel 签下首个 18A 外部客户，未披露名称",
+      "what": "Intel CEO 陈立武在 Austin 的 TomorrowX Summit 上表示，公司已签下 18A 制程的首个外部客户，但未透露客户名称。Intel 技术主管 Pushkar Ranade 在 X 上澄清，该客户签约的是 18A-P 制程节点，该节点已于今年 6 月进入风险生产。陈立武同时宣布，微软成为其最先进封装技术 EMIB 的首个公开客户。",
+      "background": "这是 Intel 五年来追赶台积电的代工业务首个外部客户里程碑。此前 Intel 工厂主要生产自家芯片。今年 5 月有报道称 Apple 与 Intel 接近达成代工协议；Intel 股价自 9 月底以来已腰斩，上月因 PC 销售疲软和供应链问题导致本季营收指引低于分析师预期至少 10 亿美元。",
+      "why": "代工业务长期缺乏外部大客户是 Intel 转型的核心质疑点，首个客户签约在象征意义上回应了这一质疑。但客户身份未披露、且签约的是尚在风险生产的 18A-P 节点，实际量产规模和收入贡献仍待验证。",
+      "next": "若分析师猜测成立，客户可能来自 Nvidia、Apple 或自研 CPU 的超大规模云厂商——Bajarin 称亚马逊、微软、谷歌在台积电的 CPU 产能吃紧。前提是这些猜测有据；Intel 未确认前，客户身份仍属推测。后续可关注 18A-P 风险生产转量产的时间表。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "18A-P",
+          "gloss": "Intel 18A 制程的增强版本（P 指 Performance），于 2026 年 6 月进入风险生产，即在新制程正式量产前小批量试产以验证良率与设计。"
+        },
+        {
+          "term": "EMIB",
+          "gloss": "Embedded Multi-die Interconnect Bridge，Intel 的先进封装技术，用嵌入式硅桥连接多个小芯片，是 Intel 在封装环节的差异化能力。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/18/intel-first-18a-foundry-customer.html"
+        }
+      ]
+    },
+    {
+      "title": "Google DeepMind 发布 Genie 4 世界模型",
+      "what": "Google DeepMind 于 11 月 18 日向符合条件的 Google AI Ultra 订阅用户开放 Genie 4，支持在生成世界中用自然语言实时修改环境、添加原生音频，并可发布到新的社区画廊供他人探索和 remix。同时 Genie 3 获得更新：单次生成时长从 60 秒延长至 3 分钟，支持 360 度全景图作为世界种子，以及世界串联。",
+      "background": "Project Genie 是今年早些时候推出的实验性研究原型，用于生成和探索交互式世界。早期测试者反馈希望获得对世界内部事件的更深控制，以及更便捷的构建与分享方式，此次更新正是对这些反馈的回应。Genie 4 与 Genie 3 在 Project Genie 的模型选择器中并存，前者主打最高保真度的视觉、物理与音频，后者面向更长时长和全景种子场景。",
+      "why": "世界模型从「生成一段可探索场景」推进到「会话中实时编辑、带自适应音频、可分享 remix」，交互性和社交属性明显增强。Genie 3 的 3 分钟时长与全景 grounding 也扩大了可玩空间。对做交互内容、游戏原型和世界模型的团队来说，这是一条可直接上手体验的产品化路径，而不只是论文演示。",
+      "next": "若订阅用户反馈积极，Google 可能把 Genie 4 的能力逐步下放到 AI Pro 等更低档位，并扩展画廊的 remix 机制。Genie 3 与 Genie 4 并存说明长时长与高保真两条路线尚未合并，后续版本可能收敛。目前仅有官方博客与 HN 讨论，实际生成质量与延迟仍待用户实测验证。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "grounding",
+          "gloss": "把生成内容锚定到给定输入（这里是 360 度全景图）上，使生成的世界在视角转动时保持场景一致，而不是自由发挥。"
+        },
+        {
+          "term": "remix",
+          "gloss": "在他人已发布的世界基础上二次修改和再创作，类似 fork 一个可交互场景。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Google DeepMind",
+          "url": "https://deepmind.google/blog/genie-4-is-now-available/"
+        },
+        {
+          "name": "Hacker News",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/"
+        }
+      ]
+    },
+    {
+      "title": "OpenAI 称其模型优化了 Jalapeño 芯片电路设计",
+      "what": "OpenAI 发布文章称，其模型优化了用于 Jalapeño 硅片的电路，并改进了 RISC-V 核心设计，展示了 AI 辅助芯片设计的进展。文章提到 GPT-6 Astra 参与其中。该消息在 Hacker News 上获得 170 分、109 条评论。",
+      "background": "OpenAI 官方博客发布了这一消息，Hacker News 随后出现讨论帖。材料未说明 Jalapeño 硅片的具体用途、优化幅度或验证方式，也未提供第三方复现或独立评估。",
+      "why": "若属实，这将是 AI 模型直接参与芯片电路优化并落到具体硅片上的案例，而不只是设计辅助工具。但当前只有 OpenAI 单方面描述，缺少量化指标和外部验证，实际效果仍需观察。",
+      "next": "接下来可能看到 OpenAI 公布更多优化细节或基准数据；若其他团队复现或给出独立评估，才能判断这类方法在芯片设计流程中的实际位置。前提是材料中提到的 Jalapeño 和 RISC-V 设计有可验证的后续披露。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "RISC-V",
+          "gloss": "一种开放指令集架构，任何人都可免费使用和扩展，常用于学术研究和定制芯片设计。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "OpenAI News",
+          "url": "https://openai.com/index/advancing-chip-design-with-our-models"
+        },
+        {
+          "name": "Hacker News",
+          "url": "https://openai.com/index/advancing-chip-design-with-our-models/"
+        }
+      ]
+    },
+    {
+      "title": "NVIDIA RTX Spark 紧凑台式机开售，支持本地跑 120B 模型",
+      "what": "NVIDIA 宣布，ASUS、Dell、MSI 的 RTX Spark 紧凑台式机即日起上市，Acer、GIGABYTE、HP 及 Microsoft Surface RTX Spark Dev Box 后续跟进。该机型搭载 20 核 Grace CPU、Blackwell RTX GPU（6144 CUDA 核心）和最高 128GB 统一内存，AI 性能达 1 petaflop，可本地运行 1200 亿参数大模型。",
+      "background": "NVIDIA 称，本地 AI 模型与常驻 agent 的工作流正在扩展，生成素材、长渲染和定时任务需要一台可 24/7 运行的专用 Windows PC。本地运行可避免按 token 计费的云端 API 开销，并让代码和文件留在本机。Adobe 同步扩大对 Windows on Arm 的原生支持。",
+      "why": "128GB 统一内存让单台紧凑台式机可本地承载 120B 参数级模型，把部分推理和微调从云端 API 迁回本地，改变按 token 付费的成本结构。对开发者而言，Windows on Arm 上的原生 CUDA 与 WSL Linux 工具链，使本地 agent 和微调工作流更接近服务器体验。",
+      "next": "若 Acer、GIGABYTE、HP 及 Microsoft Dev Box 按计划上市，RTX Spark 可能形成从笔记本到紧凑台式机的本地 AI 硬件产品线。NVIDIA Switchyard 在本地与云端模型间自动路由任务，其实际成本与延迟表现将决定本地优先策略能否被开发者接受；这取决于软件生态成熟度，目前仍待观察。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "统一内存",
+          "gloss": "CPU 与 GPU 共享同一块物理内存池，无需在两者间显式拷贝数据，因此可让 GPU 直接访问大容量内存来加载超出显存的大模型。"
+        },
+        {
+          "term": "Windows on Arm",
+          "gloss": "Windows 系统在 Arm 架构处理器上运行的版本，与 x86 应用需经模拟层不同，原生 Arm 应用可直接运行，性能与兼容性更好。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "NVIDIA Blog",
+          "url": "https://blogs.nvidia.com/blog/rtx-spark-desktop-local-ai-available-now/"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 16,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
