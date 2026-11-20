@@ -1,0 +1,439 @@
+{
+  "date": "2026-11-20",
+  "generated_at": "11:51",
+  "cards": [
+    {
+      "title": "Anthropic 纳斯达克上市首日涨 17%，市值 1.27 万亿美元",
+      "what": "据 IT 之家报道，Anthropic 于当地时间 11 月 19 日在纳斯达克上市，发行价 83 美元，开盘报 111.5 美元，盘中一度突破 115 美元后回落，收盘 97.17 美元，较发行价涨 17.07%。按收盘价计算市值约 1.27 万亿美元。本次 IPO 募资 813 亿美元，超过 SpaceX 今年 6 月的 750 亿美元，成为有史以来最大规模 IPO。",
+      "background": "报道称 Anthropic 每股收益为 -59.62 美元，仍处于高投入、尚未稳定盈利的阶段，市场更多是在为 AI 基础模型、企业级应用及未来商业化能力定价。同一批消息中，苹果被曝自研可操控设备、浏览网页、编写代码的 AI 智能体，谷歌 Gemini 也推出可直接操作 Mac 桌面的功能，头部厂商在智能体方向的竞争正在加速。",
+      "why": "这是 AI 基础模型公司首次以万亿美元级市值进入公开市场，为同类公司的估值和融资路径提供了公开参照。同时其负每股收益说明，市场给出的是对未来商业化能力的定价，而非当期盈利，这会让后续财报的兑现压力被放大。",
+      "next": "若后续财报显示企业级收入增速能支撑当前估值，可能带动更多 AI 公司推进上市；若亏损持续扩大，公开市场对 AI 板块的定价逻辑可能重新校准。以上推测依赖该公司后续披露的收入与亏损数据，目前材料中尚无这些细节。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/374235"
+        }
+      ]
+    },
+    {
+      "title": "谷歌发布 Gemini 4 Neon，成本减半且 Agent 跑分登顶",
+      "what": "11 月 18 日，Google DeepMind 发布 Gemini 4 系列第四款模型 Neon，定位介于旗舰 Carbon 与轻量 Hydrogen 之间。据极客公园报道，Neon 在 AA Intelligence Index v5.0.1 的 xhigh 档得 61 分列全球第三，单任务成本 6.44 美元，比 Carbon 低约 17%；在 AA Coding Agent Index 上以 58.6 分居首，单任务成本约为 Claude Opus 5.5 的一半。",
+      "background": "报道称，谷歌 AI 在 2026 年 7 月前后因 Gemini 3.5 Pro 跳票、数学推理失误而口碑跌至低谷。8 月谷歌重组，Koray Kavukcuoglu 接管 Gemini 路线图，推行高频迭代，并在预训练与后训练之间增设专攻编程的「中训练」团队；第 7 代 TPU Ironwood 落地，为低价策略提供算力基础。",
+      "why": "Neon 把接近旗舰的 Agent 与编程能力压到中端价位，直接冲击 OpenAI 和 Anthropic 按 token 计费的定价体系。报道提到，在 CursorBench 4.1 上 Neon 得 65.4%，高于 Opus 5.5 的 58.1%；在 Antigravity 的 SWE-sweep 上得 39.0%，远高于 Opus 5.5 的 10.1%。对企业客户而言，同等任务成本可能减半。",
+      "next": "若谷歌维持每两周一次的发版节奏，并继续用 Neon 加 Hydrogen 的大小模型混编压低成本，竞争对手可能被迫跟进降价或加速迭代。但报道也指出，Neon 在 xhigh 档首答延迟达 56.51 秒、输出量偏大，且 11 月底前存在次旗舰单价高于旗舰的价格倒挂；这些因素是否影响企业采用，尚待观察。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "AA Intelligence Index v5.0.1",
+          "gloss": "独立评测机构 Artificial Analysis 发布的模型综合智能指数，汇总多项基准测试得出总分，用于横向比较不同模型的推理能力。"
+        },
+        {
+          "term": "SWE-sweep",
+          "gloss": "在 Antigravity 环境中运行的软件工程基准测试，考察模型在真实代码仓库中完成多步骤工程任务的能力。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/374196"
+        }
+      ]
+    },
+    {
+      "title": "英伟达与微软将加速计算合作从 Azure 扩展至 Windows PC",
+      "what": "在 Microsoft Ignite 上，NVIDIA 与微软宣布扩展全栈合作：Azure 开始提供基于 NVIDIA Vera Rubin NVL72 的虚拟机；通过 Microsoft Foundry 提供 NVIDIA 开放模型与定制能力；并将 AI 部署延伸至边缘和 Windows PC，包括 Foundry Local 支持 Nemotron 3.5、Azure Local 支持 RTX PRO 6000 Blackwell GPU 和 Jetson 平台。",
+      "background": "企业 AI 正从云端训练转向在本地和边缘运行定制模型与智能体，对数据控制、推理成本和延迟的要求上升。微软与 NVIDIA 此前已在 Azure 的 GB200/GB300 系统上合作优化，此次把同一套加速计算栈延伸到 Windows PC 和工业边缘设备。",
+      "why": "这意味着企业可以在 Azure 云、本地 Azure Local 和 Windows PC 之间用同一套 NVIDIA 模型与工具链部署 AI，降低对专有前沿模型的依赖。EY 称用 Foundry 定制 Nemotron 后评估准确率提升 55%、成本降低 15 倍，显示开放模型定制在企业任务中的可行性。",
+      "next": "如果 Azure Local 和 Foundry Local 的硬件支持按计划落地，企业 AI 部署可能更多转向混合模式。但 Windows 365 Cloud PC 的 Direct Stream 仅开放有限预览，公开预览计划在 2027 年初，实际可用性和性能仍需观察。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "NVIDIA Vera Rubin NVL72",
+          "gloss": "NVIDIA 的新一代机架级 AI 系统，由 72 个 Vera Rubin GPU 通过 NVLink 互联组成，面向大规模推理、智能体应用和模型训练。"
+        },
+        {
+          "term": "Microsoft Foundry",
+          "gloss": "微软的 AI 模型开发与部署平台，提供模型目录、后训练、托管计算等服务，帮助企业在 Azure 上定制和运行模型。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "NVIDIA Blog",
+          "url": "https://blogs.nvidia.com/blog/microsoft-ignite-accelerated-computing-azure-windows-pcs/"
+        }
+      ]
+    },
+    {
+      "title": "Intel 签下首个 18A 外部客户，未透露名称",
+      "what": "Intel CEO 陈立武在 Austin 的 TomorrowX Summit 上表示，公司已签下首个 18A 制程的外部客户，但未透露客户名称。Intel 技术主管 Pushkar Ranade 在 X 上澄清，该客户签约的是 18A-P 制程节点，该节点已于今年 6 月进入风险生产。陈立武同时宣布，微软成为其最先进封装技术 EMIB 的首个公开客户。",
+      "background": "这是 Intel 五年来追赶台积电的代工业务首个外部客户里程碑。此前 Intel 工厂主要生产自家芯片。今年 5 月有报道称 Apple 与 Intel 接近达成代工协议。Intel 股价自 9 月底以来已跌去一半以上，上月公司称本季度营收将比分析师预期低至少 10 亿美元，原因是 PC 销售疲软和供应链挑战。",
+      "why": "代工业务能否拿到外部大客户，是 Intel 转型能否成立的关键验证。此前市场对 18A 良率和交付能力存疑，首个外部签约至少说明有客户愿意押注。但客户身份未公开，且签约的是风险生产阶段的 18A-P，实际量产爬坡和订单规模仍待观察。",
+      "next": "若客户身份后续披露，可能指向 Nvidia、Apple 或自研 CPU 的超大规模厂商——分析师认为亚马逊、微软、谷歌在台积电产能紧张。前提是 Intel 能按节点路线图交付 18A-P 良率；若量产延迟，首个客户能否转化为规模订单仍存不确定性。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "18A-P",
+          "gloss": "Intel 18A 制程的增强版本（P 指 Performance），于今年 6 月进入风险生产，即在新制程正式量产前小批量试产、验证良率的阶段。"
+        },
+        {
+          "term": "EMIB",
+          "gloss": "Embedded Multi-die Interconnect Bridge，Intel 的先进封装技术，通过嵌入式硅桥将多颗小芯片高密度互连，用于把不同芯粒拼装成一颗完整处理器。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/18/intel-first-18a-foundry-customer.html"
+        }
+      ]
+    },
+    {
+      "title": "IEA：数据中心用电到2030年或翻倍至1000太瓦时",
+      "what": "国际能源署（IEA）报告称，在「已宣布政策情景」下，全球数据中心用电量到2030年可能翻倍至约每年1000太瓦时。IEA指出，供应链紧张、地方反对和电网容量有限可能拖慢数据中心建设；部分地区待接入数据中心的合计容量已超过当前峰值需求。",
+      "background": "AI 算力扩张带动数据中心负荷快速上升，而铜、电缆、变压器等电网设备供应已经偏紧。IEA 的预测基于已提出但尚未落地的政策，属于情景推演而非既定事实；报告同时提到 2026 年能源危机可能加速电气化。",
+      "why": "电力接入正在成为数据中心扩张的实际瓶颈，而不只是成本项。IEA 预计到2035年峰值电力需求增长40%至50%，需要新增2600万公里线路并改造约1600万公里现有线路，电网投资因此被列为未来十年主要能源投资主题之一。",
+      "next": "若各国按当前政策推进，IEA 预计未来十年电网支出增长75%，但设备供应和地方审批可能使项目并网排队时间拉长。前提是数据中心需求按情景增长且政策不大幅转向；若电网扩容慢于预期，新建项目延期和区域电价波动可能先出现。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "已宣布政策情景",
+          "gloss": "IEA 的一种预测情景，只计入已提出但尚未正式采纳的政策措施，因此结果通常高于当前政策情景的保守假设。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/19/data-center-electricity-demand-iea.html"
+        }
+      ]
+    },
+    {
+      "title": "OpenAI 称其模型在自研与 AMD 芯片设计中取得改进",
+      "what": "据 Data Center Dynamics 报道，OpenAI 在一篇博客文章中称，其模型在芯片设计上带来了改进，覆盖自研硬件和 AMD 设计的硬件两类。报道未给出具体改进指标、芯片型号或验证方式，仅称公司详细披露了相关发现。",
+      "background": "OpenAI 近年推进自研芯片以降低对外部供应商的依赖，同时与 AMD 存在硬件层面的合作。用模型辅助芯片设计是当前 AI 公司寻找落地场景的方向之一，但公开可核验的量化结果仍少。",
+      "why": "若模型真能缩短芯片设计周期或提升指标，将改变 AI 公司自研硬件的成本结构，也会让模型能力从软件侧延伸到 EDA 与物理设计环节。但目前只有厂商自述，缺少第三方复现。",
+      "next": "后续要看 OpenAI 是否公布具体设计环节、对比基线与流片结果；若仅停留在博客层面，业界可能将其视为营销。前提是公司愿意披露可验证数据。",
+      "confidence": "低",
+      "importance": 4,
+      "terms": [],
+      "sources": [
+        {
+          "name": "Data Center Dynamics",
+          "url": "https://www.datacenterdynamics.com/en/news/openai-claims-its-models-have-delivered-chip-design-improvements-across-both-in-house-and-amd-designed-hardware/"
+        }
+      ]
+    },
+    {
+      "title": "Gemini 在 macOS 上线电脑操作功能",
+      "what": "Google 周四宣布，Gemini 桌面应用在 macOS 上获得「电脑操作」能力，AI 可代替用户操作原生 Mac 应用、在后台浏览网页，完成整理文件、填写表单、批量处理文件等多步任务。用户可在聊天窗口实时预览代理操作，并可暂停、停止或预先批准动作。该功能初期仅限美国英语，需订阅 Google AI Plus、Pro 或 Ultra。",
+      "background": "OpenAI、Anthropic、Meta 此前已在桌面应用中提供代理功能，Google 此次入场偏晚。本周 Google 还宣布更广泛推送 Gemini 的「Tasks」功能，并开始放行早期测试者试用 9 月发布的「CC」AI 代理，显示其正加快代理产品的落地节奏。",
+      "why": "电脑操作是代理型 AI 从对话走向实际执行的关键一步，直接触及本地文件与跨应用工作流。对从业者而言，这意味着桌面端代理的竞争从模型能力转向权限控制、操作可审计性和用户信任设计。",
+      "next": "若该功能在美国市场反馈平稳，Google 可能逐步扩展至更多语言和平台，但公司未给出时间表。前提是权限与安全机制经得住真实任务中的误操作考验；否则监管或用户阻力可能拖慢推广。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "电脑操作",
+          "gloss": "指 AI 代理直接控制用户电脑的鼠标、键盘和界面，在本地应用与网页上执行点击、输入等操作，而不仅是生成文本。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 19,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 17,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
