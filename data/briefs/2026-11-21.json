@@ -1,0 +1,440 @@
+{
+  "date": "2026-11-21",
+  "generated_at": "11:44",
+  "cards": [
+    {
+      "title": "Anthropic 纳斯达克上市首日涨 17%，市值 1.27 万亿美元",
+      "what": "据 IT 之家报道，Anthropic 于当地时间 11 月 19 日在纳斯达克上市，发行价 83 美元，首日收于 97.17 美元，涨 17.07%，市值约 1.27 万亿美元。开盘报 111.5 美元，盘中一度突破 115 美元后回落。按募资额计，本次 IPO 募资 813 亿美元，超过 SpaceX 今年 6 月的 750 亿美元。报道称其每股收益为 -59.62 美元。",
+      "background": "报道指出，公司仍处于高投入、尚未稳定盈利的阶段，市场更多是在为 AI 基础模型、企业级应用及未来商业化能力定价。同一批消息中还有苹果自研 AI 智能体、阿里千问在平头哥芯片训练下一代模型等动态，显示头部厂商在模型、芯片与终端入口上同时加码。",
+      "why": "这是目前规模最大的公开市场 AI 募股，为一级市场之外提供了一个可比的估值参照，也让基础模型公司的亏损与投入强度暴露在公开财报口径下。后续同类公司的上市定价和融资节奏，很可能以此为锚。",
+      "next": "若首个财报季的收入增速与亏损收窄符合预期，可能带动更多 AI 公司推进上市；若股价波动加大，承销与投资者对高投入模式的容忍度可能收紧。前提是后续披露的财务数据与招股材料口径一致。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "每股收益",
+          "gloss": "公司净利润除以总股本，衡量每股对应的盈利；为负表示当期亏损。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/374235"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic 数学家称与 Claude 合作证明黎曼猜想，仅公开 Lean 代码",
+      "what": "Anthropic 数学家 Levent Alpöge 宣称与 Claude 合作发现黎曼猜想及广义黎曼猜想的证明。文字证明超 25 万页未公开，仅发布 4 页说明和约 1700 万行 Lean 形式化代码。陶哲轩称初步看动用了朗兰兹纲领和算术几何成果，验证仍需时间。Elliot Glazer 初步检查认为形式化命题确实是广义黎曼猜想。",
+      "background": "今年 8 月 Anthropic 曾公布 Claude 将黎曼猜想相关关键线上零点比例下界从 41.6% 提高至 67.2%，当时距完整证明仍有明显差距。Alpöge 称 11 月 15 日深夜至 16 日凌晨完成关键工作，而 Anthropic 于 11 月 19 日在纳斯达克挂牌，他承认公布时间点非常糟糕。",
+      "why": "若成立，这是 AI 首次参与解决千禧年难题级别的数学问题，但当前公开材料只有 Lean 代码，且 Lean 验证的是形式化目标而非自然语言命题本身。《科学》曾报道 AI 生成的 Lean 代码在 OpenAI 的 Navier-Stokes 问题证明中弱化原始命题表述，形式化与语义一致性问题因此成为焦点。",
+      "next": "数学界需要先确认 Lean 代码中的形式化命题与原始黎曼猜想语义一致，再梳理 1700 万行代码的核心思路。即使通过，克雷数学研究所要求同行评审期刊正式发表并经过至少两年验证期，个人网站声明和代码压缩包不符合提交资格。若后续出现独立复现或期刊投稿，可信度才会实质提升。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "Lean",
+          "gloss": "一种交互式定理证明器，把数学证明翻译成计算机可机械检查的代码，由小型可信内核逐步验证逻辑推导。它只能保证代码所形式化的命题被正确证明，不能自动保证该命题与原始自然语言猜想语义一致。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/030/297.htm"
+        }
+      ]
+    },
+    {
+      "title": "METR 更新 AI 时间跨度图，加入开放式任务",
+      "what": "AI 评估非营利组织 METR 更新其时间跨度图，新增耗时更长和更开放的任务。报告称部分能力仍呈指数提升，但模型在需要判断力的任务上表现弱于编程。在让模型设计 AI 评估的任务中，没有一个 AI 设计的评估被 METR 员工认为可用于研究；在给哲学论证打分的任务上，模型也低于人类水平。",
+      "background": "原时间跨度图显示前沿模型能完成的任务时长每四个月翻倍，但因指标复杂被广泛误读。此前一份大量删节的 METR 报告称 AI 可能将 Anthropic 的 AI 进展速度加快一倍，引发对递归自我改进的担忧。新报告试图把难以自动验证、依赖判断的任务纳入评估。",
+      "why": "当前 AI 进步主要集中在可自动验证的编程和数学任务，强化学习难以直接用于成功标准模糊的任务。若 AI 要自动化研究与开发，这类判断型任务恰恰是关键。新数据表明模型在开放式任务上仍落后于人类，但已从明显不达标转向接近门槛。",
+      "next": "若 METR 继续扩充开放式任务并改进评分方法，时间跨度图可能更准确地反映判断型能力。前提是这些任务的评分能获得共识；目前 METR 员工对哲学论证任务的相关性仍有分歧，且此类任务数量少，预测能力受限。业界对可验证任务进步能否迁移到开放式任务仍存分歧。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "时间跨度图",
+          "gloss": "METR 用人类完成每项任务所需时长作为难度标尺，衡量模型能独立完成多长的任务，并观察该时长随时间的变化。"
+        },
+        {
+          "term": "强化学习",
+          "gloss": "让模型多次尝试任务，增强带来成功的神经通路、削弱导致失败的通路；它依赖能自动判断成功与否的奖励信号。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "MIT Technology Review",
+          "url": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/"
+        }
+      ]
+    },
+    {
+      "title": "微软成首家在 Azure 硬件采用 Intel EMIB 封装的公司",
+      "what": "据 Data Center Dynamics 报道，微软成为首家在 Azure 硬件中使用 Intel EMIB 封装技术的公司。双方同时确认，Intel 将长期向微软供应 Xeon 处理器。报道未披露涉及的芯片型号、部署规模与时间表。",
+      "background": "先进封装正成为芯片性能提升的关键环节，云厂商在自研与定制芯片上越来越依赖封装方案。Intel 近年把代工与封装业务作为对外合作重点，此次是其封装技术首次进入大型云厂商的服务器硬件。",
+      "why": "若属实，说明 Intel 的封装能力开始被外部大客户采用，为其代工业务提供实际案例；对微软而言，则是在 Azure 硬件上多了一条不依赖单一供应商的封装路径，可能影响其后续定制芯片的选型。",
+      "next": "后续需观察微软是否公布具体芯片与部署时间，以及该合作是否扩展到 Intel 代工的其他环节。若更多云厂商跟进，Intel 封装业务的外部订单占比可能上升；但单一媒体报道尚不足以判断规模。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "EMIB",
+          "gloss": "Intel 的嵌入式多芯片互连桥封装技术，在基板内嵌入小硅桥连接相邻芯片，让不同裸片高密度互连，常用于把 CPU 与 HBM 等拼在同一封装内。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Data Center Dynamics",
+          "url": "https://www.datacenterdynamics.com/en/news/microsoft-becomes-first-company-to-use-intels-emib-packaging-technology-for-azure-hardware/"
+        }
+      ]
+    },
+    {
+      "title": "苹果发布 Depth Pro 2，单目深度估计兼顾锐度与时序一致性",
+      "what": "苹果研究团队发布 Depth Pro 2，一种从普通相机拍摄的图像和视频中估计稠密度量深度的方法。该方法用单个可扩展网络处理单张照片、整段视频或实时摄像头画面，在原生分辨率下输出以米为单位的逐像素深度，并同时提升度量精度、边缘锐度和帧间时序一致性。团队称其定义了新的帕累托前沿，并公开了代码与权重。",
+      "background": "此前单目深度估计方法存在取舍：多帧方法时序一致但边缘模糊，单帧方法边缘锐利但帧间抖动。Depth Pro 2 延续 2024 年 Depth Pro 的零样本度量深度路线，试图用一个网络同时处理图像与视频，以消除这一取舍。",
+      "why": "对 AR、机器人和移动端 3D 应用而言，深度图既要在物体边缘锐利，又要在视频中稳定，还要有绝对尺度。Depth Pro 2 若如论文所述同时满足这三点，可减少对多模型或多传感器融合的依赖，降低端侧深度感知的工程复杂度。",
+      "next": "团队已公开代码与权重，接下来要看社区在真实视频流和移动芯片上的复现结果，尤其是运行时是否满足实时摄像头输入的要求。若第三方评测确认其帕累托前沿优势，可能推动单目深度成为端侧空间感知的默认基线。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "帕累托前沿",
+          "gloss": "多目标优化中不被其他方案在所有指标上同时超越的解集；这里指在精度、锐度、时序一致性和运行时之间取得最佳权衡的模型系列。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Apple ML Research",
+          "url": "https://machinelearning.apple.com/research/depth-pro-2-monocular"
+        }
+      ]
+    },
+    {
+      "title": "加州总检察长对 Nvidia 发出调查传票",
+      "what": "加州总检察长 Rob Bonta 表示，已向 Nvidia 发出调查传票，调查该公司是否向中国分享了先进 GPU 或机密信息，以及是否在相关风险上误导投资者和公众。此事源于前 CEO 黄仁勋与一名被美国政府认为是中国间谍的女性有染的报道。Bonta 称 Nvidia 和前 CEO 的行为「亮起红灯」。",
+      "background": "黄仁勋上周辞职，此前有更多关于他与公司员工婚外情的披露。Nvidia 新董事长 Harvey Jones 本周表示无意让黄仁勋复职。公司董事会已聘请律所和独立董事调查损害程度，美国国会准备传唤黄仁勋，SEC 据称也在进行民事调查。民主党议员还就特朗普政府管理 Nvidia 对华芯片销售展开问询。",
+      "why": "这是美国州级执法机构首次就芯片对华流向直接调查 Nvidia，调查焦点包括公司披露是否误导投资者，可能带来证券法层面的责任。同时，国会和 SEC 的调查并行，Nvidia 面临多重监管压力，其公司治理和出口合规将受到持续审视。",
+      "next": "若传票推进，加州总检察长可能要求 Nvidia 提交与黄仁勋及对华业务相关的内部记录，调查结果可能导向民事处罚或和解。国会传唤和 SEC 民事调查也可能同步展开。但调查周期和最终结论存在不确定性，取决于证据获取和公司配合程度。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "GPU",
+          "gloss": "图形处理器，此处指 Nvidia 的先进 AI 芯片，是出口管制的重点对象。"
+        },
+        {
+          "term": "SEC",
+          "gloss": "美国证券交易委员会，负责监管上市公司信息披露和投资者保护。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/20/california-ag-subpoenas-nvidia-over-worries-about-huangs-ties-with-china/"
+        }
+      ]
+    },
+    {
+      "title": "特朗普称将禁止美企在海外建数据中心并威胁征税",
+      "what": "特朗普在白宫记者会上表示，将禁止美国公司在其他国家建设数据中心，违者面临「巨额税收」惩罚。他称希望数据中心留在美国，并承认该政策事先未与团队沟通。CNBC 调查显示，64% 注册选民反对住所 10 英里内建 AI 数据中心，仅 13% 支持。",
+      "background": "特朗普此番表态前一天，刚与中国国家主席习近平、俄罗斯总统普京举行三边峰会。美国云厂商 Alphabet、Amazon、Microsoft、Meta、Oracle 已在海外建设数据中心，以贴近客户并满足监管要求。特朗普称习近平祝贺美国在 AI 领域的进展。",
+      "why": "若政策落地，将直接冲击美国云厂商的全球基础设施布局，海外扩张和就近服务客户的能力受限。但特朗普未说明法律依据和执行方式，且美国民众对本地建数据中心抵触明显，政策内在矛盾突出。",
+      "next": "目前仅为口头表态，尚无行政令或立法草案。若特朗普推进，可能面临法律挑战和企业游说；若停留在言论层面，则影响有限。关键看是否出台具体规则及如何界定「海外建设」。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/20/trump-data-centers-ai-companies-tax.html"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 0,
+      "error": "解析失败: <unknown>:8:22: not well-formed (invalid token)"
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 16,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 19,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
