@@ -1,0 +1,444 @@
+{
+  "date": "2026-11-22",
+  "generated_at": "10:49",
+  "cards": [
+    {
+      "title": "Lean 社区核验阿尔波格黎曼猜想形式化证明",
+      "what": "11 月 21 日，Lean 与 Mathlib 社区发布联合声明，称莱文特·阿尔波格以 Lean 库形式给出的黎曼猜想证明已通过核验，代码约 1700 万行。声明列出四项标准——陈述正确、代码可编译、证明对应正确陈述、证明有效——并称均已满足。数十人报告编译通过并复现同一导出文件。",
+      "background": "黎曼猜想 1859 年提出，是数论最著名的未解难题。阿尔波格于 11 月 20 日发布该 Lean 库，仅直接依赖 Mathlib。此前有报道称该证明与 Claude 合作完成、文字证明超 25 万页，但本次声明只认证形式化核验结果，未涉及 AI 参与程度。",
+      "why": "这是大型形式化证明首次由社区在一天内完成多工具交叉核验，且检查器附带相对集合论的正确性证明，回应了「Lean 逻辑本身可能有漏洞」的质疑。若成立，将改变数学界对机器可核验证明的接受标准。",
+      "next": "声明称期待数学界解释证明中的新思路，后续关键在数论专家能否消化这 1700 万行代码并提炼出人类可读的论证。若无法提炼，社区核验的结论可能仍受部分数学家质疑；AI 在证明中的具体角色也有待披露。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "Mathlib",
+          "gloss": "Lean 的数学库，收录大量已形式化的定义与定理，是 Lean 证明的公共依赖基础。"
+        },
+        {
+          "term": "形式化证明",
+          "gloss": "用证明助手语言写成的、可被机器逐行检查的证明，区别于自然语言写成的数学论文。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/030/547.htm"
+        }
+      ]
+    },
+    {
+      "title": "GPT-6.2 Astra 在 Ember-0 基准上成功率翻倍",
+      "what": "据量子位报道，机器人基础设施公司 XDOF 的实测显示，GPT-6.2 Astra 操控双臂机器人完成 Ember-0 基准 16 项操作任务的综合成功率从两个月前 GPT-6 Astra 的 19.6% 升至 41.2%。其中「给绳子打结」和「展开 T恤」两项此前无模型通关的任务被其完成。OpenAI 联合创始人 Greg Brockman 转发了该消息。",
+      "background": "Ember-0 是 XDOF 推出的真实物理环境机器人评测基准，覆盖空间推理、双臂协作、柔性物体处理等能力，每项任务重复 30 次。此前 VLA 模型在刚性物体抓取上表现尚可，但遇到柔性物体形变和长程规划时成功率明显下降，打结与展开 T恤长期为零分项。",
+      "why": "这次提升并非单点突破，16 项任务整体成功率均上升，说明通用多模态大模型作为机器人策略模型的能力边界在推进。若该趋势延续，专用机器人策略模型的训练范式可能被通用模型直接调用所替代，降低对大量人类示教数据的依赖。",
+      "next": "XDOF 表示 Ember-0 基准可能不久后被模型能力饱和，后续或需更难的评测集。推理延迟从 15 秒降至 10.1 秒仍偏高，若 OpenAI 继续优化推理速度，通用模型进入实时机器人控制的可行性将提高；但该结果目前仅来自 XDOF 单方实测，需更多独立复现。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "VLA",
+          "gloss": "视觉-语言-动作模型（Vision-Language-Action），把摄像头画面和语言指令直接映射为机器人动作输出的模型架构，代表工作包括 RT-2、Diffusion Policy 等。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/11/511779.html"
+        }
+      ]
+    },
+    {
+      "title": "可灵发布 Kling Image 4.0，采用理解生成统一自回归架构",
+      "what": "可灵推出 Kling Image 4.0，官方称原生分辨率提升至 8K，单张图最多支持 2000 字，一次最多生成 10 张连贯图片。模型采用理解与生成统一的自回归架构，并支持最高 15K Token 指令处理、结构化视觉语法和 Agentic 任务规划。雷峰网实测显示，其可修改海报已有文字、内置 70+ 预设字体，并能根据一张照片自行补全品牌名和广告语，生成电商详情长图。",
+      "background": "今年 3 月微软研究院发布 BizGenEval 商业视觉生成评测，用 400 条提示词和 8000 道检查题测试主流模型，发现模型能生成美观海报，但在精确布局和对象属性对应上仍有短板。可灵此前以视频生成出圈，10 月发布视频 4.0，此次将能力延伸至图像设计与编辑。",
+      "why": "生图竞争正从画质转向商业可用性：文字准确呈现、局部修改保留原设计、多图叙事一致性，这些是海报、电商详情页、分镜等场景的硬门槛。对没有设计团队的小商家和运营人员，一句话生成整套视觉方案可能直接改变工作流。",
+      "next": "若实测中的文字清晰度和模型自行补充信息的准确性问题得到改善，这类工具可能进一步进入影视前期分镜和品牌广告策划流程。可灵能否借此把用户从偶尔生成视频转为持续创作，取决于图像与视频能力能否在同一平台内衔接；目前这仍是推测。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "自回归架构",
+          "gloss": "按序列逐个预测下一个 token 的生成方式，GPT 类语言模型即采用此架构。用于图像生成时，模型把图像理解与生成放在同一上下文中处理，而非分开的两套模型。"
+        },
+        {
+          "term": "Agentic 任务规划",
+          "gloss": "让模型自行拆解任务步骤并安排执行顺序的能力，例如把「设计电商详情页」分解为品牌命名、文案、排版、配图等子任务再逐一完成。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/yanxishe/zjw3hyGGqzhBaPj7.html"
+        }
+      ]
+    },
+    {
+      "title": "腾讯三季度资本开支814亿元，AI业务拖累利润152亿元",
+      "what": "腾讯2026年第三季度财报显示，营收2073.4亿元同比增长8%，Non-IFRS经营利润681亿元同比下降6%。资本开支814亿元同比增长527%，现金口径资本开支付款651亿元同比增长226%，自由现金流为负691亿元。剔除混元、元宝、WorkBuddy等新AI产品后，经营利润833亿元同比增长8%，两个口径相差约152亿元。",
+      "background": "腾讯正把当期现金大规模换成算力与模型。管理层在电话会称租赁和自建算力均受约束，下一代混元推出可能更久；马化腾在内部讲话中要求核心业务从「陆战转海战」，并已重组混元团队、新设AI Infra等部门。",
+      "why": "这份财报把AI投入的成本显性化了：老业务利润率未变，利润下滑几乎全部来自新AI业务。同时WorkBuddy年化收入超5亿美元、日活破1000万，云服务增速升至35%，说明投入已开始产生收入，但能否覆盖成本仍待验证。",
+      "next": "若WorkBuddy与小微的收入增速延续，AI业务对利润的拖累可能逐步收窄；但前提是算力供给不进一步收紧。管理层称云业务较高增速将贯穿2026年全年，后续几个季度的现金流与利润率数据是主要观察点。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "Non-IFRS",
+          "gloss": "非国际财务报告准则口径，剔除股权激励、并购摊销等非现金项目后的利润指标，常用于比较经营表现。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/374302"
+        }
+      ]
+    },
+    {
+      "title": "三星2027至2029年大部分存储产能已被合同锁定",
+      "what": "韩媒 Economy Tribune 11月21日爆料，三星电子2027至2029年的大部分存储芯片产能已被合同预订，部分客户希望将供货保障延长至2031年。三星上月29日称已与10家主要客户签订长期供货协议（LTA），另有10家在谈，计划到2030年通过LTA锁定60%至70%产能。",
+      "background": "AI数据中心投资持续扩大，存储芯片短缺从HBM蔓延到通用DRAM和企业级NAND。业内数据显示主要制造商供货满足率仅60%至70%，2027年通用DRAM晶圆产能已基本售罄，HBM扩产又挤占通用DRAM的晶圆空间。",
+      "why": "存储从现货采购转向多年期长约，意味着下游厂商的供应和成本被提前锁定，议价权向三星等制造商集中。对AI基础设施的采购方来说，2027年后的DRAM和NAND供给不确定性上升，可能影响服务器与数据中心的扩产节奏。",
+      "next": "若短缺持续，更多客户可能接受含预付款和价格上下限条款的长约，合同期限向2031年延伸。但上述产能锁定信息来自韩媒爆料，三星未逐条确认，实际签约比例和价格条款仍待其后续财报披露验证。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "LTA",
+          "gloss": "长期供货协议（Long-Term Agreement），买卖双方约定未来数年的供货量与价格机制，常附带价格下限或预付款条款，用于在供应紧张时锁定产能。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/030/475.htm"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic 上市募资 935 亿美元，撞上科技股大跌周",
+      "what": "Anthropic 于周四在纳斯达克上市，募资 935 亿美元，另有科技巨头按发行价认购 260 亿美元。首日股价上涨 17%，市值达 1.8 万亿美元；周四开盘 111.50 美元，周五收于 88.91 美元。同日 Nvidia 周跌 23%，纳斯达克一周跌 10%，为 2020 年以来最差单周。",
+      "background": "据 CNBC 报道，此前风投支持的 IPO 在 2021 年募资 730 亿美元，之后四年合计仅 390 亿美元；2021 年有 126 家科技公司上市，2025 年只有 34 家。私募市场持续膨胀，Anthropic 截至 9 月累计获投 1410 亿美元。本周市场还受利率上升、反 AI 情绪和 Nvidia 高管层危机影响。",
+      "why": "这是首个纯 AI 开发公司的大型公开上市，市场正在判断它该按 AI 硬件股还是独立软件公司估值。它的定价和走势会成为后续 AI 公司 IPO 的参照，也检验私募高估值能否经受公开市场季度业绩压力。",
+      "next": "若利率和 AI 情绪继续压制估值，Anthropic 股价可能继续向发行价靠拢，并拖慢其他 AI 公司的上市节奏；若业绩证明增长能支撑估值，则可能重新打开退出通道。前提是 Nvidia 等硬件股止跌、市场对 AI 资本开支的信心恢复。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/21/anthropic-ipo-tech-selloff.html"
+        }
+      ]
+    },
+    {
+      "title": "SageMaker HyperPod 推出跨区域全局推理网关",
+      "what": "AWS 发布 Amazon SageMaker HyperPod Global Inference Gateway，一个 SageMaker 托管端点，可将推理请求路由到同一区域或跨区域注册的多个 HyperPod 集群。网关自动选择最佳集群、故障时自动转移流量，并通过 SigV4 和 IAM 认证，经 AWS PrivateLink 传输。",
+      "background": "此前 HyperPod Inference Gateway 已为单个集群提供 GPU 感知端点，依据 KV 缓存利用率和队列深度选择 pod，但无法跨集群调度。模型增大导致 GPU 容量分散在更多集群和区域，客户端需跟踪大量端点并手动处理故障转移，Global Inference Gateway 作为第二层架构补上跨集群路由。",
+      "why": "对已付费的 GPU 容量，该网关可在流量高峰时将请求溢出到空闲集群，减少排队；集群故障时自动切换，客户端无需改动；同时省去自建负载均衡、DNS 和跨区域网络。对平台团队较小、跨区域部署推理服务的团队，可降低运维负担。",
+      "next": "若该网关按博客所述在更多区域可用，采用 HyperPod 的团队可能将分散的集群端点收敛为单一入口，并更积极利用跨区域空闲容量。实际效果取决于各集群负载上报的准确性和跨区域网络延迟，这两点材料未给出量化数据。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "SigV4",
+          "gloss": "AWS Signature Version 4，AWS 的请求签名协议，客户端用凭证对请求签名，服务端验证签名以确认调用者身份和请求完整性。"
+        },
+        {
+          "term": "KV 缓存利用率",
+          "gloss": "Key-Value 缓存利用率，指推理时注意力机制中键值缓存占用的显存比例，反映 pod 当前负载，网关据此判断哪个 pod 更适合接收新请求。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning",
+          "url": "https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-global-inference-gateway-one-endpoint-across-regions-and-clusters/"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 16,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
