@@ -1,0 +1,441 @@
+{
+  "date": "2026-11-23",
+  "generated_at": "11:30",
+  "cards": [
+    {
+      "title": "英特尔称 18A 良率达 70%，14A 计划 2028 年量产",
+      "what": "英特尔 CEO 陈立武在 11 月 19 日的 TomorrowX 会议上称，Intel 18A 制程良品率已达 70%，而他 2025 年 3 月接任时该数字「非常糟糕」。18A 已用于 Panther Lake 客户端处理器和 Clearwater Forest 至强 6+ 数据中心处理器。14A 方面，公司已向客户提供 PDK 0.9，计划 2027 年下半年风险试产、2028 年大规模量产。",
+      "background": "18A 是英特尔重振代工业务的关键节点，此前长期受良率问题困扰。陈立武于 2025 年 3 月接任 CEO 后，良率成为其对外沟通的重点指标。14A 则决定英特尔能否在 2028 年前后与台积电、三星在先进制程上保持竞争节奏，PDK 0.9 的交付是客户提前启动设计的前提。",
+      "why": "70% 良率是外界判断 18A 制造经济性是否成立的参考数字，但报道指出，多芯粒设计的实际成本还取决于参数良率、芯片规格分布和可销售产品比例，单一数字不足以说明盈利能力。14A 的时间表则关系到客户是否愿意把下一代产品押在英特尔工艺上。",
+      "next": "若 PDK 0.9 反馈顺利，14A 可能在 2027 年按计划进入风险试产；但报道中相关阅读提到 14A 曾有计划 2029 年量产的表述，与本次 2028 年量产存在出入，需以官方后续口径为准。18A 良率能否在更多产品上转化为可交付产能，取决于多芯粒封装环节的配合。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "PDK",
+          "gloss": "Process Design Kit，工艺设计套件。晶圆厂提供给芯片设计公司的文件集合，包含设计规则、器件模型和验证工具，让客户能针对特定制程设计芯片。0.9 版本通常接近定型，但尚未完全冻结。"
+        },
+        {
+          "term": "风险试产",
+          "gloss": "risk production，新制程在正式大规模量产前的试生产阶段。此时工艺基本定型，但良率和可靠性仍在验证，客户开始用该制程流片以评估是否导入量产。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/030/734.htm"
+        }
+      ]
+    },
+    {
+      "title": "AWS Lambda 支持 GPU 推理，单卡最多 48 并发共享模型",
+      "what": "AWS 宣布 Lambda 的 Event Functions 可通过 Lambda Managed Instances 运行在 EC2 G 系列 GPU 实例上，支持 G4dn、G5、G6、G6f、Gr6、Gr6f、G6e。同一 GPU 环境内最多 48 个并发调用共享一份模型权重，提供 vLLM 和 SGLang 基础镜像且无需 handler 代码，异步调用超时上限 90 分钟。计费为 EC2 按需价格加 9.75% 管理费。",
+      "background": "Lambda Managed Instances 此前已允许函数跑在客户选定的 EC2 容量上，由 Lambda 负责供给、补丁和扩缩容，但发布时缺少 GPU 支持。此次补齐 GPU 后，Lambda 把驱动、CUDA 版本、AMI 和集群运维都收归平台，用户只需构建 OCI 镜像并声明 AcceleratorConfig。首批实测显示 Terraform 和 Cloud Control 尚未支持新配置，新账号 GPU vCPU 配额默认为零。",
+      "why": "对已有事件驱动架构的团队，这意味着模型推理可以复用 Lambda 的事件源、身份和网络，不必另建托管推理服务或自管 GPU 集群。单环境 48 并发共享一份权重，降低了小模型多用户场景的显存冗余。但计费按实例而非按调用，低负载时成本结构与传统 serverless 不同。",
+      "next": "若 AWS 补齐 Terraform 与 Cloud Control 支持并调整新账号 GPU 配额，采用速度可能加快。首批实测指出当前不支持响应流式输出，需要流式回复或完全控制推理服务器的场景仍会选 EC2 自建 vLLM。上述判断依赖 AWS 后续是否开放流式能力。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "AcceleratorConfig",
+          "gloss": "Lambda 函数配置中新增的块，用于声明分配给函数的 GPU 显存大小，与 MemorySize、Timeout 等并列。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "InfoQ 英文",
+          "url": "https://www.infoq.com/news/2026/11/aws-lambda-gpu-managed-instances/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global"
+        }
+      ]
+    },
+    {
+      "title": "Google 发布 Agent Compute Engine，凭证不进沙箱",
+      "what": "Google 宣布 Agent Compute Engine，一项在隔离 microVM 中运行 AI agent 的托管服务，支持检查点以暂停和恢复执行环境。设计上把凭证、API key 和 OAuth refresh token 留在 agent 沙箱之外，由外部 Agent Gateway 认证请求并注入所需密钥。该服务尚未可用，定价未公布，目标在未来几个月内预览。",
+      "background": "Google 称该设计针对三个全球规模需求：沙箱内不含可利用凭证、降低空闲 agent 恢复的成本与延迟、跨会话和操作系统更新保留持久工作区。架构上编排 harness 完全运行在沙箱之外，只向沙箱派发显式命令。Google 同时提供开源 Kubernetes 原生运行时 Agent Substrate，但 Agent Compute Engine 仅限 Google Cloud。",
+      "why": "agent 执行代码和调用工具时，凭证若留在沙箱内，一旦 agent 出错或被诱导就可能泄露。把凭证移到外部网关并保留确定性审计轨迹，是托管 agent 运行时在安全上的一个明确取舍。AWS 的 Bedrock AgentCore 和 Azure 的 Foundry Agent Service 提供类似能力，但 Google 强调凭证外置这一差异点。",
+      "next": "若预览按计划推进，接下来值得观察的是该服务能否公布启动时间、价格和密度等关键指标——深度解读中这些数字目前属于 Agent Substrate 而非 Agent Compute Engine。前提是 Google 在预览时补齐这些数据，否则企业选型时难以与 AWS、Azure 的同类服务做成本对比。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "microVM",
+          "gloss": "一种轻量级虚拟机，用硬件虚拟化提供接近容器的启动速度和强隔离边界，常用于多租户沙箱场景。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "InfoQ 英文",
+          "url": "https://www.infoq.com/news/2026/11/google-agent-compute-engine/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global"
+        }
+      ]
+    },
+    {
+      "title": "Signal 限制移动端截图，应对 AI 代理监控",
+      "what": "Signal 周五宣布，在 Android 和 iOS 应用中限制用户截图功能。Signal 总裁 Meredith Whittaker 称，操作系统集成代理式 AI 构成“生存威胁”，因为 AI 代理能“扫描”屏幕信息，使敏感数据被捕获并存入本地数据库或远程服务器，超出 Signal 控制范围。用户可手动关闭该限制，但 Whittaker 表示这会“破坏我们的隐私保证”。",
+      "background": "Signal 此前已默认阻止 Windows 版截图，此次将限制扩展到移动端。Whittaker 指出，Windows、Android 和 macOS/iOS 为支持 AI 代理能力而捕获屏幕数据，正在削弱 Signal 独立保证隐私的能力。这是加密通讯应用对操作系统级 AI 集成趋势的直接回应。",
+      "why": "操作系统级 AI 代理能读取屏幕内容，使端到端加密的隐私保证在数据离开应用后被绕过。Signal 的限制虽不完整，但标志着加密应用开始对抗 AI 代理的数据采集，可能推动其他隐私工具跟进，并引发关于 OS 层 AI 权限边界的讨论。",
+      "next": "若更多加密应用效仿，操作系统厂商可能面临压力，需明确 AI 代理访问屏幕数据的权限边界。但 Whittaker 承认该方案不完整，未覆盖 AI 代理其他更隐蔽的数据访问方式，因此后续可能出现更系统的技术或政策应对。前提是 AI 代理在操作系统中的集成继续加深。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "代理式 AI",
+          "gloss": "指能自主执行任务、调用工具并访问系统资源的 AI 代理，而非仅被动响应提示。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/"
+        }
+      ]
+    },
+    {
+      "title": "摩尔线程预告下一代消费级显卡“庐山”",
+      "what": "摩尔线程公布 MDC 2026（MUSA 开发者大会）首张预热海报，其中暗藏下一代消费级显卡“庐山”。据 VideoCardz 报道，与 MTT S80 相关的产品经理 AIR_FORCE 发帖称“应该是消费级显卡历史上最大显存容量了”，并称“性能足够惊艳”，但未给出具体容量。作为对比，报道提到英伟达旗舰 RTX 5090 配备 32GB GDDR7 显存。大会主题演讲定档 12 月 29 日上午。",
+      "background": "摩尔线程此前已围绕 MUSA 平台推进软件栈与模型适配，包括对 Kimi-K3.1 Pro 等模型的 Day-0 支持，以及开源面向万卡级集群的 Megatron-MUSA-Titan。此次选择在自家开发者大会前释放消费级显卡信号，是在国产 GPU 竞争加剧、消费级大显存需求上升的节点上造势。",
+      "why": "消费级显卡的显存容量直接决定本地能跑多大的模型、多长的上下文，是技术从业者选型的关键指标。若“史上最大显存”属实，意味着国产显卡可能在本地推理场景上寻找差异化切入点，而非正面比拼游戏性能。",
+      "next": "12 月 29 日主题演讲预计会公布“庐山”的具体规格与 MUSA 平台更新。若届时仍只给宣传口径而不披露显存容量、带宽与软件兼容性，市场反应可能有限；前提是官方按计划在该大会发布产品。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "GDDR7",
+          "gloss": "第七代图形双倍数据率显存，专为显卡设计的高带宽内存标准，带宽高于上一代 GDDR6X，常用于旗舰消费级显卡。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "IT之家",
+          "url": "https://www.ithome.com/1/030/757.htm"
+        }
+      ]
+    },
+    {
+      "title": "特朗普称Blackwell须退出最先进梯队后才可对华销售",
+      "what": "据媒体报道，特朗普在APEC会议上表态，英伟达Blackwell架构AI芯片只有在该产品不再属于市场最先进芯片之后，美国才可能批准对华出口。这意味着当前Blackwell对华出口禁令维持不变，报道未给出解禁时间节点和配套许可规则，具体细则需美国商务部工业安全局后续敲定。",
+      "background": "Blackwell是英伟达当前主力高端AI计算芯片，算力大幅领先前代，是海外云厂商搭建AI算力集群的核心选择，自推出以来长期被纳入美国对华芯片出口管制清单，国内无法直接采购原版。此次表态把解禁条件与「是否仍属最先进」挂钩，而非设定具体日期。",
+      "why": "这一表态把出口管制的松紧绑定在英伟达产品迭代节奏上：管制实际约束的是「最先进一代」，而非某一型号。对国内云厂商和芯片采购方而言，意味着短期内无法通过正规渠道获得Blackwell，算力规划需继续依赖国产替代或存量设备。",
+      "next": "若按此逻辑，解禁时点将取决于英伟达下一代旗舰芯片的推出与量产节奏，以及美国商务部工业安全局如何定义「最先进」并制定许可细则。前提是这一表态最终转化为正式规则；报道本身未给出时间表，落地形式仍存在不确定性。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "Blackwell",
+          "gloss": "英伟达当前一代高端AI计算芯片架构，用于训练和推理大模型，是海外云厂商搭建AI算力集群的主力选择。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/zaobao/qb1uol6hKvK6pRgF.html"
+        }
+      ]
+    },
+    {
+      "title": "研究称 Anthropic 到 2028 年 98% 电力来自化石燃料",
+      "what": "研究人员调查 Anthropic 用电需求后估计，到 2028 年其约 87% 电力来自天然气、11% 来自煤炭，合计 98% 来自化石燃料。Anthropic 未在美国承诺使用可再生能源，近期斥资 34 亿美元采购 1.7 GW 燃气发电设备。其数据中心电力消耗产生的二氧化碳排放中值约每年 3200 万公吨，到 2030 年可能翻倍。",
+      "background": "美国 AI 数据中心越来越倾向自建发电设施供电，规划中的数据中心发电装机容量达 177 GW。与 Anthropic 签署算力合同的美国数据中心提供商绝大部分将使用化石燃料供电，这使 AI 公司的实际排放与其气候承诺之间出现落差。",
+      "why": "AI 算力扩张正把电力结构问题推到台前：若自建燃气发电成为主流，AI 公司的碳排放将随模型规模同步上升，可能影响其 ESG 评级、监管审查和与清洁能源采购方的合作。",
+      "next": "若 Anthropic 不调整采购策略，其排放可能继续上升；但研究基于当前合同和规划推算，实际取决于后续是否新增可再生能源协议及电网清洁化进度。其他 AI 公司是否面临类似审查，尚待观察。",
+      "confidence": "中",
+      "importance": 3,
+      "terms": [
+        {
+          "term": "GW",
+          "gloss": "吉瓦，功率单位，1 GW 等于 10 亿瓦，常用于衡量发电装机容量或数据中心用电规模。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Solidot",
+          "url": "https://www.solidot.org/story?sid=85959"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 16,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
