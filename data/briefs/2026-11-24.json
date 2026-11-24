@@ -1,0 +1,447 @@
+{
+  "date": "2026-11-24",
+  "generated_at": "14:45",
+  "cards": [
+    {
+      "title": "黄仁勋被恢复英伟达CEO职务，股价涨31%",
+      "what": "英伟达董事会周一宣布，黄仁勋立即恢复CEO职务，此前他于11月13日因婚外情报道辞职。董事会称一致投票通过，并收到美国政府高层意见，认为其回归不构成国家安全风险。特朗普称与董事会沟通并称黄仁勋“没有做错事”。英伟达股价当日收涨31%。",
+      "background": "黄仁勋11月8日承认婚外情后辞职，报道称其中一名女性与中国国家安全部官员有接触。英伟达股价自11月6日收盘价186.64美元下跌近33%。政府高层上周向董事会简报未违反国家安全法，董事会随后联系黄仁勋，股价暴跌加速了谈判。",
+      "why": "全球市值最高的芯片公司CEO因个人丑闻辞职后又在政府介入下回归，且股价单日大涨31%，显示市场对管理层稳定性的高度敏感，也引发政府对私营企业人事决策影响力的讨论。",
+      "next": "若政府审查未进一步升级，黄仁勋可能继续留任并稳定公司运营；但国会或监管机构可能就政府介入公司治理举行听证。前提是相关国家安全调查不再出现新进展。",
+      "confidence": "高",
+      "importance": 5,
+      "terms": [],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-ceo.html"
+        },
+        {
+          "name": "Ars Technica",
+          "url": "https://arstechnica.com/ai/2026/11/jensen-huang-reinstated-as-nvidia-ceo-board-chair/"
+        }
+      ]
+    },
+    {
+      "title": "OpenAI 发布 GPT-6.2 Astra 与 Sol，任务成本降近半",
+      "what": "OpenAI 发布 GPT-6.2 Astra 和 GPT-6.2 Sol。据雷峰网报道，Astra 在 GDPval v2 测试中比 GPT-6 Astra 高 6.2 个百分点，输出 Token 减少 22%，API 输入输出价格降 20%，缓存输入价格降 60%。两款模型在代码工程、计算机操作、专业文档等任务上能力提升，Astra 侧重复杂专业任务，Sol 侧重日常高效执行。",
+      "background": "传统 Agent 采用规划与执行分离架构，计划形成时信息不完整，执行中新情况易使旧计划失效。OpenAI 此次让模型更主动判断工具调用、推理投入和计算机操作方式，试图把多环节人工衔接整合为连续执行链。雷峰网指出，OpenAI 未公开内部策略网络和调度算法，相关机制属于对公开能力的工程分析。",
+      "why": "模型开始参与执行路径决策，而非只生成单步内容。这影响 Agent 能否承担连续工程任务，也把验收标准、上下文缓存和返工成本纳入同一成本体系。对开发者而言，提示词前缀稳定以复用缓存、提前安排外部验证步骤，可能直接影响长程任务的实际开销和交付可靠性。",
+      "next": "若 OpenAI 公开更多评测细节，Agent 竞争可能转向任务状态维护、跨工具协同和交付可靠性。但雷峰网提到两款模型在部分测试中更易漏报文件缺失、工具不可用等障碍，能否准确区分完成、失败和受阻仍是关键。上述走向取决于后续独立复现和开发者实测。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "上下文缓存",
+          "gloss": "服务端复用相同输入前缀的计算结果，避免每轮请求重复处理系统指令和历史材料，从而降低输入开销和延迟。"
+        },
+        {
+          "term": "GDPval v2",
+          "gloss": "OpenAI 的评测集，覆盖咨询、金融、数据科学、生物技术和市场营销等领域的复杂工作流，用于衡量模型完成专业任务的质量。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/ai/MR1Osv9r2Rtr4V7F.html"
+        }
+      ]
+    },
+    {
+      "title": "文心 5.5 Flash Preview 以 Apache 2.0 协议开源",
+      "what": "11 月 24 日，百度文心 5.5 Flash Preview（ERNIE 5.5 Flash Preview）以 Apache 2.0 协议开源，权重与配套资源上线 Hugging Face 和 ModelScope，支持 vLLM、SGLang 等推理框架部署。据雷峰网报道，该模型总参数 2800 亿、每 Token 激活 140 亿，上下文最长 100 万 Token，在 CodeArena WebDev 榜单以 1668 分位列开源模型第二。",
+      "background": "国内大参数模型近期密集开源，报道中提到的 Kimi K3.1 Pro、Qwen3.8-Max 已在同一榜单上占据前列。文心此次以 Apache 2.0 这一宽松协议放出权重，并同时提供两个主流托管平台与推理框架适配，指向的是争夺开发者本地部署与二次开发生态。",
+      "why": "2800 亿总参数、140 亿激活的稀疏结构加上百万级上下文，意味着单卡或小规模集群也能跑起来，降低了企业私有化部署的门槛。Apache 2.0 允许商用与修改，对需要数据不出内网的团队是可选项，也会加剧国产开源模型在开发者侧的竞争。",
+      "next": "接下来要看第三方复现的基准成绩与真实部署成本是否与官方口径一致，以及社区是否快速产出微调版本和推理框架适配。若复现结果接近榜单表现，可能推动更多企业把长上下文任务迁到自托管方案；但报道中的榜单排名来自单一来源，仍需交叉验证。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "Apache 2.0",
+          "gloss": "一种宽松的开源许可证，允许使用者自由使用、修改和商用代码或模型，只需保留版权与许可声明，不要求衍生作品同样开源。"
+        },
+        {
+          "term": "vLLM",
+          "gloss": "面向大模型推理的高吞吐服务框架，通过 PagedAttention 管理 KV 缓存来提升并发与显存利用率，常用于生产环境部署开源权重模型。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/industrynews/X2LHtIreyiO6depw.html"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic 推出 Claude Ship，AI 代理可自动批准代码变更",
+      "what": "Anthropic 发布 Claude Ship，一套用于自动化代码审查、修复和批准常规代码变更的 AI 代理套件。其中 Code Review 已正式可用，PR Steward 和 Claude Approvals 处于测试阶段。Claude Approvals 能依据团队在仓库中以自然语言编写的策略文件自动批准代码变更，并可结合 Code Review 结果或公司自有分类器作为判断信号。",
+      "background": "AI 编程代理已能生成大量代码，审查和批准这些变更成为新的瓶颈。Anthropic 在博客中称，其 Claude Code 团队的大部分代码由 Claude 编写，因此希望 PR 之后的流程也能同样快。此前 AI 编程工具已有代码审查功能，但把批准权限交给 AI 代理是新增的一步。",
+      "why": "这标志着 AI 编程工具从生成代码、审查代码，进一步延伸到决定代码能否上线。对开发团队而言，审批是最后一道人工关口，交给代理意味着流程速度和风险模型都会改变。Anthropic 建议先在只观察模式下运行，也说明自动批准的可信度仍需验证。",
+      "next": "如果测试阶段反馈良好，Claude Ship 可能向更多套餐和代码托管平台扩展。但自动批准能否被广泛接受，取决于团队对策略文件表达力和代理误判率的信任程度；若出现错误合并事件，监管或团队内部可能重新要求人工审批。以上基于当前测试状态和 Anthropic 的谨慎建议推测。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "PR",
+          "gloss": "Pull Request，代码变更请求。开发者把分支上的修改提交到主仓库前，通过 PR 发起审查和讨论，合并即代表变更被接受。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/"
+        }
+      ]
+    },
+    {
+      "title": "CrowdStrike 宣布以 439 亿美元全股票收购 Zscaler",
+      "what": "CrowdStrike 与 Zscaler 周一宣布达成全股票收购协议，交易价值 439 亿美元。CrowdStrike 称此举将把其端点防护软件与 Zscaler 的零信任平台结合，帮助客户安全采用 AI。Zscaler 为约 8000 家企业提供云安全产品。交易需监管批准，预计约一年后完成。",
+      "background": "两家公司称合并将创造网络安全领域「最大的单一可寻址市场」，并强调为 AI 时代布局。Zscaler 的零信任产品要求员工每次访问内部系统都重新认证，与 CrowdStrike 的端点防护形成互补。目前仅有 TechCrunch 一家来源报道，交易细节和监管前景尚待更多信息。",
+      "why": "若成行，这将是网络安全领域规模最大的并购之一，把端点安全与零信任访问控制整合到同一家公司。对从业者而言，企业安全采购的供应商格局可能从多家拼装转向少数平台捆绑，AI agent 接入企业系统时的身份与权限管理也成为合并的明确卖点。",
+      "next": "交易需通过多国反垄断审查，鉴于规模，监管问询和附条件批准的可能性较高；若按公司预期约一年后完成，期间需观察双方产品线如何整合、Zscaler 的 8000 家企业客户是否留存。以上推测基于单一来源的公告内容，尚无监管机构表态。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "零信任",
+          "gloss": "一种安全模型，不默认信任网络内部流量，每次访问内部系统或资源都要求重新认证，防止攻击者窃取凭证后获得不受限制的访问权限。"
+        },
+        {
+          "term": "端点防护",
+          "gloss": "在员工使用的电脑、笔记本、手机等终端设备上运行的软件，用于检测和阻止针对这些设备的攻击。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/23/crowdstrike-to-acquire-zscaler-for-44-billion/"
+        }
+      ]
+    },
+    {
+      "title": "DeepMind 用智能体与形式化验证加速量子算法",
+      "what": "Google DeepMind 发布博客，介绍其用智能体团队配合形式化验证来改进量子算法，应用方向是聚变与化学。文中提到 AlphaEvolve 是一个由 Gemini 驱动的编码智能体，用于设计高级算法。来源为 DeepMind 官方博客，正文节选信息有限。",
+      "background": "量子算法设计长期依赖人工推导，验证正确性成本高。DeepMind 此前已推出 Gemini 驱动的编码智能体 AlphaEvolve 用于算法设计，此次把智能体搜索与形式化验证结合，指向聚变、化学这类对量子模拟有实际需求的领域。",
+      "why": "形式化验证能给出可机器检验的正确性证明，若与智能体搜索结合，可能把量子算法的发现从依赖灵感变成可规模化的流程；聚变与化学是量子计算最被看好的落地场景，进展会直接影响这些领域的预期。",
+      "next": "若该方法在更多问题上复现，可能被扩展到其他算法设计任务；但博客未披露具体加速幅度与验证覆盖范围，实际效果需等论文或第三方复现。前提是形式化验证能跟上智能体生成的候选规模。",
+      "confidence": "低",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "形式化验证",
+          "gloss": "用数学方法把系统或算法的正确性写成形式化规约，再用机器辅助工具证明其满足规约，而不是靠测试抽样。"
+        },
+        {
+          "term": "AlphaEvolve",
+          "gloss": "DeepMind 提出的由 Gemini 驱动的编码智能体，用于自动设计并改进算法。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Google DeepMind",
+          "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/"
+        }
+      ]
+    },
+    {
+      "title": "据报道 AI 服务器 OEM 因内存短缺涨价 45%",
+      "what": "据 Data Center Dynamics 报道，AI 服务器代工厂商（OEM）正将内存供应紧张带来的成本压力转嫁给客户，服务器价格涨幅据报道达 45%。报道称硬件供应受限的影响已传导至下游采购方。该报道未给出涨价涉及的具体厂商、机型或生效时间。",
+      "background": "AI 服务器需求持续增长，内存等关键部件的供应成为瓶颈，硬件成本压力从上游零部件环节向整机厂商和采购方传导。此次涨价报道出现在供应链紧张被公开讨论的时点，但单一来源未说明短缺的具体成因和持续时间。",
+      "why": "若涨幅属实，将直接抬高企业部署 AI 算力的整机采购成本，影响数据中心的扩容预算和采购节奏。对技术团队而言，硬件成本结构的变化可能改变自建集群与租用云算力的性价比权衡。",
+      "next": "后续需观察是否有更多厂商或采购方证实这一涨幅，以及内存供应是否在数个季度内缓解。若短缺持续，涨价可能扩散到更多服务器品类；若属个别厂商的定价调整，则影响范围有限。以上推测基于当前单一报道，尚待独立来源验证。",
+      "confidence": "低",
+      "importance": 4,
+      "terms": [],
+      "sources": [
+        {
+          "name": "Data Center Dynamics",
+          "url": "https://www.datacenterdynamics.com/en/news/ai-server-oems-hiking-prices-by-45-as-memory-shortage-bites-report/"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 16,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
