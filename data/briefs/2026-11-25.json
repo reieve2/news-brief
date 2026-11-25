@@ -1,0 +1,456 @@
+{
+  "date": "2026-11-25",
+  "generated_at": "13:13",
+  "cards": [
+    {
+      "title": "OpenAI 称 GPT-6 可自主设计蛋白质",
+      "what": "OpenAI 发布预印本，称 GPT-6 系列模型仅靠推理和代码就能设计蛋白质结构与氨基酸序列，无需调用专用生物学模型。内部研究模型在 14 项蛋白质任务中的多数上持平或优于专用模型，但完整结构预测仍是明显弱项。与 Onava 合作的实验室测试中，基于 GPT-6.2 设计的蛋白质在五个靶点上出现结合证据。",
+      "background": "蛋白质设计此前依赖能生成三维结构和序列的专用生物学模型，使用和协调这些模型需要大量专业知识，且难以接受新类型输入。OpenAI 称通用模型可通过自然语言提示灵活切换任务、无需重新训练，这促使其测试通用推理能力能否直接覆盖这类工作。",
+      "why": "若结论成立，蛋白质设计的主要门槛可能从掌握多个专用模型转向用自然语言描述约束，模型还能输出可读的推理和代码供审查。但完整结构预测仍是弱项，且实验室验证仅覆盖五个靶点，尚不足以证明可替代现有工具链。",
+      "next": "接下来取决于预印本能否通过同行评审，以及 Onava 的实验室结合数据能否在更多靶点上复现。若复现成立，专用生物学模型可能被重新定位为序列供给和候选筛选的辅助工具；若复现失败，则需重新评估通用模型在结构生物学任务上的实际边界。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [],
+      "sources": [
+        {
+          "name": "OpenAI News",
+          "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities"
+        },
+        {
+          "name": "Hacker News",
+          "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/"
+        }
+      ]
+    },
+    {
+      "title": "文心 5.5 Flash Preview 以 Apache 2.0 协议开源",
+      "what": "11 月 24 日，百度文心 5.5 Flash Preview（ERNIE 5.5 Flash Preview）以 Apache 2.0 协议开源，权重与配套资源已在 Hugging Face、ModelScope 上线。据雷峰网报道，模型总参数 2800 亿、每 Token 激活 140 亿，支持最长 100 万 Token 上下文，可用 vLLM、SGLang 部署。",
+      "background": "国内大参数开源模型近期密集迭代，Kimi K3.1 Pro、Qwen3.8-Max 等已占据榜单前列。文心此前开源版本影响力有限，这次直接放出旗舰级 Flash 版本权重，并选择 Apache 2.0 这一宽松协议，明显是想在开发者部署与二次开发生态上争夺位置。",
+      "why": "2800 亿总参数、140 亿激活的稀疏结构加上百万级上下文，意味着单卡或小集群就能跑出接近大模型的吞吐，对自建推理的团队成本影响直接。Apache 2.0 允许商用与修改，会降低企业接入的法律顾虑，也可能加剧国产开源模型的部署份额竞争。",
+      "next": "接下来要看社区在 vLLM、SGLang 上的实际吞吐与显存占用数据，以及第三方复现的基准成绩是否与官方一致。若量化版本和微调工具链跟进及时，采用率可能上升；但 CodeArena 排名由官方引用，独立评测出来前不宜过度解读。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "vLLM",
+          "gloss": "一个高吞吐的开源大模型推理引擎，通过 PagedAttention 管理 KV 缓存来提升并发服务效率，常被用来部署开源权重模型。"
+        },
+        {
+          "term": "SGLang",
+          "gloss": "另一个开源推理框架，主打结构化生成与 RadixAttention 前缀缓存，适合多轮对话和需要复用上下文的场景。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/industrynews/X2LHtIreyiO6depw.html"
+        },
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/11/512354.html"
+        }
+      ]
+    },
+    {
+      "title": "蚂蚁开源医疗预测模型 LingSante Pulse",
+      "what": "11月24日，蚂蚁百灵宣布开源医疗健康预测模型 LingSante Pulse，可统一处理脑电、心电、光电脉搏波、肌电等多种生理信号，预测未来六年内150种疾病表型的发生风险。模型基于超过15万小时多场景生理序列数据预训练。据雷峰网报道，评测中其高可靠性预测的疾病表型数量比此前最优模型增加约42%。",
+      "background": "AI 在医疗领域的应用正从疾病识别、健康咨询向长期健康风险预测延伸，国内外机构都在探索从心电、睡眠监测和可穿戴设备数据中发现早期健康变化。蚂蚁同期发布覆盖医疗推理、多模态理解、疾病风险预测等方向的医疗健康模型全家桶，阿福 App 也升级了 AI 健康管家并扩展手环、戒指等硬件品类。",
+      "why": "该模型用统一架构处理多种生理信号并适应不同传感器组合，据称仅用心电和胸带呼吸两通道对118种疾病仍有较强预测能力，接近完整睡眠监测设备的外部模型。若这一结果可复现，意味着低成本可穿戴设备也可能承载长期疾病风险预测，降低此类能力的硬件门槛。",
+      "next": "技术报告与模型已在 GitHub 和 Hugging Face 开放，接下来值得观察第三方能否复现其评测结果，以及预测输出在临床或健康管理场景中如何被验证和使用。前提是开源版本与评测所用版本一致；目前所有性能数字均来自蚂蚁一方，尚无独立验证。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "疾病表型",
+          "gloss": "表型指可观测到的个体特征，疾病表型即用可测量的生理或临床特征来定义的疾病表现，而非仅按诊断名称划分。"
+        },
+        {
+          "term": "光电脉搏波",
+          "gloss": "即 PPG（光电容积脉搏波），用光传感器照射皮肤、测量血容量随心跳的变化，是智能手环、戒指等可穿戴设备最常用的心率监测信号。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/industrynews/lVVGnHDROrkdwJLp.html"
+        }
+      ]
+    },
+    {
+      "title": "亚马逊收购 Decart，用软件优化 Trainium 芯片",
+      "what": "据报道，亚马逊以约 75 亿美元收购 Decart 的技术与团队，核心是让 AI 模型在非 Nvidia 芯片上运行更优的 Decart Optimization Stack（DOS）。亚马逊称自 2025 年起已与 Decart 合作优化 Trainium 芯片，此次收购旨在加速该工作。Anthropic 曾试图以相近价格收购 Decart，Nvidia 也曾是潜在买家。",
+      "background": "Nvidia 在 AI 芯片市场近乎垄断，亚马逊希望提升自研 Trainium 的竞争力，把 AWS 做成万亿美元营收业务。亚马逊此前通过 2015 年收购 Annapurna Labs 建立自研芯片部门，此次收购被视为类似路径。Decart 此前以 40 亿美元估值完成 3 亿美元融资，Nvidia 参与了该轮投资。",
+      "why": "如果软件优化能显著缩小非 Nvidia 芯片与 Nvidia 的差距，云厂商对 Nvidia 硬件的依赖可能降低，AI 芯片竞争会从纯硬件转向「芯片+编译优化栈」的组合。Anthropic 和 Nvidia 都曾有意收购 Decart，说明这类优化技术被头部公司视为战略资产。",
+      "next": "亚马逊可能将 DOS 更深度集成进 Trainium 软件栈，并向更多 AWS 客户推广基于 Trainium 的数据中心。若优化效果得到第三方验证，其他云厂商可能跟进收购或自研类似优化层。但交易金额与效果均来自报道，实际性能提升幅度尚待披露。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "Trainium",
+          "gloss": "亚马逊 AWS 自研的 AI 训练芯片系列，用于替代或补充 Nvidia GPU，降低训练成本。"
+        },
+        {
+          "term": "Decart Optimization Stack",
+          "gloss": "Decart 开发的软件栈，用于优化 AI 模型在不同芯片上的运行效率，使模型能更好地适配非 Nvidia 硬件。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/24/amazons-decart-acquisition-is-a-bet-on-using-software-to-narrow-the-gap-with-nvidia-in-the-ai-chip-race/"
+        }
+      ]
+    },
+    {
+      "title": "台积电为得州 Brazos 县 2nm 晶圆厂提交申请",
+      "what": "据报道，台积电已为拟建于得克萨斯州 Brazos 县的 2nm 晶圆厂提交申请。该公司表示，尚未就是否在该县建厂做出最终决定。该县邻近 SpaceX 的 TeraFab 项目。",
+      "background": "台积电持续在美国布局先进制程产能，此次申请是其评估得州选址的步骤之一。Brazos 县因邻近 SpaceX 的 TeraFab 项目而受到关注，但台积电强调申请不等于最终投资决定。",
+      "why": "2nm 是当前最先进的制程节点之一，若落地美国将影响全球先进芯片产能分布。申请动作表明台积电在分散产能风险，但最终决定仍存变数。",
+      "next": "台积电可能继续评估该选址的补贴、供应链和人才条件，再决定是否建厂。若获批，得州可能形成新的先进制程集群；但公司明确表示未做最终决定，后续仍可能调整。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "2nm",
+          "gloss": "指半导体制造中的 2 纳米制程节点，是当前最先进的芯片工艺代际之一，数字越小通常意味着晶体管密度更高、能效更好。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Data Center Dynamics",
+          "url": "https://www.datacenterdynamics.com/en/news/tsmc-files-application-for-proposed-2nm-chip-fab-in-brazos-county-texas/"
+        }
+      ]
+    },
+    {
+      "title": "美国数据中心自建燃气电厂超100座",
+      "what": "据 Cleanview 数据，截至 2026 年 10 月，美国数据中心开发商已宣布在设施内建设 100 多座「表后」燃气电厂，合计规划容量超 115 吉瓦，是加州峰值电力需求的两倍多。绝大多数公告发布于 2025 年初之后，但目前仅少数在建或运营。",
+      "background": "并网审批可能长达十年，成为数据中心启动的主要瓶颈。xAI 孟菲斯园区自 2024 年起使用数十台天然气涡轮机，部分未获许可，并引发监管审查和法律纠纷。此后，自建电源从特例变为常见策略，开发商愿付溢价换取上线速度。",
+      "why": "自建燃气电厂通常比并网更贵，但 AI 竞赛让速度优先。BloombergNEF 估计，若美国规划的表后燃气电厂全部建成，2035 年每年或多排放 3.45 亿吨二氧化碳当量，比并网方案多 1.52 亿吨，超过荷兰全年排放。",
+      "next": "若并网排队时间不缩短，表后燃气项目可能继续增加；但多数项目尚未开工，最终建成比例存疑。已建电厂在并网后是否转为备用或继续运行，将决定化石燃料锁定风险的大小。",
+      "confidence": "高",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "表后",
+          "gloss": "指发电设施建在用户电表靠用户一侧，直接向数据中心供电，不经过公用事业电网。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "MIT Technology Review",
+          "url": "https://www.technologyreview.com/2026/11/24/1149622/data-centers-natural-gas/"
+        }
+      ]
+    },
+    {
+      "title": "美国将 Megaspeed 等七家东南亚公司列入贸易黑名单",
+      "what": "美国商务部将新加坡 Megaspeed 及六家东南亚公司列入贸易黑名单，指其存在将先进计算产品转移至未授权终端用户或用途的「重大风险」。限制覆盖所有受美国出口管制条例管辖的物项，许可证申请适用「推定拒绝」原则。名单还包括马来西亚 PT Megaspeed International、MSFusion 及泰国实体，7Road International 被认定为别名。",
+      "background": "商务部称 2024 年因监测到可疑半导体转移活动而对 Megaspeed 立案，2025 年 5 月向 Nvidia 索取对其销售记录，Nvidia 次月将其列入「禁售」名单；2025 年 6 月美方与新加坡执法部门进行现场最终用途核查。同期阿里巴巴新加坡子公司 Apex Enterprise Solutions 也被列入，阿里称将采取法律途径并否认转移受管制芯片。",
+      "why": "这是出口管制从芯片原厂向东南亚云与数据中心中转环节延伸的案例，直接压缩先进算力经第三地转口的空间。对在新加坡、马来西亚运营算力租赁或云服务的公司，合规审查和客户尽调成本会上升；新加坡总理黄循财表态不希望新加坡被用作规避美国出口管制的通道。",
+      "next": "若美方刑事调查推进，可能出现起诉或认罪协议；新加坡称调查仍在进行并与美方磋商，后续或收紧本地转口审查。阿里对 Apex 被列名的法律挑战结果，可能影响其他被列名企业的应对方式。以上判断依赖现有调查进展和双方磋商不出现重大转向。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "推定拒绝",
+          "gloss": "美国出口许可审查中的一种默认立场：除非申请方提供充分证据推翻，否则推定不予批准，实际效果接近禁运。"
+        },
+        {
+          "term": "最终用途核查",
+          "gloss": "出口管制执法中的现场检查，核实受管制物项是否由申报的终端用户用于申报的用途，防止经第三地转口或挪作他用。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/24/us-adds-megaspeed-to-trade-blacklist-over-export-control-concerns-.html"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 16,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 19,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
