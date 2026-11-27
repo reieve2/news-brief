@@ -1,0 +1,448 @@
+{
+  "date": "2026-11-27",
+  "generated_at": "12:46",
+  "cards": [
+    {
+      "title": "Sand.ai 宣布开源 480B 参数 MAGI-2 视频模型",
+      "what": "11 月 25 日，Sand.ai 宣布计划尽快开源旗下 480B 总参数的 MAGI-2 音视频统一模型全量权重。该模型在 Artificial Analysis 图生带音频视频维度超越 Seedance 2.5，位居全球第一。官方 API 刊例价 1080P 下 0.5 元/秒，不到 Seedance 2.5 同规格的十分之一。",
+      "background": "2026 年下半年 Seedance 2.5 确立工业级标杆，AA 榜单前五长期被闭源模型垄断，开源模型落后 50 到 100 多个 Elo 分。文生图与 LLM 赛道已走过「闭源定义上限、开源引爆社区」的路径，视频赛道被认为在更快重演同一剧本。",
+      "why": "闭源模型公开价约 4 元/秒，按 3 到 5 次重试率算，单条可用镜头单秒全链路成本达 12 到 20 元。MAGI-2 把 API 价压到 0.5 元/秒，权重开源后本地部署成本可再降一个数量级，直接冲击靠卖 API 赚算力差价的商业模式。",
+      "next": "若权重如期开源，中小团队可私有化部署，竞争重心可能从算力成本转向场景理解与工作流。但千亿参数模型本地部署仍需相当算力与运维能力，高并发场景下官方 API 仍可能是承接方。开源能否兑现「尽快」的承诺，是后续关键变量。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "Elo",
+          "gloss": "一种配对比较的评分体系，常用于模型竞技场排名，分数差反映两模型对战胜率。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "极客公园",
+          "url": "http://www.geekpark.net/news/374532"
+        }
+      ]
+    },
+    {
+      "title": "MiniMax 内部模型 MIM 攻破多个密码方案",
+      "what": "据 MiniMax 官方展示，其内部模型 MIM 攻破了多个 NIST 密码候选方案和顶会前沿成果：在 TII McEliece 中恢复 94 个私钥，其中 55 个为全球首次攻克；破译效率较此前顶会最优纪录提升 43400 倍。MIM 还发现 Waterfall-256 的碰撞攻击路径，并找出十多处官方参考代码漏洞。",
+      "background": "今年 7 月，Anthropic 的前沿模型 Claude 在 NIST 后量子签名方案 HAWK 中挖出数学漏洞，被视为 AI 首次独立发现算法底层缺陷。此后苏黎世联邦理工学院与 Anthropic 等机构搭建了 CryptanalysisBench 测试题库，当时最强模型在 142 道高阶题中只能解出 6 到 12 道。",
+      "why": "密码分析要求零容错的长程推理，并打通数学推导、编码到实验验证的完整流程，被业内视为检验 AI 能否做真正科学研究的试金石。MiniMax 的结果若经第三方复核，意味着国产模型在 AI4S 的高难度推理任务上进入了此前由海外头部模型占据的区间。",
+      "next": "关键变量是第三方复核：报道提到这类成果需在常规环境稳定复现并排除干扰因素，而目前数据均来自 MiniMax 官方展示。若复现通过，可能推动更多密码方案在标准评选前接受 AI 红队测试；若复现失败，则 43400 倍等数字需重新评估。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [
+        {
+          "term": "TII McEliece",
+          "gloss": "基于 McEliece 编码密码体制的密钥恢复挑战赛，其数学难题已存在近半个世纪，也是 NIST 后量子密码标准候选方案的核心基础。"
+        },
+        {
+          "term": "Waterfall-256",
+          "gloss": "2008 年 NIST 密码标准竞赛的哈希函数候选方案，数据经三组不同长度内部序列交错打乱后输出；MIM 找到使其差异不扩散的输入模式，从而构造碰撞。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/yanxishe/T2xmmiMAC6WbuuCM.html"
+        }
+      ]
+    },
+    {
+      "title": "Nvidia 暂停向东南亚四国发运服务器",
+      "what": "据报道，Nvidia 已要求 Dell、Super Micro 等制造合作伙伴暂停向马来西亚、新加坡、泰国和印度尼西亚发运服务器，暂停期限未定，以评估区域伙伴是否满足美国出口要求。TechCrunch 与 Engadget 均援引《华尔街日报》报道。",
+      "background": "美国商务部本月早些时候封堵了一个漏洞：中国公司此前通过远程访问东南亚数据中心里的 Nvidia 芯片来获取算力。据智库 Institute for Progress 估算，这类远程数据中心约占中国 AI 算力的 24%。",
+      "why": "这是出口管制从芯片流向延伸到算力访问层面的信号。东南亚作为转口与远程算力枢纽的角色被直接切断，区域云服务商和 Nvidia 的渠道伙伴短期面临交付中断。",
+      "next": "若 Nvidia 对合作伙伴的合规审查在数周内完成，发运可能恢复，但附带更严格的最终用户核查；若审查范围扩大，其他转口地区也可能被纳入。前提是美国商务部不进一步收紧规则。",
+      "confidence": "中",
+      "importance": 5,
+      "terms": [],
+      "sources": [
+        {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/"
+        },
+        {
+          "name": "Engadget",
+          "url": "https://www.engadget.com/2329200/nvidia-reportedly-halts-chip-shipments-to-southeast-asia/"
+        }
+      ]
+    },
+    {
+      "title": "FCC 批准 SpaceX 部署百万颗轨道数据中心卫星",
+      "what": "美国联邦通信委员会（FCC）主席 Brendan Carr 宣布，批准 SpaceX 将 100 万颗 AI 计算卫星送入轨道的申请，该星座名为 Starmind。FCC 授权文件显示，该申请收到大量公众意见，包括 Amazon Leo、Viasat 和美国天文学会提交的驳回请愿。SpaceX 未回应置评请求。",
+      "background": "Amazon 曾在 3 月请愿反对，称 Starmind 是「宏大野心而非真实计划」，认为 SpaceX 需要「数百年」才能建成，且未说明如何兑现。Google 去年公布 Project Suncatcher，Blue Origin 也在 3 月申请发射最多 51,600 颗卫星。多家公司同时押注轨道计算。",
+      "why": "这是监管层首次为「轨道数据中心」这一形态放行超大规模星座，意味着 AI 算力部署可能从地面扩展到太空。但反对者指出环境审查缺失、夜空光污染和空间碎片连锁碰撞风险，FCC 称对环境和光学天文议题无管辖权。",
+      "next": "若 SpaceX 按申请推进，后续将取决于实际发射节奏和卫星量产能力；Amazon 等方可能寻求司法或立法途径挑战该决定。前提是 FCC 授权不被法院中止，且 SpaceX 能证明百万颗规模在工程和成本上可行。",
+      "confidence": "高",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "Starmind",
+          "gloss": "SpaceX 此次获批的卫星星座名称，用于在轨提供 AI 计算能力，与 Starlink 卫星互联网星座并列。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "CNBC Technology",
+          "url": "https://www.cnbc.com/2026/11/25/spacex-fcc-satellite-approval.html"
+        },
+        {
+          "name": "Engadget",
+          "url": "https://www.engadget.com/2329071/spacex-gets-fcc-approval-to-deploy-1-million-satellites-for-its-ai-orbital-data-center/"
+        }
+      ]
+    },
+    {
+      "title": "生数科技发布 Motubrain 2.0 世界动作模型并宣布开源",
+      "what": "生数科技发布 Motubrain 2.0，含 20B 参数世界动作模型（WAM）和 Motubrain-Harness 智能体系统，并宣布近期开源。预训练全程公开直播 25 天、20 万步，期间因夹爪开关标注反了导致成功率下降，团队从第 0 步重训。该模型在六项机器人操作 Benchmark 中五项第一，RoboDojo 评测得分超过 GPT-6 Astra 和 Claude Opus 5.5。",
+      "background": "物理 AI 技术路线尚未收敛，中国信通院 2026 年 10 月报告指出统一感知、决策和执行的主导架构尚未出现。行业讨论从固定任务演示转向换物体、换任务后的泛化能力，同时 RSI（递归自我改进）和基模训练黑盒问题受关注。生数科技半年前发布 Motubrain 1.0 并提出通用世界模型框架，2.0 是该路线的延续。",
+      "why": "这是少见的把预训练全过程公开直播的物理 AI 模型，训练曲线、数据错误和重训决策都可回溯，为外界提供了观察世界动作模型如何训练出来的样本。同时它以 20B 参数在 RoboDojo 上超过 GPT-6 Astra 等通用大模型，说明视频预训练权重迁移到机器人动作建模的路径有竞争力。",
+      "next": "若近期如期开源，开发者可在已适配的星尘 S1 和松灵 PiPER 上零样本部署，但更多机型的适配仍是待解问题。团队称 zero-shot 是核心卖点，后续需观察第三方在自有本体上的复现结果是否与榜单一致。RSI 实验的完整数据尚未公开，其实际收益和算力代价有待验证。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "WAM",
+          "gloss": "世界动作模型（World Action Model），在同一模型中联合建模环境动态预测与机器人动作输出，使动作生成以对世界状态的预测为条件。"
+        },
+        {
+          "term": "RSI",
+          "gloss": "递归自我改进（Recursive Self-Improvement），指模型利用真实执行中的反馈改进自身策略或系统组件，团队此次在 Harness 层面做了相关实验。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "雷峰网",
+          "url": "https://www.leiphone.com/category/ai/0DEts3fxmZTZ7ojp.html"
+        }
+      ]
+    },
+    {
+      "title": "腾讯混元发布 Hy3D 3.6，优化高模与 PBR 贴图生成",
+      "what": "腾讯混元 11 月 27 日发布 3D 大模型 Hy3D 3.6，重点优化高模和 PBR 材质贴图生成，称几何表面更整洁、结构更清晰、贴图质量更高。该版本已上线腾讯云 Token Hub 提供 API，并接入 Miora、LAP、WorkRally 等产品。腾讯称内部数百位专业 3D 美术与建模师盲测显示，其几何与纹理整体质量、可用性显著优于同类模型。",
+      "background": "混元 3D 自 2024 年 11 月开源首代模型以来持续迭代，官方称社区下载量已超 653 万，并形成高模与低模两条技术路线。当前 3D 生成竞争从「能看」转向「能用」，拓扑、分件、UV 和 PBR 材质等生产可用性成为关键，此次更新即针对专业制作流程的资产底稿需求。",
+      "why": "对专业 3D 制作而言，生成资产能否进入重拓扑、烘焙和引擎验证环节，取决于几何整洁度与 PBR 贴图匹配度。Hy3D 3.6 若如官方所述在盲测中占优，意味着原生 3D 生成模型可承担角色、生物、服装等复杂资产的初稿，减少美术从零建模的工作量。",
+      "next": "按腾讯混元 3D 负责人的说法，3D 内容生产会与 Agent 结合，语言模型负责理解与调度、原生 3D 模型负责造型与材质。若这一分工成立，后续版本可能更强调批量生成的稳定性与生产管线集成；但盲测结论来自腾讯内部，实际生产可用性仍需第三方创作者验证。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "PBR",
+          "gloss": "基于物理的渲染（Physically Based Rendering），用一套符合物理规律的光照与材质参数描述表面外观，使资产在不同光照和引擎中表现一致，是游戏与影视资产的标准材质规范。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "量子位",
+          "url": "https://www.qbitai.com/2026/11/513155.html"
+        }
+      ]
+    },
+    {
+      "title": "仿生手接入神经实现触觉，首位居家用户试用",
+      "what": "据 MIT Technology Review 报道，33 岁的 Avi Davidson 成为首名在家中独立使用实验性仿生手的受试者。该设备由犹他大学团队开展临床试验，将电极植入其前臂三条神经（每条神经植入含 100 根针的电极阵列）及周围肌肉，使他能控制动作并感知压力，可拿捏葡萄、鸡蛋等易碎物。他是第九名植入者，也是首名带回家独立使用的人。",
+      "background": "该仿生手属于 LUKE 手臂，2000 年代研发，2014 年首次试验并获 FDA 批准。此次试验重点不在手臂本身，而在新的神经连接方式。研究团队自 2013 年起测试残肢神经接口，Davidson 经身心评估和脑部扫描确认仍保有左手心理表征后入选。",
+      "why": "此前多数神经接口仿生手停留在实验室或短期测试，缺乏居家独立使用的真实数据。Davidson 的日常使用可回答触觉反馈在真实生活中是否有用、何时失效，以及长期对大脑和神经系统的影响，为这类设备的实用性和安全性提供依据。",
+      "next": "研究团队将跟踪 Davidson 的日常使用，记录设备有效和失效的场景，并评估其身心与神经系统变化。若居家数据积极，可能推动更大规模试验；但受试者不保留设备且需两次手术，可扩展性仍待观察。",
+      "confidence": "中",
+      "importance": 4,
+      "terms": [
+        {
+          "term": "电极阵列",
+          "gloss": "将多个微电极按网格排列的器件，用于同时记录或刺激神经信号。此处每条神经植入含 100 根针的阵列，以建立神经与仿生手之间的双向连接。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "MIT Technology Review",
+          "url": "https://www.technologyreview.com/2026/11/26/1149923/the-next-generation-of-bionic-hands-is-here-and-they-can-feel/"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Hacker News",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Techmeme",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "Wired",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "VentureBeat AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "The Register",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Engadget",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "IEEE Spectrum",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Tom's Hardware",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "OpenAI News",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "count": 18,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Simon Willison",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "SemiAnalysis",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.AI",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "Reddit r/MachineLearning",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "Reddit r/LocalLLaMA",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "GitHub Trending",
+      "count": 16,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "PyTorch Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "BAIR",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "CNBC Technology",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "Crunchbase News",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Platformer",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Sifted",
+      "count": 24,
+      "error": ""
+    },
+    {
+      "name": "Data Center Dynamics",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "EE Times",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "GitHub Blog",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "Lobsters",
+      "count": 25,
+      "error": ""
+    },
+    {
+      "name": "The New Stack",
+      "count": 0,
+      "error": "请求失败"
+    },
+    {
+      "name": "InfoQ 英文",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "TLDR AI",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "雷峰网",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "量子位",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "钛媒体",
+      "count": 17,
+      "error": ""
+    },
+    {
+      "name": "IT之家",
+      "count": 60,
+      "error": ""
+    },
+    {
+      "name": "新浪科技",
+      "count": 15,
+      "error": ""
+    },
+    {
+      "name": "Solidot",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "爱范儿",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "少数派",
+      "count": 10,
+      "error": ""
+    },
+    {
+      "name": "阮一峰的网络日志",
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "InfoQ 中文",
+      "count": 20,
+      "error": ""
+    },
+    {
+      "name": "OSCHINA",
+      "count": 50,
+      "error": ""
+    },
+    {
+      "name": "极客公园",
+      "count": 30,
+      "error": ""
+    },
+    {
+      "name": "界面新闻",
+      "count": 30,
+      "error": ""
+    }
+  ],
+  "degraded": false,
+  "degraded_reason": ""
+}
